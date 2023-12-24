@@ -2,7 +2,7 @@
 id: j76ahf4fh0mz6jq2m1qhemw
 title: Resume
 desc: ''
-updated: 1703318907395
+updated: 1703399841872
 created: 1703313259802
 ---
 
@@ -27,7 +27,7 @@ created: 1703313259802
 
 ## **Education**
 
-### National Sun Yat-sen University
+### National Sun Yat-Sen University
 
 #### Bachelor's degree in Finance
 
