@@ -1,0 +1,18 @@
+<h1 id="environmentobject">EnvironmentObject<a aria-hidden="true" class="anchor-heading icon-link" href="#environmentobject"></a></h1>
+<h2 id="why-use-it">Why use it?<a aria-hidden="true" class="anchor-heading icon-link" href="#why-use-it"></a></h2>
+<p>當我們想要在View Hiearchy中共享某個物件，不想要一層一層傳遞該物件時，我們可以在View的最父層透過<code>environmentObject()</code>modifier，讓要使用的子層在View中以<code>@EnvironmentObject</code>去取得這個共享的物件。</p>
+<h2 id="what-is-it">What is it?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-is-it"></a></h2>
+<p>他跟<code>@ObservedObject</code>有點像，都是參照符合<code>ObservableObject</code>protocol 的物件，差別在於:</p>
+<ul>
+<li><code>@ObservedObject</code>需要父層傳遞該Observable物件</li>
+<li><code>@EnvironmentObject</code>則是找到在到View階層環境中的Observable物件。
+<blockquote>
+<p>SwiftUI會找尋該View階層中與宣告型別一樣的物件。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="behind-the-scenes">Behind the scenes<a aria-hidden="true" class="anchor-heading icon-link" href="#behind-the-scenes"></a></h2>
+<div class="mermaid">
+  
+</div>
+<h2 id="example">Example<a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a></h2>

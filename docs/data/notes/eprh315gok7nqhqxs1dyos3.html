@@ -1,0 +1,101 @@
+<h1 id="animation">Animation<a aria-hidden="true" class="anchor-heading icon-link" href="#animation"></a></h1>
+<h2 id="3-ways-of-implementing-animation-in-swiftui">3 ways of implementing animation in swiftUI<a aria-hidden="true" class="anchor-heading icon-link" href="#3-ways-of-implementing-animation-in-swiftui"></a></h2>
+<ol>
+<li>
+<p>By <code>.animation</code> modifier</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">PersonMoveView</span><span class="token punctuation">:</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+
+<span class="token attribute atrule">@State</span> <span class="token keyword">private</span> <span class="token keyword">var</span> moveDistance<span class="token punctuation">:</span> <span class="token class-name">CGFloat</span> <span class="token operator">=</span> <span class="token number">0</span>
+
+  <span class="token keyword">var</span> body<span class="token punctuation">:</span> <span class="token keyword">some</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+  <span class="token class-name">Button</span> <span class="token punctuation">{</span>
+    moveDistance <span class="token operator">+=</span> <span class="token number">100</span>
+  <span class="token punctuation">}</span> label<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"移動"</span></span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token class-name">Image</span><span class="token punctuation">(</span><span class="token punctuation">.</span>jason<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">resizable</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">scaledToFit</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">offset</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> moveDistance<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">animation</span><span class="token punctuation">(</span><span class="token punctuation">.</span>bouncy<span class="token punctuation">,</span> value<span class="token punctuation">:</span> moveDistance<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li>
+<p><code>withAnimation</code></p>
+<pre class="language-swift"><code class="language-swift">    <span class="token keyword">struct</span> <span class="token class-name">PersonMoveView</span><span class="token punctuation">:</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+
+  <span class="token attribute atrule">@State</span> <span class="token keyword">private</span> <span class="token keyword">var</span> moveDistance<span class="token punctuation">:</span> <span class="token class-name">CGFloat</span> <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> <span class="token keyword">some</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> animation <span class="token operator">=</span> <span class="token class-name">Animation</span><span class="token punctuation">.</span><span class="token function">easeInOut</span><span class="token punctuation">(</span>duration<span class="token punctuation">:</span> <span class="token number">0.2</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">0.2</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">repeatForever</span><span class="token punctuation">(</span>autoreverses<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+
+    <span class="token class-name">Button</span> <span class="token punctuation">{</span>
+      moveDistance <span class="token operator">+=</span> <span class="token number">100</span>
+    <span class="token punctuation">}</span> label<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"移動"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token class-name">Image</span><span class="token punctuation">(</span><span class="token punctuation">.</span>jason<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">resizable</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">scaledToFit</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">offset</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> moveDistance<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">animation</span><span class="token punctuation">(</span><span class="token punctuation">.</span>bouncy<span class="token punctuation">,</span> value<span class="token punctuation">:</span> moveDistance<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span>onAppear <span class="token punctuation">{</span>
+        <span class="token function">withAnimation</span><span class="token punctuation">(</span>animation<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          moveDistance <span class="token operator">+=</span> moveDistance <span class="token operator">==</span> <span class="token number">100</span> <span class="token operator">?</span> <span class="token operator">-</span><span class="token number">100</span> <span class="token punctuation">:</span> <span class="token number">100</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li>
+<p>calling <code>animation</code> on <code>Binding</code> values</p>
+</li>
+</ol>
+<h2 id="transition">Transition<a aria-hidden="true" class="anchor-heading icon-link" href="#transition"></a></h2>
+<ol>
+<li>
+<p>類似sheet的酷東東</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">TransitionView</span><span class="token punctuation">:</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+
+  <span class="token attribute atrule">@State</span> <span class="token keyword">private</span> <span class="token keyword">var</span> showView<span class="token punctuation">:</span> <span class="token class-name">Bool</span> <span class="token operator">=</span> <span class="token boolean">false</span>
+
+  <span class="token keyword">var</span> body<span class="token punctuation">:</span> <span class="token keyword">some</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+    <span class="token class-name">ZStack</span><span class="token punctuation">(</span>alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>bottom<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">VStack</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Button</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Button test transition"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">withAnimation</span><span class="token punctuation">(</span><span class="token punctuation">.</span>easeInOut<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            showView<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token class-name">Spacer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">if</span> showView <span class="token punctuation">{</span>
+        <span class="token class-name">RoundedRectangle</span><span class="token punctuation">(</span>cornerRadius<span class="token punctuation">:</span> <span class="token number">30.0</span><span class="token punctuation">)</span>
+          <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>height<span class="token punctuation">:</span> <span class="token class-name">UIScreen</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span>bounds<span class="token punctuation">.</span>height <span class="token operator">*</span> <span class="token number">0.5</span><span class="token punctuation">)</span>
+          <span class="token punctuation">.</span><span class="token function">transition</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">move</span><span class="token punctuation">(</span>edge<span class="token punctuation">:</span> <span class="token punctuation">.</span>bottom<span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">.</span><span class="token function">ignoresSafeArea</span><span class="token punctuation">(</span>edges<span class="token punctuation">:</span> <span class="token punctuation">.</span>bottom<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li>
+<p><code>asymmetric</code>可以做進出場的控制</p>
+<pre class="language-swift"><code class="language-swift"><span class="token punctuation">.</span><span class="token function">transition</span><span class="token punctuation">(</span>
+    <span class="token class-name">AsymmetricTransition</span><span class="token punctuation">(</span>
+        insertion<span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token function">move</span><span class="token punctuation">(</span>edge<span class="token punctuation">:</span> <span class="token punctuation">.</span>bottom<span class="token punctuation">)</span><span class="token punctuation">,</span> removal<span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token function">move</span><span class="token punctuation">(</span>edge<span class="token punctuation">:</span> <span class="token punctuation">.</span>trailing<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+</ol>
+<h3 id="transition-vs-animation-的使用時機">Transition vs Animation 的使用時機？<a aria-hidden="true" class="anchor-heading icon-link" href="#transition-vs-animation-的使用時機"></a></h3>
+<p>view原本就在螢幕上，且單純想做搖擺等動畫 => animation</p>
+<p>要新增某個view到現有的view => Transition + conditional rendering</p>
+<h2 id="sheet-vs-transition-vs-animation-offset">Sheet vs Transition vs Animation offset<a aria-hidden="true" class="anchor-heading icon-link" href="#sheet-vs-transition-vs-animation-offset"></a></h2>

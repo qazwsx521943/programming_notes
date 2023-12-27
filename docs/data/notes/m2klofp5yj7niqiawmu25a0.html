@@ -1,0 +1,191 @@
+<h1 id="grand-central-dispatch">Grand Central Dispatch<a aria-hidden="true" class="anchor-heading icon-link" href="#grand-central-dispatch"></a></h1>
+<p><img src="/programming_notes/./assets/images/language.swift.grand-central-dispatch_icon.png" alt="GCD_icon"></p>
+<div class="mermaid">
+  graph TB;
+A[Grand Central Dispatch] --> B[Why do we need it?]
+A --> C[How did it work?]
+A --> D[Alternatives]
+</div>
+<h2 id="what-is-grand-central-dispatch">What is Grand Central Dispatch?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-is-grand-central-dispatch"></a></h2>
+<blockquote>
+<p>Dispatch, also known as Grand Central Dispatch (GCD), contains language features, runtime libraries, and system enhancements that provide systemic, comprehensive improvements to the support for concurrent code execution on multicore hardware in macOS, iOS, watchOS, and tvOS.</p>
+</blockquote>
+<p>一個讓工程師可以更輕易配置<strong>concurrent code</strong>的框架</p>
+<h2 id="what-problem-did-gcd-solve">What problem did <strong>GCD</strong> solve?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-problem-did-gcd-solve"></a></h2>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>執行緒管理</th><th>人工</th><th>GCD</th></tr></thead><tbody><tr><td>(維護 / 開發)難度</td><td>較高</td><td>較低</td></tr><tr><td>平均效能</td><td>1</td><td>1.3</td></tr><tr><td>安全性</td><td>不一定</td><td>安全</td></tr></tbody></table></div>
+<h2 id="how-did-it-work">How did it Work?<a aria-hidden="true" class="anchor-heading icon-link" href="#how-did-it-work"></a></h2>
+<p>GCD是一個讓我們可以不用直接操作Thread的API，我們只需要指定Task的<strong>性質</strong>，並將他加入適當的<strong>DispatchQueue</strong>，GCD就可以幫我們處理這些Task應該要在哪個Thread被執行。</p>
+<h3 id="before-gcd">Before GCD<a aria-hidden="true" class="anchor-heading icon-link" href="#before-gcd"></a></h3>
+<div class="mermaid">
+  graph TD
+A[Program] --> B[Create Threads]
+B --> C[Define Thread Functions]
+C --> D[Start Threads]
+D --> E[Thread1: Task1]
+D --> F[Thread2: Task2]
+D --> G[Thread3: Task3]
+E --> H[Thread Synchronization]
+F --> H
+G --> H
+H --> I[Continue Execution]
+</div>
+<h3 id="after-gcd">After GCD<a aria-hidden="true" class="anchor-heading icon-link" href="#after-gcd"></a></h3>
+<div class="mermaid">
+  graph TD
+A[Program] --> B[Dispatch Queue1]
+A[Program] --> C[Dispatch Queue2]
+B --> D[Task1]
+B --> E[Task2]
+C --> F[Task3]
+C --> G[Task4]
+</div>
+<h2 id="parallelism-and-concurrency">Parallelism and Concurrency<a aria-hidden="true" class="anchor-heading icon-link" href="#parallelism-and-concurrency"></a></h2>
+<blockquote>
+<h3 id="explaination-from-wwdc2017-gcd">Explaination from WWDC2017 GCD<a aria-hidden="true" class="anchor-heading icon-link" href="#explaination-from-wwdc2017-gcd"></a></h3>
+<ul>
+<li>
+<p>Parallelism</p>
+<p>Simultaneous execution of closely related computations</p>
+</li>
+<li>
+<p>Concurrency</p>
+<p>Composition of independently executed tasks</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="queue-concept">Queue Concept<a aria-hidden="true" class="anchor-heading icon-link" href="#queue-concept"></a></h2>
+<p>當我們提交Task到DispatchQueue中，GCD會依照先進先出(FIFO)的規則依序執行我們的Task。</p>
+<p>我們僅需要注意：</p>
+<ul>
+<li>選擇對的DispatchQueue( Serial / Concurrent )</li>
+<li>執行對的dispatching function( sync / async )</li>
+</ul>
+<h3 id="dispatchqueue">DispatchQueue<a aria-hidden="true" class="anchor-heading icon-link" href="#dispatchqueue"></a></h3>
+<h4 id="serial-vs-concurrent">Serial vs Concurrent<a aria-hidden="true" class="anchor-heading icon-link" href="#serial-vs-concurrent"></a></h4>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>DispatchQueue Type</th><th align="center">Serial</th><th align="center">Concurrent</th></tr></thead><tbody><tr><td>可預測</td><td align="center">可以</td><td align="center">不一定</td></tr><tr><td>發生Race Condition</td><td align="center">不可能</td><td align="center">可能</td></tr><tr><td>完成Task的速度</td><td align="center">慢</td><td align="center">快</td></tr></tbody></table></div>
+<h4 id="sync-vs-async">Sync vs async<a aria-hidden="true" class="anchor-heading icon-link" href="#sync-vs-async"></a></h4>
+<blockquote>
+<p>Dispatch Function is just a function that tells the queue how this task should be scheduled</p>
+</blockquote>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">let</span> backgroundQueue <span class="token operator">=</span> <span class="token class-name">DispatchQueue</span><span class="token punctuation">.</span><span class="token function">global</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+backgroundQueue<span class="token punctuation">.</span>sync <span class="token punctuation">{</span>
+  <span class="token comment">// Task1</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"task1"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"between sync"</span></span><span class="token punctuation">)</span>
+
+backgroundQueue<span class="token punctuation">.</span><span class="token keyword">async</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Task2</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"task2"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// output:</span>
+<span class="token comment">// task1</span>
+<span class="token comment">// between sync</span>
+<span class="token comment">// task2</span>
+</code></pre>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">let</span> backgroundQueue <span class="token operator">=</span> <span class="token class-name">DispatchQueue</span><span class="token punctuation">.</span><span class="token function">global</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+backgroundQueue<span class="token punctuation">.</span><span class="token keyword">async</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Task1</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"task1"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"middle"</span></span><span class="token punctuation">)</span>
+
+backgroundQueue<span class="token punctuation">.</span>sync <span class="token punctuation">{</span>
+  <span class="token comment">// Task2</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"task2"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"bottom"</span></span><span class="token punctuation">)</span>
+
+<span class="token comment">// output:</span>
+<span class="token comment">// between async</span>
+<span class="token comment">// task2</span>
+<span class="token comment">// after all async</span>
+<span class="token comment">// task1</span>
+</code></pre>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">let</span> backgroundQueue <span class="token operator">=</span> <span class="token class-name">DispatchQueue</span><span class="token punctuation">.</span><span class="token function">global</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+backgroundQueue<span class="token punctuation">.</span><span class="token keyword">async</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Task1</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"small task done, on thread </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation"><span class="token class-name">Thread</span><span class="token punctuation">.</span>current</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+  backgroundQueue<span class="token punctuation">.</span>sync <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"sync task, on thread </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation"><span class="token class-name">Thread</span><span class="token punctuation">.</span>current</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    backgroundQueue<span class="token punctuation">.</span><span class="token keyword">async</span> <span class="token punctuation">{</span>
+      <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"inside sync async task, on thread </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation"><span class="token class-name">Thread</span><span class="token punctuation">.</span>current</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"between async"</span></span><span class="token punctuation">)</span>
+
+backgroundQueue<span class="token punctuation">.</span>sync <span class="token punctuation">{</span>
+  <span class="token comment">// Task2</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"task2"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"after all async"</span></span><span class="token punctuation">)</span>
+
+<span class="token comment">// output:</span>
+<span class="token comment">// between async</span>
+<span class="token comment">// task2</span>
+<span class="token comment">// after all async</span>
+<span class="token comment">// task1</span>
+</code></pre>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/programming_notes/notes/205jes6rqcp0hof79t6hs6i">Concurrency</a></li>
+<li><a href="/programming_notes/notes/9bunykr1jl52ls7wqudyauz">Parallelism</a></li>
+</ol>

@@ -1,0 +1,28 @@
+<h1 id="performance">Performance<a aria-hidden="true" class="anchor-heading icon-link" href="#performance"></a></h1>
+<h2 id="dimensions-of-performance">Dimensions of Performance<a aria-hidden="true" class="anchor-heading icon-link" href="#dimensions-of-performance"></a></h2>
+<ol>
+<li>Allocation
+<ol>
+<li>stack &#x26; heap</li>
+</ol>
+</li>
+<li>Reference Counting</li>
+<li>Method Dispatch</li>
+</ol>
+<h3 id="allocation">Allocation<a aria-hidden="true" class="anchor-heading icon-link" href="#allocation"></a></h3>
+<p>記憶體儲存的位置，</p>
+<p>如果沒有identity, indirect storage的需求，使用struct會比class有更好的效能。</p>
+<h4 id="dynamic--static-dispatch">Dynamic / Static Dispatch<a aria-hidden="true" class="anchor-heading icon-link" href="#dynamic--static-dispatch"></a></h4>
+<ul>
+<li>Dynamic:
+<ol>
+<li>Table Dispatch(witness table)</li>
+<li>Message Dispatch(KVO, Core Data)</li>
+</ol>
+</li>
+<li>Static:
+<ol>
+<li></li>
+</ol>
+</li>
+</ul>

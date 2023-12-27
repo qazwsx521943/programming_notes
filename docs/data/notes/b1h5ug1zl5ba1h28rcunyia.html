@@ -1,0 +1,16 @@
+<h1 id="ios-version-check">iOS Version Check<a aria-hidden="true" class="anchor-heading icon-link" href="#ios-version-check"></a></h1>
+<h2 id="availableios-17-"><code>#available(iOS 17, *)</code><a aria-hidden="true" class="anchor-heading icon-link" href="#availableios-17-"></a></h2>
+<p>檢查OS版本來決定要不要運行code</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">if</span> <span class="token other-directive property">#available</span><span class="token punctuation">(</span>iOS <span class="token number">17</span><span class="token punctuation">,</span> <span class="token operator">*</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"this code only runs on iOS 17 and up"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"this code only runs on iOS 16 and lower"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="availableios-17--1"><code>@available(iOS 17, *)</code><a aria-hidden="true" class="anchor-heading icon-link" href="#availableios-17--1"></a></h2>
+<p>定義class/method時標註可被調用的OS版本</p>
+<pre class="language-swift"><code class="language-swift"><span class="token attribute atrule">@available</span><span class="token punctuation">(</span>iOS <span class="token number">17</span><span class="token punctuation">,</span> <span class="token operator">*</span><span class="token punctuation">)</span>
+<span class="token keyword">final</span> <span class="token keyword">class</span> <span class="token class-name">Camera</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ..</span>
+<span class="token punctuation">}</span>
+</code></pre>

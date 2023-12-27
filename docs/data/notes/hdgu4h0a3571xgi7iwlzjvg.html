@@ -1,0 +1,25 @@
+<h1 id="preferencekey">PreferenceKey<a aria-hidden="true" class="anchor-heading icon-link" href="#preferencekey"></a></h1>
+<h2 id="navigationtitle_-title-string-是怎麼運作的"><code>.navigationTitle(_ title: String)</code> 是怎麼運作的？<a aria-hidden="true" class="anchor-heading icon-link" href="#navigationtitle_-title-string-是怎麼運作的"></a></h2>
+<p>通常在child view中要改變parent view的值我們會使用Binding的方式，但是像navigationTitle這種modifier我們並沒有做綁定，為什麼還是可以在任何child view中改變parent view的navigationTitle呢？</p>
+<p>當某個View透過modifier設定navigationTitle時，實際上是透過PreferenceKey去改變最父層的navigationTitle</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">CustomPreferenceKey</span><span class="token punctuation">:</span> <span class="token class-name">PreferenceKey</span> <span class="token punctuation">{</span>
+  <span class="token keyword">static</span> <span class="token keyword">var</span> defaultValue<span class="token punctuation">:</span> <span class="token class-name">String</span> <span class="token operator">=</span> <span class="token string-literal"><span class="token string">""</span></span>
+
+  <span class="token keyword">static</span> <span class="token keyword">func</span> <span class="token function-definition function">reduce</span><span class="token punctuation">(</span>value<span class="token punctuation">:</span> <span class="token keyword">inout</span> <span class="token class-name">String</span><span class="token punctuation">,</span> nextValue<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    value <span class="token operator">=</span> <span class="token function">nextValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>Steps:
+<ol>
+<li>建立一個遵從<code>PreferenceKey</code>的struct</li>
+<li>Parent View 用<code>onPreferenceChange</code>modifier監聽</li>
+<li>Child View用<code>preference(key: RectGeoPreferenceKey.self, value: size)</code>改變自定義的struct</li>
+</ol>
+</li>
+</ul>
+<h2 id="使用情境">使用情境<a aria-hidden="true" class="anchor-heading icon-link" href="#使用情境"></a></h2>
+<ol>
+<li>監聽<code>scrollView</code>中某個View的offset</li>
+</ol>

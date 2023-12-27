@@ -1,0 +1,3407 @@
+{
+  "notes": {
+    "403": {
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "fname": "403",
+      "id": "403",
+      "title": "This page has not yet sprouted",
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1703654659358,
+      "created": 1703654659358,
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [],
+      "parent": null,
+      "data": {}
+    },
+    "root": {
+      "id": "root",
+      "title": "root",
+      "desc": "",
+      "updated": 1605266684036,
+      "created": 1595961348801,
+      "custom": {
+        "nav_order": 0,
+        "permalink": "/"
+      },
+      "fname": "root",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "b49e7e13a0c91addc8ab9ef97080cf1e",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "p1jj2aztluo4pb12qn8gunp",
+        "avquk6puzxi790rxzodnfmh",
+        "rn0e0y5coqo8iyqfxd7ocsk",
+        "c1bs7wsjfbhb0zipaywqv1"
+      ],
+      "parent": null,
+      "data": {}
+    },
+    "c1bs7wsjfbhb0zipaywqv1": {
+      "id": "c1bs7wsjfbhb0zipaywqv1",
+      "title": "Tutorial",
+      "desc": "",
+      "updated": 1698416066342,
+      "created": 1654223767390,
+      "currentStep": 0,
+      "totalSteps": 0,
+      "custom": {
+        "currentStep": 0,
+        "totalSteps": 0
+      },
+      "fname": "tutorial",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "e8174321d085c6a8ab52b3326a29c9de",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "tutorial",
+            "id": "c1bs7wsjfbhb0zipaywqv1",
+            "vaultName": "Dendron"
+          },
+          "value": "tutorial.one",
+          "position": {
+            "start": {
+              "line": 61,
+              "column": 9,
+              "offset": 2424
+            },
+            "end": {
+              "line": 61,
+              "column": 25,
+              "offset": 2440
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "tutorial.one"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "tutorial",
+            "id": "c1bs7wsjfbhb0zipaywqv1",
+            "vaultName": "Dendron"
+          },
+          "value": "tutorial",
+          "position": {
+            "start": {
+              "line": 65,
+              "column": 134,
+              "offset": 2762
+            },
+            "end": {
+              "line": 65,
+              "column": 146,
+              "offset": 2774
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "tutorial"
+          }
+        },
+        {
+          "from": {
+            "fname": "tutorial",
+            "id": "c1bs7wsjfbhb0zipaywqv1",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 65,
+              "column": 134,
+              "offset": 2762
+            },
+            "end": {
+              "line": 65,
+              "column": 146,
+              "offset": 2774
+            },
+            "indent": []
+          },
+          "value": "tutorial"
+        }
+      ],
+      "anchors": {
+        "create-a-note": {
+          "type": "header",
+          "text": "Create a Note",
+          "value": "create-a-note",
+          "line": 14,
+          "column": 0,
+          "depth": 2
+        },
+        "find-a-note": {
+          "type": "header",
+          "text": "Find a Note",
+          "value": "find-a-note",
+          "line": 25,
+          "column": 0,
+          "depth": 2
+        },
+        "organize-your-notes": {
+          "type": "header",
+          "text": "Organize your Notes",
+          "value": "organize-your-notes",
+          "line": 36,
+          "column": 0,
+          "depth": 2
+        },
+        "create-a-link": {
+          "type": "header",
+          "text": "Create a link",
+          "value": "create-a-link",
+          "line": 47,
+          "column": 0,
+          "depth": 2
+        },
+        "navigate-a-link": {
+          "type": "header",
+          "text": "Navigate a link",
+          "value": "navigate-a-link",
+          "line": 59,
+          "column": 0,
+          "depth": 2
+        },
+        "refactor-a-note": {
+          "type": "header",
+          "text": "Refactor a Note",
+          "value": "refactor-a-note",
+          "line": 67,
+          "column": 0,
+          "depth": 2
+        },
+        "conclusion": {
+          "type": "header",
+          "text": "Conclusion",
+          "value": "conclusion",
+          "line": 76,
+          "column": 0,
+          "depth": 2
+        },
+        "next-steps": {
+          "type": "header",
+          "text": "Next Steps",
+          "value": "next-steps",
+          "line": 82,
+          "column": 0,
+          "depth": 2
+        },
+        "community": {
+          "type": "header",
+          "text": "Community",
+          "value": "community",
+          "line": 104,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "root",
+      "data": {}
+    },
+    "rn0e0y5coqo8iyqfxd7ocsk": {
+      "id": "rn0e0y5coqo8iyqfxd7ocsk",
+      "title": "Programming",
+      "desc": "",
+      "updated": 1703388389237,
+      "created": 1703388389237,
+      "custom": {},
+      "fname": "programming",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "827e6be2b85b30e6df10a99ead6df17e",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "hbjsa0j33arqblxg88k4jfv",
+        "r7uyk9st3d9jhl2udoeqf26",
+        "07schiltkp85q9r624we8lq",
+        "yr68nymrc2wmccpkch7bxf2"
+      ],
+      "parent": "root",
+      "data": {}
+    },
+    "yr68nymrc2wmccpkch7bxf2": {
+      "id": "yr68nymrc2wmccpkch7bxf2",
+      "title": "Side Projects",
+      "desc": "",
+      "updated": 1703388415281,
+      "created": 1703388415281,
+      "custom": {},
+      "fname": "programming.side projects",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "f57b9dfe4300799e7f66abd47bbc0a70",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "gzy1xz97zvnttb8urqpfhh3"
+      ],
+      "parent": "rn0e0y5coqo8iyqfxd7ocsk",
+      "data": {}
+    },
+    "gzy1xz97zvnttb8urqpfhh3": {
+      "id": "gzy1xz97zvnttb8urqpfhh3",
+      "title": "Flavor Flash Journal",
+      "desc": "",
+      "updated": 1703388640780,
+      "created": 1700872379646,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "38e303a7beaf40b221d002d760a6e1e7",
+      "links": [],
+      "anchors": {
+        "food-app": {
+          "type": "header",
+          "text": "Food App",
+          "value": "food-app",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "eprh315gok7nqhqxs1dyos3",
+        "itzjg71gb2k0xaj8p8a0a9b",
+        "viioqk5u9v3rsmcfvb5zv3l",
+        "pe6vepkpwtgibepjb75nfmg",
+        "idmoihik9jm09tb79mbpk1q",
+        "rj6d1s24ldccufdqi31lhmn",
+        "dy8x4ijvphppvx2ruts6lxv",
+        "xjoeuc8wuqj1r0fwoesk2k1",
+        "v23jjeviz0i0ms8c7nkbkfa",
+        "9mr2s7gpmdzbi4penck2gg0",
+        "gl20na8txb9ctwgns65tbeb",
+        "b1h5ug1zl5ba1h28rcunyia",
+        "efb7lxnmysqpsnu2ldh7b0r",
+        "snyjwumcbhskqfobufygzto",
+        "ftar26pjpxmmjemznet1npi",
+        "0zd97egyho7luqqur6n5wnu"
+      ],
+      "parent": "yr68nymrc2wmccpkch7bxf2",
+      "data": {}
+    },
+    "0zd97egyho7luqqur6n5wnu": {
+      "id": "0zd97egyho7luqqur6n5wnu",
+      "title": "Xcode Issues",
+      "desc": "",
+      "updated": 1702516305935,
+      "created": 1700894592350,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.xcode issues",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "a466a2e6a6c1238e905be73799fcbf76",
+      "links": [],
+      "anchors": {
+        "spm-cant-find-module": {
+          "type": "header",
+          "text": "SPM can't find module",
+          "value": "spm-cant-find-module",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "fastest-way-removing-derived-data": {
+          "type": "header",
+          "text": "Fastest Way removing Derived Data",
+          "value": "fastest-way-removing-derived-data",
+          "line": 14,
+          "column": 0,
+          "depth": 2
+        },
+        "multiple-command-produce": {
+          "type": "header",
+          "text": "Multiple command produce",
+          "value": "multiple-command-produce",
+          "line": 20,
+          "column": 0,
+          "depth": 2
+        },
+        "check-thread-issue": {
+          "type": "header",
+          "text": "Check Thread issue",
+          "value": "check-thread-issue",
+          "line": 24,
+          "column": 0,
+          "depth": 2
+        },
+        "xcode-project-file-merge-group": {
+          "type": "header",
+          "text": "XCode project file merge 'group'",
+          "value": "xcode-project-file-merge-group",
+          "line": 28,
+          "column": 0,
+          "depth": 2
+        },
+        "如何查看模擬器的userdefaults-plist": {
+          "type": "header",
+          "text": "如何查看模擬器的UserDefaults plist?",
+          "value": "如何查看模擬器的userdefaults-plist",
+          "line": 36,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "gzy1xz97zvnttb8urqpfhh3",
+      "data": {}
+    },
+    "ftar26pjpxmmjemznet1npi": {
+      "id": "ftar26pjpxmmjemznet1npi",
+      "title": "Test",
+      "desc": "",
+      "updated": 1703169792758,
+      "created": 1703148700325,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.test",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "d26a8415091e1edf0f72bba4f8eea83f",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "uoyy643tke6yv1dskldwlki",
+        "yohgi8syibtpckf3ucrtzn7"
+      ],
+      "parent": "gzy1xz97zvnttb8urqpfhh3",
+      "data": {}
+    },
+    "yohgi8syibtpckf3ucrtzn7": {
+      "id": "yohgi8syibtpckf3ucrtzn7",
+      "title": "Unit Test",
+      "desc": "",
+      "updated": 1703148733409,
+      "created": 1703148726565,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.test.unit test",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "b1ecd4996d3c0d42dcb38a2cd7937d32",
+      "links": [],
+      "anchors": {},
+      "children": [],
+      "parent": "ftar26pjpxmmjemznet1npi",
+      "data": {}
+    },
+    "uoyy643tke6yv1dskldwlki": {
+      "id": "uoyy643tke6yv1dskldwlki",
+      "title": "UI Test",
+      "desc": "",
+      "updated": 1703149037607,
+      "created": 1703148716170,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.test.ui test",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "bc65f44db508b099c3684ad8ddd9c821",
+      "links": [],
+      "anchors": {
+        "goal": {
+          "type": "header",
+          "text": "Goal",
+          "value": "goal",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "ftar26pjpxmmjemznet1npi",
+      "data": {}
+    },
+    "snyjwumcbhskqfobufygzto": {
+      "id": "snyjwumcbhskqfobufygzto",
+      "title": "Style Guide",
+      "desc": "",
+      "updated": 1701870644020,
+      "created": 1701870644020,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.style guide",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "0396e5b346263205e81ebd8d161278a5",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "ep4j9qx8bktxsxsfvxyb32x"
+      ],
+      "parent": "gzy1xz97zvnttb8urqpfhh3",
+      "data": {}
+    },
+    "ep4j9qx8bktxsxsfvxyb32x": {
+      "id": "ep4j9qx8bktxsxsfvxyb32x",
+      "title": "Custom Styling",
+      "desc": "",
+      "updated": 1701875612159,
+      "created": 1701875273319,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.style guide.custom styling",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "a176f64573affd5de542a2f2594dded2",
+      "links": [],
+      "anchors": {
+        "buttonstyle-togglestyle-etc": {
+          "type": "header",
+          "text": "ButtonStyle, ToggleStyle, etc",
+          "value": "buttonstyle-togglestyle-etc",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "snyjwumcbhskqfobufygzto",
+      "data": {}
+    },
+    "efb7lxnmysqpsnu2ldh7b0r": {
+      "id": "efb7lxnmysqpsnu2ldh7b0r",
+      "title": "Mapkit",
+      "desc": "",
+      "updated": 1701135937335,
+      "created": 1701091818264,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.mapkit",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "d70547da2f9cf77bfc680ad5a696cb52",
+      "links": [],
+      "anchors": {
+        "ios-160-interfacing-with-uikit": {
+          "type": "header",
+          "text": "iOS 16.0 (interfacing with UIKit)",
+          "value": "ios-160-interfacing-with-uikit",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "callback-order": {
+          "type": "header",
+          "text": "Callback Order",
+          "value": "callback-order",
+          "line": 13,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [],
+      "parent": "gzy1xz97zvnttb8urqpfhh3",
+      "data": {}
+    },
+    "b1h5ug1zl5ba1h28rcunyia": {
+      "id": "b1h5ug1zl5ba1h28rcunyia",
+      "title": "iOS Version Check",
+      "desc": "",
+      "updated": 1703496692776,
+      "created": 1703492034949,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.ios version check",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "0d034db723567ef918254b55b9585133",
+      "links": [],
+      "anchors": {
+        "availableios-17-": {
+          "type": "header",
+          "text": "#available(iOS 17, *)",
+          "value": "availableios-17-",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "availableios-17--1": {
+          "type": "header",
+          "text": "@available(iOS 17, *)",
+          "value": "availableios-17--1",
+          "line": 20,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "gzy1xz97zvnttb8urqpfhh3",
+      "data": {}
+    },
+    "gl20na8txb9ctwgns65tbeb": {
+      "id": "gl20na8txb9ctwgns65tbeb",
+      "title": "Firebase",
+      "desc": "",
+      "updated": 1701679474178,
+      "created": 1701679474178,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.firebase",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "75edce9c8d10f05e289a057ccbbf2863",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "fb3cv62eok3am0c3pgwwtfp",
+        "f48f4umzc3ayqtkl3ik3wln",
+        "hsvfqkwpu4o05tdgw19niby"
+      ],
+      "parent": "gzy1xz97zvnttb8urqpfhh3",
+      "data": {}
+    },
+    "hsvfqkwpu4o05tdgw19niby": {
+      "id": "hsvfqkwpu4o05tdgw19niby",
+      "title": "Cloud Messaging",
+      "desc": "",
+      "updated": 1701679486650,
+      "created": 1701679486650,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.firebase.cloud messaging",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "061c2d179755985fb3c1331e88a18e7a",
+      "links": [],
+      "anchors": {},
+      "children": [],
+      "parent": "gl20na8txb9ctwgns65tbeb",
+      "data": {}
+    },
+    "f48f4umzc3ayqtkl3ik3wln": {
+      "id": "f48f4umzc3ayqtkl3ik3wln",
+      "title": "Cloud Firestore",
+      "desc": "",
+      "updated": 1702537705460,
+      "created": 1702520834662,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.firebase.cloud firestore",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "e1575bd45e3da6f8414e53e52c5496be",
+      "links": [],
+      "anchors": {
+        "keywords": {
+          "type": "header",
+          "text": "Keywords",
+          "value": "keywords",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "what-is-a-document-in-firestore": {
+          "type": "header",
+          "text": "What is a document in firestore?",
+          "value": "what-is-a-document-in-firestore",
+          "line": 13,
+          "column": 0,
+          "depth": 2
+        },
+        "what-is-a-reference-in-firestore": {
+          "type": "header",
+          "text": "What is a reference in firestore?",
+          "value": "what-is-a-reference-in-firestore",
+          "line": 19,
+          "column": 0,
+          "depth": 2
+        },
+        "index-types-in-cloud-firestore": {
+          "type": "header",
+          "text": "Index types in Cloud Firestore",
+          "value": "index-types-in-cloud-firestore",
+          "line": 35,
+          "column": 0,
+          "depth": 2
+        },
+        "data-structuring-for-cloud-firestore": {
+          "type": "header",
+          "text": "Data Structuring for cloud firestore",
+          "value": "data-structuring-for-cloud-firestore",
+          "line": 40,
+          "column": 0,
+          "depth": 2
+        },
+        "options": {
+          "type": "header",
+          "text": "Options",
+          "value": "options",
+          "line": 44,
+          "column": 0,
+          "depth": 3
+        },
+        "write": {
+          "type": "header",
+          "text": "Write",
+          "value": "write",
+          "line": 50,
+          "column": 0,
+          "depth": 2
+        },
+        "options-1": {
+          "type": "header",
+          "text": "Options",
+          "value": "options-1",
+          "line": 52,
+          "column": 0,
+          "depth": 3
+        },
+        "set-document": {
+          "type": "header",
+          "text": "Set document",
+          "value": "set-document",
+          "line": 58,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [],
+      "parent": "gl20na8txb9ctwgns65tbeb",
+      "data": {}
+    },
+    "fb3cv62eok3am0c3pgwwtfp": {
+      "id": "fb3cv62eok3am0c3pgwwtfp",
+      "title": "WebRTC signalling",
+      "desc": "",
+      "updated": 1703591324237,
+      "created": 1703589664596,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.firebase.WebRTC signalling",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "4472e15d2416cbe6dfd70374d24f6651",
+      "links": [],
+      "anchors": {
+        "如何用firebase-collection建立一個signalling-server": {
+          "type": "header",
+          "text": "如何用Firebase Collection建立一個signalling server?",
+          "value": "如何用firebase-collection建立一個signalling-server",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "建立一個直播間": {
+          "type": "header",
+          "text": "建立一個直播間",
+          "value": "建立一個直播間",
+          "line": 10,
+          "column": 0,
+          "depth": 3
+        },
+        "加入一個直播間": {
+          "type": "header",
+          "text": "加入一個直播間",
+          "value": "加入一個直播間",
+          "line": 26,
+          "column": 0,
+          "depth": 3
+        },
+        "collect-ice-candidates": {
+          "type": "header",
+          "text": "Collect ICE candidates",
+          "value": "collect-ice-candidates",
+          "line": 41,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [],
+      "parent": "gl20na8txb9ctwgns65tbeb",
+      "data": {}
+    },
+    "9mr2s7gpmdzbi4penck2gg0": {
+      "id": "9mr2s7gpmdzbi4penck2gg0",
+      "title": "Dependency Injection",
+      "desc": "",
+      "updated": 1703254243793,
+      "created": 1703253972301,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.dependency injection",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "1baa04d741d9d6471aea186eb38aaf2a",
+      "links": [],
+      "anchors": {
+        "dependency-injection": {
+          "type": "header",
+          "text": "Dependency Injection",
+          "value": "dependency-injection",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "gzy1xz97zvnttb8urqpfhh3",
+      "data": {}
+    },
+    "v23jjeviz0i0ms8c7nkbkfa": {
+      "id": "v23jjeviz0i0ms8c7nkbkfa",
+      "title": "Data Structure",
+      "desc": "",
+      "updated": 1700989300590,
+      "created": 1700968290364,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.data structure",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "6149a05134bd1a93958636cf5e1a500a",
+      "links": [],
+      "anchors": {
+        "struct-vs-class-vs-actor": {
+          "type": "header",
+          "text": "Struct vs Class vs Actor",
+          "value": "struct-vs-class-vs-actor",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "struct": {
+          "type": "header",
+          "text": "struct",
+          "value": "struct",
+          "line": 10,
+          "column": 0,
+          "depth": 3
+        },
+        "class": {
+          "type": "header",
+          "text": "Class",
+          "value": "class",
+          "line": 22,
+          "column": 0,
+          "depth": 3
+        },
+        "actor": {
+          "type": "header",
+          "text": "Actor",
+          "value": "actor",
+          "line": 24,
+          "column": 0,
+          "depth": 3
+        },
+        "class-vs-struct-": {
+          "type": "header",
+          "text": "Class vs Struct ?",
+          "value": "class-vs-struct-",
+          "line": 44,
+          "column": 0,
+          "depth": 2
+        },
+        "value-vs-reference-types": {
+          "type": "header",
+          "text": "Value vs Reference types",
+          "value": "value-vs-reference-types",
+          "line": 48,
+          "column": 0,
+          "depth": 2
+        },
+        "stack-vs-heap": {
+          "type": "header",
+          "text": "Stack vs Heap",
+          "value": "stack-vs-heap",
+          "line": 58,
+          "column": 0,
+          "depth": 2
+        },
+        "stack": {
+          "type": "header",
+          "text": "Stack",
+          "value": "stack",
+          "line": 64,
+          "column": 0,
+          "depth": 3
+        },
+        "heap": {
+          "type": "header",
+          "text": "Heap",
+          "value": "heap",
+          "line": 69,
+          "column": 0,
+          "depth": 3
+        },
+        "automatic-reference-counting-arc": {
+          "type": "header",
+          "text": "Automatic Reference Counting (ARC)",
+          "value": "automatic-reference-counting-arc",
+          "line": 75,
+          "column": 0,
+          "depth": 2
+        },
+        "situations-when-choosing-different-data-types": {
+          "type": "header",
+          "text": "Situations when choosing different data types",
+          "value": "situations-when-choosing-different-data-types",
+          "line": 83,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "gzy1xz97zvnttb8urqpfhh3",
+      "data": {}
+    },
+    "xjoeuc8wuqj1r0fwoesk2k1": {
+      "id": "xjoeuc8wuqj1r0fwoesk2k1",
+      "title": "Core Data",
+      "desc": "",
+      "updated": 1703253952500,
+      "created": 1702460092546,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.core data",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "265bce6424d0f2557eff2a9eb9faf4e4",
+      "links": [],
+      "anchors": {
+        "swiftui-中導入core-data": {
+          "type": "header",
+          "text": "SwiftUI 中導入Core Data",
+          "value": "swiftui-中導入core-data",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "如何使用-fetchrequest-property-wrapper": {
+          "type": "header",
+          "text": "如何使用 @FetchRequest property wrapper?",
+          "value": "如何使用-fetchrequest-property-wrapper",
+          "line": 14,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "gzy1xz97zvnttb8urqpfhh3",
+      "data": {}
+    },
+    "dy8x4ijvphppvx2ruts6lxv": {
+      "id": "dy8x4ijvphppvx2ruts6lxv",
+      "title": "Concurrency",
+      "desc": "",
+      "updated": 1701526535396,
+      "created": 1700900576550,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.concurrency",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "6e5355e031238c602d3e53973f4774fb",
+      "links": [],
+      "anchors": {
+        "download-image": {
+          "type": "header",
+          "text": "Download image",
+          "value": "download-image",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "old-way-escaping-closure": {
+          "type": "header",
+          "text": "Old way (escaping closure)",
+          "value": "old-way-escaping-closure",
+          "line": 10,
+          "column": 0,
+          "depth": 3
+        },
+        "new-way-async-await": {
+          "type": "header",
+          "text": "New way (async await)",
+          "value": "new-way-async-await",
+          "line": 44,
+          "column": 0,
+          "depth": 3
+        },
+        "how-to-load-multiple-images-concurrently": {
+          "type": "header",
+          "text": "How to load multiple images concurrently?",
+          "value": "how-to-load-multiple-images-concurrently",
+          "line": 58,
+          "column": 0,
+          "depth": 2
+        },
+        "problem-loading-images-in-a-task-context-loads-by-serial": {
+          "type": "header",
+          "text": "Problem: loading images in a Task context loads by serial",
+          "value": "problem-loading-images-in-a-task-context-loads-by-serial",
+          "line": 60,
+          "column": 0,
+          "depth": 3
+        },
+        "solution-1-split-in-different-task": {
+          "type": "header",
+          "text": "Solution 1: Split in different Task",
+          "value": "solution-1-split-in-different-task",
+          "line": 95,
+          "column": 0,
+          "depth": 3
+        },
+        "solution-2-async-let": {
+          "type": "header",
+          "text": "Solution 2: async let",
+          "value": "solution-2-async-let",
+          "line": 122,
+          "column": 0,
+          "depth": 3
+        },
+        "solution-3-taskgroup": {
+          "type": "header",
+          "text": "Solution 3: TaskGroup",
+          "value": "solution-3-taskgroup",
+          "line": 139,
+          "column": 0,
+          "depth": 3
+        },
+        "sdk-不支援-async-await-使用completionhandler": {
+          "type": "header",
+          "text": "SDK 不支援 async await （使用completionHandler）",
+          "value": "sdk-不支援-async-await-使用completionhandler",
+          "line": 172,
+          "column": 0,
+          "depth": 2
+        },
+        "solution-使用withcheckedthrowingcontinuation包": {
+          "type": "header",
+          "text": "Solution: 使用withCheckedThrowingContinuation包",
+          "value": "solution-使用withcheckedthrowingcontinuation包",
+          "line": 174,
+          "column": 0,
+          "depth": 3
+        },
+        "問題-在還沒有actor之前要如何解決不同物件之間對同一個class的存取修改": {
+          "type": "header",
+          "text": "問題： 在還沒有actor之前，要如何解決不同物件之間對同一個class的存取/修改？",
+          "value": "問題-在還沒有actor之前要如何解決不同物件之間對同一個class的存取修改",
+          "line": 193,
+          "column": 0,
+          "depth": 2
+        },
+        "what-is-global-actors": {
+          "type": "header",
+          "text": "What is global Actors?",
+          "value": "what-is-global-actors",
+          "line": 197,
+          "column": 0,
+          "depth": 2
+        },
+        "what-is-mainactor": {
+          "type": "header",
+          "text": "What is @MainActor?",
+          "value": "what-is-mainactor",
+          "line": 199,
+          "column": 0,
+          "depth": 2
+        },
+        "what-is-sendable-protocol": {
+          "type": "header",
+          "text": "What is Sendable protocol?",
+          "value": "what-is-sendable-protocol",
+          "line": 205,
+          "column": 0,
+          "depth": 2
+        },
+        "manage-strong--weak-reference-with-async--await": {
+          "type": "header",
+          "text": "Manage strong & weak reference with Async / Await?",
+          "value": "manage-strong--weak-reference-with-async--await",
+          "line": 211,
+          "column": 0,
+          "depth": 2
+        },
+        "mvvm-中使用async--await-的-pattern": {
+          "type": "header",
+          "text": "MVVM 中使用Async / Await 的 Pattern",
+          "value": "mvvm-中使用async--await-的-pattern",
+          "line": 217,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "gzy1xz97zvnttb8urqpfhh3",
+      "data": {}
+    },
+    "rj6d1s24ldccufdqi31lhmn": {
+      "id": "rj6d1s24ldccufdqi31lhmn",
+      "title": "Community",
+      "desc": "",
+      "updated": 1700893517147,
+      "created": 1700872446703,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.community",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "84b9ece193ba301c3a7b85a4a3a6d860",
+      "links": [],
+      "anchors": {
+        "qrcode-掃條碼": {
+          "type": "header",
+          "text": "QRCode 掃條碼",
+          "value": "qrcode-掃條碼",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "產生qrcode": {
+          "type": "header",
+          "text": "產生QRCode",
+          "value": "產生qrcode",
+          "line": 10,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [],
+      "parent": "gzy1xz97zvnttb8urqpfhh3",
+      "data": {}
+    },
+    "idmoihik9jm09tb79mbpk1q": {
+      "id": "idmoihik9jm09tb79mbpk1q",
+      "title": "Architecture",
+      "desc": "",
+      "updated": 1701074732617,
+      "created": 1701041481511,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.architecture",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "ea254a658803a0b93e8b07a2038d61ad",
+      "links": [],
+      "anchors": {
+        "dependency-injection": {
+          "type": "header",
+          "text": "Dependency Injection",
+          "value": "dependency-injection",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "how-it-works": {
+          "type": "header",
+          "text": "How it works?",
+          "value": "how-it-works",
+          "line": 14,
+          "column": 0,
+          "depth": 3
+        },
+        "singleton": {
+          "type": "header",
+          "text": "Singleton",
+          "value": "singleton",
+          "line": 21,
+          "column": 0,
+          "depth": 2
+        },
+        "app-lifecycle": {
+          "type": "header",
+          "text": "App LifeCycle",
+          "value": "app-lifecycle",
+          "line": 34,
+          "column": 0,
+          "depth": 2
+        },
+        "main-property-wrapper": {
+          "type": "header",
+          "text": "@Main property wrapper",
+          "value": "main-property-wrapper",
+          "line": 38,
+          "column": 0,
+          "depth": 3
+        },
+        "app-protocol": {
+          "type": "header",
+          "text": "'App' protocol",
+          "value": "app-protocol",
+          "line": 42,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [],
+      "parent": "gzy1xz97zvnttb8urqpfhh3",
+      "data": {}
+    },
+    "pe6vepkpwtgibepjb75nfmg": {
+      "id": "pe6vepkpwtgibepjb75nfmg",
+      "title": "View",
+      "desc": "",
+      "updated": 1701400109005,
+      "created": 1701136515001,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.View",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "537132c5fd4813fa5f17fa3a44c9b1fa",
+      "links": [],
+      "anchors": {
+        "container-views": {
+          "type": "header",
+          "text": "Container Views",
+          "value": "container-views",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "vstack---vertical": {
+          "type": "header",
+          "text": "VStack -> Vertical",
+          "value": "vstack---vertical",
+          "line": 10,
+          "column": 0,
+          "depth": 3
+        },
+        "hstack---horizontal": {
+          "type": "header",
+          "text": "HStack -> Horizontal",
+          "value": "hstack---horizontal",
+          "line": 12,
+          "column": 0,
+          "depth": 3
+        },
+        "zstack---zindex-back-to-front": {
+          "type": "header",
+          "text": "ZStack -> zIndex (back to front)",
+          "value": "zstack---zindex-back-to-front",
+          "line": 14,
+          "column": 0,
+          "depth": 3
+        },
+        "common-modifiers": {
+          "type": "header",
+          "text": "Common Modifiers",
+          "value": "common-modifiers",
+          "line": 18,
+          "column": 0,
+          "depth": 2
+        },
+        "frame": {
+          "type": "header",
+          "text": ".frame()",
+          "value": "frame",
+          "line": 20,
+          "column": 0,
+          "depth": 3
+        },
+        "background是可以不斷疊加上去的": {
+          "type": "header",
+          "text": ".background()是可以不斷疊加上去的",
+          "value": "background是可以不斷疊加上去的",
+          "line": 31,
+          "column": 0,
+          "depth": 3
+        },
+        "overlay會在background之上": {
+          "type": "header",
+          "text": ".overlay會在background之上",
+          "value": "overlay會在background之上",
+          "line": 33,
+          "column": 0,
+          "depth": 3
+        },
+        "background-vs-zstack": {
+          "type": "header",
+          "text": "background vs ZStack",
+          "value": "background-vs-zstack",
+          "line": 37,
+          "column": 0,
+          "depth": 2
+        },
+        "善用spacer推-stack-裡面的laout": {
+          "type": "header",
+          "text": "善用Spacer()推 Stack 裡面的laout",
+          "value": "善用spacer推-stack-裡面的laout",
+          "line": 41,
+          "column": 0,
+          "depth": 2
+        },
+        "how-to-use-enum-and-init-in-swiftui-reusable-views": {
+          "type": "header",
+          "text": "How to use enum and init in swiftUI reusable views",
+          "value": "how-to-use-enum-and-init-in-swiftui-reusable-views",
+          "line": 43,
+          "column": 0,
+          "depth": 2
+        },
+        "scrollview-小技巧": {
+          "type": "header",
+          "text": "ScrollView 小技巧",
+          "value": "scrollview-小技巧",
+          "line": 45,
+          "column": 0,
+          "depth": 2
+        },
+        "conditional-rendering": {
+          "type": "header",
+          "text": "Conditional Rendering",
+          "value": "conditional-rendering",
+          "line": 55,
+          "column": 0,
+          "depth": 2
+        },
+        "action-sheet-alert-view-都是可以封裝成viewbuilder的": {
+          "type": "header",
+          "text": "Action sheet, Alert view 都是可以封裝成viewBuilder的",
+          "value": "action-sheet-alert-view-都是可以封裝成viewbuilder的",
+          "line": 61,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "65euco42r84gg5c3ch3fz7j",
+        "qnblppa3jgb50fudg4bok41",
+        "jzt4n14uhf1nf988eby18f7",
+        "nevfh3syem3vgfs1350xjkh",
+        "hdgu4h0a3571xgi7iwlzjvg",
+        "nkp55fqc7bcwlb00sxlh3dw"
+      ],
+      "parent": "gzy1xz97zvnttb8urqpfhh3",
+      "data": {}
+    },
+    "nkp55fqc7bcwlb00sxlh3dw": {
+      "id": "nkp55fqc7bcwlb00sxlh3dw",
+      "title": "Reusable View",
+      "desc": "",
+      "updated": 1701344135971,
+      "created": 1701307744073,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.View.Reusable View",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "003c32ec1496db2f4157650e3bf34b69",
+      "links": [],
+      "anchors": {
+        "管理要渲染哪個loading-view的container-view": {
+          "type": "header",
+          "text": "管理要渲染哪個Loading View的Container View",
+          "value": "管理要渲染哪個loading-view的container-view",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "loading-view怎麼設計的": {
+          "type": "header",
+          "text": "Loading View怎麼設計的",
+          "value": "loading-view怎麼設計的",
+          "line": 79,
+          "column": 0,
+          "depth": 2
+        },
+        "how-to-extract-subviews": {
+          "type": "header",
+          "text": "How to extract Subviews",
+          "value": "how-to-extract-subviews",
+          "line": 83,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "pe6vepkpwtgibepjb75nfmg",
+      "data": {}
+    },
+    "hdgu4h0a3571xgi7iwlzjvg": {
+      "id": "hdgu4h0a3571xgi7iwlzjvg",
+      "title": "PreferenceKey",
+      "desc": "",
+      "updated": 1701425012717,
+      "created": 1701421599254,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.View.PreferenceKey",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "9d2ea4e7b4c319dcf07628165f95d8da",
+      "links": [],
+      "anchors": {
+        "navigationtitle_-title-string-是怎麼運作的": {
+          "type": "header",
+          "text": ".navigationTitle(_ title: String) 是怎麼運作的？",
+          "value": "navigationtitle_-title-string-是怎麼運作的",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "使用情境": {
+          "type": "header",
+          "text": "使用情境",
+          "value": "使用情境",
+          "line": 29,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "pe6vepkpwtgibepjb75nfmg",
+      "data": {}
+    },
+    "nevfh3syem3vgfs1350xjkh": {
+      "id": "nevfh3syem3vgfs1350xjkh",
+      "title": "Grid",
+      "desc": "",
+      "updated": 1701337565675,
+      "created": 1701337435341,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.View.Grid",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "4c66647d283b36386a46a33be8ec462e",
+      "links": [],
+      "anchors": {
+        "lazyvgrid-instagram-layout": {
+          "type": "header",
+          "text": "LazyVGrid Instagram layout",
+          "value": "lazyvgrid-instagram-layout",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "pe6vepkpwtgibepjb75nfmg",
+      "data": {}
+    },
+    "jzt4n14uhf1nf988eby18f7": {
+      "id": "jzt4n14uhf1nf988eby18f7",
+      "title": "Divider",
+      "desc": "",
+      "updated": 1701413806275,
+      "created": 1701413716811,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.View.Divider",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "3eaf53ab7216632659ff78b659f87021",
+      "links": [],
+      "anchors": {
+        "-------text--------effect": {
+          "type": "header",
+          "text": "------ Text ------ Effect",
+          "value": "-------text--------effect",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "pe6vepkpwtgibepjb75nfmg",
+      "data": {}
+    },
+    "qnblppa3jgb50fudg4bok41": {
+      "id": "qnblppa3jgb50fudg4bok41",
+      "title": "Clean UI Code",
+      "desc": "",
+      "updated": 1701409184250,
+      "created": 1701409090865,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.View.Clean UI Code",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "7fe6600c1913ba524eaaf2c8494e8e76",
+      "links": [],
+      "anchors": {
+        "clean-ui-code-in-swiftui": {
+          "type": "header",
+          "text": "Clean UI code in swiftUI",
+          "value": "clean-ui-code-in-swiftui",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "pe6vepkpwtgibepjb75nfmg",
+      "data": {}
+    },
+    "65euco42r84gg5c3ch3fz7j": {
+      "id": "65euco42r84gg5c3ch3fz7j",
+      "title": "Shape",
+      "desc": "",
+      "updated": 1701245131381,
+      "created": 1701238872908,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.View.Circle",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "009c6e3a03de3d5103ae41fd3df53723",
+      "links": [],
+      "anchors": {
+        "畫邊框": {
+          "type": "header",
+          "text": "畫邊框",
+          "value": "畫邊框",
+          "line": 9,
+          "column": 0,
+          "depth": 2
+        },
+        "搭配trim做一個loading的動畫": {
+          "type": "header",
+          "text": "搭配trim做一個Loading的動畫",
+          "value": "搭配trim做一個loading的動畫",
+          "line": 63,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [],
+      "parent": "pe6vepkpwtgibepjb75nfmg",
+      "data": {}
+    },
+    "viioqk5u9v3rsmcfvb5zv3l": {
+      "id": "viioqk5u9v3rsmcfvb5zv3l",
+      "title": "Tips",
+      "desc": "",
+      "updated": 1701568097948,
+      "created": 1701567210883,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.Tips",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "18512961688fee34edc12044e7eacbd6",
+      "links": [],
+      "anchors": {
+        "preview": {
+          "type": "header",
+          "text": "Preview",
+          "value": "preview",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "gzy1xz97zvnttb8urqpfhh3",
+      "data": {}
+    },
+    "itzjg71gb2k0xaj8p8a0a9b": {
+      "id": "itzjg71gb2k0xaj8p8a0a9b",
+      "title": "Extensions",
+      "desc": "",
+      "updated": 1701336450003,
+      "created": 1701336373819,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.Extensions",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "1bbbd66ad611f48cb48d12e0585f7be2",
+      "links": [],
+      "anchors": {
+        "color": {
+          "type": "header",
+          "text": "Color",
+          "value": "color",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "gzy1xz97zvnttb8urqpfhh3",
+      "data": {}
+    },
+    "eprh315gok7nqhqxs1dyos3": {
+      "id": "eprh315gok7nqhqxs1dyos3",
+      "title": "Animation",
+      "desc": "",
+      "updated": 1701398930357,
+      "created": 1701322800476,
+      "custom": {},
+      "fname": "programming.side projects.flavor flash journal.Animation",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "2aea2f572fb2ced07ac83be05181d0c4",
+      "links": [],
+      "anchors": {
+        "3-ways-of-implementing-animation-in-swiftui": {
+          "type": "header",
+          "text": "3 ways of implementing animation in swiftUI",
+          "value": "3-ways-of-implementing-animation-in-swiftui",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "transition": {
+          "type": "header",
+          "text": "Transition",
+          "value": "transition",
+          "line": 65,
+          "column": 0,
+          "depth": 2
+        },
+        "transition-vs-animation-的使用時機": {
+          "type": "header",
+          "text": "Transition vs Animation 的使用時機？",
+          "value": "transition-vs-animation-的使用時機",
+          "line": 105,
+          "column": 0,
+          "depth": 3
+        },
+        "sheet-vs-transition-vs-animation-offset": {
+          "type": "header",
+          "text": "Sheet vs Transition vs Animation offset",
+          "value": "sheet-vs-transition-vs-animation-offset",
+          "line": 111,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "gzy1xz97zvnttb8urqpfhh3",
+      "data": {}
+    },
+    "07schiltkp85q9r624we8lq": {
+      "id": "07schiltkp85q9r624we8lq",
+      "title": "Language",
+      "desc": "",
+      "updated": 1698417581225,
+      "created": 1698417581225,
+      "custom": {},
+      "fname": "programming.language",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "d7a4434e401bb85806cbeecbebf02390",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "vztg7xzj0425ae5ogmk8ds2"
+      ],
+      "parent": "rn0e0y5coqo8iyqfxd7ocsk",
+      "data": {}
+    },
+    "vztg7xzj0425ae5ogmk8ds2": {
+      "id": "vztg7xzj0425ae5ogmk8ds2",
+      "title": "Swift",
+      "desc": "",
+      "updated": 1698417581220,
+      "created": 1698417581220,
+      "custom": {},
+      "fname": "programming.language.swift",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "e8365b9650c615a8187a3a7780ca81cc",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "rxplme0keulo3fon6e4gxmc",
+        "rc44em7kcfzkyprtzidrtjs",
+        "n5jvl7w3vcsyh0vxk4ocvcu",
+        "qjbja5y4bx4h8yq4aaydnss",
+        "m2klofp5yj7niqiawmu25a0",
+        "y4x1bbpym9389xf1pj71s7z",
+        "pup4i4mmvmbwq6pxkp1jchf",
+        "k0wglg86ad5i8p1z42joprw"
+      ],
+      "parent": "07schiltkp85q9r624we8lq",
+      "data": {}
+    },
+    "k0wglg86ad5i8p1z42joprw": {
+      "id": "k0wglg86ad5i8p1z42joprw",
+      "title": "Tip",
+      "desc": "",
+      "updated": 1698815877005,
+      "created": 1698815839178,
+      "custom": {},
+      "fname": "programming.language.swift.tips",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "2bb2034111a913c56d9d38e9f8e99c29",
+      "links": [],
+      "anchors": {
+        "pretty-print-debug-console": {
+          "type": "header",
+          "text": "Pretty print debug console",
+          "value": "pretty-print-debug-console",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "local-reasoning": {
+          "type": "header",
+          "text": "Local Reasoning",
+          "value": "local-reasoning",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "vztg7xzj0425ae5ogmk8ds2",
+      "data": {}
+    },
+    "pup4i4mmvmbwq6pxkp1jchf": {
+      "id": "pup4i4mmvmbwq6pxkp1jchf",
+      "title": "Protocol",
+      "desc": "",
+      "updated": 1698891096416,
+      "created": 1698736114248,
+      "custom": {},
+      "fname": "programming.language.swift.protocol",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "4412d5a38855299b3613c5c749b135c3",
+      "links": [],
+      "anchors": {
+        "what-is-protocol": {
+          "type": "header",
+          "text": "What is Protocol?",
+          "value": "what-is-protocol",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "why-do-we-need-protocols": {
+          "type": "header",
+          "text": "Why do we need Protocols?",
+          "value": "why-do-we-need-protocols",
+          "line": 20,
+          "column": 0,
+          "depth": 2
+        },
+        "protocol-requirements": {
+          "type": "header",
+          "text": "Protocol Requirements",
+          "value": "protocol-requirements",
+          "line": 22,
+          "column": 0,
+          "depth": 2
+        },
+        "properties": {
+          "type": "header",
+          "text": "properties",
+          "value": "properties",
+          "line": 24,
+          "column": 0,
+          "depth": 3
+        },
+        "functions": {
+          "type": "header",
+          "text": "functions",
+          "value": "functions",
+          "line": 30,
+          "column": 0,
+          "depth": 3
+        },
+        "initializers": {
+          "type": "header",
+          "text": "initializers",
+          "value": "initializers",
+          "line": 55,
+          "column": 0,
+          "depth": 3
+        },
+        "protocol-vs-inheritance": {
+          "type": "header",
+          "text": "Protocol vs Inheritance",
+          "value": "protocol-vs-inheritance",
+          "line": 69,
+          "column": 0,
+          "depth": 2
+        },
+        "note": {
+          "type": "header",
+          "text": "Note：",
+          "value": "note",
+          "line": 73,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "59ly9f4dsj8kmoihictk4uq"
+      ],
+      "parent": "vztg7xzj0425ae5ogmk8ds2",
+      "data": {}
+    },
+    "59ly9f4dsj8kmoihictk4uq": {
+      "id": "59ly9f4dsj8kmoihictk4uq",
+      "title": "Delegate",
+      "desc": "",
+      "updated": 1698794631926,
+      "created": 1698751058607,
+      "custom": {},
+      "fname": "programming.language.swift.protocol.delegate",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "bf3b98736402a73611e563d21bd222d4",
+      "links": [],
+      "anchors": {
+        "舉例": {
+          "type": "header",
+          "text": "舉例",
+          "value": "舉例",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        },
+        "實作方式": {
+          "type": "header",
+          "text": "實作方式",
+          "value": "實作方式",
+          "line": 15,
+          "column": 0,
+          "depth": 2
+        },
+        "搭配-extension": {
+          "type": "header",
+          "text": "搭配 Extension",
+          "value": "搭配-extension",
+          "line": 19,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "pup4i4mmvmbwq6pxkp1jchf",
+      "data": {}
+    },
+    "y4x1bbpym9389xf1pj71s7z": {
+      "id": "y4x1bbpym9389xf1pj71s7z",
+      "title": "Performance",
+      "desc": "",
+      "updated": 1698795421437,
+      "created": 1698475925104,
+      "custom": {},
+      "fname": "programming.language.swift.performance",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "e9ab897967adaab11bf736fcb2b43b0f",
+      "links": [],
+      "anchors": {
+        "dimensions-of-performance": {
+          "type": "header",
+          "text": "Dimensions of Performance",
+          "value": "dimensions-of-performance",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "allocation": {
+          "type": "header",
+          "text": "Allocation",
+          "value": "allocation",
+          "line": 15,
+          "column": 0,
+          "depth": 3
+        },
+        "dynamic--static-dispatch": {
+          "type": "header",
+          "text": "Dynamic / Static Dispatch",
+          "value": "dynamic--static-dispatch",
+          "line": 21,
+          "column": 0,
+          "depth": 4
+        }
+      },
+      "children": [],
+      "parent": "vztg7xzj0425ae5ogmk8ds2",
+      "data": {}
+    },
+    "m2klofp5yj7niqiawmu25a0": {
+      "id": "m2klofp5yj7niqiawmu25a0",
+      "title": "Grand Central Dispatch",
+      "desc": "",
+      "updated": 1698727111578,
+      "created": 1698417734679,
+      "custom": {},
+      "fname": "programming.language.swift.grand-central-dispatch",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "902bd0e00d79d2a62057dee3cc745488",
+      "links": [],
+      "anchors": {
+        "what-is-grand-central-dispatch": {
+          "type": "header",
+          "text": "What is Grand Central Dispatch?",
+          "value": "what-is-grand-central-dispatch",
+          "line": 17,
+          "column": 0,
+          "depth": 2
+        },
+        "what-problem-did-gcd-solve": {
+          "type": "header",
+          "text": "What problem did GCD solve?",
+          "value": "what-problem-did-gcd-solve",
+          "line": 23,
+          "column": 0,
+          "depth": 2
+        },
+        "how-did-it-work": {
+          "type": "header",
+          "text": "How did it Work?",
+          "value": "how-did-it-work",
+          "line": 31,
+          "column": 0,
+          "depth": 2
+        },
+        "before-gcd": {
+          "type": "header",
+          "text": "Before GCD",
+          "value": "before-gcd",
+          "line": 35,
+          "column": 0,
+          "depth": 3
+        },
+        "after-gcd": {
+          "type": "header",
+          "text": "After GCD",
+          "value": "after-gcd",
+          "line": 51,
+          "column": 0,
+          "depth": 3
+        },
+        "parallelism-and-concurrency": {
+          "type": "header",
+          "text": "Parallelism and Concurrency",
+          "value": "parallelism-and-concurrency",
+          "line": 63,
+          "column": 0,
+          "depth": 2
+        },
+        "explaination-from-wwdc2017-gcd": {
+          "type": "header",
+          "text": "Explaination from WWDC2017 GCD",
+          "value": "explaination-from-wwdc2017-gcd",
+          "line": 65,
+          "column": 2,
+          "depth": 3
+        },
+        "queue-concept": {
+          "type": "header",
+          "text": "Queue Concept",
+          "value": "queue-concept",
+          "line": 74,
+          "column": 0,
+          "depth": 2
+        },
+        "dispatchqueue": {
+          "type": "header",
+          "text": "DispatchQueue",
+          "value": "dispatchqueue",
+          "line": 83,
+          "column": 0,
+          "depth": 3
+        },
+        "serial-vs-concurrent": {
+          "type": "header",
+          "text": "Serial vs Concurrent",
+          "value": "serial-vs-concurrent",
+          "line": 85,
+          "column": 0,
+          "depth": 4
+        },
+        "sync-vs-async": {
+          "type": "header",
+          "text": "Sync vs async",
+          "value": "sync-vs-async",
+          "line": 93,
+          "column": 0,
+          "depth": 4
+        }
+      },
+      "children": [
+        "205jes6rqcp0hof79t6hs6i",
+        "9bunykr1jl52ls7wqudyauz"
+      ],
+      "parent": "vztg7xzj0425ae5ogmk8ds2",
+      "data": {}
+    },
+    "9bunykr1jl52ls7wqudyauz": {
+      "id": "9bunykr1jl52ls7wqudyauz",
+      "title": "Parallelism",
+      "desc": "",
+      "updated": 1698463258665,
+      "created": 1698463052691,
+      "custom": {},
+      "fname": "programming.language.swift.grand-central-dispatch.parallelism",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "39fb1df540659f8f12296dc89c8a781f",
+      "links": [],
+      "anchors": {
+        "明確告訴gcd這個task要使用parellelism的方式去執行": {
+          "type": "header",
+          "text": "明確告訴GCD這個task要使用parellelism的方式去執行",
+          "value": "明確告訴gcd這個task要使用parellelism的方式去執行",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "m2klofp5yj7niqiawmu25a0",
+      "data": {}
+    },
+    "205jes6rqcp0hof79t6hs6i": {
+      "id": "205jes6rqcp0hof79t6hs6i",
+      "title": "Concurrency",
+      "desc": "",
+      "updated": 1698670697373,
+      "created": 1698463425918,
+      "custom": {},
+      "fname": "programming.language.swift.grand-central-dispatch.concurrency",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "83746cf15bda54403acd9ed4cf2ec08a",
+      "links": [],
+      "anchors": {
+        "為什麼我們要好好的處理concurrency": {
+          "type": "header",
+          "text": "為什麼我們要好好的處理concurrency?",
+          "value": "為什麼我們要好好的處理concurrency",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "如何使用dispatchqueue": {
+          "type": "header",
+          "text": "如何使用DispatchQueue?",
+          "value": "如何使用dispatchqueue",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "step-1-取得或建立一個dispatchqueue": {
+          "type": "header",
+          "text": "Step 1: 取得或建立一個DispatchQueue",
+          "value": "step-1-取得或建立一個dispatchqueue",
+          "line": 16,
+          "column": 0,
+          "depth": 3
+        },
+        "step-2-我們可以透過以下方式提交task到一個dispatchqueue物件上並指定dispatchqueue要如何執行這個task": {
+          "type": "header",
+          "text": "Step 2: 我們可以透過以下方式提交Task到一個DispatchQueue物件上，並指定DispatchQueue要如何執行這個Task",
+          "value": "step-2-我們可以透過以下方式提交task到一個dispatchqueue物件上並指定dispatchqueue要如何執行這個task",
+          "line": 26,
+          "column": 0,
+          "depth": 3
+        },
+        "什麼是dispatchitem為何要使用他": {
+          "type": "header",
+          "text": "什麼是DispatchItem？為何要使用他？",
+          "value": "什麼是dispatchitem為何要使用他",
+          "line": 38,
+          "column": 0,
+          "depth": 2
+        },
+        "什麼是dispatchgroup-為何要使用他": {
+          "type": "header",
+          "text": "什麼是DispatchGroup? 為何要使用他？",
+          "value": "什麼是dispatchgroup-為何要使用他",
+          "line": 55,
+          "column": 0,
+          "depth": 2
+        },
+        "什麼是dispatchsemaphore為何要使用他": {
+          "type": "header",
+          "text": "什麼是DispatchSemaphore？為何要使用他？",
+          "value": "什麼是dispatchsemaphore為何要使用他",
+          "line": 92,
+          "column": 0,
+          "depth": 2
+        },
+        "什麼是barrier為何要使用他": {
+          "type": "header",
+          "text": "什麼是Barrier？為何要使用他？",
+          "value": "什麼是barrier為何要使用他",
+          "line": 94,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "m2klofp5yj7niqiawmu25a0",
+      "data": {}
+    },
+    "qjbja5y4bx4h8yq4aaydnss": {
+      "id": "qjbja5y4bx4h8yq4aaydnss",
+      "title": "Framework",
+      "desc": "",
+      "updated": 1698879252108,
+      "created": 1698879252108,
+      "custom": {},
+      "fname": "programming.language.swift.framework",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "334b85df298c351ef2a45f49c65d8953",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "265euhsg8077ow4ql8x9u0q",
+        "ufvecfcsf101sp1f77qbxaa"
+      ],
+      "parent": "vztg7xzj0425ae5ogmk8ds2",
+      "data": {}
+    },
+    "ufvecfcsf101sp1f77qbxaa": {
+      "id": "ufvecfcsf101sp1f77qbxaa",
+      "title": "UIKit",
+      "desc": "",
+      "updated": 1698879284037,
+      "created": 1698879284037,
+      "custom": {},
+      "fname": "programming.language.swift.framework.UIKit",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "517b589fe608771af562aeb5f6ac72f8",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "qzw63mivlua187e0g83rzkz"
+      ],
+      "parent": "qjbja5y4bx4h8yq4aaydnss",
+      "data": {}
+    },
+    "qzw63mivlua187e0g83rzkz": {
+      "id": "qzw63mivlua187e0g83rzkz",
+      "title": "architecture",
+      "desc": "",
+      "updated": 1698883110844,
+      "created": 1698879485519,
+      "custom": {},
+      "fname": "programming.language.swift.framework.UIKit.architecture",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "333e9ebd3b1fc29e4978299bd0320b0d",
+      "links": [],
+      "anchors": {
+        "concept": {
+          "type": "header",
+          "text": "Concept",
+          "value": "concept",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "protocol-oriented-programming": {
+          "type": "header",
+          "text": "Protocol Oriented Programming",
+          "value": "protocol-oriented-programming",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "allocation": {
+          "type": "header",
+          "text": "Allocation",
+          "value": "allocation",
+          "line": 14,
+          "column": 0,
+          "depth": 2
+        },
+        "technique": {
+          "type": "header",
+          "text": "Technique",
+          "value": "technique",
+          "line": 16,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "ufvecfcsf101sp1f77qbxaa",
+      "data": {}
+    },
+    "265euhsg8077ow4ql8x9u0q": {
+      "id": "265euhsg8077ow4ql8x9u0q",
+      "title": "SwiftUI",
+      "desc": "",
+      "updated": 1699849049527,
+      "created": 1699849049527,
+      "custom": {},
+      "fname": "programming.language.swift.framework.SwiftUI",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "92d89998adafdd1040b97e17a659b8c0",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "2v31mamk1fjl6km26amg70u"
+      ],
+      "parent": "qjbja5y4bx4h8yq4aaydnss",
+      "data": {}
+    },
+    "2v31mamk1fjl6km26amg70u": {
+      "id": "2v31mamk1fjl6km26amg70u",
+      "title": "property wrappers",
+      "desc": "",
+      "updated": 1703406353296,
+      "created": 1703321142883,
+      "custom": {},
+      "fname": "programming.language.swift.framework.SwiftUI.property wrappers",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "9dc10a225baa986755c638800d12e687",
+      "links": [],
+      "anchors": {
+        "what-is-property-wrappers": {
+          "type": "header",
+          "text": "What is Property Wrappers?",
+          "value": "what-is-property-wrappers",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "dmn0s8vbc4p6q4s505vfthw",
+        "e3wts7ybn3i1jj1huiz9rid",
+        "0xf3nhksxkl8k16che9xfwg",
+        "4l31wi6hepfu79z7bwqhxzz",
+        "8foo2npzsn8w4081lilhziq"
+      ],
+      "parent": "265euhsg8077ow4ql8x9u0q",
+      "data": {}
+    },
+    "8foo2npzsn8w4081lilhziq": {
+      "id": "8foo2npzsn8w4081lilhziq",
+      "title": "State",
+      "desc": "",
+      "updated": 1703398059966,
+      "created": 1703397701306,
+      "custom": {},
+      "fname": "programming.language.swift.framework.SwiftUI.property wrappers.state",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "3806ab64f0ac4dd848f13936040a1f8f",
+      "links": [],
+      "anchors": {
+        "what-is-state": {
+          "type": "header",
+          "text": "What is @State?",
+          "value": "what-is-state",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "when-to-use-it": {
+          "type": "header",
+          "text": "When to use it?",
+          "value": "when-to-use-it",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "behind-the-scene": {
+          "type": "header",
+          "text": "Behind the scene",
+          "value": "behind-the-scene",
+          "line": 16,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "2v31mamk1fjl6km26amg70u",
+      "data": {}
+    },
+    "4l31wi6hepfu79z7bwqhxzz": {
+      "id": "4l31wi6hepfu79z7bwqhxzz",
+      "title": "Published",
+      "desc": "",
+      "updated": 1703406087743,
+      "created": 1703405504568,
+      "custom": {},
+      "fname": "programming.language.swift.framework.SwiftUI.property wrappers.published",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "9fc0540ccc4d4fe44bc2d71dc02ca519",
+      "links": [],
+      "anchors": {
+        "observableobject-protocol": {
+          "type": "header",
+          "text": "ObservableObject Protocol",
+          "value": "observableobject-protocol",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "when-to-use-it": {
+          "type": "header",
+          "text": "When to use it?",
+          "value": "when-to-use-it",
+          "line": 14,
+          "column": 0,
+          "depth": 2
+        },
+        "behind-the-scenes": {
+          "type": "header",
+          "text": "Behind the scenes",
+          "value": "behind-the-scenes",
+          "line": 18,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "2v31mamk1fjl6km26amg70u",
+      "data": {}
+    },
+    "0xf3nhksxkl8k16che9xfwg": {
+      "id": "0xf3nhksxkl8k16che9xfwg",
+      "title": "EnvironmentObject",
+      "desc": "",
+      "updated": 1703408013456,
+      "created": 1703406825357,
+      "custom": {},
+      "fname": "programming.language.swift.framework.SwiftUI.property wrappers.environmentObject",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "2471281babcecf3ca234c26e29797a78",
+      "links": [],
+      "anchors": {
+        "why-use-it": {
+          "type": "header",
+          "text": "Why use it?",
+          "value": "why-use-it",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "what-is-it": {
+          "type": "header",
+          "text": "What is it?",
+          "value": "what-is-it",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "behind-the-scenes": {
+          "type": "header",
+          "text": "Behind the scenes",
+          "value": "behind-the-scenes",
+          "line": 20,
+          "column": 0,
+          "depth": 2
+        },
+        "example": {
+          "type": "header",
+          "text": "Example",
+          "value": "example",
+          "line": 26,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "2v31mamk1fjl6km26amg70u",
+      "data": {}
+    },
+    "e3wts7ybn3i1jj1huiz9rid": {
+      "id": "e3wts7ybn3i1jj1huiz9rid",
+      "title": "StateObject",
+      "desc": "",
+      "updated": 1703406747121,
+      "created": 1703397824582,
+      "custom": {},
+      "fname": "programming.language.swift.framework.SwiftUI.property wrappers.StateObject",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "fb9214ca5f37a44d324c119f1c4f2c12",
+      "links": [],
+      "anchors": {
+        "what-is-stateobject": {
+          "type": "header",
+          "text": "What is @StateObject",
+          "value": "what-is-stateobject",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "when-to-use-it": {
+          "type": "header",
+          "text": "When to use it?",
+          "value": "when-to-use-it",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "behind-the-scenes": {
+          "type": "header",
+          "text": "Behind the scenes",
+          "value": "behind-the-scenes",
+          "line": 18,
+          "column": 0,
+          "depth": 2
+        },
+        "injecting-stateobjects-into-views": {
+          "type": "header",
+          "text": "Injecting @StateObjects into views",
+          "value": "injecting-stateobjects-into-views",
+          "line": 20,
+          "column": 0,
+          "depth": 2
+        },
+        "force-stateobject-property-to-reinitialize": {
+          "type": "header",
+          "text": "Force @StateObject property to reinitialize",
+          "value": "force-stateobject-property-to-reinitialize",
+          "line": 39,
+          "column": 0,
+          "depth": 2
+        },
+        "ios-170-introduced-observable-macro": {
+          "type": "header",
+          "text": "iOS 17.0 introduced @Observable macro",
+          "value": "ios-170-introduced-observable-macro",
+          "line": 43,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "2v31mamk1fjl6km26amg70u",
+      "data": {}
+    },
+    "dmn0s8vbc4p6q4s505vfthw": {
+      "id": "dmn0s8vbc4p6q4s505vfthw",
+      "title": "Environment",
+      "desc": "",
+      "updated": 1703408998292,
+      "created": 1703408052638,
+      "custom": {},
+      "fname": "programming.language.swift.framework.SwiftUI.property wrappers.Environment",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "9ab395690e5575b363cd0dc5c7e9a6c0",
+      "links": [],
+      "anchors": {
+        "why-use-it": {
+          "type": "header",
+          "text": "Why use it?",
+          "value": "why-use-it",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "what-is-it": {
+          "type": "header",
+          "text": "What is it?",
+          "value": "what-is-it",
+          "line": 17,
+          "column": 0,
+          "depth": 2
+        },
+        "difference-between-environmentobject": {
+          "type": "header",
+          "text": "Difference between @EnvironmentObject",
+          "value": "difference-between-environmentobject",
+          "line": 21,
+          "column": 0,
+          "depth": 2
+        },
+        "behind-the-scenes": {
+          "type": "header",
+          "text": "Behind the scenes",
+          "value": "behind-the-scenes",
+          "line": 27,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "2v31mamk1fjl6km26amg70u",
+      "data": {}
+    },
+    "n5jvl7w3vcsyh0vxk4ocvcu": {
+      "id": "n5jvl7w3vcsyh0vxk4ocvcu",
+      "title": "Extension",
+      "desc": "",
+      "updated": 1698852494794,
+      "created": 1698850616708,
+      "custom": {},
+      "fname": "programming.language.swift.extension",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "cc8565aa1f7f4f2f512c51bb03d5eef4",
+      "links": [],
+      "anchors": {
+        "what-can-we-do-with-extension": {
+          "type": "header",
+          "text": "What can we do with Extension?",
+          "value": "what-can-we-do-with-extension",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "rokc7843iqin5f5kfi9sew8"
+      ],
+      "parent": "vztg7xzj0425ae5ogmk8ds2",
+      "data": {}
+    },
+    "rokc7843iqin5f5kfi9sew8": {
+      "id": "rokc7843iqin5f5kfi9sew8",
+      "title": "UIImage",
+      "desc": "",
+      "updated": 1699581897116,
+      "created": 1699581784876,
+      "custom": {},
+      "fname": "programming.language.swift.extension.UIImage",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "334a645ab6d8d4a1c5858dac62378118",
+      "links": [],
+      "anchors": {},
+      "children": [],
+      "parent": "n5jvl7w3vcsyh0vxk4ocvcu",
+      "data": {}
+    },
+    "rc44em7kcfzkyprtzidrtjs": {
+      "id": "rc44em7kcfzkyprtzidrtjs",
+      "title": "Data Structure",
+      "desc": "",
+      "updated": 1702897389759,
+      "created": 1699313135493,
+      "custom": {},
+      "fname": "programming.language.swift.data flow",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "f78011281d05a9243fa16d2bbbaea48c",
+      "links": [],
+      "anchors": {
+        "what-does-conforming-to-codable-do": {
+          "type": "header",
+          "text": "What does conforming to Codable do?",
+          "value": "what-does-conforming-to-codable-do",
+          "line": 9,
+          "column": 0,
+          "depth": 2
+        },
+        "搭配-codingkeys-做-encode-decode": {
+          "type": "header",
+          "text": "搭配 CodingKeys 做 encode, decode",
+          "value": "搭配-codingkeys-做-encode-decode",
+          "line": 23,
+          "column": 0,
+          "depth": 2
+        },
+        "jsonserialization": {
+          "type": "header",
+          "text": "JSONSerialization",
+          "value": "jsonserialization",
+          "line": 27,
+          "column": 0,
+          "depth": 2
+        },
+        "decodable-vs-decoder-protocol": {
+          "type": "header",
+          "text": "Decodable vs Decoder Protocol",
+          "value": "decodable-vs-decoder-protocol",
+          "line": 31,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "vztg7xzj0425ae5ogmk8ds2",
+      "data": {}
+    },
+    "rxplme0keulo3fon6e4gxmc": {
+      "id": "rxplme0keulo3fon6e4gxmc",
+      "title": "Serialization",
+      "desc": "",
+      "updated": 1703489251057,
+      "created": 1703433158198,
+      "custom": {},
+      "fname": "programming.language.swift.Serialization",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "26116e4cfd4107a3dcacaf249a71566e",
+      "links": [],
+      "anchors": {
+        "為何我們需要將資料encodedecode呢": {
+          "type": "header",
+          "text": "為何我們需要將資料encode、decode呢？",
+          "value": "為何我們需要將資料encodedecode呢",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "codable-behind-the-scenes": {
+          "type": "header",
+          "text": "Codable Behind the scenes",
+          "value": "codable-behind-the-scenes",
+          "line": 18,
+          "column": 0,
+          "depth": 2
+        },
+        "example": {
+          "type": "header",
+          "text": "Example",
+          "value": "example",
+          "line": 22,
+          "column": 0,
+          "depth": 2
+        },
+        "foundation-codable-types": {
+          "type": "header",
+          "text": "Foundation codable types",
+          "value": "foundation-codable-types",
+          "line": 46,
+          "column": 0,
+          "depth": 2
+        },
+        "自定義-codingkeys": {
+          "type": "header",
+          "text": "自定義 CodingKeys",
+          "value": "自定義-codingkeys",
+          "line": 55,
+          "column": 0,
+          "depth": 2
+        },
+        "why": {
+          "type": "header",
+          "text": "Why?",
+          "value": "why",
+          "line": 83,
+          "column": 0,
+          "depth": 3
+        },
+        "codable常用的情境": {
+          "type": "header",
+          "text": "Codable常用的情境：",
+          "value": "codable常用的情境",
+          "line": 109,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "ehit98sudwsnivfx8dnovwq"
+      ],
+      "parent": "vztg7xzj0425ae5ogmk8ds2",
+      "data": {}
+    },
+    "ehit98sudwsnivfx8dnovwq": {
+      "id": "ehit98sudwsnivfx8dnovwq",
+      "title": "Decoding JSON",
+      "desc": "",
+      "updated": 1703478052681,
+      "created": 1703474287471,
+      "custom": {},
+      "fname": "programming.language.swift.Serialization.Decoding JSON",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "aea1b6315cbfe6b0310e6fb8345f8636",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "2v2u6kg1vpm06lq3nlupx7f",
+        "jusxtrdqjytxtjizz2s5yok"
+      ],
+      "parent": "rxplme0keulo3fon6e4gxmc",
+      "data": {}
+    },
+    "jusxtrdqjytxtjizz2s5yok": {
+      "id": "jusxtrdqjytxtjizz2s5yok",
+      "title": "Nested Data",
+      "desc": "",
+      "updated": 1703478750644,
+      "created": 1703478021111,
+      "custom": {},
+      "fname": "programming.language.swift.Serialization.Decoding JSON.nested data",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "5d458477b88f2eb514db39cd28371e7b",
+      "links": [],
+      "anchors": {
+        "前情提要": {
+          "type": "header",
+          "text": "前情提要",
+          "value": "前情提要",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "資料處理步驟": {
+          "type": "header",
+          "text": "資料處理步驟",
+          "value": "資料處理步驟",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "step1-先釐清前端所需要的資料結構": {
+          "type": "header",
+          "text": "Step1 先釐清前端所需要的資料結構",
+          "value": "step1-先釐清前端所需要的資料結構",
+          "line": 14,
+          "column": 0,
+          "depth": 3
+        },
+        "step2-建立一個中繼的類去decode我們拿回來的資料": {
+          "type": "header",
+          "text": "Step2 建立一個中繼的類去Decode我們拿回來的資料",
+          "value": "step2-建立一個中繼的類去decode我們拿回來的資料",
+          "line": 32,
+          "column": 0,
+          "depth": 3
+        },
+        "step3-把step1建立的類透過extension讓我們可以透過中繼類初始化我們真正需要的資料": {
+          "type": "header",
+          "text": "Step3 把Step1建立的類透過extension讓我們可以透過中繼類初始化我們真正需要的資料",
+          "value": "step3-把step1建立的類透過extension讓我們可以透過中繼類初始化我們真正需要的資料",
+          "line": 104,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [],
+      "parent": "ehit98sudwsnivfx8dnovwq",
+      "data": {}
+    },
+    "2v2u6kg1vpm06lq3nlupx7f": {
+      "id": "2v2u6kg1vpm06lq3nlupx7f",
+      "title": "Merge Data",
+      "desc": "",
+      "updated": 1703488942707,
+      "created": 1703478072635,
+      "custom": {},
+      "fname": "programming.language.swift.Serialization.Decoding JSON.Merge Data",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "4214ed7cc9049581b074b15cd310c677",
+      "links": [],
+      "anchors": {
+        "前情提要": {
+          "type": "header",
+          "text": "前情提要",
+          "value": "前情提要",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "資料處理步驟": {
+          "type": "header",
+          "text": "資料處理步驟",
+          "value": "資料處理步驟",
+          "line": 66,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "ehit98sudwsnivfx8dnovwq",
+      "data": {}
+    },
+    "r7uyk9st3d9jhl2udoeqf26": {
+      "id": "r7uyk9st3d9jhl2udoeqf26",
+      "title": "Git Flow",
+      "desc": "",
+      "updated": 1699199245490,
+      "created": 1698987736143,
+      "custom": {},
+      "fname": "programming.git flow",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "510c478c9e357270d473529aadde6b4d",
+      "links": [],
+      "anchors": {},
+      "children": [],
+      "parent": "rn0e0y5coqo8iyqfxd7ocsk",
+      "data": {}
+    },
+    "hbjsa0j33arqblxg88k4jfv": {
+      "id": "hbjsa0j33arqblxg88k4jfv",
+      "title": "Design Pattern",
+      "desc": "",
+      "updated": 1698904815825,
+      "created": 1698904799908,
+      "custom": {},
+      "fname": "programming.design pattern",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "049be6e3997e6ffb1ddb5cdd72482ed6",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "y8otxung92f9zxx8j7ug0xu",
+        "0s36hxqraz1orimb13qdeio"
+      ],
+      "parent": "rn0e0y5coqo8iyqfxd7ocsk",
+      "data": {}
+    },
+    "0s36hxqraz1orimb13qdeio": {
+      "id": "0s36hxqraz1orimb13qdeio",
+      "title": "POP",
+      "desc": "",
+      "updated": 1698940017197,
+      "created": 1698940017197,
+      "custom": {},
+      "fname": "programming.design pattern.POP",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "9f0042be0fffe34465cc8b32dd322886",
+      "links": [],
+      "anchors": {
+        "what-pop-differs-from-oop": {
+          "type": "header",
+          "text": "What POP differs from OOP",
+          "value": "what-pop-differs-from-oop",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "pop--value-semantic--performance--local-reasoning": {
+          "type": "header",
+          "text": "POP + Value Semantic = Performance & Local Reasoning",
+          "value": "pop--value-semantic--performance--local-reasoning",
+          "line": 13,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "hbjsa0j33arqblxg88k4jfv",
+      "data": {}
+    },
+    "y8otxung92f9zxx8j7ug0xu": {
+      "id": "y8otxung92f9zxx8j7ug0xu",
+      "title": "OOP",
+      "desc": "",
+      "updated": 1698907678996,
+      "created": 1698904830457,
+      "custom": {},
+      "fname": "programming.design pattern.OOP",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "882f6d44d8e8a2e4feba6fc60c3213c9",
+      "links": [],
+      "anchors": {
+        "languages": {
+          "type": "header",
+          "text": "Languages",
+          "value": "languages",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "pillars": {
+          "type": "header",
+          "text": "Pillars",
+          "value": "pillars",
+          "line": 15,
+          "column": 0,
+          "depth": 2
+        },
+        "building-blocks": {
+          "type": "header",
+          "text": "Building blocks",
+          "value": "building-blocks",
+          "line": 34,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "hbjsa0j33arqblxg88k4jfv",
+      "data": {}
+    },
+    "avquk6puzxi790rxzodnfmh": {
+      "id": "avquk6puzxi790rxzodnfmh",
+      "title": "Network",
+      "desc": "",
+      "updated": 1703389860189,
+      "created": 1703389860189,
+      "custom": {},
+      "fname": "network",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "0bfe6f6b96fe6d830949ee85a97ec3d1",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "rf4iauetxq2lkq31oh3zlcd",
+        "7sq39378nm2qlmrr1hajkzt"
+      ],
+      "parent": "root",
+      "data": {}
+    },
+    "7sq39378nm2qlmrr1hajkzt": {
+      "id": "7sq39378nm2qlmrr1hajkzt",
+      "title": "webRTC",
+      "desc": "",
+      "updated": 1703501418565,
+      "created": 1703496794697,
+      "custom": {},
+      "fname": "network.webRTC",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "46b1554ceb37b1c674ffa142fdadf567",
+      "links": [],
+      "anchors": {
+        "實現webrtc的步驟": {
+          "type": "header",
+          "text": "實現WebRTC的步驟",
+          "value": "實現webrtc的步驟",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "avquk6puzxi790rxzodnfmh",
+      "data": {}
+    },
+    "rf4iauetxq2lkq31oh3zlcd": {
+      "id": "rf4iauetxq2lkq31oh3zlcd",
+      "title": "Web Socket",
+      "desc": "",
+      "updated": 1699199439899,
+      "created": 1699087752806,
+      "custom": {},
+      "fname": "network.web socket",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "4069befa7cb66728c6c0be7d8178a82c",
+      "links": [],
+      "anchors": {
+        "what-is-socketio": {
+          "type": "header",
+          "text": "What is Socket.IO",
+          "value": "what-is-socketio",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "why-socketio": {
+          "type": "header",
+          "text": "Why Socket.IO?",
+          "value": "why-socketio",
+          "line": 15,
+          "column": 0,
+          "depth": 2
+        },
+        "how-to-use-socketio": {
+          "type": "header",
+          "text": "How to use Socket.IO?",
+          "value": "how-to-use-socketio",
+          "line": 21,
+          "column": 0,
+          "depth": 2
+        },
+        "remember": {
+          "type": "header",
+          "text": "Remember",
+          "value": "remember",
+          "line": 53,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "avquk6puzxi790rxzodnfmh",
+      "data": {}
+    },
+    "p1jj2aztluo4pb12qn8gunp": {
+      "id": "p1jj2aztluo4pb12qn8gunp",
+      "title": "Job Findin",
+      "desc": "",
+      "updated": 1703306328320,
+      "created": 1703306314627,
+      "custom": {},
+      "fname": "job finding",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "54ee39c1a2ba6059bb4e80ef9875e27c",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "j5nt68t495df32uuynadodo",
+        "j76ahf4fh0mz6jq2m1qhemw"
+      ],
+      "parent": "root",
+      "data": {}
+    },
+    "j76ahf4fh0mz6jq2m1qhemw": {
+      "id": "j76ahf4fh0mz6jq2m1qhemw",
+      "title": "Resume",
+      "desc": "",
+      "updated": 1703575504949,
+      "created": 1703313259802,
+      "custom": {},
+      "fname": "job finding.resume",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "876fe814d7d8952ceff4570ff83a02e4",
+      "links": [],
+      "anchors": {
+        "summary": {
+          "type": "header",
+          "text": "Summary",
+          "value": "summary",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "technical-skills": {
+          "type": "header",
+          "text": "Technical Skills",
+          "value": "technical-skills",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "work-experiences": {
+          "type": "header",
+          "text": "Work Experiences",
+          "value": "work-experiences",
+          "line": 20,
+          "column": 0,
+          "depth": 2
+        },
+        "appworks-school-ios-development-sep-2023---jan-2023": {
+          "type": "header",
+          "text": "AppWorks School, iOS Development, Sep 2023 - Jan 2023",
+          "value": "appworks-school-ios-development-sep-2023---jan-2023",
+          "line": 22,
+          "column": 0,
+          "depth": 3
+        },
+        "front-end-engineer-wisdom-courage-may-2023---aug-2023": {
+          "type": "header",
+          "text": "Front-End Engineer, Wisdom Courage, May 2023 - Aug 2023",
+          "value": "front-end-engineer-wisdom-courage-may-2023---aug-2023",
+          "line": 29,
+          "column": 0,
+          "depth": 3
+        },
+        "auditor-deloitte-oct-2021---sep-2022": {
+          "type": "header",
+          "text": "Auditor, Deloitte, Oct 2021 - Sep 2022",
+          "value": "auditor-deloitte-oct-2021---sep-2022",
+          "line": 35,
+          "column": 0,
+          "depth": 3
+        },
+        "education": {
+          "type": "header",
+          "text": "Education",
+          "value": "education",
+          "line": 40,
+          "column": 0,
+          "depth": 2
+        },
+        "national-sun-yat-sen-university": {
+          "type": "header",
+          "text": "National Sun Yat-Sen University",
+          "value": "national-sun-yat-sen-university",
+          "line": 42,
+          "column": 0,
+          "depth": 3
+        },
+        "bachelors-degree-in-finance": {
+          "type": "header",
+          "text": "Bachelor's degree in Finance",
+          "value": "bachelors-degree-in-finance",
+          "line": 44,
+          "column": 0,
+          "depth": 4
+        },
+        "projects": {
+          "type": "header",
+          "text": "Projects",
+          "value": "projects",
+          "line": 51,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "p1jj2aztluo4pb12qn8gunp",
+      "data": {}
+    },
+    "j5nt68t495df32uuynadodo": {
+      "id": "j5nt68t495df32uuynadodo",
+      "title": "Leet Code",
+      "desc": "",
+      "updated": 1703393061638,
+      "created": 1703306331660,
+      "custom": {},
+      "fname": "job finding.leet code",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "34ce05b832311918194f552bd6b82e21",
+      "links": [],
+      "anchors": {
+        "21-merge-two-linkedlist": {
+          "type": "header",
+          "text": "21. Merge two LinkedList",
+          "value": "21-merge-two-linkedlist",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "26-remove-duplicates-from-sorted-array": {
+          "type": "header",
+          "text": "26. Remove Duplicates from Sorted Array",
+          "value": "26-remove-duplicates-from-sorted-array",
+          "line": 56,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "p1jj2aztluo4pb12qn8gunp",
+      "data": {}
+    }
+  },
+  "domains": [
+    {
+      "id": "root",
+      "title": "root",
+      "desc": "",
+      "updated": 1605266684036,
+      "created": 1595961348801,
+      "custom": {
+        "nav_order": 0,
+        "permalink": "/"
+      },
+      "fname": "root",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "b49e7e13a0c91addc8ab9ef97080cf1e",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "p1jj2aztluo4pb12qn8gunp",
+        "avquk6puzxi790rxzodnfmh",
+        "rn0e0y5coqo8iyqfxd7ocsk",
+        "c1bs7wsjfbhb0zipaywqv1"
+      ],
+      "parent": null,
+      "data": {},
+      "body": "\nThis is the root for your Dendron vault.\n\nIf you decide to publish your entire vault, it will be your landing page. You are free to customize any part of this page except the frontmatter at the top, between the `---`.\n"
+    }
+  ],
+  "noteIndex": {
+    "id": "root",
+    "title": "root",
+    "desc": "",
+    "updated": 1605266684036,
+    "created": 1595961348801,
+    "custom": {
+      "nav_order": 0,
+      "permalink": "/"
+    },
+    "fname": "root",
+    "type": "note",
+    "vault": {
+      "fsPath": ".",
+      "selfContained": true,
+      "name": "Dendron"
+    },
+    "contentHash": "b49e7e13a0c91addc8ab9ef97080cf1e",
+    "links": [],
+    "anchors": {},
+    "children": [
+      "p1jj2aztluo4pb12qn8gunp",
+      "avquk6puzxi790rxzodnfmh",
+      "rn0e0y5coqo8iyqfxd7ocsk",
+      "c1bs7wsjfbhb0zipaywqv1"
+    ],
+    "parent": null,
+    "data": {},
+    "body": "\nThis is the root for your Dendron vault.\n\nIf you decide to publish your entire vault, it will be your landing page. You are free to customize any part of this page except the frontmatter at the top, between the `---`.\n"
+  },
+  "vaults": [
+    {
+      "fsPath": ".",
+      "selfContained": true,
+      "name": "Dendron"
+    }
+  ]
+}

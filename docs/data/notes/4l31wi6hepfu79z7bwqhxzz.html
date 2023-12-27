@@ -1,0 +1,12 @@
+<h1 id="published">Published<a aria-hidden="true" class="anchor-heading icon-link" href="#published"></a></h1>
+<h2 id="observableobject-protocol"><code>ObservableObject</code> Protocol<a aria-hidden="true" class="anchor-heading icon-link" href="#observableobject-protocol"></a></h2>
+<p>當我們宣告一個class遵守<code>ObservableObject</code> protocol時，我們是在告訴SwiftUI這個class可以被View所觀測。</p>
+<p>這個class中如果有property使用<code>@Published</code>標記，代表這當這個property變動時，所有引用到這個property的View都要重繪。</p>
+<h2 id="when-to-use-it">When to use it?<a aria-hidden="true" class="anchor-heading icon-link" href="#when-to-use-it"></a></h2>
+<blockquote>
+<p>whenever an object with a property marked <code>@Published</code> is changed, all views using that object will be reloaded to reflect those changes.</p>
+</blockquote>
+<h2 id="behind-the-scenes">Behind the scenes<a aria-hidden="true" class="anchor-heading icon-link" href="#behind-the-scenes"></a></h2>
+<blockquote>
+<p>the <code>@Published</code> property wrapper effectively adds a willSet property observer to items, so that any changes are automatically sent out to observers.</p>
+</blockquote>

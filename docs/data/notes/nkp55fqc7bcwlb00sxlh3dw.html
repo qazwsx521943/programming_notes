@@ -1,0 +1,81 @@
+<h1 id="reusable-view">Reusable View<a aria-hidden="true" class="anchor-heading icon-link" href="#reusable-view"></a></h1>
+<h2 id="管理要渲染哪個loading-view的container-view">管理要渲染哪個Loading View的Container View<a aria-hidden="true" class="anchor-heading icon-link" href="#管理要渲染哪個loading-view的container-view"></a></h2>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">public</span> <span class="token keyword">struct</span> <span class="token class-name">ActivityIndicatorView</span><span class="token punctuation">:</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">enum</span> <span class="token class-name">IndicatorType</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> `<span class="token keyword">default</span>`<span class="token punctuation">(</span>count<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">)</span>
+        <span class="token keyword">case</span> <span class="token function">arcs</span><span class="token punctuation">(</span>count<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">,</span> lineWidth<span class="token punctuation">:</span> <span class="token class-name">CGFloat</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">)</span>
+        <span class="token keyword">case</span> <span class="token function">rotatingDots</span><span class="token punctuation">(</span>count<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">)</span>
+        <span class="token keyword">case</span> <span class="token function">flickeringDots</span><span class="token punctuation">(</span>count<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">)</span>
+        <span class="token keyword">case</span> <span class="token function">scalingDots</span><span class="token punctuation">(</span>count<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">,</span> inset<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">)</span>
+        <span class="token keyword">case</span> <span class="token function">opacityDots</span><span class="token punctuation">(</span>count<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">,</span> inset<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">)</span>
+        <span class="token keyword">case</span> <span class="token function">equalizer</span><span class="token punctuation">(</span>count<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">)</span>
+        <span class="token keyword">case</span> <span class="token function">growingArc</span><span class="token punctuation">(</span><span class="token class-name">Color</span> <span class="token operator">=</span> <span class="token punctuation">.</span>black<span class="token punctuation">,</span> lineWidth<span class="token punctuation">:</span> <span class="token class-name">CGFloat</span> <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">)</span>
+        <span class="token keyword">case</span> growingCircle
+        <span class="token keyword">case</span> <span class="token function">gradient</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> colors<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">Color</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token class-name">CGLineCap</span> <span class="token operator">=</span> <span class="token punctuation">.</span>butt<span class="token punctuation">,</span> lineWidth<span class="token punctuation">:</span> <span class="token class-name">CGFloat</span> <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token attribute atrule">@Binding</span> <span class="token keyword">var</span> isVisible<span class="token punctuation">:</span> <span class="token class-name">Bool</span>
+    <span class="token keyword">var</span> type<span class="token punctuation">:</span> <span class="token class-name">IndicatorType</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">init</span><span class="token punctuation">(</span>isVisible<span class="token punctuation">:</span> <span class="token class-name">Binding</span><span class="token operator">&#x3C;</span><span class="token class-name">Bool</span><span class="token operator">></span><span class="token punctuation">,</span> type<span class="token punctuation">:</span> <span class="token class-name">IndicatorType</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        _isVisible <span class="token operator">=</span> isVisible
+        <span class="token keyword">self</span><span class="token punctuation">.</span>type <span class="token operator">=</span> type
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">var</span> body<span class="token punctuation">:</span> <span class="token keyword">some</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> isVisible <span class="token punctuation">{</span>
+            indicator
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token class-name">EmptyView</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// MARK: - Private</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">var</span> indicator<span class="token punctuation">:</span> <span class="token keyword">some</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+        <span class="token class-name">ZStack</span> <span class="token punctuation">{</span>
+            <span class="token keyword">switch</span> type <span class="token punctuation">{</span>
+            <span class="token keyword">case</span> <span class="token punctuation">.</span><span class="token keyword">default</span><span class="token punctuation">(</span><span class="token keyword">let</span> count<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token class-name">DefaultIndicatorView</span><span class="token punctuation">(</span>count<span class="token punctuation">:</span> count<span class="token punctuation">)</span>
+            <span class="token keyword">case</span> <span class="token punctuation">.</span><span class="token function">arcs</span><span class="token punctuation">(</span><span class="token keyword">let</span> count<span class="token punctuation">,</span> <span class="token keyword">let</span> lineWidth<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token class-name">ArcsIndicatorView</span><span class="token punctuation">(</span>count<span class="token punctuation">:</span> count<span class="token punctuation">,</span> lineWidth<span class="token punctuation">:</span> lineWidth<span class="token punctuation">)</span>
+            <span class="token keyword">case</span> <span class="token punctuation">.</span><span class="token function">rotatingDots</span><span class="token punctuation">(</span><span class="token keyword">let</span> count<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token class-name">RotatingDotsIndicatorView</span><span class="token punctuation">(</span>count<span class="token punctuation">:</span> count<span class="token punctuation">)</span>
+            <span class="token keyword">case</span> <span class="token punctuation">.</span><span class="token function">flickeringDots</span><span class="token punctuation">(</span><span class="token keyword">let</span> count<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token class-name">FlickeringDotsIndicatorView</span><span class="token punctuation">(</span>count<span class="token punctuation">:</span> count<span class="token punctuation">)</span>
+            <span class="token keyword">case</span> <span class="token punctuation">.</span><span class="token function">scalingDots</span><span class="token punctuation">(</span><span class="token keyword">let</span> count<span class="token punctuation">,</span> <span class="token keyword">let</span> inset<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token class-name">ScalingDotsIndicatorView</span><span class="token punctuation">(</span>count<span class="token punctuation">:</span> count<span class="token punctuation">,</span> inset<span class="token punctuation">:</span> inset<span class="token punctuation">)</span>
+            <span class="token keyword">case</span> <span class="token punctuation">.</span><span class="token function">opacityDots</span><span class="token punctuation">(</span><span class="token keyword">let</span> count<span class="token punctuation">,</span> <span class="token keyword">let</span> inset<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token class-name">OpacityDotsIndicatorView</span><span class="token punctuation">(</span>count<span class="token punctuation">:</span> count<span class="token punctuation">,</span> inset<span class="token punctuation">:</span> inset<span class="token punctuation">)</span>
+            <span class="token keyword">case</span> <span class="token punctuation">.</span><span class="token function">equalizer</span><span class="token punctuation">(</span><span class="token keyword">let</span> count<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token class-name">EqualizerIndicatorView</span><span class="token punctuation">(</span>count<span class="token punctuation">:</span> count<span class="token punctuation">)</span>
+            <span class="token keyword">case</span> <span class="token punctuation">.</span><span class="token function">growingArc</span><span class="token punctuation">(</span><span class="token keyword">let</span> color<span class="token punctuation">,</span> <span class="token keyword">let</span> lineWidth<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token class-name">GrowingArcIndicatorView</span><span class="token punctuation">(</span>color<span class="token punctuation">:</span> color<span class="token punctuation">,</span> lineWidth<span class="token punctuation">:</span> lineWidth<span class="token punctuation">)</span>
+            <span class="token keyword">case</span> <span class="token punctuation">.</span>growingCircle<span class="token punctuation">:</span>
+                <span class="token class-name">GrowingCircleIndicatorView</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">case</span> <span class="token punctuation">.</span><span class="token function">gradient</span><span class="token punctuation">(</span><span class="token keyword">let</span> colors<span class="token punctuation">,</span> <span class="token keyword">let</span> lineCap<span class="token punctuation">,</span> <span class="token keyword">let</span> lineWidth<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token class-name">GradientIndicatorView</span><span class="token punctuation">(</span>colors<span class="token punctuation">:</span> colors<span class="token punctuation">,</span> lineCap<span class="token punctuation">:</span> lineCap<span class="token punctuation">,</span> lineWidth<span class="token punctuation">:</span> lineWidth<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ol>
+<li>
+<p>先定義Enum，代表這個Container View可以渲染的Loading View有哪些</p>
+</li>
+<li>
+<p>定義<code>init</code>方式 (傳入一個<code>isVisible</code>的Binding variable、一個上面定義好的Loading Type)</p>
+</li>
+<li>
+<p>透過<code>computed value</code>決定這個view要渲染哪個Loading View</p>
+</li>
+</ol>
+<h2 id="loading-view怎麼設計的">Loading View怎麼設計的<a aria-hidden="true" class="anchor-heading icon-link" href="#loading-view怎麼設計的"></a></h2>
+<p>先決定Loading想要的變化(Ex: 透明度、長度、變形)</p>
+<h2 id="how-to-extract-subviews">How to extract Subviews<a aria-hidden="true" class="anchor-heading icon-link" href="#how-to-extract-subviews"></a></h2>
+<ol>
+<li>Simple view => 拆成其他computed value就可以</li>
+<li>Need reusability(stateful view) => extract into subview</li>
+</ol>

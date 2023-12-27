@@ -1,0 +1,92 @@
+<h1 id="serialization">Serialization<a aria-hidden="true" class="anchor-heading icon-link" href="#serialization"></a></h1>
+<p><strong>Foundation</strong> library定義了<code>Encodable</code>, <code>Decodable</code>, 也提供<code>Encoder</code>, <code>Decoder</code> API讓我們可以很方便地進行資料處理。</p>
+<p>當我們需要更深入的設定時，也可以使用<code>EncodableWithConfiguration</code>, <code>DecodableWithConfiguration</code>這兩個protocols。</p>
+<h2 id="為何我們需要將資料encodedecode呢">為何我們需要將資料encode、decode呢？<a aria-hidden="true" class="anchor-heading icon-link" href="#為何我們需要將資料encodedecode呢"></a></h2>
+<p>當我們透過網路傳送資料、將資料存到硬碟上，通常都需要先將檔案編碼成特定的格式再做傳輸、儲存。</p>
+<p>而我們在撰寫程式碼時，會定義出一些類(class、struct)，當我們需要將這些類別的實體拿來做傳輸、儲存時，我們必須要讓這個類<code>Codable</code>，才可以透過Decoder、Encoder處理我們的資料。</p>
+<h2 id="codable-behind-the-scenes"><code>Codable</code> Behind the scenes<a aria-hidden="true" class="anchor-heading icon-link" href="#codable-behind-the-scenes"></a></h2>
+<p><img src="/programming_notes/../assets/images/programming.language.swift.Serialization_behind-the-scenes.png" alt="codable behind the scenes"></p>
+<h2 id="example">Example<a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a></h2>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">TestEncode</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> id<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">let</span> intArr<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">Int</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Instance method 'encode' requires that 'TestEncode' conform to 'Encodable'</span>
+<span class="token keyword">let</span> encodedJSONData <span class="token operator">=</span> <span class="token keyword">try</span><span class="token operator">?</span> <span class="token class-name">JSONEncoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span><span class="token class-name">TestEncode</span><span class="token punctuation">(</span>id<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"encode&#x26;decode"</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> encodedPropertyListData <span class="token operator">=</span> <span class="token keyword">try</span><span class="token operator">?</span> <span class="token class-name">PropertyListEncoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span><span class="token class-name">TestEncode</span><span class="token punctuation">(</span>id<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"encode&#x26;Decode"</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>如果自定義的類沒有遵守<code>Encodable</code> protocol，encoder的encode方法是沒有辦法接收自定義類的實例的。</p>
+<p>這時候只需要讓TestEncode遵守<code>Encodable</code>，即可順利encode了</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">TestEncode</span><span class="token punctuation">:</span> <span class="token class-name">Encodable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> id<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">let</span> intArr<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">Int</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="foundation-codable-types">Foundation codable types<a aria-hidden="true" class="anchor-heading icon-link" href="#foundation-codable-types"></a></h2>
+<ul>
+<li>String</li>
+<li>Int</li>
+<li>Double</li>
+<li>Date</li>
+<li>Data</li>
+<li>URL</li>
+</ul>
+<h2 id="自定義-codingkeys">自定義 <code>CodingKeys</code><a aria-hidden="true" class="anchor-heading icon-link" href="#自定義-codingkeys"></a></h2>
+<p>當自定義的類遵守<code>Codable</code>時，我們可以選擇在類別內宣告一個叫<code>CodingKeys</code>的enum，且這個enum需遵守<code>CodingKey</code>協議。</p>
+<pre class="language-swift"><code class="language-swift"><span class="token comment">/// A type that can be used as a key for encoding and decoding.</span>
+<span class="token keyword">public</span> <span class="token keyword">protocol</span> <span class="token class-name">CodingKey</span> <span class="token punctuation">:</span> <span class="token class-name">CustomDebugStringConvertible</span><span class="token punctuation">,</span> <span class="token class-name">CustomStringConvertible</span><span class="token punctuation">,</span> <span class="token class-name">Sendable</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">/// The string to use in a named collection (e.g. a string-keyed dictionary).</span>
+    <span class="token keyword">var</span> stringValue<span class="token punctuation">:</span> <span class="token class-name">String</span> <span class="token punctuation">{</span> <span class="token keyword">get</span> <span class="token punctuation">}</span>
+
+    <span class="token keyword">init</span><span class="token operator">?</span><span class="token punctuation">(</span>stringValue<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span>
+
+    <span class="token comment">/// The value to use in an integer-indexed collection (e.g. an int-keyed dictionary).</span>
+    <span class="token keyword">var</span> intValue<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token operator">?</span> <span class="token punctuation">{</span> <span class="token keyword">get</span> <span class="token punctuation">}</span>
+
+    <span class="token keyword">init</span><span class="token operator">?</span><span class="token punctuation">(</span>intValue<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">extension</span> <span class="token class-name">CodingKey</span> <span class="token punctuation">{</span>
+    <span class="token comment">/// A textual representation of this key.</span>
+    <span class="token keyword">public</span> <span class="token keyword">var</span> description<span class="token punctuation">:</span> <span class="token class-name">String</span> <span class="token punctuation">{</span> <span class="token keyword">get</span> <span class="token punctuation">}</span>
+
+    <span class="token comment">/// A textual representation of this key, suitable for debugging.</span>
+    <span class="token keyword">public</span> <span class="token keyword">var</span> debugDescription<span class="token punctuation">:</span> <span class="token class-name">String</span> <span class="token punctuation">{</span> <span class="token keyword">get</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="why">Why?<a aria-hidden="true" class="anchor-heading icon-link" href="#why"></a></h3>
+<p>有時候序列化後的資料格式(key-value pair)的key命名並不符合Swift的命名邏輯，且有時候這個key會頻繁被更改，與其隨著這些外部的資料key去做property的命名，不如就透過宣告<code>CodingKeys</code>拿來map這些外部的資料格式。</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">let</span> mockJSONData <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"""
+    {
+      5"first_name": "Jason",
+      "last_name": "Chung"
+    }
+"""</span></span>
+
+<span class="token keyword">struct</span> <span class="token class-name">User</span><span class="token punctuation">:</span> <span class="token class-name">Codable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> firstName<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">let</span> lastName<span class="token punctuation">:</span> <span class="token class-name">String</span>
+
+    <span class="token keyword">enum</span> <span class="token class-name">CodingKeys</span><span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">CodingKey</span> <span class="token punctuation">{</span>
+      <span class="token keyword">case</span> firstName <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"first_name"</span></span>
+      <span class="token keyword">case</span> lastName <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"last_name"</span></span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> encodedJSONData <span class="token operator">=</span> <span class="token keyword">try</span><span class="token operator">!</span> mockJSONData<span class="token punctuation">.</span><span class="token function">data</span><span class="token punctuation">(</span>using<span class="token punctuation">:</span> <span class="token punctuation">.</span>utf8<span class="token punctuation">)</span><span class="token operator">!</span>
+<span class="token keyword">let</span> decodedJSONData <span class="token operator">=</span> <span class="token keyword">try</span> <span class="token class-name">JSONDecoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span><span class="token class-name">User</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">,</span> from<span class="token punctuation">:</span> encodedJSONData<span class="token punctuation">)</span>
+</code></pre>
+<h2 id="codable常用的情境"><code>Codable</code>常用的情境：<a aria-hidden="true" class="anchor-heading icon-link" href="#codable常用的情境"></a></h2>
+<ol>
+<li>JSON Serialization/Deserialization</li>
+<li>PropertyList Serialization</li>
+<li>UserDefaults</li>
+<li>Unit Testing (透過自定義類建立假資料，轉換成JSON格式測試Decoding出錯情境)</li>
+</ol>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/programming_notes/notes/ehit98sudwsnivfx8dnovwq">Decoding JSON</a></li>
+</ol>

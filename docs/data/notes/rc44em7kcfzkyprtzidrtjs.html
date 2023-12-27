@@ -1,0 +1,60 @@
+<h1 id="data-structure">Data Structure<a aria-hidden="true" class="anchor-heading icon-link" href="#data-structure"></a></h1>
+<h2 id="what-does-conforming-to-codable-do">What does conforming to <strong>Codable</strong> do?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-does-conforming-to-codable-do"></a></h2>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">Landmark</span><span class="token punctuation">:</span> <span class="token class-name">Codable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">var</span> foundingYear<span class="token punctuation">:</span> <span class="token class-name">Int</span>
+
+    <span class="token comment">// Landmark now supports the Codable methods init(from:) and encode(to:),</span>
+    <span class="token comment">// even though they aren't written as part of its declaration.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>遵循Codable協議就可以在編碼或解碼資料時，將資料轉成swift的資料格式</p>
+<h2 id="搭配-codingkeys-做-encode-decode">搭配 <strong>CodingKeys</strong> 做 encode, decode<a aria-hidden="true" class="anchor-heading icon-link" href="#搭配-codingkeys-做-encode-decode"></a></h2>
+<p>如果api回傳的資料(encoded的格式)跟我們的struct定義不一致，我們可以提供自定義的encode, decode邏輯。</p>
+<h2 id="jsonserialization">JSONSerialization<a aria-hidden="true" class="anchor-heading icon-link" href="#jsonserialization"></a></h2>
+<blockquote>
+<p>An object that converts between JSON and the equivalent Foundation objects.</p>
+</blockquote>
+<h2 id="decodable-vs-decoder-protocol"><code>Decodable</code> vs <code>Decoder</code> Protocol<a aria-hidden="true" class="anchor-heading icon-link" href="#decodable-vs-decoder-protocol"></a></h2>
+<p><code>Decodable</code>是一個Protocol，並要求遵守的類必須提供一個<code>init()</code>，而這個<code>init</code>函式的唯一input是一個<code>Decoder</code>類</p>
+<pre class="language-swift"><code class="language-swift"><span class="token comment">/// A type that can decode itself from an external representation.</span>
+<span class="token keyword">public</span> <span class="token keyword">protocol</span> <span class="token class-name">Decodable</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">/// Creates a new instance by decoding from the given decoder.</span>
+    <span class="token comment">///</span>
+    <span class="token comment">/// This initializer throws an error if reading from the decoder fails, or</span>
+    <span class="token comment">/// if the data read is corrupted or otherwise invalid.</span>
+    <span class="token comment">///</span>
+    <span class="token comment">/// - Parameter decoder: The decoder to read data from.</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span>from decoder<span class="token punctuation">:</span> <span class="token class-name">Decoder</span><span class="token punctuation">)</span> <span class="token keyword">throws</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><code>Decoder</code>也是一個Protocol，我們使用遵守他的類來解碼payload。</p>
+<p>範例：</p>
+<p>當我們自定義Decoder的初始化函式時，我們透過<code>Decoder</code>實體的<code>container()</code> func拿到一個<code>KeyedDecodingContainer</code>的實體，並利用這個<code>container</code>的<code>decode()</code>來解碼payload。</p>
+<p>Ｑ： CodingKeys 扮演什麼角色？</p>
+<p>Ａ： Decoder呼叫container時需要傳入CodingKeys這個類，之後就可以透過container的<code>decode</code>去取值。</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">Person</span><span class="token punctuation">:</span> <span class="token class-name">Decodable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">let</span> age<span class="token punctuation">:</span> <span class="token class-name">Int</span>
+    <span class="token keyword">let</span> gender<span class="token punctuation">:</span> <span class="token class-name">String</span>
+
+    <span class="token keyword">enum</span> <span class="token class-name">CodingKeys</span><span class="token punctuation">:</span> <span class="token class-name">CodingKey</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> name
+        <span class="token keyword">case</span> age
+        <span class="token keyword">case</span> gender
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">init</span><span class="token punctuation">(</span>from decoder<span class="token punctuation">:</span> <span class="token class-name">Decoder</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> container <span class="token operator">=</span> <span class="token keyword">try</span> decoder<span class="token punctuation">.</span><span class="token function">container</span><span class="token punctuation">(</span>keyedBy<span class="token punctuation">:</span> <span class="token class-name">CodingKeys</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">)</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token keyword">try</span> container<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">,</span> forKey<span class="token punctuation">:</span> <span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token keyword">try</span> container<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span><span class="token class-name">Int</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">,</span> forKey<span class="token punctuation">:</span> <span class="token punctuation">.</span>age<span class="token punctuation">)</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>gender <span class="token operator">=</span> <span class="token keyword">try</span> container<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span><span class="token class-name">Gender</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">,</span> forKey<span class="token punctuation">:</span> <span class="token punctuation">.</span>gender<span class="token punctuation">)</span><span class="token punctuation">.</span>rawValue
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">enum</span> <span class="token class-name">Gender</span><span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Decodable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> male
+    <span class="token keyword">case</span> female
+<span class="token punctuation">}</span>
+</code></pre>

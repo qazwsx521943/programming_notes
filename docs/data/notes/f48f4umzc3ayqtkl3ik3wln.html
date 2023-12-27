@@ -1,0 +1,63 @@
+<h1 id="cloud-firestore">Cloud Firestore<a aria-hidden="true" class="anchor-heading icon-link" href="#cloud-firestore"></a></h1>
+<h2 id="keywords">Keywords<a aria-hidden="true" class="anchor-heading icon-link" href="#keywords"></a></h2>
+<ul>
+<li>NoSQL</li>
+<li>document-oriented database</li>
+</ul>
+<h2 id="what-is-a-document-in-firestore">What is a document in firestore?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-is-a-document-in-firestore"></a></h2>
+<p>A lightweight record that contains fields, which map to values.</p>
+<blockquote>
+<p>arrays or nested objects, are called maps</p>
+</blockquote>
+<h2 id="what-is-a-reference-in-firestore">What is a reference in firestore?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-is-a-reference-in-firestore"></a></h2>
+<p>A reference is a lightweight object that just points to a location in your database.</p>
+<ul>
+<li>
+<p>拿<code>collection reference</code>：</p>
+<ul>
+<li>querying the documents in the collection</li>
+</ul>
+</li>
+<li>
+<p>拿<code>document reference</code>:</p>
+<ul>
+<li>對該document進行讀寫</li>
+</ul>
+</li>
+</ul>
+<p>拿Reference的小技巧：</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">let</span> documnetRef <span class="token operator">=</span> db<span class="token punctuation">.</span><span class="token function">document</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"users/jason"</span></span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="index-types-in-cloud-firestore">Index types in Cloud Firestore<a aria-hidden="true" class="anchor-heading icon-link" href="#index-types-in-cloud-firestore"></a></h2>
+<ol>
+<li>single-field indexes</li>
+<li>composite indexes</li>
+</ol>
+<h2 id="data-structuring-for-cloud-firestore">Data Structuring for cloud firestore<a aria-hidden="true" class="anchor-heading icon-link" href="#data-structuring-for-cloud-firestore"></a></h2>
+<ul>
+<li>Always store numbers as doubles</li>
+</ul>
+<h3 id="options">Options<a aria-hidden="true" class="anchor-heading icon-link" href="#options"></a></h3>
+<ol>
+<li>Document：</li>
+<li>MultiCollections:</li>
+<li>SubCollections within documents:</li>
+</ol>
+<h2 id="write">Write<a aria-hidden="true" class="anchor-heading icon-link" href="#write"></a></h2>
+<h3 id="options-1">Options<a aria-hidden="true" class="anchor-heading icon-link" href="#options-1"></a></h3>
+<ol>
+<li>在某個集合中新增檔案，並指定DocumentID</li>
+<li>在某個集合中新增檔案，使用Cloud Firestore自動產生的DocumentID</li>
+<li>在某個集合中新增空檔案（使用Cloud Firestore自動產生的DocumentID），日後在增加資料</li>
+</ol>
+<h3 id="set-document">Set document<a aria-hidden="true" class="anchor-heading icon-link" href="#set-document"></a></h3>
+<blockquote>
+<p>建立 / 覆蓋某個檔案</p>
+</blockquote>
+<pre class="language-swift"><code class="language-swift"><span class="token comment">// Update one field, creating the document if it does not exist.</span>
+db<span class="token punctuation">.</span><span class="token function">collection</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"cities"</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">document</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"BJ"</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">[</span> <span class="token string-literal"><span class="token string">"capital"</span></span><span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">]</span><span class="token punctuation">,</span> merge<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+</code></pre>
+<p>如果使用<code>set()</code>建立檔案，一定需要給一個DocumentID，但是不是每次我們要建立的資料的ID都需要我們自己產生，這時候可以使用<code>add()</code>，這樣就可以請Cloud Firestore幫我們建立這筆資料的DocumentID</p>
+<blockquote>
+<p>Behind the scenes, .add(...) and .doc().set(...) are completely equivalent, so you can use whichever is more convenient.</p>
+</blockquote>

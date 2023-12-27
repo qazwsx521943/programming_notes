@@ -1,0 +1,36 @@
+<h1 id="architecture">Architecture<a aria-hidden="true" class="anchor-heading icon-link" href="#architecture"></a></h1>
+<h2 id="dependency-injection">Dependency Injection<a aria-hidden="true" class="anchor-heading icon-link" href="#dependency-injection"></a></h2>
+<p>Q: What did it solve?</p>
+<p>A: Singleton design pattern cons</p>
+<h3 id="how-it-works">How it works?<a aria-hidden="true" class="anchor-heading icon-link" href="#how-it-works"></a></h3>
+<blockquote>
+<p>Use protocols to make a blue print of DataServices</p>
+</blockquote>
+<ol>
+<li>Initializing dataServices at a intro level (Can use a Master class to initialize all dataServices)</li>
+<li>Passing these dataService instances into Views and use it to initialize view models (Injection)</li>
+</ol>
+<h2 id="singleton">Singleton<a aria-hidden="true" class="anchor-heading icon-link" href="#singleton"></a></h2>
+<ul>
+<li>
+<p>Pros:</p>
+<ol>
+<li>Very convenient</li>
+<li>Beginner friendly</li>
+</ol>
+</li>
+<li>
+<p>Cons:</p>
+<ol>
+<li>Singleton's are global (not thread safe)</li>
+<li>can't customize init (bad for testing)</li>
+<li>can't swap out service</li>
+</ol>
+</li>
+</ul>
+<h2 id="app-lifecycle">App LifeCycle<a aria-hidden="true" class="anchor-heading icon-link" href="#app-lifecycle"></a></h2>
+<p>Prior to iOS 14, iOS apps had a class named "AppDelegate" that the creation of this class was the starting point of an app.</p>
+<h3 id="main-property-wrapper"><code>@Main</code> property wrapper<a aria-hidden="true" class="anchor-heading icon-link" href="#main-property-wrapper"></a></h3>
+<p>Indicates the entry execution of the app</p>
+<h3 id="app-protocol">'App' protocol<a aria-hidden="true" class="anchor-heading icon-link" href="#app-protocol"></a></h3>
+<p>struct that conform to the App protocol, has a default implementation of the method <code>main()</code>, which manages the launch process of the app.</p>

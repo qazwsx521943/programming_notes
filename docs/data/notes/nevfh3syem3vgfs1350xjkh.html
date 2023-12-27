@@ -1,0 +1,35 @@
+<h1 id="grid">Grid<a aria-hidden="true" class="anchor-heading icon-link" href="#grid"></a></h1>
+<h2 id="lazyvgrid-instagram-layout"><code>LazyVGrid</code> Instagram layout<a aria-hidden="true" class="anchor-heading icon-link" href="#lazyvgrid-instagram-layout"></a></h2>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">LazyVGridView</span><span class="token punctuation">:</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> <span class="token keyword">some</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+    <span class="token class-name">ScrollView</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Rectangle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token class-name">AngularGradient</span><span class="token punctuation">(</span>colors<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">.</span>blue<span class="token punctuation">,</span> <span class="token punctuation">.</span>purple<span class="token punctuation">,</span> <span class="token punctuation">.</span>red<span class="token punctuation">]</span><span class="token punctuation">,</span> center<span class="token punctuation">:</span> <span class="token punctuation">.</span>bottomLeading<span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token punctuation">.</span>infinity<span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">500</span><span class="token punctuation">)</span>
+
+    <span class="token class-name">LazyVGrid</span><span class="token punctuation">(</span>
+        columns<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token class-name">GridItem</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">flexible</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> spacing<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token class-name">GridItem</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">flexible</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> spacing<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token class-name">GridItem</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">flexible</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> spacing<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>leading<span class="token punctuation">,</span>
+        spacing<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+        pinnedViews<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">.</span>sectionHeaders<span class="token punctuation">]</span><span class="token punctuation">,</span>
+        content<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token class-name">Section</span> <span class="token punctuation">{</span>
+              <span class="token class-name">ForEach</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token operator">..&#x3C;</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> index <span class="token keyword">in</span>
+                  <span class="token class-name">Rectangle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>height<span class="token punctuation">:</span> <span class="token number">150</span><span class="token punctuation">)</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span> header<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+              <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"This is Section 1"</span></span><span class="token punctuation">)</span>
+                  <span class="token punctuation">.</span><span class="token function">font</span><span class="token punctuation">(</span><span class="token punctuation">.</span>subheadline<span class="token punctuation">)</span>
+                  <span class="token punctuation">.</span><span class="token function">foregroundStyle</span><span class="token punctuation">(</span><span class="token punctuation">.</span>brown<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>

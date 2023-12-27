@@ -1,0 +1,23 @@
+<h1 id="extensions">Extensions<a aria-hidden="true" class="anchor-heading icon-link" href="#extensions"></a></h1>
+<h2 id="color"><code>Color</code><a aria-hidden="true" class="anchor-heading icon-link" href="#color"></a></h2>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">extension</span> <span class="token class-name">Color</span> <span class="token punctuation">{</span>
+  <span class="token keyword">static</span> <span class="token keyword">func</span> <span class="token function-definition function">generateRandomColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token keyword">Self</span> <span class="token punctuation">{</span>
+  <span class="token keyword">enum</span> <span class="token class-name">RColor</span><span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> red <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> green <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> blue <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> yellow <span class="token operator">=</span> <span class="token number">3</span>
+
+    <span class="token keyword">var</span> color<span class="token punctuation">:</span> <span class="token class-name">Color</span> <span class="token punctuation">{</span>
+      <span class="token keyword">switch</span> <span class="token keyword">self</span> <span class="token punctuation">{</span>
+      <span class="token keyword">case</span> <span class="token punctuation">.</span>blue<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token class-name">Color</span><span class="token punctuation">.</span>blue
+      <span class="token keyword">case</span> <span class="token punctuation">.</span>green<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token class-name">Color</span><span class="token punctuation">.</span>green
+      <span class="token keyword">case</span> <span class="token punctuation">.</span>yellow<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token class-name">Color</span><span class="token punctuation">.</span>yellow
+      <span class="token keyword">case</span> <span class="token punctuation">.</span>red<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token class-name">Color</span><span class="token punctuation">.</span>red
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">let</span> random <span class="token operator">=</span> <span class="token class-name">Int</span><span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token keyword">in</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token operator">...</span><span class="token number">3</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> <span class="token class-name">RColor</span><span class="token punctuation">(</span>rawValue<span class="token punctuation">:</span> random<span class="token punctuation">)</span><span class="token operator">!</span><span class="token punctuation">.</span>color
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>

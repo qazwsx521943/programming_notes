@@ -1,0 +1,56 @@
+<h1 id="mapkit">Mapkit<a aria-hidden="true" class="anchor-heading icon-link" href="#mapkit"></a></h1>
+<h2 id="ios-160-interfacing-with-uikit">iOS 16.0 (interfacing with UIKit)<a aria-hidden="true" class="anchor-heading icon-link" href="#ios-160-interfacing-with-uikit"></a></h2>
+<p>當某個struct conform <code>UIViewRepresentable</code>
+需要實作 <code>makeUIView</code>, <code>updateUIView</code> protocol function</p>
+<h3 id="callback-order">Callback Order<a aria-hidden="true" class="anchor-heading icon-link" href="#callback-order"></a></h3>
+<ol>
+<li>
+<p>makeCoordinator</p>
+<ol>
+<li>
+<p>Creates the custom instance that you use to communicate changes(by delegates) from your view to other parts of your SwiftUI interface.</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">associatedtype</span> <span class="token class-name">Coordinator</span> <span class="token operator">=</span> <span class="token class-name">Void</span>
+
+<span class="token attribute atrule">@MainActor</span> <span class="token keyword">func</span> <span class="token function-definition function">makeCoordinator</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token keyword">Self</span><span class="token punctuation">.</span><span class="token class-name">Coordinator</span>
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>makeUIView</p>
+<ol>
+<li>
+<p>Creates the view object and configures its initial state.</p>
+<pre class="language-swift"><code class="language-swift"><span class="token comment">/// You must implement this method and use it to create your view object.</span>
+<span class="token comment">/// Configure the view using your app's current data and contents of the</span>
+<span class="token comment">/// `context` parameter. The system calls this method only once, when it</span>
+<span class="token comment">/// creates your view for the first time. For all subsequent updates, the</span>
+<span class="token comment">/// system calls the ``UIViewRepresentable/updateUIView(_:context:)``</span>
+<span class="token comment">/// method.</span>
+
+<span class="token keyword">associatedtype</span> <span class="token class-name">UIViewType</span> <span class="token punctuation">:</span> <span class="token class-name">UIView</span>
+
+<span class="token keyword">func</span> <span class="token function-definition function">makeUIView</span><span class="token punctuation">(</span>context<span class="token punctuation">:</span> <span class="token keyword">Self</span><span class="token punctuation">.</span><span class="token class-name">Context</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token keyword">Self</span><span class="token punctuation">.</span><span class="token class-name">UIViewType</span>
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>updateUIView</p>
+<ol>
+<li>
+<p>Updates the state of the specified view with new information from SwiftUI.</p>
+</li>
+<li>
+<p>When properties like <code>@Published</code> changed, calls this method to update portions of your interface affected by those changes.</p>
+<pre class="language-swift"><code class="language-swift"><span class="token comment">/// When the state of your app changes, SwiftUI updates the portions of your</span>
+<span class="token comment">/// interface affected by those changes. SwiftUI calls this method for any</span>
+<span class="token comment">/// changes affecting the corresponding UIKit view. Use this method to</span>
+<span class="token comment">/// update the configuration of your view to match the new state information</span>
+<span class="token comment">/// provided in the `context` parameter.</span>
+<span class="token keyword">func</span> <span class="token function-definition function">updateUIView</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> uiView<span class="token punctuation">:</span> <span class="token keyword">Self</span><span class="token punctuation">.</span><span class="token class-name">UIViewType</span><span class="token punctuation">,</span> context<span class="token punctuation">:</span> <span class="token keyword">Self</span><span class="token punctuation">.</span><span class="token class-name">Context</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>

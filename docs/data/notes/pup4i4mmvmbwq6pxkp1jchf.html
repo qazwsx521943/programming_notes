@@ -1,0 +1,77 @@
+<h1 id="protocol">Protocol<a aria-hidden="true" class="anchor-heading icon-link" href="#protocol"></a></h1>
+<h2 id="what-is-protocol">What is Protocol?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-is-protocol"></a></h2>
+<blockquote>
+<p>A protocol defines a blueprint of methods, properties, and other requirements that suit a particular task or piece of functionality. The protocol can then be adopted by a class, structure, or enumeration to provide an actual implementation of those requirements. Any type that satisfies the requirements of a protocol is said to conform to that protocol.</p>
+</blockquote>
+<p>Protocol是功能的藍圖，定義好可以交由Type實現功能。</p>
+<p>舉例來說，我們是老闆，我們再請工廠生產我們的產品之前，先給工廠一個產品的requirement，讓我們兩種不同產品，都提供一些相同功能。</p>
+<p>ex: 可以旋轉、可以變色等等</p>
+<p>這些功能是我們的最低要求，我們請工廠一定在建立產品之前，要符合這些功能給我們產品的藍圖，再去實際生產</p>
+<h2 id="why-do-we-need-protocols">Why do we need Protocols?<a aria-hidden="true" class="anchor-heading icon-link" href="#why-do-we-need-protocols"></a></h2>
+<h2 id="protocol-requirements">Protocol Requirements<a aria-hidden="true" class="anchor-heading icon-link" href="#protocol-requirements"></a></h2>
+<h3 id="properties">properties<a aria-hidden="true" class="anchor-heading icon-link" href="#properties"></a></h3>
+<pre class="language-swift"><code class="language-swift"></code></pre>
+<h3 id="functions">functions<a aria-hidden="true" class="anchor-heading icon-link" href="#functions"></a></h3>
+<ul>
+<li>如果用<strong>mutating</strong>標記function的草稿，在實作class method時不必再寫一次在method前，但struct, enum時需要。</li>
+</ul>
+<blockquote>
+<p>為什麼需要mutating標記呢？</p>
+<p>protocol 本身並不會定義function，只定義<strong>名字</strong>、<strong>參數</strong>、<strong>回傳值</strong>。 但是有時候還是很難透過這三個東西去表示這個function實作時需要注意的事，像是會不會去更改到該Type的stored properties，但如果用mutating前綴作為標記的話，就可以一目瞭然，知道這個function實作時會更改到stored property。</p>
+</blockquote>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">enum</span> <span class="token class-name">OnOffSwitch</span><span class="token punctuation">:</span> <span class="token class-name">Togglable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> off<span class="token punctuation">,</span> on
+    <span class="token comment">// class實作時不需要再標記為mutating</span>
+    <span class="token keyword">mutating</span> <span class="token keyword">func</span> <span class="token function-definition function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">switch</span> <span class="token keyword">self</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token punctuation">.</span>off<span class="token punctuation">:</span>
+            <span class="token keyword">self</span> <span class="token operator">=</span> <span class="token punctuation">.</span>on
+        <span class="token keyword">case</span> <span class="token punctuation">.</span>on<span class="token punctuation">:</span>
+            <span class="token keyword">self</span> <span class="token operator">=</span> <span class="token punctuation">.</span>off
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> lightSwitch <span class="token operator">=</span> <span class="token class-name">OnOffSwitch</span><span class="token punctuation">.</span>off
+lightSwitch<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="initializers">initializers<a aria-hidden="true" class="anchor-heading icon-link" href="#initializers"></a></h3>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">protocol</span> <span class="token class-name">SomeProtocol</span> <span class="token punctuation">{</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span>someParameter<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 實作時要加上`required`，但如果標記為`final`的class，則可以不必</span>
+<span class="token keyword">class</span> <span class="token class-name">SomeClass</span><span class="token punctuation">:</span> <span class="token class-name">SomeProtocol</span> <span class="token punctuation">{</span>
+    <span class="token keyword">required</span> <span class="token keyword">init</span><span class="token punctuation">(</span>someParameter<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// initializer implementation goes here</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="protocol-vs-inheritance">Protocol vs Inheritance<a aria-hidden="true" class="anchor-heading icon-link" href="#protocol-vs-inheritance"></a></h2>
+<p>Struct, Enum 是無法被繼承的Type，但我們可以透過讓這些Type遵循某個共同的Protocol去讓Type之間有一些很相似的特性。</p>
+<h2 id="note">Note：<a aria-hidden="true" class="anchor-heading icon-link" href="#note"></a></h2>
+<ul>
+<li>Protocol 也是一個類別</li>
+</ul>
+<blockquote>
+<p>有時候instance之間並沒有共同superclass，但是有共同的功能，這時候就可以透過protocol的type讓他們有以功能分類的概念。</p>
+</blockquote>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">let</span> objects<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">AnyObject</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token class-name">Circle</span><span class="token punctuation">(</span>radius<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">Sun</span><span class="token punctuation">(</span>radius<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">Frisbee</span><span class="token punctuation">(</span>radius<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">Square</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+<span class="token keyword">for</span> object <span class="token keyword">in</span> objects <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token keyword">let</span> roundObject <span class="token operator">=</span> object <span class="token keyword">as</span><span class="token operator">?</span> <span class="token class-name">Round</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"round object"</span></span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"not round"</span></span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>Protocol 可以其他 Protocol 繼承</li>
+<li>Protocol 可以互相組合</li>
+<li>-@objc protocols can be adopted only by classes, not by structures or enumerations</li>
+<li>Protocol 搭配 extension 做</li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/programming_notes/notes/59ly9f4dsj8kmoihictk4uq">Delegate</a></li>
+</ol>

@@ -1,0 +1,111 @@
+<h1 id="shape">Shape<a aria-hidden="true" class="anchor-heading icon-link" href="#shape"></a></h1>
+<h2 id="畫邊框">畫邊框<a aria-hidden="true" class="anchor-heading icon-link" href="#畫邊框"></a></h2>
+<pre class="language-swift"><code class="language-swift"><span class="token class-name">Circle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">stroke</span><span class="token punctuation">(</span>
+    <span class="token class-name">Color</span><span class="token punctuation">.</span>green<span class="token punctuation">,</span>
+    style<span class="token punctuation">:</span> <span class="token class-name">StrokeStyle</span><span class="token punctuation">(</span>lineWidth<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span> lineCap<span class="token punctuation">:</span> <span class="token punctuation">.</span>square<span class="token punctuation">,</span> dash<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">40</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span>
+</code></pre>
+<p><img src="/programming_notes/assets/images/project%20brainstorming.flavor%20flash%20journal.View.CircleStroker.png" alt="Circle stroke"></p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">PathView</span><span class="token punctuation">:</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> <span class="token keyword">some</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+  <span class="token class-name">ZStack</span> <span class="token punctuation">{</span>
+   <span class="token class-name">Path</span> <span class="token punctuation">{</span> path <span class="token keyword">in</span>
+    path<span class="token punctuation">.</span><span class="token function">move</span><span class="token punctuation">(</span>to<span class="token punctuation">:</span> <span class="token class-name">CGPoint</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    path<span class="token punctuation">.</span><span class="token function">addLine</span><span class="token punctuation">(</span>to<span class="token punctuation">:</span> <span class="token class-name">CGPoint</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token number">370</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+   <span class="token punctuation">}</span>
+   <span class="token punctuation">.</span><span class="token function">stroke</span><span class="token punctuation">(</span>style<span class="token punctuation">:</span> <span class="token class-name">StrokeStyle</span><span class="token punctuation">(</span>lineWidth<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">,</span> lineCap<span class="token punctuation">:</span> <span class="token punctuation">.</span>square<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><img src="/programming_notes/assets/images/project%20brainstorming.flavor%20flash%20journal.View.stroke_linecap.png" alt="linecap"></p>
+<pre class="language-swift"><code class="language-swift">  <span class="token class-name">GeometryReader</span> <span class="token punctuation">{</span> geometry <span class="token keyword">in</span>
+   <span class="token class-name">ZStack</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Path</span> <span class="token punctuation">{</span> path <span class="token keyword">in</span>
+     path<span class="token punctuation">.</span><span class="token function">move</span><span class="token punctuation">(</span>to<span class="token punctuation">:</span> <span class="token class-name">CGPoint</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> geometry<span class="token punctuation">.</span>size<span class="token punctuation">.</span>width <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+     path<span class="token punctuation">.</span><span class="token function">addLine</span><span class="token punctuation">(</span>to<span class="token punctuation">:</span> <span class="token class-name">CGPoint</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> geometry<span class="token punctuation">.</span>size<span class="token punctuation">.</span>width <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">-</span> <span class="token number">50</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+     path<span class="token punctuation">.</span><span class="token function">addLine</span><span class="token punctuation">(</span>to<span class="token punctuation">:</span> <span class="token class-name">CGPoint</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> geometry<span class="token punctuation">.</span>size<span class="token punctuation">.</span>width <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">50</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">.</span><span class="token function">stroke</span><span class="token punctuation">(</span>style<span class="token punctuation">:</span> <span class="token class-name">StrokeStyle</span><span class="token punctuation">(</span>lineWidth<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">,</span> lineCap<span class="token punctuation">:</span> <span class="token punctuation">.</span>square<span class="token punctuation">,</span> lineJoin<span class="token punctuation">:</span> <span class="token punctuation">.</span>round<span class="token punctuation">)</span><span class="token punctuation">)</span>
+   <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+<p><img src="/programming_notes/assets/images/project%20brainstorming.flavor%20flash%20journal.View.lineJoin.png" alt="lineJoin"></p>
+<p><code>strokeStyle</code> init parameters:</p>
+<ol>
+<li>
+<p>lineCap: 控制線條尾端的形狀</p>
+<ol>
+<li>round 圓尾</li>
+<li>square、butt 方形尾
+<blockquote>
+<p>如果想要嚴格控制物件的大小 => butt，因為square的方形尾會超出起點＆終點</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li>
+<p>lineJoin: 控制線條的連接style</p>
+<ol>
+<li>round、milter、bevel</li>
+</ol>
+</li>
+<li>
+<p>dash: 控制虛線樣式&#x26;間隔的長度</p>
+</li>
+</ol>
+<h3 id="搭配trim做一個loading的動畫">搭配<code>trim</code>做一個Loading的動畫<a aria-hidden="true" class="anchor-heading icon-link" href="#搭配trim做一個loading的動畫"></a></h3>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">import</span> <span class="token class-name">SwiftUI</span>
+<span class="token keyword">import</span> <span class="token class-name">Combine</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">CircleView</span><span class="token punctuation">:</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+
+ <span class="token attribute atrule">@State</span> <span class="token keyword">var</span> progress<span class="token punctuation">:</span> <span class="token class-name">CGFloat</span> <span class="token operator">=</span> <span class="token number">0</span>
+ <span class="token keyword">let</span> timer <span class="token operator">=</span> <span class="token class-name">Timer</span><span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span>every<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> on<span class="token punctuation">:</span> <span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token keyword">in</span><span class="token punctuation">:</span> <span class="token punctuation">.</span>common<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">autoconnect</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> <span class="token keyword">some</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+      <span class="token class-name">Circle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span>from<span class="token punctuation">:</span> <span class="token number">0.0</span><span class="token punctuation">,</span> to<span class="token punctuation">:</span> progress<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">stroke</span><span class="token punctuation">(</span><span class="token class-name">Color</span><span class="token punctuation">.</span>green<span class="token punctuation">,</span> lineWidth<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">onReceive</span><span class="token punctuation">(</span>timer<span class="token punctuation">,</span> perform<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token omit keyword">_</span> <span class="token keyword">in</span>
+          <span class="token function">addProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+   <span class="token punctuation">}</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span>
+
+ <span class="token keyword">func</span> <span class="token function-definition function">addProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> progress <span class="token operator">>=</span> <span class="token number">1.0</span> <span class="token punctuation">{</span>
+   progress <span class="token operator">=</span> <span class="token number">0.1</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+   progress <span class="token operator">+=</span> <span class="token number">0.1</span>
+  <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Without using Combine ↓</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">CircleView</span><span class="token punctuation">:</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+
+ <span class="token attribute atrule">@State</span> <span class="token keyword">var</span> progress<span class="token punctuation">:</span> <span class="token class-name">CGFloat</span> <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> <span class="token keyword">some</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+      <span class="token class-name">Circle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span>from<span class="token punctuation">:</span> <span class="token number">0.0</span><span class="token punctuation">,</span> to<span class="token punctuation">:</span> progress<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">stroke</span><span class="token punctuation">(</span><span class="token class-name">Color</span><span class="token punctuation">.</span>green<span class="token punctuation">,</span> lineWidth<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span>onAppear <span class="token punctuation">{</span>
+          <span class="token keyword">let</span> setTimer <span class="token operator">=</span> <span class="token class-name">Timer</span><span class="token punctuation">.</span><span class="token function">scheduledTimer</span><span class="token punctuation">(</span>withTimeInterval<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> repeats<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> timer <span class="token keyword">in</span>
+            <span class="token function">addProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+
+ <span class="token keyword">func</span> <span class="token function-definition function">addProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> progress <span class="token operator">>=</span> <span class="token number">1.0</span> <span class="token punctuation">{</span>
+   progress <span class="token operator">=</span> <span class="token number">0.1</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+   progress <span class="token operator">+=</span> <span class="token number">0.1</span>
+  <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>

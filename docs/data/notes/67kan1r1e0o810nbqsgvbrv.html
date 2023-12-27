@@ -1,0 +1,48 @@
+<h1 id="property-wrappers">Property Wrappers<a aria-hidden="true" class="anchor-heading icon-link" href="#property-wrappers"></a></h1>
+<blockquote>
+<p>Property Wrapper跟SwiftUI是同一年推出的，導致很多人會誤以為property wrapper也是SwiftUI框架中的一部份，但其實只是一個swift語言的新功能。</p>
+</blockquote>
+<h2 id="what-is-property-wrappers">What is Property Wrappers?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-is-property-wrappers"></a></h2>
+<p>The <code>@propertyWrapper</code> is a Swift attribute used on structs, enums or classes</p>
+<blockquote>
+<p>Property wrappers 是一個語法糖，告訴compiler說這個類別建立出來的實體有wrapped value這層setter / getter的包裝。</p>
+</blockquote>
+<p>REF: <a href="https://www.hackingwithswift.com/quick-start/swiftui/all-swiftui-property-wrappers-explained-and-compared">https://www.hackingwithswift.com/quick-start/swiftui/all-swiftui-property-wrappers-explained-and-compared</a></p>
+<ol>
+<li><code>@AppStorage</code>: (Owns its data)
+<ol>
+<li>A easier way to manage userDefaults in swiftUI.</li>
+</ol>
+</li>
+<li><code>@Binding</code>: (Doesn't own its data)</li>
+<li><code>@Environment</code>:
+<ol>
+<li>Reads data from the system. (ex: Color scheme, scenePhase)</li>
+</ol>
+</li>
+<li><code>@EnvironmentObject</code>: (Doesn't own its data)
+<ol>
+<li>Reads a shared Object that we placed into the environment.</li>
+</ol>
+</li>
+<li><code>@State</code>: (Owns its data)
+<ol>
+<li>Lets us manipulate small amounts of value type data locally to a view.</li>
+</ol>
+</li>
+<li><code>@StateObject</code>: (Owns its data)
+<ol>
+<li>Used to store new instances of reference type data that conforms to the <code>ObservableObject</code> protocol.</li>
+</ol>
+</li>
+<li><code>@ObservedObject</code>: (Doesn't own its data)
+<ol>
+<li>Refers to an instance of an external class that conforms to the <code>ObservableObject</code> protocol.</li>
+</ol>
+</li>
+<li><code>@Published</code>: (Owns its data)
+<ol>
+<li>Is attached to properties inside an 1, and tells SwiftUI that it should refresh any views that use this property when it is changed.</li>
+</ol>
+</li>
+</ol>

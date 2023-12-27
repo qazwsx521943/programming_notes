@@ -1,0 +1,11 @@
+<h1 id="dependency-injection">Dependency Injection<a aria-hidden="true" class="anchor-heading icon-link" href="#dependency-injection"></a></h1>
+<h2 id="dependency-injection-1">Dependency Injection<a aria-hidden="true" class="anchor-heading icon-link" href="#dependency-injection-1"></a></h2>
+<p>Common used cases:</p>
+<ul>
+<li>
+<p>When initializing a provider, we might pass in a dataService for the provider to init, and then the provdier can use that dataService instance to fetch Data.</p>
+</li>
+<li>
+<p>When using <code>#Preview</code> in swiftUI, some views depends on the environment values when rendering the view, so we might use an environment modifier to inject the values that we want to see on the preview canvas.</p>
+</li>
+</ul>

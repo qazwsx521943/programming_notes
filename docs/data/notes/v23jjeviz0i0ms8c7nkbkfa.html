@@ -1,0 +1,124 @@
+<h1 id="data-structure">Data Structure<a aria-hidden="true" class="anchor-heading icon-link" href="#data-structure"></a></h1>
+<h2 id="struct-vs-class-vs-actor">Struct vs Class vs Actor<a aria-hidden="true" class="anchor-heading icon-link" href="#struct-vs-class-vs-actor"></a></h2>
+<h3 id="struct">struct<a aria-hidden="true" class="anchor-heading icon-link" href="#struct"></a></h3>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">MyStruct</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> title<span class="token punctuation">:</span> <span class="token class-name">String</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> structObject <span class="token operator">=</span> <span class="token class-name">MyStruct</span><span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"myStruct"</span></span><span class="token punctuation">)</span>
+
+structObject<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"updated myStruct"</span></span> <span class="token comment">// This one is a whole new struct object</span>
+</code></pre>
+<h3 id="class">Class<a aria-hidden="true" class="anchor-heading icon-link" href="#class"></a></h3>
+<h3 id="actor">Actor<a aria-hidden="true" class="anchor-heading icon-link" href="#actor"></a></h3>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">actor</span> <span class="token class-name">MyDataManager</span> <span class="token punctuation">{</span>
+ <span class="token keyword">static</span> <span class="token keyword">let</span> instance <span class="token operator">=</span> <span class="token class-name">MyDataManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+ <span class="token keyword">private</span> <span class="token keyword">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+ <span class="token keyword">var</span> data<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">String</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+ <span class="token keyword">func</span> <span class="token function-definition function">getRandomData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">String</span><span class="token operator">?</span> <span class="token punctuation">{</span>
+  <span class="token keyword">self</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token function">UUID</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>uuidString<span class="token punctuation">)</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span>current<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token keyword">self</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">randomElement</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>Classes that are thread safe.</p>
+</blockquote>
+<h2 id="class-vs-struct-">Class vs Struct ?<a aria-hidden="true" class="anchor-heading icon-link" href="#class-vs-struct-"></a></h2>
+<p>There is much less need to worry about memory leaks or multiple threads racing to access / modeify a single instance of a variable.</p>
+<h2 id="value-vs-reference-types">Value vs Reference types<a aria-hidden="true" class="anchor-heading icon-link" href="#value-vs-reference-types"></a></h2>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>types</th><th align="center">Struct</th><th align="center">Class</th><th align="center">Actor</th><th align="center">Function</th></tr></thead><tbody><tr><td>type</td><td align="center">Value</td><td align="center">Reference</td><td align="center">Reference</td><td align="center">Reference</td></tr><tr><td>Stored in</td><td align="center">Stack</td><td align="center">Heap</td><td align="center">Heap</td><td align="center">Heap</td></tr><tr><td>Speed</td><td align="center">Faster</td><td align="center">Slower</td><td align="center">Slower</td><td align="center"></td></tr><tr><td>Thread safe</td><td align="center">V</td><td align="center">X</td><td align="center">V</td><td align="center">X</td></tr><tr><td>Inheritance</td><td align="center">X</td><td align="center">V</td><td align="center">X</td><td align="center">X</td></tr></tbody></table></div>
+<h2 id="stack-vs-heap">Stack vs Heap<a aria-hidden="true" class="anchor-heading icon-link" href="#stack-vs-heap"></a></h2>
+<p>Value based data types are stored in stack</p>
+<p>Reference based data types are stored in heap</p>
+<h3 id="stack">Stack<a aria-hidden="true" class="anchor-heading icon-link" href="#stack"></a></h3>
+<ul>
+<li>Each thread has it's own stack!</li>
+<li>Variables allocated on the stack are stored directly to the memory, and access to this memory is very fast</li>
+</ul>
+<h3 id="heap">Heap<a aria-hidden="true" class="anchor-heading icon-link" href="#heap"></a></h3>
+<ul>
+<li>Shared across threads!</li>
+</ul>
+<p><img src="/programming_notes/assets/images/project%20brainstorming.flavor%20flash%20journal.thread_struct_heap.png"></p>
+<h2 id="automatic-reference-counting-arc">Automatic Reference Counting (ARC)<a aria-hidden="true" class="anchor-heading icon-link" href="#automatic-reference-counting-arc"></a></h2>
+<p>value types such as structures and enumerations are just copying the data to data. Therefore it's not affected by ARC.</p>
+<p>ARC is used to track and manage the app's memory usage. When class instances are no longer needed, ARC automatically frees up the memory used by that class.</p>
+<p>這也是為什麼esacaping closure通常會需要標註<code>weak self</code>的原因，以免當某個class不需要被使用時，卻因為某個closure中有引用到strong self而無法正常釋放記憶體。</p>
+<h2 id="situations-when-choosing-different-data-types">Situations when choosing different data types<a aria-hidden="true" class="anchor-heading icon-link" href="#situations-when-choosing-different-data-types"></a></h2>
+<ol>
+<li>
+<p>Structs:</p>
+<ol>
+<li>Data Models</li>
+<li>SwiftUI Views</li>
+</ol>
+</li>
+<li>
+<p>Classes:</p>
+<ol>
+<li>ViewModels</li>
+</ol>
+</li>
+<li>
+<p>Actors:</p>
+<ol>
+<li>Shared 'Manager' / 'Data Store'</li>
+</ol>
+</li>
+</ol>
+<p>References:</p>
+<ul>
+<li><a href="https://www.backblaze.com/blog/whats-the-diff-programs-processes-and-threads/">https://www.backblaze.com/blog/whats-the-diff-programs-processes-and-threads/</a></li>
+</ul>

@@ -1,0 +1,36 @@
+<h1 id="state">State<a aria-hidden="true" class="anchor-heading icon-link" href="#state"></a></h1>
+<h2 id="what-is-state">What is <code>@State</code>?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-is-state"></a></h2>
+<blockquote>
+<p>A property wrapper type that can read and write a value managed by SwiftUI.</p>
+</blockquote>
+<h2 id="when-to-use-it">When to use it?<a aria-hidden="true" class="anchor-heading icon-link" href="#when-to-use-it"></a></h2>
+<blockquote>
+<p>Use state as the single source of truth for a given value type that you store in a view hierarchy. Create a state value in an <code>App</code>, <code>Scene</code>, or <code>View</code> by applying the <code>@State</code> attribute to a property declaration and providing an initial value</p>
+</blockquote>
+<h2 id="behind-the-scene">Behind the scene<a aria-hidden="true" class="anchor-heading icon-link" href="#behind-the-scene"></a></h2>
+<blockquote>
+<p>SwiftUI manages the property's storage. When the value changes, SwiftUI updates the parts of the view hierarchy that depend on the value. To access a state's underlying value, you use its <code>wrappedValue</code> property. However, as a shortcut Swift enables you to access the wrapped value by referring directly to the state instance.</p>
+</blockquote>
+<p>SwiftUI 中每個View都是以struct定義的，由於struct中的property是immutable，如果我們有一個variable是會改變的，而每次改變時我們希望View會重繪，那這時候我們就可以用<code>@State</code>這個SwiftUI定義好的property wrapper。當我們更改這個以<code>@State</code>定義的variable，SwiftUI就會幫我們更新View。</p>
+<p>在struct中宣告變數加上<code>@State</code>前綴，SwiftUI會將這個變數管理在一個shared storage(Redux like)，讓我們在View的重繪時不會遺失這個變數。</p>
+<p>從SwiftUI documentation可以看到<code>@State</code>定義的一些public property：</p>
+<pre class="language-swift"><code class="language-swift"><span class="token attribute atrule">@propertyWrapper</span> <span class="token keyword">public</span> <span class="token keyword">struct</span> <span class="token class-name">State</span><span class="token operator">&#x3C;</span><span class="token class-name">Value</span><span class="token operator">></span><span class="token punctuation">:</span> <span class="token class-name">DynamicProperty</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">init</span><span class="token punctuation">(</span>wrappedValue value<span class="token punctuation">:</span> <span class="token class-name">Value</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">init</span><span class="token punctuation">(</span>initialValue value<span class="token punctuation">:</span> <span class="token class-name">Value</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">var</span> wrappedValue<span class="token punctuation">:</span> <span class="token class-name">Value</span> <span class="token punctuation">{</span> <span class="token keyword">get</span> <span class="token keyword">nonmutating</span> <span class="token keyword">set</span> <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">var</span> projectedValue<span class="token punctuation">:</span> <span class="token class-name">Binding</span><span class="token operator">&#x3C;</span><span class="token class-name">Value</span><span class="token operator">></span> <span class="token punctuation">{</span> <span class="token keyword">get</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">protocol</span> <span class="token class-name">DynamicProperty</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">/// Updates the underlying value of the stored value.</span>
+    <span class="token comment">///</span>
+    <span class="token comment">/// SwiftUI calls this function before rendering a view's</span>
+    <span class="token comment">/// ``View/body-swift.property`` to ensure the view has the most recent</span>
+    <span class="token comment">/// value.</span>
+    <span class="token keyword">mutating</span> <span class="token keyword">func</span> <span class="token function-definition function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>

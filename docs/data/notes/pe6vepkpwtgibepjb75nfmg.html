@@ -1,0 +1,48 @@
+<h1 id="view">View<a aria-hidden="true" class="anchor-heading icon-link" href="#view"></a></h1>
+<h2 id="container-views">Container Views<a aria-hidden="true" class="anchor-heading icon-link" href="#container-views"></a></h2>
+<h3 id="vstack---vertical">VStack -> Vertical<a aria-hidden="true" class="anchor-heading icon-link" href="#vstack---vertical"></a></h3>
+<h3 id="hstack---horizontal">HStack -> Horizontal<a aria-hidden="true" class="anchor-heading icon-link" href="#hstack---horizontal"></a></h3>
+<h3 id="zstack---zindex-back-to-front">ZStack -> zIndex (back to front)<a aria-hidden="true" class="anchor-heading icon-link" href="#zstack---zindex-back-to-front"></a></h3>
+<blockquote>
+<p>VStack, HStack has default spacing.</p>
+</blockquote>
+<h2 id="common-modifiers">Common Modifiers<a aria-hidden="true" class="anchor-heading icon-link" href="#common-modifiers"></a></h2>
+<h3 id="frame"><code>.frame()</code><a aria-hidden="true" class="anchor-heading icon-link" href="#frame"></a></h3>
+<pre class="language-swift"><code class="language-swift"><span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Hello, World!"</span></span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">background</span><span class="token punctuation">(</span><span class="token punctuation">.</span>blue<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">frame</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token number">300</span><span class="token punctuation">,</span>height<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span> alignment<span class="token punctuation">:</span> <span class="token punctuation">.</span>bottom<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">background</span><span class="token punctuation">(</span><span class="token punctuation">.</span>red<span class="token punctuation">)</span>
+</code></pre>
+<p>view before the <code>.frame()</code> modifier will be the content of the frame.</p>
+<h3 id="background是可以不斷疊加上去的"><code>.background()</code>是可以不斷疊加上去的<a aria-hidden="true" class="anchor-heading icon-link" href="#background是可以不斷疊加上去的"></a></h3>
+<h3 id="overlay會在background之上"><code>.overlay</code>會在background之上<a aria-hidden="true" class="anchor-heading icon-link" href="#overlay會在background之上"></a></h3>
+<blockquote>
+<p>background, overlay 設定的alignment是對齊Self的frame.</p>
+</blockquote>
+<h2 id="background-vs-zstack"><code>background</code> vs <code>ZStack</code><a aria-hidden="true" class="anchor-heading icon-link" href="#background-vs-zstack"></a></h2>
+<p>當堆疊很多物件時，使用<code>ZStack</code>，單純的情況就盡量使用<code>background</code></p>
+<h2 id="善用spacer推-stack-裡面的laout">善用<code>Spacer()</code>推 Stack 裡面的laout<a aria-hidden="true" class="anchor-heading icon-link" href="#善用spacer推-stack-裡面的laout"></a></h2>
+<h2 id="how-to-use-enum-and-init-in-swiftui-reusable-views">How to use <code>enum</code> and <code>init</code> in swiftUI reusable views<a aria-hidden="true" class="anchor-heading icon-link" href="#how-to-use-enum-and-init-in-swiftui-reusable-views"></a></h2>
+<h2 id="scrollview-小技巧">ScrollView 小技巧<a aria-hidden="true" class="anchor-heading icon-link" href="#scrollview-小技巧"></a></h2>
+<blockquote>
+<p>可以nest，如果想要做瀑布流可以考慮</p>
+</blockquote>
+<pre><code>ScrollView -> VStack -> **ForEach** -> ScrollView -> HStack -> **ForEach** -> RoundedRectangle
+</code></pre>
+<p>如果資料比較多，我們應該要使用LazyVStack, LazyHStack</p>
+<h2 id="conditional-rendering">Conditional Rendering<a aria-hidden="true" class="anchor-heading icon-link" href="#conditional-rendering"></a></h2>
+<ol>
+<li>if else statements ( <code>||</code>, <code>&#x26;&#x26;</code> )</li>
+<li>ternary operators</li>
+</ol>
+<h2 id="action-sheet-alert-view-都是可以封裝成viewbuilder的">Action sheet, Alert view 都是可以封裝成viewBuilder的<a aria-hidden="true" class="anchor-heading icon-link" href="#action-sheet-alert-view-都是可以封裝成viewbuilder的"></a></h2>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/programming_notes/notes/qnblppa3jgb50fudg4bok41">Clean UI Code</a></li>
+<li><a href="/programming_notes/notes/jzt4n14uhf1nf988eby18f7">Divider</a></li>
+<li><a href="/programming_notes/notes/nevfh3syem3vgfs1350xjkh">Grid</a></li>
+<li><a href="/programming_notes/notes/hdgu4h0a3571xgi7iwlzjvg">PreferenceKey</a></li>
+<li><a href="/programming_notes/notes/nkp55fqc7bcwlb00sxlh3dw">Reusable View</a></li>
+<li><a href="/programming_notes/notes/65euco42r84gg5c3ch3fz7j">Shape</a></li>
+</ol>

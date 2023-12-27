@@ -1,0 +1,44 @@
+<h1 id="stateobject">StateObject<a aria-hidden="true" class="anchor-heading icon-link" href="#stateobject"></a></h1>
+<h2 id="what-is-stateobject">What is <code>@StateObject</code><a aria-hidden="true" class="anchor-heading icon-link" href="#what-is-stateobject"></a></h2>
+<blockquote>
+<p>A property wrapper type that instantiates an observable object.</p>
+</blockquote>
+<h2 id="when-to-use-it">When to use it?<a aria-hidden="true" class="anchor-heading icon-link" href="#when-to-use-it"></a></h2>
+<blockquote>
+<p>Use a state object as the single source of truth for a reference type that you store in a view hierarchy.</p>
+<p>when you need to create a reference type inside one of your views and make sure it stays alive for use in that view and others you share it with.</p>
+</blockquote>
+<h2 id="behind-the-scenes">Behind the scenes<a aria-hidden="true" class="anchor-heading icon-link" href="#behind-the-scenes"></a></h2>
+<h2 id="injecting-stateobjects-into-views">Injecting <code>@StateObjects</code> into views<a aria-hidden="true" class="anchor-heading icon-link" href="#injecting-stateobjects-into-views"></a></h2>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">MyInitializableView</span><span class="token punctuation">:</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+    <span class="token attribute atrule">@StateObject</span> <span class="token keyword">private</span> <span class="token keyword">var</span> model<span class="token punctuation">:</span> <span class="token class-name">DataModel</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// SwiftUI ensures that the following initialization uses the</span>
+        <span class="token comment">// closure only once during the lifetime of the view, so</span>
+        <span class="token comment">// later changes to the view's name input have no effect.</span>
+        _model <span class="token operator">=</span> <span class="token class-name">StateObject</span><span class="token punctuation">(</span>wrappedValue<span class="token punctuation">:</span> <span class="token class-name">DataModel</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> <span class="token keyword">some</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+        <span class="token class-name">VStack</span> <span class="token punctuation">{</span>
+            <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Name: </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">model<span class="token punctuation">.</span>name</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="force-stateobject-property-to-reinitialize">Force <code>@StateObject</code> property to reinitialize<a aria-hidden="true" class="anchor-heading icon-link" href="#force-stateobject-property-to-reinitialize"></a></h2>
+<p>如果希望View中的reference type在View重繪時重新初始化，可以透過給定id modifier的方式去強迫這個reference type重新初始化（一般來說重繪View時，如果View的id沒有變化，SwiftUI就不會重新初始化這個 reference type property）</p>
+<h2 id="ios-170-introduced-observable-macro">iOS 17.0 introduced <code>@Observable</code> macro<a aria-hidden="true" class="anchor-heading icon-link" href="#ios-170-introduced-observable-macro"></a></h2>
+<ul>
+<li>
+<p>使用<code>@Observable</code> macro 帶來什麼好處？</p>
+<ol>
+<li>寫更少扣：
+<ol>
+<li>只要class前面帶有<code>@Observable</code>，裡面宣告的變數都帶有<code>@Published</code>特性。</li>
+<li>在View中初始化該class的實體不需要標記為<code>@StateObject</code>。</li>
+<li>該class也不需要在定義時標記遵守 <code>ObservableObject</code>。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>

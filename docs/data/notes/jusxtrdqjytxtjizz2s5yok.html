@@ -1,0 +1,97 @@
+<h1 id="nested-data">Nested Data<a aria-hidden="true" class="anchor-heading icon-link" href="#nested-data"></a></h1>
+<h2 id="前情提要">前情提要<a aria-hidden="true" class="anchor-heading icon-link" href="#前情提要"></a></h2>
+<p>今天的需求是，前端的資料流以及畫面渲然只需要部分的資料，但是後端訂出的API格式多給了很多暫時不需要的資料。</p>
+<h2 id="資料處理步驟">資料處理步驟<a aria-hidden="true" class="anchor-heading icon-link" href="#資料處理步驟"></a></h2>
+<h3 id="step1-先釐清前端所需要的資料結構">Step1 先釐清前端所需要的資料結構<a aria-hidden="true" class="anchor-heading icon-link" href="#step1-先釐清前端所需要的資料結構"></a></h3>
+<p>於是我們考量了<code>GroceryStore</code>跟<code>Product</code>之間的關聯性，我們定義出了下方的類:</p>
+<pre class="language-swift"><code class="language-swift"><span class="token comment">// 每間商店包含 商店名、商品陣列</span>
+<span class="token keyword">struct</span> <span class="token class-name">GroceryStore</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">var</span> products<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">Product</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">struct</span> <span class="token class-name">Product</span><span class="token punctuation">:</span> <span class="token class-name">Codable</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span>
+        <span class="token keyword">var</span> points<span class="token punctuation">:</span> <span class="token class-name">Int</span>
+        <span class="token keyword">var</span> description<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token operator">?</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="step2-建立一個中繼的類去decode我們拿回來的資料">Step2 建立一個中繼的類去Decode我們拿回來的資料<a aria-hidden="true" class="anchor-heading icon-link" href="#step2-建立一個中繼的類去decode我們拿回來的資料"></a></h3>
+<p>但是今天API定出來的資料格式如下：</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Home Town Market"</span><span class="token punctuation">,</span>
+        <span class="token property">"aisles"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Produce"</span><span class="token punctuation">,</span>
+                <span class="token property">"shelves"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Discount Produce"</span><span class="token punctuation">,</span>
+                        <span class="token property">"product"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                            <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Banana"</span><span class="token punctuation">,</span>
+                            <span class="token property">"points"</span><span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+                            <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"A banana that's perfectly ripe."</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Big City Market"</span><span class="token punctuation">,</span>
+        <span class="token property">"aisles"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Sale Aisle"</span><span class="token punctuation">,</span>
+                <span class="token property">"shelves"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Seasonal Sale"</span><span class="token punctuation">,</span>
+                        <span class="token property">"product"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                            <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Chestnuts"</span><span class="token punctuation">,</span>
+                            <span class="token property">"points"</span><span class="token operator">:</span> <span class="token number">700</span><span class="token punctuation">,</span>
+                            <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Chestnuts that were roasted over an open fire."</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Last Season's Clearance"</span><span class="token punctuation">,</span>
+                        <span class="token property">"product"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                            <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Pumpkin Seeds"</span><span class="token punctuation">,</span>
+                            <span class="token property">"points"</span><span class="token operator">:</span> <span class="token number">400</span><span class="token punctuation">,</span>
+                            <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Seeds harvested from a pumpkin."</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre>
+<p>於是我們建立了一個中繼的類，去接收傳過來的資料。</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">GroceryStoreService</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">let</span> aisles<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">Aisles</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">struct</span> <span class="token class-name">Aisles</span><span class="token punctuation">:</span> <span class="token class-name">Decodable</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span>
+        <span class="token keyword">let</span> shelves<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">Shelves</span><span class="token punctuation">]</span>
+
+        <span class="token keyword">struct</span> <span class="token class-name">Shelves</span><span class="token punctuation">:</span> <span class="token class-name">Decodable</span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span>
+            <span class="token keyword">let</span> product<span class="token punctuation">:</span> <span class="token class-name">GroceryStore</span><span class="token punctuation">.</span><span class="token class-name">Product</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="step3-把step1建立的類透過extension讓我們可以透過中繼類初始化我們真正需要的資料">Step3 把Step1建立的類透過<code>extension</code>讓我們可以透過中繼類初始化我們真正需要的資料<a aria-hidden="true" class="anchor-heading icon-link" href="#step3-把step1建立的類透過extension讓我們可以透過中繼類初始化我們真正需要的資料"></a></h3>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">extension</span> <span class="token class-name">GroceryStore</span> <span class="token punctuation">{</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span>from service<span class="token punctuation">:</span> <span class="token class-name">GroceryDataService</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        name <span class="token operator">=</span> service<span class="token punctuation">.</span>name
+
+        products <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> aisle <span class="token keyword">in</span> service<span class="token punctuation">.</span>aisles <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> shelf <span class="token keyword">in</span> service<span class="token punctuation">.</span>shelves <span class="token punctuation">{</span>
+                product<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>shelf<span class="token punctuation">.</span>product<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>

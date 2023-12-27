@@ -1,0 +1,20 @@
+<h1 id="environment">Environment<a aria-hidden="true" class="anchor-heading icon-link" href="#environment"></a></h1>
+<h2 id="why-use-it">Why use it?<a aria-hidden="true" class="anchor-heading icon-link" href="#why-use-it"></a></h2>
+<p>有時候我們會需要取得一些裝置、系統設定的資訊如：</p>
+<ul>
+<li>colorScheme 當前系統 深 / 淺 色</li>
+<li>managedObjectContext CoreData的viewContext</li>
+</ul>
+<p>透過<code>@Environment</code>我們可以很輕鬆取得這些資訊</p>
+<h2 id="what-is-it">What is it?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-is-it"></a></h2>
+<p>他是一個可以用來取得一些SwiftUI預設宣告好的物件。</p>
+<h2 id="difference-between-environmentobject">Difference between <code>@EnvironmentObject</code><a aria-hidden="true" class="anchor-heading icon-link" href="#difference-between-environmentobject"></a></h2>
+<ul>
+<li>
+<p><code>@EnvironmentObject</code> allows us to inject arbitrary values into the environment.</p>
+</li>
+<li>
+<p><code>@Environment</code> is specifically there to work with SwiftUI’s own pre-defined keys.</p>
+</li>
+</ul>
+<h2 id="behind-the-scenes">Behind the scenes<a aria-hidden="true" class="anchor-heading icon-link" href="#behind-the-scenes"></a></h2>

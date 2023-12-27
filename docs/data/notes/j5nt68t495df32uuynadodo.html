@@ -1,0 +1,78 @@
+<h1 id="leet-code">Leet Code<a aria-hidden="true" class="anchor-heading icon-link" href="#leet-code"></a></h1>
+<h2 id="21-merge-two-linkedlist">21. Merge two LinkedList<a aria-hidden="true" class="anchor-heading icon-link" href="#21-merge-two-linkedlist"></a></h2>
+<p>2023/12/23 解題思路： 先將兩個LinkedList都轉成<code>Array</code>，然後將他們的值加總並排序(<code>sorted()</code>)，最後在用這個處理後的<code>Array</code>去將每個element map 成 <code>ListNode</code>，跑迴圈將每個<code>ListNode</code>串接起來</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">mergeTwoLists</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> list1<span class="token punctuation">:</span> <span class="token class-name">ListNode</span><span class="token operator">?</span><span class="token punctuation">,</span> <span class="token omit keyword">_</span> list2<span class="token punctuation">:</span> <span class="token class-name">ListNode</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">ListNode</span><span class="token operator">?</span> <span class="token punctuation">{</span>
+        <span class="token keyword">func</span> <span class="token function-definition function">getLinkedArr</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> list<span class="token punctuation">:</span> <span class="token class-name">ListNode</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token punctuation">[</span><span class="token class-name">Int</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+            <span class="token keyword">guard</span> <span class="token keyword">let</span> list <span class="token keyword">else</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">}</span>
+            <span class="token keyword">var</span> returnArr<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">Int</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+            <span class="token keyword">if</span> <span class="token keyword">let</span> nextNode <span class="token operator">=</span> list<span class="token punctuation">.</span>next <span class="token punctuation">{</span>
+                returnArr <span class="token operator">+=</span> <span class="token punctuation">[</span>list<span class="token punctuation">.</span>val<span class="token punctuation">]</span>
+                <span class="token keyword">return</span> returnArr <span class="token operator">+</span> <span class="token function">getLinkedArr</span><span class="token punctuation">(</span>nextNode<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> returnArr <span class="token operator">+</span> <span class="token punctuation">[</span>list<span class="token punctuation">.</span>val<span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">func</span> <span class="token function-definition function">generateListNode</span><span class="token punctuation">(</span>from array<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">Int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">ListNode</span><span class="token operator">?</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> array<span class="token punctuation">.</span>isEmpty <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token nil constant">nil</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">var</span> listNodeArr <span class="token operator">=</span> array<span class="token punctuation">.</span>map <span class="token punctuation">{</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span><span class="token short-argument">$0</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>index<span class="token punctuation">,</span> node<span class="token punctuation">)</span> <span class="token keyword">in</span> listNodeArr<span class="token punctuation">.</span><span class="token function">enumerated</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> index <span class="token operator">==</span> <span class="token punctuation">(</span>listNodeArr<span class="token punctuation">.</span>count <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">break</span>
+                <span class="token punctuation">}</span>
+                node<span class="token punctuation">.</span>next <span class="token operator">=</span> listNodeArr<span class="token punctuation">[</span>index <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">return</span> listNodeArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">var</span> list1Arr <span class="token operator">=</span> <span class="token function">getLinkedArr</span><span class="token punctuation">(</span>list1<span class="token punctuation">)</span>
+        <span class="token keyword">var</span> list2Arr <span class="token operator">=</span> <span class="token function">getLinkedArr</span><span class="token punctuation">(</span>list2<span class="token punctuation">)</span>
+        <span class="token keyword">var</span> sumListArr <span class="token operator">=</span> <span class="token punctuation">(</span>list1Arr <span class="token operator">+</span> list2Arr<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sorted</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">return</span> <span class="token function">generateListNode</span><span class="token punctuation">(</span>from<span class="token punctuation">:</span> sumListArr<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>反思：
+應該應用遞迴的特性，讓listNode去比較並尋找應該接在下一個的listNode，不斷地重複直到沒有下一個listNode.</p>
+<h2 id="26-remove-duplicates-from-sorted-array">26. Remove Duplicates from Sorted Array<a aria-hidden="true" class="anchor-heading icon-link" href="#26-remove-duplicates-from-sorted-array"></a></h2>
+<p>2023/12/24 解題思路：</p>
+<p>先宣告一個空的陣列，然後將參數的nums陣列跑迴圈，如果nums陣列中的element沒有包含在substituteNums陣列中，就加進去，否則跳過。</p>
+<p>最後再將 substituteNums賦值給nums，並回傳substituteNums的陣列長度。</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">removeDuplicates</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> nums<span class="token punctuation">:</span> <span class="token keyword">inout</span> <span class="token punctuation">[</span><span class="token class-name">Int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Int</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> substituteNums<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">Int</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>index<span class="token punctuation">,</span> num<span class="token punctuation">)</span> <span class="token keyword">in</span> nums<span class="token punctuation">.</span><span class="token function">enumerated</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> substituteNums<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                substituteNums<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        nums <span class="token operator">=</span> substituteNums
+        <span class="token keyword">return</span> substituteNums<span class="token punctuation">.</span>count
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>反思：</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">removeDuplicates</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> nums<span class="token punctuation">:</span> <span class="token keyword">inout</span> <span class="token punctuation">[</span><span class="token class-name">Int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Int</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> idx <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> num <span class="token keyword">in</span> nums <span class="token keyword">where</span> num <span class="token operator">!=</span> nums<span class="token punctuation">[</span>idx<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 第一個num一定不會被跑到</span>
+            idx <span class="token operator">+=</span> <span class="token number">1</span>
+            nums<span class="token punctuation">[</span>idx<span class="token punctuation">]</span> <span class="token operator">=</span> num
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> idx <span class="token operator">+</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>

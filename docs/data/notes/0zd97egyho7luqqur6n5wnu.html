@@ -1,0 +1,31 @@
+<h1 id="xcode-issues">Xcode Issues<a aria-hidden="true" class="anchor-heading icon-link" href="#xcode-issues"></a></h1>
+<h2 id="spm-cant-find-module">SPM can't find module<a aria-hidden="true" class="anchor-heading icon-link" href="#spm-cant-find-module"></a></h2>
+<pre class="language-git"><code class="language-git">rm -rf ~/Library/Developer/Xcode/DerivedData
+</code></pre>
+<h2 id="fastest-way-removing-derived-data">Fastest Way removing Derived Data<a aria-hidden="true" class="anchor-heading icon-link" href="#fastest-way-removing-derived-data"></a></h2>
+<pre class="language-terminal"><code class="language-terminal">rm -rf ~/Library/Developer/Xcode/DerivedData
+</code></pre>
+<h2 id="multiple-command-produce">Multiple command produce<a aria-hidden="true" class="anchor-heading icon-link" href="#multiple-command-produce"></a></h2>
+<p><a href="https://stackoverflow.com/questions/50718018/xcode-10-error-multiple-commands-produce">https://stackoverflow.com/questions/50718018/xcode-10-error-multiple-commands-produce</a></p>
+<h2 id="check-thread-issue">Check Thread issue<a aria-hidden="true" class="anchor-heading icon-link" href="#check-thread-issue"></a></h2>
+<p><img src="/programming_notes/assets/images/project%20brainstorming.flavor%20flash%20journal.xcode%20issues_check_thread.png"></p>
+<h2 id="xcode-project-file-merge-group">XCode project file merge 'group'<a aria-hidden="true" class="anchor-heading icon-link" href="#xcode-project-file-merge-group"></a></h2>
+<p>要注意合併時，檔案夾之間是否有 source group結尾包住，否則會有啟動不了的問題</p>
+<pre><code>E7FFB38B2B1CA2B90065A213 /* FoodPrintHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPrintHistoryViewModel.swift; sourceTree = "&#x3C;group>"; };
+</code></pre>
+<h2 id="如何查看模擬器的userdefaults-plist">如何查看模擬器的UserDefaults plist?<a aria-hidden="true" class="anchor-heading icon-link" href="#如何查看模擬器的userdefaults-plist"></a></h2>
+<p><a href="https://pradnya-nikam.medium.com/view-and-change-user-defaults-on-ios-simulator-d2c3fc3b82b1">https://pradnya-nikam.medium.com/view-and-change-user-defaults-on-ios-simulator-d2c3fc3b82b1</a></p>
+<ol>
+<li>先找到模擬器被存在哪：
+<pre><code>/Users/zhongzhexuan/Library/Developer/CoreSimulator/Devices/BE1B25CF-FBF9-4850-BBCC-58807BA3D19B
+</code></pre>
+</li>
+<li>進到模擬器的資料夾：
+<pre><code>find . -name ios22-jason.SwiftJunior.plist
+</code></pre>
+</li>
+<li>如果有UserDefaults檔案，就會搜尋的到
+<pre><code>./data/Containers/Data/Application/521CEC9B-FB38-4A6B-8329-02CC51188A20/Library/Preferences/ios22-jason.SwiftJunior.plist
+</code></pre>
+</li>
+</ol>

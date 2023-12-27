@@ -1,0 +1,75 @@
+<h1 id="concurrency">Concurrency<a aria-hidden="true" class="anchor-heading icon-link" href="#concurrency"></a></h1>
+<h2 id="為什麼我們要好好的處理concurrency">為什麼我們要好好的處理concurrency?<a aria-hidden="true" class="anchor-heading icon-link" href="#為什麼我們要好好的處理concurrency"></a></h2>
+<p>設計良好的concurrency code可以讓我們充分使用到CPU的資源</p>
+<h2 id="如何使用dispatchqueue">如何使用DispatchQueue?<a aria-hidden="true" class="anchor-heading icon-link" href="#如何使用dispatchqueue"></a></h2>
+<p><strong>DispatchQueue</strong>就是幫我們管理Tasks的一個物件。</p>
+<h3 id="step-1-取得或建立一個dispatchqueue">Step 1: 取得或建立一個DispatchQueue<a aria-hidden="true" class="anchor-heading icon-link" href="#step-1-取得或建立一個dispatchqueue"></a></h3>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">let</span> mainQueue <span class="token operator">=</span> <span class="token class-name">DispatchQueue</span><span class="token punctuation">.</span>main  <span class="token comment">// Serial</span>
+
+<span class="token keyword">let</span> globalQueue <span class="token operator">=</span> <span class="token class-name">DispatchQueue</span><span class="token punctuation">.</span><span class="token function">global</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// Concurrent</span>
+
+<span class="token keyword">let</span> customQueue <span class="token operator">=</span> <span class="token class-name">DispatchQueue</span><span class="token punctuation">(</span>label<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"example.com.domain"</span></span><span class="token punctuation">)</span> <span class="token comment">// default Serial</span>
+</code></pre>
+<h3 id="step-2-我們可以透過以下方式提交task到一個dispatchqueue物件上並指定dispatchqueue要如何執行這個task">Step 2: 我們可以透過以下方式提交Task到一個DispatchQueue物件上，並指定DispatchQueue要如何執行這個Task<a aria-hidden="true" class="anchor-heading icon-link" href="#step-2-我們可以透過以下方式提交task到一個dispatchqueue物件上並指定dispatchqueue要如何執行這個task"></a></h3>
+<pre class="language-swift"><code class="language-swift">globalQueue<span class="token punctuation">.</span>sync <span class="token punctuation">{</span>
+  <span class="token comment">// Task1...</span>
+<span class="token punctuation">}</span>
+
+globatQueue<span class="token punctuation">.</span><span class="token keyword">async</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Task2...</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="什麼是dispatchitem為何要使用他">什麼是DispatchItem？為何要使用他？<a aria-hidden="true" class="anchor-heading icon-link" href="#什麼是dispatchitem為何要使用他"></a></h2>
+<p>如果我們想要控制我們的Task狀態呢？ ex: 在三秒內沒有回傳結果時我想要取消這個Task</p>
+<ol>
+<li>
+<p>情境1:  使用者輸入UISearchBar時，不希望每次text change都打一次API，造成後端的負擔。</p>
+<p>我們可以將Task透過DispatchItem封裝，再透過DispatchQueue設定asyncAfter延後執行這個DispatchItem，我們就可以達到延遲fetch資料，減少對後端的負載</p>
+</li>
+</ol>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">let</span> workItem <span class="token operator">=</span> <span class="token class-name">DispatchWorkItem</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Task1...</span>
+<span class="token punctuation">}</span>
+
+globalQueue<span class="token punctuation">.</span><span class="token keyword">async</span><span class="token punctuation">(</span>execute<span class="token punctuation">:</span> workItem<span class="token punctuation">)</span>
+</code></pre>
+<h2 id="什麼是dispatchgroup-為何要使用他">什麼是DispatchGroup? 為何要使用他？<a aria-hidden="true" class="anchor-heading icon-link" href="#什麼是dispatchgroup-為何要使用他"></a></h2>
+<ol>
+<li>情境1: 我們有一個陣列的api要打，我們希望他可以全部加載完再一次更新到畫面上</li>
+</ol>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">let</span> globalQueue <span class="token operator">=</span> <span class="token class-name">DispatchQueue</span><span class="token punctuation">.</span><span class="token function">global</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> loadImageGroup <span class="token operator">=</span> <span class="token class-name">DispatchGroup</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+loadImageGroup<span class="token punctuation">.</span><span class="token function">enter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+globalQueue<span class="token punctuation">.</span><span class="token keyword">async</span> <span class="token punctuation">{</span>
+    <span class="token function">task1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> response <span class="token keyword">in</span>
+        <span class="token operator">...</span>
+        loadImageGroup<span class="token punctuation">.</span><span class="token function">leave</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+loadImageGroup<span class="token punctuation">.</span><span class="token function">enter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+globalQueue<span class="token punctuation">.</span><span class="token keyword">async</span> <span class="token punctuation">{</span>
+    <span class="token function">task2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> response <span class="token keyword">in</span>
+        <span class="token operator">...</span>
+        loadImageGroup<span class="token punctuation">.</span><span class="token function">leave</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 1. wait synchronously for all tasks to finish</span>
+loadImageGroup<span class="token punctuation">.</span><span class="token function">wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// ↓ Tasks that need to be done after loadImageGroup's task are all done</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"all done"</span></span><span class="token punctuation">)</span>
+
+
+<span class="token comment">// 2. adding a completion handler for loadImageGroup</span>
+loadImageGroup<span class="token punctuation">.</span><span class="token function">notify</span><span class="token punctuation">(</span>queue<span class="token punctuation">:</span> <span class="token punctuation">.</span>main<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ui update code</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<h2 id="什麼是dispatchsemaphore為何要使用他">什麼是DispatchSemaphore？為何要使用他？<a aria-hidden="true" class="anchor-heading icon-link" href="#什麼是dispatchsemaphore為何要使用他"></a></h2>
+<h2 id="什麼是barrier為何要使用他">什麼是Barrier？為何要使用他？<a aria-hidden="true" class="anchor-heading icon-link" href="#什麼是barrier為何要使用他"></a></h2>
+<p>當把Task加到Concurrent Queue中，有時候不同Thread的Task會需要共同存取+修改到某個Value，造成一些Bug。</p>
+<p>透過在submit一個task時設定這個Task被執行時不能有其他task存取到同一個共同資源，可以確保這個task執行時不會有其他存取到共同資源的Task在其他Thread中存取。</p>
+<p><img src="/programming_notes/assets/images/language.swift.grand-central-dispatch.concurrency_barrierConcept.png"></p>

@@ -1,0 +1,11 @@
+<h1 id="core-data">Core Data<a aria-hidden="true" class="anchor-heading icon-link" href="#core-data"></a></h1>
+<h2 id="swiftui-中導入core-data">SwiftUI 中導入Core Data<a aria-hidden="true" class="anchor-heading icon-link" href="#swiftui-中導入core-data"></a></h2>
+<ol>
+<li>建立Data Model</li>
+<li>建立DataController / DataManagar Helper class，負責初始化data model persistent store</li>
+<li>在App入口初始化DataController，並透過<code>@environmnet(\.managedObjectContext, dataController.container.viewContext)</code>讓整個view hiearchy 都可以存取到</li>
+</ol>
+<h2 id="如何使用-fetchrequest-property-wrapper">如何使用 <code>@FetchRequest</code> property wrapper?<a aria-hidden="true" class="anchor-heading icon-link" href="#如何使用-fetchrequest-property-wrapper"></a></h2>
+<blockquote>
+<p>Always declare properties that have a fetch request wrapper as private.</p>
+</blockquote>

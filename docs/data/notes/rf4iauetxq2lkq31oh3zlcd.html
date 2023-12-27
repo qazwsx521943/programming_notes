@@ -1,0 +1,59 @@
+<h1 id="web-socket">Web Socket<a aria-hidden="true" class="anchor-heading icon-link" href="#web-socket"></a></h1>
+<h2 id="what-is-socketio">What is Socket.IO<a aria-hidden="true" class="anchor-heading icon-link" href="#what-is-socketio"></a></h2>
+<p>一個函式庫，用途在於實現Server跟Client的溝通</p>
+<ul>
+<li>一個整合node.js http Server的套件 (socket.io)</li>
+<li>封裝客戶端http</li>
+</ul>
+<h2 id="why-socketio">Why Socket.IO?<a aria-hidden="true" class="anchor-heading icon-link" href="#why-socketio"></a></h2>
+<ol>
+<li>低延遲</li>
+<li>雙向</li>
+<li>event base</li>
+</ol>
+<h2 id="how-to-use-socketio">How to use Socket.IO?<a aria-hidden="true" class="anchor-heading icon-link" href="#how-to-use-socketio"></a></h2>
+<ul>
+<li>
+<p>Server:</p>
+<ol>
+<li>
+<p>引入套件封裝好的 <strong>Server</strong> class</p>
+</li>
+<li>
+<p>將node:http建立出來的<strong>HTTP server</strong>物件當參數來初始化 socket 的 <strong>Server</strong> class</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword module">import</span> <span class="token imports">express</span> <span class="token keyword module">from</span> <span class="token string">'express'</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> createServer<span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'node:http'</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">Server</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'socket.io'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> <span class="token function">createServer</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> io <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Server</span><span class="token punctuation">(</span>server<span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li>
+<p>透過這樣子產生出來的io實體，可以透過<code>on</code> method開啟socket通道</p>
+<pre class="language-js"><code class="language-js">io<span class="token punctuation">.</span><span class="token method function property-access">emit</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">,</span><span class="token string">'world'</span><span class="token punctuation">)</span> <span class="token comment">// 提交給所有connected的sockets</span>
+
+io<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">'connection'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">socket</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  socket<span class="token punctuation">.</span><span class="token property-access">broadcast</span><span class="token punctuation">.</span><span class="token method function property-access">emit</span><span class="token punctuation">(</span><span class="token string">'hi'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li>
+<p>後端透過emit傳送訊息給前端</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Client:</p>
+<ol>
+<li>前端會需要一個io實例</li>
+<li>透過io實例的emit提交客戶端訊息</li>
+</ol>
+</li>
+</ul>
+<h2 id="remember">Remember<a aria-hidden="true" class="anchor-heading icon-link" href="#remember"></a></h2>
+<ol>
+<li>前端的socket不會永遠都連線中</li>
+<li>server端的socket不會存任何事件</li>
+</ol>
