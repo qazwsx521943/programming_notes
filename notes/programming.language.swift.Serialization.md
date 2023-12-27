@@ -2,7 +2,7 @@
 id: rxplme0keulo3fon6e4gxmc
 title: Serialization
 desc: ''
-updated: 1703480016107
+updated: 1703489251057
 created: 1703433158198
 ---
 
@@ -56,6 +56,30 @@ struct TestEncode: Encodable {
 ## 自定義 `CodingKeys`
 
 當自定義的類遵守`Codable`時，我們可以選擇在類別內宣告一個叫`CodingKeys`的enum，且這個enum需遵守`CodingKey`協議。
+
+```swift
+/// A type that can be used as a key for encoding and decoding.
+public protocol CodingKey : CustomDebugStringConvertible, CustomStringConvertible, Sendable {
+
+    /// The string to use in a named collection (e.g. a string-keyed dictionary).
+    var stringValue: String { get }
+
+    init?(stringValue: String)
+
+    /// The value to use in an integer-indexed collection (e.g. an int-keyed dictionary).
+    var intValue: Int? { get }
+
+    init?(intValue: Int)
+}
+
+extension CodingKey {
+    /// A textual representation of this key.
+    public var description: String { get }
+
+    /// A textual representation of this key, suitable for debugging.
+    public var debugDescription: String { get }
+}
+```
 
 ### Why?
 

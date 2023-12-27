@@ -2,7 +2,7 @@
 id: 2v2u6kg1vpm06lq3nlupx7f
 title: Merge Data
 desc: ''
-updated: 1703488412043
+updated: 1703488942707
 created: 1703478072635
 ---
 
@@ -29,18 +29,18 @@ struct Team: Codable {
 
 ```json
 {
-  "members": [
-    {
-      "name": "Jason",
-      "id": "123",
-      "age": 20
-    },
-    {
-      "name": "Lyy",
-      "id": "456",
-      "age": 18
-    }
-  ]
+    "members": [
+        {
+            "name": "Jason",
+            "id": "123",
+            "age": 20
+        },
+        {
+            "name": "Lyy",
+            "id": "456",
+            "age": 18
+        }
+    ]
 }
 ```
 
@@ -49,16 +49,16 @@ struct Team: Codable {
 ```json
 // 實際的 JSON Data
 {
-  "members": [
-    "Jason": {
-      "id": "123",
-      "age": 20
-    },
-    "Lyy": {
-      "id": "456",
-      "age": 18
-    }
-  ]
+    "members": [
+        "Jason": {
+            "id": "123",
+            "age": 20
+        },
+        "Lyy": {
+            "id": "456",
+            "age": 18
+        }
+    ]
 }
 ```
 
