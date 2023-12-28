@@ -6,7 +6,7 @@ updated: 1698727111578
 created: 1698417734679
 ---
 
-![GCD_icon](./assets/images/language.swift.grand-central-dispatch_icon.png)
+![GCD_icon](/../assets/images/language.swift.grand-central-dispatch_icon.png)
 
 ```mermaid
 graph TB;

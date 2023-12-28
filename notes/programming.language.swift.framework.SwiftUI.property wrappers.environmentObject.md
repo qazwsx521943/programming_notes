@@ -20,8 +20,4 @@ created: 1703406825357
 
 ## Behind the scenes
 
-```mermaid
-
-```
-
 ## Example
