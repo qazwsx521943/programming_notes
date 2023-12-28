@@ -2,7 +2,7 @@
 id: pup4i4mmvmbwq6pxkp1jchf
 title: Protocol
 desc: ''
-updated: 1698891096416
+updated: 1703733357568
 created: 1698736114248
 ---
 
@@ -34,7 +34,7 @@ ex: 可以旋轉、可以變色等等
 
 > 為什麼需要mutating標記呢？
 >
-> protocol 本身並不會定義function，只定義**名字**、**參數**、**回傳值**。 但是有時候還是很難透過這三個東西去表示這個function實作時需要注意的事，像是會不會去更改到該Type的stored properties，但如果用mutating前綴作為標記的話，就可以一目瞭然，知道這個function實作時會更改到stored property。
+> protocol 本身並不會實作function，只定義**名字**、**參數**、**回傳值**。 但是有時候還是很難透過這三個東西去表示這個function實作時需要注意的事，像是會不會去更改到該Type的stored properties，但如果用mutating前綴作為標記的話，就可以一目瞭然，知道這個function實作時會更改到stored property。
 
 ```swift
 enum OnOffSwitch: Togglable {
