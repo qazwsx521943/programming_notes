@@ -42,7 +42,7 @@
         },
         {
           "key": "7sq39378nm2qlmrr1hajkzt",
-          "title": "webRTC",
+          "title": "WebRTC",
           "icon": null,
           "hasTitleNumberOutlined": false,
           "vaultName": "Dendron",
@@ -160,6 +160,14 @@
                       "hasTitleNumberOutlined": false,
                       "vaultName": "Dendron",
                       "children": []
+                    },
+                    {
+                      "key": "vngl32fzlfilw9u46sgx02x",
+                      "title": "Tips",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
                     }
                   ]
                 },
@@ -227,25 +235,16 @@
                           ]
                         }
                       ]
-                    },
-                    {
-                      "key": "ufvecfcsf101sp1f77qbxaa",
-                      "title": "UIKit",
-                      "icon": null,
-                      "hasTitleNumberOutlined": false,
-                      "vaultName": "Dendron",
-                      "children": [
-                        {
-                          "key": "qzw63mivlua187e0g83rzkz",
-                          "title": "architecture",
-                          "icon": null,
-                          "hasTitleNumberOutlined": false,
-                          "vaultName": "Dendron",
-                          "children": []
-                        }
-                      ]
                     }
                   ]
+                },
+                {
+                  "key": "copi536d0o8g51ay18dp29l",
+                  "title": "Generics",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "Dendron",
+                  "children": []
                 },
                 {
                   "key": "m2klofp5yj7niqiawmu25a0",
@@ -288,14 +287,22 @@
                   "vaultName": "Dendron",
                   "children": [
                     {
-                      "key": "59ly9f4dsj8kmoihictk4uq",
-                      "title": "Delegate",
+                      "key": "rao39zh688txt34bqvi1pm0",
+                      "title": "Sequence",
                       "icon": null,
                       "hasTitleNumberOutlined": false,
                       "vaultName": "Dendron",
                       "children": []
                     }
                   ]
+                },
+                {
+                  "key": "2cg1kb9zlmrzfvyzu54nsrd",
+                  "title": "Structures and Classes",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "Dendron",
+                  "children": []
                 },
                 {
                   "key": "k0wglg86ad5i8p1z42joprw",
@@ -437,14 +444,6 @@
                   "children": []
                 },
                 {
-                  "key": "v23jjeviz0i0ms8c7nkbkfa",
-                  "title": "Data Structure",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": []
-                },
-                {
                   "key": "9mr2s7gpmdzbi4penck2gg0",
                   "title": "Dependency Injection",
                   "icon": null,
@@ -462,6 +461,14 @@
                     {
                       "key": "fb3cv62eok3am0c3pgwwtfp",
                       "title": "WebRTC signalling",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "x7zburapvginrdl69fv85j4",
+                      "title": "Apple Sign In",
                       "icon": null,
                       "hasTitleNumberOutlined": false,
                       "vaultName": "Dendron",
@@ -556,14 +563,6 @@
           ]
         }
       ]
-    },
-    {
-      "key": "c1bs7wsjfbhb0zipaywqv1",
-      "title": "Tutorial",
-      "icon": null,
-      "hasTitleNumberOutlined": false,
-      "vaultName": "Dendron",
-      "children": []
     }
   ],
   "child2parent": {
@@ -587,6 +586,7 @@
     "rc44em7kcfzkyprtzidrtjs": "vztg7xzj0425ae5ogmk8ds2",
     "n5jvl7w3vcsyh0vxk4ocvcu": "vztg7xzj0425ae5ogmk8ds2",
     "rokc7843iqin5f5kfi9sew8": "n5jvl7w3vcsyh0vxk4ocvcu",
+    "vngl32fzlfilw9u46sgx02x": "n5jvl7w3vcsyh0vxk4ocvcu",
     "qjbja5y4bx4h8yq4aaydnss": "vztg7xzj0425ae5ogmk8ds2",
     "265euhsg8077ow4ql8x9u0q": "qjbja5y4bx4h8yq4aaydnss",
     "2v31mamk1fjl6km26amg70u": "265euhsg8077ow4ql8x9u0q",
@@ -595,14 +595,14 @@
     "0xf3nhksxkl8k16che9xfwg": "2v31mamk1fjl6km26amg70u",
     "4l31wi6hepfu79z7bwqhxzz": "2v31mamk1fjl6km26amg70u",
     "8foo2npzsn8w4081lilhziq": "2v31mamk1fjl6km26amg70u",
-    "ufvecfcsf101sp1f77qbxaa": "qjbja5y4bx4h8yq4aaydnss",
-    "qzw63mivlua187e0g83rzkz": "ufvecfcsf101sp1f77qbxaa",
+    "copi536d0o8g51ay18dp29l": "vztg7xzj0425ae5ogmk8ds2",
     "m2klofp5yj7niqiawmu25a0": "vztg7xzj0425ae5ogmk8ds2",
     "205jes6rqcp0hof79t6hs6i": "m2klofp5yj7niqiawmu25a0",
     "9bunykr1jl52ls7wqudyauz": "m2klofp5yj7niqiawmu25a0",
     "y4x1bbpym9389xf1pj71s7z": "vztg7xzj0425ae5ogmk8ds2",
     "pup4i4mmvmbwq6pxkp1jchf": "vztg7xzj0425ae5ogmk8ds2",
-    "59ly9f4dsj8kmoihictk4uq": "pup4i4mmvmbwq6pxkp1jchf",
+    "rao39zh688txt34bqvi1pm0": "pup4i4mmvmbwq6pxkp1jchf",
+    "2cg1kb9zlmrzfvyzu54nsrd": "vztg7xzj0425ae5ogmk8ds2",
     "k0wglg86ad5i8p1z42joprw": "vztg7xzj0425ae5ogmk8ds2",
     "yr68nymrc2wmccpkch7bxf2": "rn0e0y5coqo8iyqfxd7ocsk",
     "gzy1xz97zvnttb8urqpfhh3": "yr68nymrc2wmccpkch7bxf2",
@@ -620,10 +620,10 @@
     "rj6d1s24ldccufdqi31lhmn": "gzy1xz97zvnttb8urqpfhh3",
     "dy8x4ijvphppvx2ruts6lxv": "gzy1xz97zvnttb8urqpfhh3",
     "xjoeuc8wuqj1r0fwoesk2k1": "gzy1xz97zvnttb8urqpfhh3",
-    "v23jjeviz0i0ms8c7nkbkfa": "gzy1xz97zvnttb8urqpfhh3",
     "9mr2s7gpmdzbi4penck2gg0": "gzy1xz97zvnttb8urqpfhh3",
     "gl20na8txb9ctwgns65tbeb": "gzy1xz97zvnttb8urqpfhh3",
     "fb3cv62eok3am0c3pgwwtfp": "gl20na8txb9ctwgns65tbeb",
+    "x7zburapvginrdl69fv85j4": "gl20na8txb9ctwgns65tbeb",
     "f48f4umzc3ayqtkl3ik3wln": "gl20na8txb9ctwgns65tbeb",
     "hsvfqkwpu4o05tdgw19niby": "gl20na8txb9ctwgns65tbeb",
     "b1h5ug1zl5ba1h28rcunyia": "gzy1xz97zvnttb8urqpfhh3",
@@ -633,8 +633,7 @@
     "ftar26pjpxmmjemznet1npi": "gzy1xz97zvnttb8urqpfhh3",
     "uoyy643tke6yv1dskldwlki": "ftar26pjpxmmjemznet1npi",
     "yohgi8syibtpckf3ucrtzn7": "ftar26pjpxmmjemznet1npi",
-    "0zd97egyho7luqqur6n5wnu": "gzy1xz97zvnttb8urqpfhh3",
-    "c1bs7wsjfbhb0zipaywqv1": null
+    "0zd97egyho7luqqur6n5wnu": "gzy1xz97zvnttb8urqpfhh3"
   },
   "notesLabelById": {
     "p1jj2aztluo4pb12qn8gunp": "Job Findin",
@@ -642,7 +641,7 @@
     "j76ahf4fh0mz6jq2m1qhemw": "Resume",
     "avquk6puzxi790rxzodnfmh": "Network",
     "rf4iauetxq2lkq31oh3zlcd": "Web Socket",
-    "7sq39378nm2qlmrr1hajkzt": "webRTC",
+    "7sq39378nm2qlmrr1hajkzt": "WebRTC",
     "rn0e0y5coqo8iyqfxd7ocsk": "Programming",
     "hbjsa0j33arqblxg88k4jfv": "Design Pattern",
     "y8otxung92f9zxx8j7ug0xu": "OOP",
@@ -657,6 +656,7 @@
     "rc44em7kcfzkyprtzidrtjs": "Data Structure",
     "n5jvl7w3vcsyh0vxk4ocvcu": "Extension",
     "rokc7843iqin5f5kfi9sew8": "UIImage",
+    "vngl32fzlfilw9u46sgx02x": "Tips",
     "qjbja5y4bx4h8yq4aaydnss": "Framework",
     "265euhsg8077ow4ql8x9u0q": "SwiftUI",
     "2v31mamk1fjl6km26amg70u": "property wrappers",
@@ -665,14 +665,14 @@
     "0xf3nhksxkl8k16che9xfwg": "EnvironmentObject",
     "4l31wi6hepfu79z7bwqhxzz": "Published",
     "8foo2npzsn8w4081lilhziq": "State",
-    "ufvecfcsf101sp1f77qbxaa": "UIKit",
-    "qzw63mivlua187e0g83rzkz": "architecture",
+    "copi536d0o8g51ay18dp29l": "Generics",
     "m2klofp5yj7niqiawmu25a0": "Grand Central Dispatch",
     "205jes6rqcp0hof79t6hs6i": "Concurrency",
     "9bunykr1jl52ls7wqudyauz": "Parallelism",
     "y4x1bbpym9389xf1pj71s7z": "Performance",
     "pup4i4mmvmbwq6pxkp1jchf": "Protocol",
-    "59ly9f4dsj8kmoihictk4uq": "Delegate",
+    "rao39zh688txt34bqvi1pm0": "Sequence",
+    "2cg1kb9zlmrzfvyzu54nsrd": "Structures and Classes",
     "k0wglg86ad5i8p1z42joprw": "Tip",
     "yr68nymrc2wmccpkch7bxf2": "Side Projects",
     "gzy1xz97zvnttb8urqpfhh3": "Flavor Flash Journal",
@@ -690,10 +690,10 @@
     "rj6d1s24ldccufdqi31lhmn": "Community",
     "dy8x4ijvphppvx2ruts6lxv": "Concurrency",
     "xjoeuc8wuqj1r0fwoesk2k1": "Core Data",
-    "v23jjeviz0i0ms8c7nkbkfa": "Data Structure",
     "9mr2s7gpmdzbi4penck2gg0": "Dependency Injection",
     "gl20na8txb9ctwgns65tbeb": "Firebase",
     "fb3cv62eok3am0c3pgwwtfp": "WebRTC signalling",
+    "x7zburapvginrdl69fv85j4": "Apple Sign In",
     "f48f4umzc3ayqtkl3ik3wln": "Cloud Firestore",
     "hsvfqkwpu4o05tdgw19niby": "Cloud Messaging",
     "b1h5ug1zl5ba1h28rcunyia": "iOS Version Check",
@@ -703,7 +703,6 @@
     "ftar26pjpxmmjemznet1npi": "Test",
     "uoyy643tke6yv1dskldwlki": "UI Test",
     "yohgi8syibtpckf3ucrtzn7": "Unit Test",
-    "0zd97egyho7luqqur6n5wnu": "Xcode Issues",
-    "c1bs7wsjfbhb0zipaywqv1": "Tutorial"
+    "0zd97egyho7luqqur6n5wnu": "Xcode Issues"
   }
 }

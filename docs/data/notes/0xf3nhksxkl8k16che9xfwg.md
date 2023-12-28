@@ -13,8 +13,4 @@
 
 ## Behind the scenes
 
-```mermaid
-
-```
-
 ## Example

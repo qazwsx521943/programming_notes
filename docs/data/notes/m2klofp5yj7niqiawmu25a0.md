@@ -1,5 +1,5 @@
 
-![GCD_icon](./assets/images/language.swift.grand-central-dispatch_icon.png)
+![GCD_icon](/../assets/images/language.swift.grand-central-dispatch_icon.png)
 
 ```mermaid
 graph TB;

@@ -1,0 +1,18 @@
+<h1 id="tips">Tips<a aria-hidden="true" class="anchor-heading icon-link" href="#tips"></a></h1>
+<h2 id="computed-property設計">computed property設計<a aria-hidden="true" class="anchor-heading icon-link" href="#computed-property設計"></a></h2>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">extension</span> <span class="token class-name">String</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> firstLetter<span class="token punctuation">:</span> <span class="token class-name">Character</span> <span class="token punctuation">{</span>
+        <span class="token keyword">get</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">self</span><span class="token punctuation">.</span>count <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token keyword">self</span><span class="token punctuation">[</span><span class="token keyword">self</span><span class="token punctuation">.</span>startIndex<span class="token punctuation">]</span> <span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">" "</span></span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">set</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token keyword">self</span><span class="token punctuation">.</span>count <span class="token operator">></span> <span class="token number">0</span> <span class="token punctuation">{</span>
+                <span class="token keyword">self</span><span class="token punctuation">.</span><span class="token function">replaceSubrange</span><span class="token punctuation">(</span><span class="token keyword">self</span><span class="token punctuation">.</span>startIndex<span class="token operator">...</span><span class="token keyword">self</span><span class="token punctuation">.</span>startIndex<span class="token punctuation">,</span> with<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token keyword">self</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>

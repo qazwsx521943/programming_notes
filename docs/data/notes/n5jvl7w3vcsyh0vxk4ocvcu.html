@@ -3,10 +3,33 @@
 <p>Add functionality for class, struct, enum.</p>
 <ul>
 <li>透過extension，我們可以擴展非open source的程式碼。</li>
-<li></li>
 </ul>
+<h2 id="why-cant-we-add-stored-properties-into-extension">Why can't we add stored properties into Extension?<a aria-hidden="true" class="anchor-heading icon-link" href="#why-cant-we-add-stored-properties-into-extension"></a></h2>
+<ul>
+<li>影響程式碼的可維護性、可讀性</li>
+<li>記憶體存放考量，stored properties是需要額外分配記憶體空間去儲存的。</li>
+<li>Swift是安全、強型別語言，如果允許在Extension中聲明stored properties，會需要在compile的時候引入type check, type inference，增加複雜度。</li>
+</ul>
+<p>如果有想要在某Type的Extension中宣告stored properties的衝動，你或許該考慮繼承該Type。</p>
+<h2 id="why-can-we-add-static-properties-inside-a-types-extension">Why can we add static properties inside a type's Extension?<a aria-hidden="true" class="anchor-heading icon-link" href="#why-can-we-add-static-properties-inside-a-types-extension"></a></h2>
+<p>當我們在類別的宣告中聲明一個static property，這個static property就是一個放在該類別namespace底下的global property。</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span>
+
+    <span class="token keyword">let</span> age<span class="token punctuation">:</span> <span class="token class-name">Int</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">extension</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">let</span> john <span class="token operator">=</span> <span class="token class-name">Person</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"John"</span></span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">18</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 想在程式碼任何地方取用時</span>
+<span class="token class-name">Person</span><span class="token punctuation">.</span>john
+</code></pre>
 <hr>
 <strong>Children</strong>
 <ol>
+<li><a href="/programming_notes/notes/vngl32fzlfilw9u46sgx02x">Tips</a></li>
 <li><a href="/programming_notes/notes/rokc7843iqin5f5kfi9sew8">UIImage</a></li>
 </ol>
