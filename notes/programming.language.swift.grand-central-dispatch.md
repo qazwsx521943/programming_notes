@@ -2,11 +2,11 @@
 id: m2klofp5yj7niqiawmu25a0
 title: Grand Central Dispatch
 desc: ''
-updated: 1698727111578
+updated: 1704124807904
 created: 1698417734679
 ---
 
-![GCD_icon](/../assets/images/language.swift.grand-central-dispatch_icon.png)
+![GCD_icon](/assets/images/language.swift.grand-central-dispatch_icon.png)
 
 ```mermaid
 graph TB;

@@ -11,7 +11,7 @@
 
 ## `Codable` Behind the scenes
 
-![codable behind the scenes](/../assets/images/programming.language.swift.Serialization_behind-the-scenes.png)
+![codable behind the scenes](/assets/images/programming.language.swift.Serialization_behind-the-scenes.png)
 
 ## Example
 

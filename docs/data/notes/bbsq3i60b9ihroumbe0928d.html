@@ -35,8 +35,8 @@ reference3 <span class="token operator">=</span> <span class="token nil constant
 <span class="token comment">// since there are no more strong reference</span>
 </code></pre>
 <h2 id="strong-reference-example">Strong reference Example<a aria-hidden="true" class="anchor-heading icon-link" href="#strong-reference-example"></a></h2>
-<p><img src="/programming_notes/../assets/images/programming.language.swift.ARC_strong-ref_1.png" alt="strong ref establish"></p>
-<p><img src="/programming_notes/../assets/images/programming.language.swift.ARC_strong-ref_2.png" alt="remove variable references"></p>
+<p><img src="/programming_notes/assets/images/programming.language.swift.ARC_strong-ref_1.png" alt="strong ref establish"></p>
+<p><img src="/programming_notes/assets/images/programming.language.swift.ARC_strong-ref_2.png" alt="remove variable references"></p>
 <p>可以發現儘管<code>john</code>跟<code>ApartmentA</code>都沒有再引用到Person、Apartment實例，但是因為這兩個實例本身互相引用了，導致Reference Count沒有辦法歸零並釋放記憶體，進一步造成memory leak。</p>
 <h2 id="how-to-prevent-reference-cycle">How to prevent reference cycle?<a aria-hidden="true" class="anchor-heading icon-link" href="#how-to-prevent-reference-cycle"></a></h2>
 <blockquote>

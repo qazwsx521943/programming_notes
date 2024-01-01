@@ -11,8 +11,8 @@
       "title": "This page has not yet sprouted",
       "schemaStub": false,
       "type": "note",
-      "updated": 1704124524826,
-      "created": 1704124524826,
+      "updated": 1704124898501,
+      "created": 1704124898501,
       "desc": "",
       "links": [],
       "anchors": {},
@@ -1754,7 +1754,7 @@
       "id": "bbsq3i60b9ihroumbe0928d",
       "title": "ARC",
       "desc": "",
-      "updated": 1703917016257,
+      "updated": 1704124839592,
       "created": 1703772605114,
       "custom": {},
       "fname": "programming.language.swift.memory management.ARC",
@@ -1764,7 +1764,7 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "86de45bb7292bcf8d8c505a6dd4be349",
+      "contentHash": "0cf79e59ddbac1a40ba7f0081c4fee13",
       "links": [],
       "anchors": {
         "what-is-arc-automatic-reference-counting": {
@@ -1816,7 +1816,7 @@
       "id": "m2klofp5yj7niqiawmu25a0",
       "title": "Grand Central Dispatch",
       "desc": "",
-      "updated": 1698727111578,
+      "updated": 1704124807904,
       "created": 1698417734679,
       "custom": {},
       "fname": "programming.language.swift.grand-central-dispatch",
@@ -1826,7 +1826,7 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "6cdd87af901b7f7c0106f2752b9ea61e",
+      "contentHash": "8561eea8a5d75d5b5ee371c196598d55",
       "links": [],
       "anchors": {
         "what-is-grand-central-dispatch": {
@@ -2663,7 +2663,7 @@
       "id": "mr2culexmtziuklrq2gt22f",
       "title": "Types",
       "desc": "",
-      "updated": 1704122360336,
+      "updated": 1704124855649,
       "created": 1703951617977,
       "custom": {},
       "fname": "programming.language.swift.Types",
@@ -2673,7 +2673,7 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "c2b955a02a7062e6823c2d44d8ec7ece",
+      "contentHash": "cb9a1d13e6406a6b8f42ea0f153250a4",
       "links": [],
       "anchors": {
         "definition": {
@@ -2710,6 +2710,7 @@
         }
       },
       "children": [
+        "td8qrahpv2jd2hkgjpre031",
         "m30ay8bv1fkxsl30m2r9frl",
         "2cg1kb9zlmrzfvyzu54nsrd"
       ],
@@ -2720,7 +2721,7 @@
       "id": "2cg1kb9zlmrzfvyzu54nsrd",
       "title": "Structures Vs Classes",
       "desc": "",
-      "updated": 1704124179224,
+      "updated": 1704124865992,
       "created": 1703728237903,
       "custom": {},
       "fname": "programming.language.swift.types.structures vs classes",
@@ -2730,7 +2731,7 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "b3e77d09b1183f2a4a28d213989b8acf",
+      "contentHash": "b2c209d110c38090dd07e12574f5a837",
       "links": [],
       "anchors": {
         "definition-syntax": {
@@ -2888,11 +2889,73 @@
       "parent": "mr2culexmtziuklrq2gt22f",
       "data": {}
     },
+    "td8qrahpv2jd2hkgjpre031": {
+      "id": "td8qrahpv2jd2hkgjpre031",
+      "title": "Class",
+      "desc": "",
+      "updated": 1704124882112,
+      "created": 1704087722909,
+      "custom": {},
+      "fname": "programming.language.swift.Types.class",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "bbb6d917d8623d865f9205804e1e57e7",
+      "links": [],
+      "anchors": {
+        "definition-syntax": {
+          "type": "header",
+          "text": "Definition Syntax",
+          "value": "definition-syntax",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "examples": {
+          "type": "header",
+          "text": "Examples",
+          "value": "examples",
+          "line": 20,
+          "column": 0,
+          "depth": 2
+        },
+        "value-type-vs-reference-type": {
+          "type": "header",
+          "text": "Value Type vs Reference Type",
+          "value": "value-type-vs-reference-type",
+          "line": 44,
+          "column": 0,
+          "depth": 2
+        },
+        "coa": {
+          "type": "header",
+          "text": "CoA",
+          "value": "coa",
+          "line": 46,
+          "column": 0,
+          "depth": 3
+        },
+        "cow": {
+          "type": "header",
+          "text": "CoW",
+          "value": "cow",
+          "line": 66,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [],
+      "parent": "mr2culexmtziuklrq2gt22f",
+      "data": {}
+    },
     "rxplme0keulo3fon6e4gxmc": {
       "id": "rxplme0keulo3fon6e4gxmc",
       "title": "Serialization",
       "desc": "",
-      "updated": 1703489251057,
+      "updated": 1704124889647,
       "created": 1703433158198,
       "custom": {},
       "fname": "programming.language.swift.Serialization",
@@ -2902,7 +2965,7 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "26116e4cfd4107a3dcacaf249a71566e",
+      "contentHash": "a3619dd861b9d20b6d92702debdeb798",
       "links": [],
       "anchors": {
         "為何我們需要將資料encodedecode呢": {

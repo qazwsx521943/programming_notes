@@ -76,7 +76,7 @@ personStructArray[0].name = "TOYA"
 getStackAddress(target: &personStructArray) == getStackAddress(target: &personStructArrayCopy)
 ```
 
-![value type](/../assets/images/programming.language.swift.Types.value-type.png)
+![value type](/assets/images/programming.language.swift.Types.value-type.png)
 
 Reference
 
@@ -101,7 +101,7 @@ print(fourthPerson.name)
 print(thirdPerson === fourthPersonec)
 ```
 
-![reference type](/../assets/images/programming.language.swift.Types.reference-type.png)
+![reference type](/assets/images/programming.language.swift.Types.reference-type.png)
 
 ## Both can:
 

@@ -1,0 +1,85 @@
+<h1 id="class">Class<a aria-hidden="true" class="anchor-heading icon-link" href="#class"></a></h1>
+<h2 id="definition-syntax">Definition Syntax<a aria-hidden="true" class="anchor-heading icon-link" href="#definition-syntax"></a></h2>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">SomeStructure</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">SomeClass</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="examples">Examples<a aria-hidden="true" class="anchor-heading icon-link" href="#examples"></a></h2>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">LocationStruct</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> latitude<span class="token punctuation">:</span> <span class="token class-name">CGFloat</span>
+    <span class="token keyword">var</span> longitude<span class="token punctuation">:</span> <span class="token class-name">CGFloat</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">LocationClass</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> latitude<span class="token punctuation">:</span> <span class="token class-name">CGFloat</span>
+    <span class="token keyword">var</span> longitude<span class="token punctuation">:</span> <span class="token class-name">CGFloat</span>
+
+    <span class="token keyword">init</span><span class="token punctuation">(</span>latitude<span class="token punctuation">:</span> <span class="token class-name">CGFloat</span><span class="token punctuation">,</span> longitude<span class="token punctuation">:</span> <span class="token class-name">CGFloat</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">self</span><span class="token punctuation">.</span>latitude <span class="token operator">=</span> latitude
+       <span class="token keyword">self</span><span class="token punctuation">.</span>longitude <span class="token operator">=</span> longitude
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> locationStruct <span class="token operator">=</span> <span class="token class-name">LocationStruct</span><span class="token punctuation">(</span>latitude<span class="token punctuation">:</span> <span class="token number">120</span><span class="token punctuation">,</span> longitude<span class="token punctuation">:</span> <span class="token number">25</span><span class="token punctuation">)</span>
+
+<span class="token keyword">let</span> locationClass <span class="token operator">=</span> <span class="token class-name">LocationClass</span><span class="token punctuation">(</span>latitude<span class="token punctuation">:</span> <span class="token number">120</span><span class="token punctuation">,</span> longitude<span class="token punctuation">:</span> <span class="token number">25</span><span class="token punctuation">)</span>
+
+</code></pre>
+<h2 id="value-type-vs-reference-type"><strong>Value Type</strong> vs <strong>Reference Type</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#value-type-vs-reference-type"></a></h2>
+<h3 id="coa">CoA<a aria-hidden="true" class="anchor-heading icon-link" href="#coa"></a></h3>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">PersonStruct</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">var</span> age<span class="token punctuation">:</span> <span class="token class-name">Int</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> firstPerson <span class="token operator">=</span> <span class="token class-name">PersonStruct</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"StructPerson"</span></span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">18</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> secondPerson <span class="token operator">=</span> firstPerson
+
+firstPerson<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"StructPersonModified"</span></span>
+
+<span class="token function">print</span><span class="token punctuation">(</span>firstPerson<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>secondPerson<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+
+<span class="token function">getStackAddress</span><span class="token punctuation">(</span>target<span class="token punctuation">:</span> <span class="token operator">&#x26;</span>firstPerson<span class="token punctuation">)</span>
+<span class="token function">getStackAddress</span><span class="token punctuation">(</span>target<span class="token punctuation">:</span> <span class="token operator">&#x26;</span>secondPerson<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="cow">CoW<a aria-hidden="true" class="anchor-heading icon-link" href="#cow"></a></h3>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">var</span> personStructArray <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token class-name">PersonStruct</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"TOYX"</span></span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token class-name">PersonStruct</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"TOYY"</span></span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token class-name">PersonStruct</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"TOYZ"</span></span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+<span class="token keyword">var</span> personStructArrayCopy <span class="token operator">=</span> personStructArray
+
+<span class="token function">getStackAddress</span><span class="token punctuation">(</span>target<span class="token punctuation">:</span> <span class="token operator">&#x26;</span>personStructArray<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token function">getStackAddress</span><span class="token punctuation">(</span>target<span class="token punctuation">:</span> <span class="token operator">&#x26;</span>personStructArrayCopy<span class="token punctuation">)</span>
+
+personStructArray<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"TOYA"</span></span>
+
+<span class="token function">getStackAddress</span><span class="token punctuation">(</span>target<span class="token punctuation">:</span> <span class="token operator">&#x26;</span>personStructArray<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token function">getStackAddress</span><span class="token punctuation">(</span>target<span class="token punctuation">:</span> <span class="token operator">&#x26;</span>personStructArrayCopy<span class="token punctuation">)</span>
+</code></pre>
+<p><img src="/programming_notes/assets/images/programming.language.swift.Types.value-type.png" alt="value type"></p>
+<p>Reference</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">PersonClass</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">var</span> age<span class="token punctuation">:</span> <span class="token class-name">Int</span>
+
+    <span class="token keyword">init</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        <span class="token keyword">self</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> thirdPerson <span class="token operator">=</span> <span class="token class-name">PersonClass</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"ClassPerson"</span></span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> fourthPerson <span class="token operator">=</span> thirdPerson
+
+thirdPerson<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"ClassPersonModified"</span></span>
+
+<span class="token function">print</span><span class="token punctuation">(</span>thirdPerson<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>fourthPerson<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>thirdPerson <span class="token operator">===</span> fourthPersonec<span class="token punctuation">)</span>
+</code></pre>
+<p><img src="/programming_notes/assets/images/programming.language.swift.Types.reference-type.png" alt="reference type"></p>

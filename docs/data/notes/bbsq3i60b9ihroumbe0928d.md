@@ -40,9 +40,9 @@ reference3 = nil // count = 1
 
 ## Strong reference Example
 
-![strong ref establish](/../assets/images/programming.language.swift.ARC_strong-ref_1.png)
+![strong ref establish](/assets/images/programming.language.swift.ARC_strong-ref_1.png)
 
-![remove variable references](/../assets/images/programming.language.swift.ARC_strong-ref_2.png)
+![remove variable references](/assets/images/programming.language.swift.ARC_strong-ref_2.png)
 
 可以發現儘管`john`跟`ApartmentA`都沒有再引用到Person、Apartment實例，但是因為這兩個實例本身互相引用了，導致Reference Count沒有辦法歸零並釋放記憶體，進一步造成memory leak。
 

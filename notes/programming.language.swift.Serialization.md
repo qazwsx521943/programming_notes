@@ -2,7 +2,7 @@
 id: rxplme0keulo3fon6e4gxmc
 title: Serialization
 desc: ''
-updated: 1703489251057
+updated: 1704124889647
 created: 1703433158198
 ---
 
@@ -18,7 +18,7 @@ created: 1703433158198
 
 ## `Codable` Behind the scenes
 
-![codable behind the scenes](/../assets/images/programming.language.swift.Serialization_behind-the-scenes.png)
+![codable behind the scenes](/assets/images/programming.language.swift.Serialization_behind-the-scenes.png)
 
 ## Example
 
