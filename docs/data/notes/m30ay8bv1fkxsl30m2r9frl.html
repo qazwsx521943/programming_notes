@@ -1,76 +1,114 @@
 <h1 id="enumeration">Enumeration<a aria-hidden="true" class="anchor-heading icon-link" href="#enumeration"></a></h1>
 <h2 id="enum-or-struct">enum or struct?<a aria-hidden="true" class="anchor-heading icon-link" href="#enum-or-struct"></a></h2>
-<h3 id="可枚舉但不需封裝">可枚舉但不需封裝:<a aria-hidden="true" class="anchor-heading icon-link" href="#可枚舉但不需封裝"></a></h3>
-<pre class="language-swift"><code class="language-swift"><span class="token keyword">enum</span> <span class="token class-name">LoginType</span><span class="token punctuation">:</span> <span class="token class-name">String</span> <span class="token punctuation">{</span>
-    <span class="token keyword">case</span> nativeLogin <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"native login"</span></span>
-    <span class="token keyword">case</span> fbLogin <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"facebook login"</span></span>
-    <span class="token keyword">case</span> appleLogin <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"apple login"</span></span>
-    <span class="token keyword">case</span> gitHubLogin <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"gitHub login"</span></span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">struct</span> <span class="token class-name">LoginTypeStruct</span> <span class="token punctuation">{</span>
-    <span class="token keyword">static</span> <span class="token keyword">let</span> appleLogin <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"apple login"</span></span>
-    <span class="token keyword">static</span> <span class="token keyword">let</span> fbLogin <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"facebook login"</span></span>
-    <span class="token keyword">static</span> <span class="token keyword">let</span> githubLogin <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"gitHub login"</span></span>
-    <span class="token keyword">static</span> <span class="token keyword">let</span> nativeLogin <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"native login"</span></span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>in this case, it's better to use <code>enum</code>.</p>
+<p>enum 非常適合表達可列舉的相關值。</p>
+<p>將這些相關值用 enum 表示有以下優點</p>
 <ul>
-<li>type safety</li>
-<li>readibility</li>
-</ul>
-<h3 id="可枚舉且需封裝物件資料">可枚舉且需封裝物件資料:<a aria-hidden="true" class="anchor-heading icon-link" href="#可枚舉且需封裝物件資料"></a></h3>
-<pre class="language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">LoginTypeStruct</span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span>
-    <span class="token keyword">let</span> description<span class="token punctuation">:</span> <span class="token class-name">String</span>
-    <span class="token keyword">var</span> isEnabled<span class="token punctuation">:</span> <span class="token class-name">Bool</span> <span class="token comment">// Example of additional data</span>
-
-    <span class="token keyword">static</span> <span class="token keyword">let</span> appleLogin <span class="token operator">=</span> <span class="token class-name">LoginTypeStruct</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Apple Login"</span></span><span class="token punctuation">,</span> description<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Login using Apple ID"</span></span><span class="token punctuation">,</span> isEnabled<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
-    <span class="token keyword">static</span> <span class="token keyword">let</span> fbLogin <span class="token operator">=</span> <span class="token class-name">LoginTypeStruct</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Facebook Login"</span></span><span class="token punctuation">,</span> description<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Login using Facebook"</span></span><span class="token punctuation">,</span> isEnabled<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
-    <span class="token keyword">static</span> <span class="token keyword">let</span> githubLogin <span class="token operator">=</span> <span class="token class-name">LoginTypeStruct</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"GitHub Login"</span></span><span class="token punctuation">,</span> description<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Login using GitHub"</span></span><span class="token punctuation">,</span> isEnabled<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
-    <span class="token keyword">static</span> <span class="token keyword">let</span> nativeLogin <span class="token operator">=</span> <span class="token class-name">LoginTypeStruct</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Native Login"</span></span><span class="token punctuation">,</span> description<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Login using our native authentication"</span></span><span class="token punctuation">,</span> isEnabled<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+<li>
+<p>Type Safety</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">enum</span> <span class="token class-name">Direction</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> north
+    <span class="token keyword">case</span> south
+    <span class="token keyword">case</span> west
+    <span class="token keyword">case</span> east
 <span class="token punctuation">}</span>
 
-<span class="token keyword">enum</span> <span class="token class-name">LoginTypeEnum</span> <span class="token punctuation">{</span>
-    <span class="token keyword">case</span> <span class="token function">appleLogin</span><span class="token punctuation">(</span>isEnabled<span class="token punctuation">:</span> <span class="token class-name">Bool</span><span class="token punctuation">)</span>
-    <span class="token keyword">case</span> <span class="token function">fbLogin</span><span class="token punctuation">(</span>isEnabled<span class="token punctuation">:</span> <span class="token class-name">Bool</span><span class="token punctuation">)</span>
-    <span class="token keyword">case</span> <span class="token function">githubLogin</span><span class="token punctuation">(</span>isEnabled<span class="token punctuation">:</span> <span class="token class-name">Bool</span><span class="token punctuation">)</span>
-    <span class="token keyword">case</span> <span class="token function">nativeLogin</span><span class="token punctuation">(</span>isEnabled<span class="token punctuation">:</span> <span class="token class-name">Bool</span><span class="token punctuation">)</span>
-
-    <span class="token keyword">var</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span> <span class="token punctuation">{</span>
-        <span class="token keyword">switch</span> <span class="token keyword">self</span> <span class="token punctuation">{</span>
-            <span class="token keyword">case</span> <span class="token punctuation">.</span>appleLogin<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"Apple Login"</span></span>
-            <span class="token keyword">case</span> <span class="token punctuation">.</span>fbLogin<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"Facebook Login"</span></span>
-            <span class="token keyword">case</span> <span class="token punctuation">.</span>githubLogin<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"GitHub Login"</span></span>
-            <span class="token keyword">case</span> <span class="token punctuation">.</span>nativeLogin<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"Native Login"</span></span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">var</span> description<span class="token punctuation">:</span> <span class="token class-name">String</span> <span class="token punctuation">{</span>
-        <span class="token keyword">switch</span> <span class="token keyword">self</span> <span class="token punctuation">{</span>
-            <span class="token keyword">case</span> <span class="token punctuation">.</span>appleLogin<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"Login using Apple ID"</span></span>
-            <span class="token keyword">case</span> <span class="token punctuation">.</span>fbLogin<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"Login using Facebook"</span></span>
-            <span class="token keyword">case</span> <span class="token punctuation">.</span>githubLogin<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"Login using GitHub"</span></span>
-            <span class="token keyword">case</span> <span class="token punctuation">.</span>nativeLogin<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"Login using our native authentication"</span></span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">var</span> isEnabled<span class="token punctuation">:</span> <span class="token class-name">Bool</span> <span class="token punctuation">{</span>
-        <span class="token keyword">switch</span> <span class="token keyword">self</span> <span class="token punctuation">{</span>
-        <span class="token keyword">case</span> <span class="token keyword">let</span> <span class="token punctuation">.</span><span class="token function">appleLogin</span><span class="token punctuation">(</span>isEnabled<span class="token punctuation">)</span><span class="token punctuation">,</span>
-            <span class="token keyword">let</span> <span class="token punctuation">.</span><span class="token function">fbLogin</span><span class="token punctuation">(</span>isEnabled<span class="token punctuation">)</span><span class="token punctuation">,</span>
-            <span class="token keyword">let</span> <span class="token punctuation">.</span><span class="token function">githubLogin</span><span class="token punctuation">(</span>isEnabled<span class="token punctuation">)</span><span class="token punctuation">,</span>
-            <span class="token keyword">let</span> <span class="token punctuation">.</span><span class="token function">nativeLogin</span><span class="token punctuation">(</span>isEnabled<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> isEnabled
-        <span class="token punctuation">}</span>
+<span class="token comment">// type safety -> compiler will check if the</span>
+<span class="token comment">// input parameter is correct type</span>
+<span class="token keyword">func</span> <span class="token function-definition function">decideDirection</span><span class="token punctuation">(</span>direction<span class="token punctuation">:</span> <span class="token class-name">Direction</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">switch</span> direction <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token punctuation">.</span>north<span class="token punctuation">:</span>
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"walk toward mountain"</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">case</span> <span class="token punctuation">.</span>south<span class="token punctuation">:</span>
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"walk toward sea"</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">case</span> <span class="token punctuation">.</span>west<span class="token punctuation">,</span> <span class="token punctuation">.</span>east<span class="token punctuation">:</span>
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"gg 3:0"</span></span><span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
+
+<span class="token comment">// can only check during run time</span>
+<span class="token keyword">func</span> <span class="token function-definition function">decideDirection</span><span class="token punctuation">(</span>direction<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">switch</span> direction <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string-literal"><span class="token string">"north"</span></span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"walk toward mountain"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token string-literal"><span class="token string">"south"</span></span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"walk toward sea"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"gg 3:0"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">decideDirection</span><span class="token punctuation">(</span>direction<span class="token punctuation">:</span> <span class="token punctuation">.</span>east<span class="token punctuation">)</span>
+<span class="token function">decideDirection</span><span class="token punctuation">(</span>direction<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"north"</span></span><span class="token punctuation">)</span>
+<span class="token function">decideDirection</span><span class="token punctuation">(</span>direction<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"northh"</span></span><span class="token punctuation">)</span>
 </code></pre>
+</li>
+<li>
+<p>Readability &#x26; Maintainability: 減少其他人看code需要的通靈技能</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">enum</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token function">mammal</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> legs<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token function">bird</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> wingspan<span class="token punctuation">:</span> <span class="token class-name">Double</span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token function">fish</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> color<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> lion <span class="token operator">=</span> <span class="token class-name">Animal</span><span class="token punctuation">.</span><span class="token function">mammal</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Lion"</span></span><span class="token punctuation">,</span> legs<span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> eagle <span class="token operator">=</span> <span class="token class-name">Animal</span><span class="token punctuation">.</span><span class="token function">bird</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Eagle"</span></span><span class="token punctuation">,</span> wingspan<span class="token punctuation">:</span> <span class="token number">2.5</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> goldfish <span class="token operator">=</span> <span class="token class-name">Animal</span><span class="token punctuation">.</span><span class="token function">fish</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Goldfish"</span></span><span class="token punctuation">,</span> color<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Gold"</span></span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li>
+<p>Extensibility：可以輕鬆擴展 / 修改 case value</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">enum</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+      <span class="token keyword">case</span> <span class="token function">mammal</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> legs<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span>
+      <span class="token keyword">case</span> <span class="token function">bird</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> wingspan<span class="token punctuation">:</span> <span class="token class-name">Double</span><span class="token punctuation">)</span>
+      <span class="token keyword">case</span> <span class="token function">fish</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> color<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span>
+      <span class="token keyword">case</span> <span class="token function">reptile</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> scales<span class="token punctuation">:</span> <span class="token class-name">Bool</span><span class="token punctuation">)</span>  <span class="token comment">// 新增爬蟲類型</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ul>
 <h2 id="use-cases">Use Cases<a aria-hidden="true" class="anchor-heading icon-link" href="#use-cases"></a></h2>
 <ol>
-<li>Error Handling
-<pre class="language-swift"><code class="language-swift"></code></pre>
+<li>
+<p>表示狀態</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">enum</span> <span class="token class-name">OrderStatus</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> pending
+    <span class="token keyword">case</span> processing
+    <span class="token keyword">case</span> shipped
+    <span class="token keyword">case</span> delivered
+    <span class="token keyword">case</span> cancelled
+<span class="token punctuation">}</span>
+</code></pre>
 </li>
-<li></li>
+<li>
+<p>搭配<code>associated value</code>當作容器：</p>
+<pre class="language-swift"><code class="language-swift"><span class="token comment">// 1. 定義 Message 容器</span>
+<span class="token keyword">enum</span> <span class="token class-name">Message</span><span class="token punctuation">:</span> <span class="token class-name">Codable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">enum</span> <span class="token class-name">MediaType</span><span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Codable</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> image
+        <span class="token keyword">case</span> video
+        <span class="token keyword">case</span> audio
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">case</span> <span class="token function">text</span><span class="token punctuation">(</span>payload<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token function">media</span><span class="token punctuation">(</span>type<span class="token punctuation">:</span> <span class="token class-name">MediaType</span><span class="token punctuation">,</span> payload<span class="token punctuation">:</span> <span class="token class-name">Data</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 2. 建立 Message instance</span>
+<span class="token keyword">let</span> message<span class="token punctuation">:</span> <span class="token class-name">Message</span> <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span>payload<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Hello"</span></span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> imageMessage<span class="token punctuation">:</span> <span class="token class-name">Message</span> <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token function">media</span><span class="token punctuation">(</span>type<span class="token punctuation">:</span> <span class="token punctuation">.</span>image<span class="token punctuation">,</span> payload<span class="token punctuation">:</span> <span class="token class-name">Data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 3. 取出 Message 容器內的 data</span>
+<span class="token function">convertMessage</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+<span class="token function">convertMessage</span><span class="token punctuation">(</span>imageMessage<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function-definition function">convertMessage</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> message<span class="token punctuation">:</span> <span class="token class-name">Message</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">switch</span> message <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token keyword">let</span> text<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"this is a text message: </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">text</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token keyword">let</span> <span class="token punctuation">.</span><span class="token function">media</span><span class="token punctuation">(</span>media<span class="token punctuation">,</span> payload<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"this is </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">media</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> message with Data: </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">payload</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
 </ol>

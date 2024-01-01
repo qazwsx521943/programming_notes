@@ -11,8 +11,8 @@
       "title": "This page has not yet sprouted",
       "schemaStub": false,
       "type": "note",
-      "updated": 1704135070792,
-      "created": 1704135070792,
+      "updated": 1704144606069,
+      "created": 1704144606069,
       "desc": "",
       "links": [],
       "anchors": {},
@@ -2838,7 +2838,7 @@
       "id": "m30ay8bv1fkxsl30m2r9frl",
       "title": "Enumeration",
       "desc": "",
-      "updated": 1703996576253,
+      "updated": 1704144587178,
       "created": 1703951656006,
       "custom": {},
       "fname": "programming.language.swift.Types.enumeration",
@@ -2848,7 +2848,7 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "fd6447e5e519835a14060f97780e28e6",
+      "contentHash": "f708a5680cb91ad6d2f7cf9b70ca0c7a",
       "links": [],
       "anchors": {
         "enum-or-struct": {
@@ -2859,27 +2859,11 @@
           "column": 0,
           "depth": 2
         },
-        "可枚舉但不需封裝": {
-          "type": "header",
-          "text": "可枚舉但不需封裝:",
-          "value": "可枚舉但不需封裝",
-          "line": 10,
-          "column": 0,
-          "depth": 3
-        },
-        "可枚舉且需封裝物件資料": {
-          "type": "header",
-          "text": "可枚舉且需封裝物件資料:",
-          "value": "可枚舉且需封裝物件資料",
-          "line": 33,
-          "column": 0,
-          "depth": 3
-        },
         "use-cases": {
           "type": "header",
           "text": "Use Cases",
           "value": "use-cases",
-          "line": 83,
+          "line": 78,
           "column": 0,
           "depth": 2
         }
