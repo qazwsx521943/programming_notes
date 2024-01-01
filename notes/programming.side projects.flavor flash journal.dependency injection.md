@@ -2,11 +2,13 @@
 id: 9mr2s7gpmdzbi4penck2gg0
 title: Dependency Injection
 desc: ''
-updated: 1703254243793
+updated: 1703948754034
 created: 1703253972301
 ---
 
 ## Dependency Injection
+
+> Dependency injection aims to separate the concerns of constructing objects and using them, leading to loosely coupled programs.
 
 Common used cases:
 

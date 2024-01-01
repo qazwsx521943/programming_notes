@@ -1,0 +1,34 @@
+<h1 id="closures">Closures<a aria-hidden="true" class="anchor-heading icon-link" href="#closures"></a></h1>
+<h2 id="capture-list-情境">Capture list 情境<a aria-hidden="true" class="anchor-heading icon-link" href="#capture-list-情境"></a></h2>
+<h3 id="捕獲的變數為-value-type">捕獲的變數為 value type<a aria-hidden="true" class="anchor-heading icon-link" href="#捕獲的變數為-value-type"></a></h3>
+<pre class="language-swift"><code class="language-swift"><span class="token comment">/// closure capture value at define</span>
+<span class="token keyword">var</span> captureValue <span class="token operator">=</span> <span class="token number">20</span>
+
+<span class="token keyword">let</span> captureFunction <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">[</span>captureValue<span class="token punctuation">]</span> <span class="token keyword">in</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"captured value: </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">captureValue</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+captureValue <span class="token operator">=</span> <span class="token number">100</span>
+<span class="token function">captureFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 20</span>
+</code></pre>
+<p>⇧ 的code跟 ↓ 是等價的，只是用capture list更簡潔。</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">var</span> captureValue <span class="token operator">=</span> <span class="token number">20</span>
+<span class="token keyword">var</span> capturedClosureValue <span class="token operator">=</span> captureValue
+
+<span class="token keyword">let</span> captureFunction <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"captured value: </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">capturedClosureValue</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+captureValue <span class="token operator">=</span> <span class="token number">100</span>
+<span class="token function">captureFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 20</span>
+</code></pre>
+<pre class="language-swift"><code class="language-swift"><span class="token comment">/// closure capture value at execution</span>
+<span class="token keyword">var</span> captureValue <span class="token operator">=</span> <span class="token number">20</span>
+
+<span class="token keyword">let</span> captureFunction <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"captured value: </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">captureValue</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+captureValue <span class="token operator">=</span> <span class="token number">100</span>
+<span class="token function">captureFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 20</span>
+</code></pre>

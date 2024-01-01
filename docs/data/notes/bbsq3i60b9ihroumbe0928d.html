@@ -1,0 +1,66 @@
+<h1 id="arc">ARC<a aria-hidden="true" class="anchor-heading icon-link" href="#arc"></a></h1>
+<h2 id="what-is-arc-automatic-reference-counting">What is ARC (Automatic Reference Counting)?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-is-arc-automatic-reference-counting"></a></h2>
+<blockquote>
+<p>Swift uses Automatic Reference Counting (ARC) to track and manage your app’s memory usage. In most cases, this means that memory management “just works” in Swift, and you don’t need to think about memory management yourself. ARC automatically frees up the memory used by class instances when those instances are no longer needed.</p>
+</blockquote>
+<p>從官方文件可以得知，他是一個跟物件(class)生命週期有關的自動化機制。</p>
+<h2 id="how-arc-works-in-example">How ARC Works in Example<a aria-hidden="true" class="anchor-heading icon-link" href="#how-arc-works-in-example"></a></h2>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span>
+
+    <span class="token keyword">init</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">name</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> is initialized"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">deinit</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation"><span class="token keyword">self</span><span class="token punctuation">.</span>name</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> is deinitialized"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> reference1<span class="token punctuation">:</span> <span class="token class-name">Person</span><span class="token operator">?</span>
+<span class="token keyword">var</span> reference2<span class="token punctuation">:</span> <span class="token class-name">Person</span><span class="token operator">?</span>
+<span class="token keyword">var</span> reference3<span class="token punctuation">:</span> <span class="token class-name">Person</span><span class="token operator">?</span>
+
+<span class="token comment">// Jason person object reference count = 0</span>
+reference1 <span class="token operator">=</span> <span class="token class-name">Person</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Jason"</span></span><span class="token punctuation">)</span> <span class="token comment">// count = 1</span>
+reference2 <span class="token operator">=</span> reference1 <span class="token comment">// count = 2</span>
+reference3 <span class="token operator">=</span> reference1 <span class="token comment">// count = 3</span>
+
+reference2 <span class="token operator">=</span> <span class="token nil constant">nil</span> <span class="token comment">// count = 2</span>
+reference3 <span class="token operator">=</span> <span class="token nil constant">nil</span> <span class="token comment">// count = 1</span>
+<span class="token comment">//reference1 = nil</span>
+<span class="token comment">// comment out this line of code so that count = 0.</span>
+<span class="token comment">// ARC deallocates this Jason person object's memory,</span>
+<span class="token comment">// since there are no more strong reference</span>
+</code></pre>
+<h2 id="strong-reference-example">Strong reference Example<a aria-hidden="true" class="anchor-heading icon-link" href="#strong-reference-example"></a></h2>
+<p><img src="/programming_notes/../assets/images/programming.language.swift.ARC_strong-ref_1.png" alt="strong ref establish"></p>
+<p><img src="/programming_notes/../assets/images/programming.language.swift.ARC_strong-ref_2.png" alt="remove variable references"></p>
+<p>可以發現儘管<code>john</code>跟<code>ApartmentA</code>都沒有再引用到Person、Apartment實例，但是因為這兩個實例本身互相引用了，導致Reference Count沒有辦法歸零並釋放記憶體，進一步造成memory leak。</p>
+<h2 id="how-to-prevent-reference-cycle">How to prevent reference cycle?<a aria-hidden="true" class="anchor-heading icon-link" href="#how-to-prevent-reference-cycle"></a></h2>
+<blockquote>
+<p>Swift provides two ways to solve reference cycles when working with a class type: weak references, and unowned references .</p>
+</blockquote>
+<p>評估物件的生命週期適合用<code>weak</code> 還是 <code>unowned</code></p>
+<pre class="language-swift"><code class="language-swift">
+<span class="token comment">// 使用weak原因：StorageManager實例調用saveImage時，</span>
+<span class="token comment">// 我們不確定delegate的物件是否已經deallocated, 所以使用weak。</span>
+<span class="token comment">// 如果很確定delegate的物件不會被deallocated，我們可以使用unowned</span>
+<span class="token keyword">class</span> <span class="token class-name">StorageManager</span> <span class="token punctuation">{</span>
+    <span class="token keyword">weak</span> <span class="token keyword">var</span> delegate<span class="token punctuation">:</span> <span class="token class-name">StorageManagerDelegate</span><span class="token operator">?</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">func</span> <span class="token function-definition function">saveImage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> imageData<span class="token punctuation">:</span> <span class="token class-name">Data</span>
+        <span class="token comment">// fetch image...</span>
+
+
+        <span class="token keyword">self</span><span class="token punctuation">.</span>delegate<span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">didReceiveImage</span><span class="token punctuation">(</span><span class="token keyword">self</span><span class="token punctuation">,</span> imageData<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<h2 id="closure也是reference-type所以也會有-reference-cycle">Closure也是Reference Type，所以也會有 reference cycle<a aria-hidden="true" class="anchor-heading icon-link" href="#closure也是reference-type所以也會有-reference-cycle"></a></h2>
+<blockquote>
+<p>透過定義 capture list 來明確指定外部變數的捕獲方式。</p>
+</blockquote>

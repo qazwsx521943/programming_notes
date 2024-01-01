@@ -1,0 +1,39 @@
+<h1 id="memory-management">Memory Management<a aria-hidden="true" class="anchor-heading icon-link" href="#memory-management"></a></h1>
+<p><a href="https://developer.apple.com/documentation/swift/manual-memory-management">https://developer.apple.com/documentation/swift/manual-memory-management</a></p>
+<h2 id="stack-vs-heap">Stack vs Heap<a aria-hidden="true" class="anchor-heading icon-link" href="#stack-vs-heap"></a></h2>
+<p>他們都是記憶體區域</p>
+<h3 id="stack-特性">Stack 特性<a aria-hidden="true" class="anchor-heading icon-link" href="#stack-特性"></a></h3>
+<ul>
+<li>
+<p><strong>具有區域性:</strong></p>
+<p>呼叫function時 function scope中的變數會被存在stack中，當執行完畢會釋放</p>
+</li>
+<li>
+<p><strong>堆疊結構:</strong></p>
+<p>stack 是一種堆疊結構，讀寫stack上的資料可以非常迅速</p>
+</li>
+<li>
+<p><strong>自動分配和釋放:</strong></p>
+<p>想想function，我們從來沒有主動去釋放function內宣告的變數，只要變數超過作用域，空間就會被自動釋放</p>
+</li>
+</ul>
+<h3 id="heap-的特性">Heap 的特性<a aria-hidden="true" class="anchor-heading icon-link" href="#heap-的特性"></a></h3>
+<ul>
+<li>
+<p><strong>動態分配:</strong></p>
+<p>在heap上分配記憶體是動態的，它不像 stack 那樣有明確的作用範圍和生命週期</p>
+</li>
+<li>
+<p><strong>生命週期:</strong></p>
+<p>heap上的資料不受作用域限制，可以依據程式的需求進行調整</p>
+</li>
+<li>
+<p><strong>全局性:</strong></p>
+<p>heap上的資料可以在整個應用程式中共享</p>
+</li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/programming_notes/notes/bbsq3i60b9ihroumbe0928d">ARC</a></li>
+</ol>

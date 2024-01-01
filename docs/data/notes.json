@@ -11,8 +11,8 @@
       "title": "This page has not yet sprouted",
       "schemaStub": false,
       "type": "note",
-      "updated": 1703770805281,
-      "created": 1703770805281,
+      "updated": 1704124524826,
+      "created": 1704124524826,
       "desc": "",
       "links": [],
       "anchors": {},
@@ -24,7 +24,7 @@
       "id": "root",
       "title": "My Second Brain",
       "desc": "",
-      "updated": 1703770799412,
+      "updated": 1703774418339,
       "created": 1595961348801,
       "custom": {
         "nav_order": 0,
@@ -37,7 +37,7 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "66e8bf2de7e5700b63cac4ef4be9ef9c",
+      "contentHash": "ce2f2d82cf7fe71b3a5900a8f91fd111",
       "links": [],
       "anchors": {
         "welcome-to-my-learning-repository-": {
@@ -50,7 +50,8 @@
         }
       },
       "children": [
-        "p1jj2aztluo4pb12qn8gunp",
+        "j416lb0sk2vag9yvgr9bxzb",
+        "ski4xep9sjz6v7rxjf1fln1",
         "avquk6puzxi790rxzodnfmh",
         "rn0e0y5coqo8iyqfxd7ocsk"
       ],
@@ -646,7 +647,7 @@
       "id": "9mr2s7gpmdzbi4penck2gg0",
       "title": "Dependency Injection",
       "desc": "",
-      "updated": 1703254243793,
+      "updated": 1703948754034,
       "created": 1703253972301,
       "custom": {},
       "fname": "programming.side projects.flavor flash journal.dependency injection",
@@ -656,7 +657,7 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "1baa04d741d9d6471aea186eb38aaf2a",
+      "contentHash": "b0f3e22055d08bf745f8ca7592a8b2ce",
       "links": [],
       "anchors": {
         "dependency-injection": {
@@ -1477,14 +1478,16 @@
       "anchors": {},
       "children": [
         "rxplme0keulo3fon6e4gxmc",
+        "mr2culexmtziuklrq2gt22f",
+        "41n9yjlpdhmbls1eigctl1v",
         "rc44em7kcfzkyprtzidrtjs",
         "n5jvl7w3vcsyh0vxk4ocvcu",
         "qjbja5y4bx4h8yq4aaydnss",
         "copi536d0o8g51ay18dp29l",
         "m2klofp5yj7niqiawmu25a0",
+        "hvogtqvodqmpqkl2y0zxkph",
         "y4x1bbpym9389xf1pj71s7z",
         "pup4i4mmvmbwq6pxkp1jchf",
-        "2cg1kb9zlmrzfvyzu54nsrd",
         "k0wglg86ad5i8p1z42joprw"
       ],
       "parent": "07schiltkp85q9r624we8lq",
@@ -1538,84 +1541,6 @@
           "line": 16,
           "column": 0,
           "depth": 3
-        }
-      },
-      "children": [],
-      "parent": "vztg7xzj0425ae5ogmk8ds2",
-      "data": {}
-    },
-    "2cg1kb9zlmrzfvyzu54nsrd": {
-      "id": "2cg1kb9zlmrzfvyzu54nsrd",
-      "title": "Structures and Classes",
-      "desc": "",
-      "updated": 1703731441389,
-      "created": 1703728237903,
-      "custom": {},
-      "fname": "programming.language.swift.structures and classes",
-      "type": "note",
-      "vault": {
-        "fsPath": ".",
-        "selfContained": true,
-        "name": "Dendron"
-      },
-      "contentHash": "5729b91227de0ed9264bd2699cb795cc",
-      "links": [],
-      "anchors": {
-        "both-can": {
-          "type": "header",
-          "text": "Both can:",
-          "value": "both-can",
-          "line": 10,
-          "column": 0,
-          "depth": 2
-        },
-        "classes-additional-capabilities": {
-          "type": "header",
-          "text": "Classes additional capabilities:",
-          "value": "classes-additional-capabilities",
-          "line": 17,
-          "column": 0,
-          "depth": 2
-        },
-        "what-apple-says": {
-          "type": "header",
-          "text": "What apple says",
-          "value": "what-apple-says",
-          "line": 47,
-          "column": 0,
-          "depth": 2
-        },
-        "value-vs-reference-types": {
-          "type": "header",
-          "text": "Value vs Reference types",
-          "value": "value-vs-reference-types",
-          "line": 53,
-          "column": 0,
-          "depth": 2
-        },
-        "stack-vs-heap": {
-          "type": "header",
-          "text": "Stack vs Heap",
-          "value": "stack-vs-heap",
-          "line": 63,
-          "column": 0,
-          "depth": 2
-        },
-        "automatic-reference-counting-arc": {
-          "type": "header",
-          "text": "Automatic Reference Counting (ARC)",
-          "value": "automatic-reference-counting-arc",
-          "line": 69,
-          "column": 0,
-          "depth": 2
-        },
-        "situations-when-choosing-different-data-types": {
-          "type": "header",
-          "text": "Situations when choosing different data types",
-          "value": "situations-when-choosing-different-data-types",
-          "line": 77,
-          "column": 0,
-          "depth": 2
         }
       },
       "children": [],
@@ -1775,6 +1700,116 @@
       },
       "children": [],
       "parent": "vztg7xzj0425ae5ogmk8ds2",
+      "data": {}
+    },
+    "hvogtqvodqmpqkl2y0zxkph": {
+      "id": "hvogtqvodqmpqkl2y0zxkph",
+      "title": "Memory Management",
+      "desc": "",
+      "updated": 1704120699994,
+      "created": 1703918584124,
+      "custom": {},
+      "fname": "programming.language.swift.memory management",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "4d6c3d5c051b91ab10166608de2882d8",
+      "links": [],
+      "anchors": {
+        "stack-vs-heap": {
+          "type": "header",
+          "text": "Stack vs Heap",
+          "value": "stack-vs-heap",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        },
+        "stack-特性": {
+          "type": "header",
+          "text": "Stack 特性",
+          "value": "stack-特性",
+          "line": 14,
+          "column": 0,
+          "depth": 3
+        },
+        "heap-的特性": {
+          "type": "header",
+          "text": "Heap 的特性",
+          "value": "heap-的特性",
+          "line": 28,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [
+        "bbsq3i60b9ihroumbe0928d"
+      ],
+      "parent": "vztg7xzj0425ae5ogmk8ds2",
+      "data": {}
+    },
+    "bbsq3i60b9ihroumbe0928d": {
+      "id": "bbsq3i60b9ihroumbe0928d",
+      "title": "ARC",
+      "desc": "",
+      "updated": 1703917016257,
+      "created": 1703772605114,
+      "custom": {},
+      "fname": "programming.language.swift.memory management.ARC",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "86de45bb7292bcf8d8c505a6dd4be349",
+      "links": [],
+      "anchors": {
+        "what-is-arc-automatic-reference-counting": {
+          "type": "header",
+          "text": "What is ARC (Automatic Reference Counting)?",
+          "value": "what-is-arc-automatic-reference-counting",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "how-arc-works-in-example": {
+          "type": "header",
+          "text": "How ARC Works in Example",
+          "value": "how-arc-works-in-example",
+          "line": 14,
+          "column": 0,
+          "depth": 2
+        },
+        "strong-reference-example": {
+          "type": "header",
+          "text": "Strong reference Example",
+          "value": "strong-reference-example",
+          "line": 47,
+          "column": 0,
+          "depth": 2
+        },
+        "how-to-prevent-reference-cycle": {
+          "type": "header",
+          "text": "How to prevent reference cycle?",
+          "value": "how-to-prevent-reference-cycle",
+          "line": 55,
+          "column": 0,
+          "depth": 2
+        },
+        "closure也是reference-type所以也會有-reference-cycle": {
+          "type": "header",
+          "text": "Closure也是Reference Type，所以也會有 reference cycle",
+          "value": "closure也是reference-type所以也會有-reference-cycle",
+          "line": 80,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "hvogtqvodqmpqkl2y0zxkph",
       "data": {}
     },
     "m2klofp5yj7niqiawmu25a0": {
@@ -2045,9 +2080,62 @@
       "links": [],
       "anchors": {},
       "children": [
-        "265euhsg8077ow4ql8x9u0q"
+        "265euhsg8077ow4ql8x9u0q",
+        "d5kbcl46xodh9c8hl10qrsu",
+        "ri418z8my409lbev7mvbfo7"
       ],
       "parent": "vztg7xzj0425ae5ogmk8ds2",
+      "data": {}
+    },
+    "ri418z8my409lbev7mvbfo7": {
+      "id": "ri418z8my409lbev7mvbfo7",
+      "title": "URL Loading System",
+      "desc": "",
+      "updated": 1704028924787,
+      "created": 1704006010890,
+      "custom": {},
+      "fname": "programming.language.swift.framework.url loading System",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "db53150a28b30edc0fe5879cd0b3b6bd",
+      "links": [],
+      "anchors": {},
+      "children": [],
+      "parent": "qjbja5y4bx4h8yq4aaydnss",
+      "data": {}
+    },
+    "d5kbcl46xodh9c8hl10qrsu": {
+      "id": "d5kbcl46xodh9c8hl10qrsu",
+      "title": "Combine",
+      "desc": "",
+      "updated": 1703905612030,
+      "created": 1703905480617,
+      "custom": {},
+      "fname": "programming.language.swift.framework.combine",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "9973026a65cc97632744936d400d1557",
+      "links": [],
+      "anchors": {
+        "what-is-combine": {
+          "type": "header",
+          "text": "What is Combine?",
+          "value": "what-is-combine",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "qjbja5y4bx4h8yq4aaydnss",
       "data": {}
     },
     "265euhsg8077ow4ql8x9u0q": {
@@ -2533,6 +2621,273 @@
       "parent": "vztg7xzj0425ae5ogmk8ds2",
       "data": {}
     },
+    "41n9yjlpdhmbls1eigctl1v": {
+      "id": "41n9yjlpdhmbls1eigctl1v",
+      "title": "Closures",
+      "desc": "",
+      "updated": 1703863190534,
+      "created": 1703772642942,
+      "custom": {},
+      "fname": "programming.language.swift.closures",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "b65451f6e86b085b0a90a05ccbc7f7a9",
+      "links": [],
+      "anchors": {
+        "capture-list-情境": {
+          "type": "header",
+          "text": "Capture list 情境",
+          "value": "capture-list-情境",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "捕獲的變數為-value-type": {
+          "type": "header",
+          "text": "捕獲的變數為 value type",
+          "value": "捕獲的變數為-value-type",
+          "line": 10,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [],
+      "parent": "vztg7xzj0425ae5ogmk8ds2",
+      "data": {}
+    },
+    "mr2culexmtziuklrq2gt22f": {
+      "id": "mr2culexmtziuklrq2gt22f",
+      "title": "Types",
+      "desc": "",
+      "updated": 1704122360336,
+      "created": 1703951617977,
+      "custom": {},
+      "fname": "programming.language.swift.Types",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "c2b955a02a7062e6823c2d44d8ec7ece",
+      "links": [],
+      "anchors": {
+        "definition": {
+          "type": "header",
+          "text": "Definition",
+          "value": "definition",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "value-type--reference-type": {
+          "type": "header",
+          "text": "Value Type , Reference Type",
+          "value": "value-type--reference-type",
+          "line": 18,
+          "column": 0,
+          "depth": 2
+        },
+        "value-type": {
+          "type": "header",
+          "text": "value type:",
+          "value": "value-type",
+          "line": 22,
+          "column": 0,
+          "depth": 3
+        },
+        "reference-type": {
+          "type": "header",
+          "text": "reference type:",
+          "value": "reference-type",
+          "line": 29,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [
+        "m30ay8bv1fkxsl30m2r9frl",
+        "2cg1kb9zlmrzfvyzu54nsrd"
+      ],
+      "parent": "vztg7xzj0425ae5ogmk8ds2",
+      "data": {}
+    },
+    "2cg1kb9zlmrzfvyzu54nsrd": {
+      "id": "2cg1kb9zlmrzfvyzu54nsrd",
+      "title": "Structures Vs Classes",
+      "desc": "",
+      "updated": 1704124179224,
+      "created": 1703728237903,
+      "custom": {},
+      "fname": "programming.language.swift.types.structures vs classes",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "b3e77d09b1183f2a4a28d213989b8acf",
+      "links": [],
+      "anchors": {
+        "definition-syntax": {
+          "type": "header",
+          "text": "Definition Syntax",
+          "value": "definition-syntax",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        },
+        "examples": {
+          "type": "header",
+          "text": "Examples",
+          "value": "examples",
+          "line": 22,
+          "column": 0,
+          "depth": 2
+        },
+        "pass-by-value-vs-pass-by-reference": {
+          "type": "header",
+          "text": "Pass by value vs Pass by reference",
+          "value": "pass-by-value-vs-pass-by-reference",
+          "line": 46,
+          "column": 0,
+          "depth": 2
+        },
+        "coa": {
+          "type": "header",
+          "text": "CoA",
+          "value": "coa",
+          "line": 48,
+          "column": 0,
+          "depth": 3
+        },
+        "cow": {
+          "type": "header",
+          "text": "CoW",
+          "value": "cow",
+          "line": 68,
+          "column": 0,
+          "depth": 3
+        },
+        "both-can": {
+          "type": "header",
+          "text": "Both can:",
+          "value": "both-can",
+          "line": 112,
+          "column": 0,
+          "depth": 2
+        },
+        "class-特性": {
+          "type": "header",
+          "text": "Class 特性:",
+          "value": "class-特性",
+          "line": 119,
+          "column": 0,
+          "depth": 2
+        },
+        "what-apple-says": {
+          "type": "header",
+          "text": "What apple says",
+          "value": "what-apple-says",
+          "line": 150,
+          "column": 0,
+          "depth": 2
+        },
+        "heap-summary": {
+          "type": "header",
+          "text": "Heap Summary",
+          "value": "heap-summary",
+          "line": 156,
+          "column": 0,
+          "depth": 3
+        },
+        "stack-summary": {
+          "type": "header",
+          "text": "Stack Summary",
+          "value": "stack-summary",
+          "line": 166,
+          "column": 0,
+          "depth": 3
+        },
+        "situations-when-choosing-different-data-types": {
+          "type": "header",
+          "text": "Situations when choosing different data types",
+          "value": "situations-when-choosing-different-data-types",
+          "line": 171,
+          "column": 0,
+          "depth": 2
+        },
+        "comparison": {
+          "type": "header",
+          "text": "Comparison",
+          "value": "comparison",
+          "line": 183,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "mr2culexmtziuklrq2gt22f",
+      "data": {}
+    },
+    "m30ay8bv1fkxsl30m2r9frl": {
+      "id": "m30ay8bv1fkxsl30m2r9frl",
+      "title": "Enumeration",
+      "desc": "",
+      "updated": 1703996576253,
+      "created": 1703951656006,
+      "custom": {},
+      "fname": "programming.language.swift.Types.enumeration",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "fd6447e5e519835a14060f97780e28e6",
+      "links": [],
+      "anchors": {
+        "enum-or-struct": {
+          "type": "header",
+          "text": "enum or struct?",
+          "value": "enum-or-struct",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "可枚舉但不需封裝": {
+          "type": "header",
+          "text": "可枚舉但不需封裝:",
+          "value": "可枚舉但不需封裝",
+          "line": 10,
+          "column": 0,
+          "depth": 3
+        },
+        "可枚舉且需封裝物件資料": {
+          "type": "header",
+          "text": "可枚舉且需封裝物件資料:",
+          "value": "可枚舉且需封裝物件資料",
+          "line": 33,
+          "column": 0,
+          "depth": 3
+        },
+        "use-cases": {
+          "type": "header",
+          "text": "Use Cases",
+          "value": "use-cases",
+          "line": 83,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "mr2culexmtziuklrq2gt22f",
+      "data": {}
+    },
     "rxplme0keulo3fon6e4gxmc": {
       "id": "rxplme0keulo3fon6e4gxmc",
       "title": "Serialization",
@@ -2777,9 +3132,48 @@
       "anchors": {},
       "children": [
         "y8otxung92f9zxx8j7ug0xu",
-        "0s36hxqraz1orimb13qdeio"
+        "0s36hxqraz1orimb13qdeio",
+        "fff715mwr5cluf3hwpq40z4"
       ],
       "parent": "rn0e0y5coqo8iyqfxd7ocsk",
+      "data": {}
+    },
+    "fff715mwr5cluf3hwpq40z4": {
+      "id": "fff715mwr5cluf3hwpq40z4",
+      "title": "Factory",
+      "desc": "",
+      "updated": 1704079623269,
+      "created": 1704028940266,
+      "custom": {},
+      "fname": "programming.design pattern.factory",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "9042ea0f05fc92fd21a75cd2ae7cc23b",
+      "links": [],
+      "anchors": {
+        "factory-pattern-如何隱藏複雜性": {
+          "type": "header",
+          "text": "Factory Pattern 如何隱藏複雜性？",
+          "value": "factory-pattern-如何隱藏複雜性",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "how-to-implement-factory-pattern": {
+          "type": "header",
+          "text": "How to implement Factory Pattern?",
+          "value": "how-to-implement-factory-pattern",
+          "line": 14,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "hbjsa0j33arqblxg88k4jfv",
       "data": {}
     },
     "0s36hxqraz1orimb13qdeio": {
@@ -2974,11 +3368,120 @@
       "parent": "avquk6puzxi790rxzodnfmh",
       "data": {}
     },
-    "p1jj2aztluo4pb12qn8gunp": {
-      "id": "p1jj2aztluo4pb12qn8gunp",
-      "title": "Job Findin",
+    "ski4xep9sjz6v7rxjf1fln1": {
+      "id": "ski4xep9sjz6v7rxjf1fln1",
+      "title": "Libraries",
       "desc": "",
-      "updated": 1703306328320,
+      "updated": 1703998456652,
+      "created": 1703998456652,
+      "custom": {},
+      "fname": "libraries",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "b8be5071d6073d06317392e8f3a2e239",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "ycav7y1plpd72ulknzdaw6x"
+      ],
+      "parent": "root",
+      "data": {}
+    },
+    "ycav7y1plpd72ulknzdaw6x": {
+      "id": "ycav7y1plpd72ulknzdaw6x",
+      "title": "Alamofire",
+      "desc": "",
+      "updated": 1704005644980,
+      "created": 1703998468835,
+      "custom": {},
+      "fname": "libraries.alamofire",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "b2a5a9c6ee3e13fa93440df16bd38cec",
+      "links": [],
+      "anchors": {
+        "what-is-it-built-for": {
+          "type": "header",
+          "text": "What is it built for?",
+          "value": "what-is-it-built-for",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "how-it-was-built": {
+          "type": "header",
+          "text": "How it was built",
+          "value": "how-it-was-built",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "where-does-af-come-from": {
+          "type": "header",
+          "text": "Where does AF come from?",
+          "value": "where-does-af-come-from",
+          "line": 18,
+          "column": 0,
+          "depth": 3
+        },
+        "session職責": {
+          "type": "header",
+          "text": "Session職責",
+          "value": "session職責",
+          "line": 26,
+          "column": 0,
+          "depth": 4
+        },
+        "urlconvertibleurlrequestconvertibleprotocol": {
+          "type": "header",
+          "text": "URLConvertible、URLRequestConvertibleprotocol",
+          "value": "urlconvertibleurlrequestconvertibleprotocol",
+          "line": 30,
+          "column": 0,
+          "depth": 4
+        },
+        "sessiondelegate-職責": {
+          "type": "header",
+          "text": "SessionDelegate 職責",
+          "value": "sessiondelegate-職責",
+          "line": 52,
+          "column": 0,
+          "depth": 3
+        },
+        "usage": {
+          "type": "header",
+          "text": "Usage",
+          "value": "usage",
+          "line": 62,
+          "column": 0,
+          "depth": 2
+        },
+        "requests": {
+          "type": "header",
+          "text": "requests",
+          "value": "requests",
+          "line": 64,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [],
+      "parent": "ski4xep9sjz6v7rxjf1fln1",
+      "data": {}
+    },
+    "j416lb0sk2vag9yvgr9bxzb": {
+      "id": "j416lb0sk2vag9yvgr9bxzb",
+      "title": "Resume",
+      "desc": "",
+      "updated": 1704124381361,
       "created": 1703306314627,
       "custom": {},
       "fname": "job finding",
@@ -2988,11 +3491,10 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "54ee39c1a2ba6059bb4e80ef9875e27c",
+      "contentHash": "b3cd0e0017367e9743739d76539a48df",
       "links": [],
       "anchors": {},
       "children": [
-        "j5nt68t495df32uuynadodo",
         "j76ahf4fh0mz6jq2m1qhemw"
       ],
       "parent": "root",
@@ -3000,19 +3502,19 @@
     },
     "j76ahf4fh0mz6jq2m1qhemw": {
       "id": "j76ahf4fh0mz6jq2m1qhemw",
-      "title": "Resume",
+      "title": "Self Intro",
       "desc": "",
       "updated": 1703678273348,
       "created": 1703313259802,
       "custom": {},
-      "fname": "job finding.resume",
+      "fname": "job finding.self-intro",
       "type": "note",
       "vault": {
         "fsPath": ".",
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "97fdfdc172fdfda9a9d5ac078bc02d11",
+      "contentHash": "b5819fac644818ddf20169da90950596",
       "links": [],
       "anchors": {
         "summary": {
@@ -3113,45 +3615,7 @@
         }
       },
       "children": [],
-      "parent": "p1jj2aztluo4pb12qn8gunp",
-      "data": {}
-    },
-    "j5nt68t495df32uuynadodo": {
-      "id": "j5nt68t495df32uuynadodo",
-      "title": "Leet Code",
-      "desc": "",
-      "updated": 1703770686757,
-      "created": 1703306331660,
-      "custom": {},
-      "fname": "job finding.leet code",
-      "type": "note",
-      "vault": {
-        "fsPath": ".",
-        "selfContained": true,
-        "name": "Dendron"
-      },
-      "contentHash": "49d353ecde2c7c999116d4e95a7b66b5",
-      "links": [],
-      "anchors": {
-        "21-merge-two-linkedlist": {
-          "type": "header",
-          "text": "21. Merge two LinkedList",
-          "value": "21-merge-two-linkedlist",
-          "line": 8,
-          "column": 0,
-          "depth": 2
-        },
-        "26-remove-duplicates-from-sorted-array": {
-          "type": "header",
-          "text": "26. Remove Duplicates from Sorted Array",
-          "value": "26-remove-duplicates-from-sorted-array",
-          "line": 56,
-          "column": 0,
-          "depth": 2
-        }
-      },
-      "children": [],
-      "parent": "p1jj2aztluo4pb12qn8gunp",
+      "parent": "j416lb0sk2vag9yvgr9bxzb",
       "data": {}
     }
   },
@@ -3160,7 +3624,7 @@
       "id": "root",
       "title": "My Second Brain",
       "desc": "",
-      "updated": 1703770799412,
+      "updated": 1703774418339,
       "created": 1595961348801,
       "custom": {
         "nav_order": 0,
@@ -3173,7 +3637,7 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "66e8bf2de7e5700b63cac4ef4be9ef9c",
+      "contentHash": "ce2f2d82cf7fe71b3a5900a8f91fd111",
       "links": [],
       "anchors": {
         "welcome-to-my-learning-repository-": {
@@ -3186,20 +3650,21 @@
         }
       },
       "children": [
-        "p1jj2aztluo4pb12qn8gunp",
+        "j416lb0sk2vag9yvgr9bxzb",
+        "ski4xep9sjz6v7rxjf1fln1",
         "avquk6puzxi790rxzodnfmh",
         "rn0e0y5coqo8iyqfxd7ocsk"
       ],
       "parent": null,
       "data": {},
-      "body": "\n## Welcome to my learning repository! 📚\n\n**Disclaimer:**\n\nThe content in this repository is a work in progress and should not be considered an authoritative source of information. These notes are currently being compiled during my learning journey at AppWorks School. They are subject to change, and there may be gaps in organization and accuracy.\n\n**Note Status:**\n\nI am actively working on organizing and rectifying any inaccuracies. Expect a more comprehensive set of notes by 2024/01/19.\n\nFeel free to connect with me and share your thoughts or suggestions regarding my note-taking process. I appreciate any feedback and collaboration to enhance the quality of these notes.\n\nHappy learning! 🚀"
+      "body": "\n## Welcome to my learning repository! 📚\n\n**Disclaimer:**\n\nThe content in this repository is a work in progress and should not be considered an authoritative source of information. These notes are currently being compiled during my learning journey at AppWorks School. They are subject to change, and there may be gaps in organization and accuracy.\n\n**Note Status:**\n\nI am actively working on organizing and rectifying any inaccuracies. Expect a more comprehensive set of notes by 2024/01/19.\n\n**Reading guide:**\n\n> Block quotes like this generally means this paragraph is quoted by official documentation.\n\n```swift\n// Example code is typically simplified and may not be practical in real-world scenarios.\n// It is created solely to aid my understanding of the underlying concepts related to a specific topic.\n```\n\nFeel free to connect with me and share your thoughts or suggestions regarding my note-taking process. I appreciate any feedback and collaboration to enhance the quality of these notes.\n\nHappy learning! 🚀"
     }
   ],
   "noteIndex": {
     "id": "root",
     "title": "My Second Brain",
     "desc": "",
-    "updated": 1703770799412,
+    "updated": 1703774418339,
     "created": 1595961348801,
     "custom": {
       "nav_order": 0,
@@ -3212,7 +3677,7 @@
       "selfContained": true,
       "name": "Dendron"
     },
-    "contentHash": "66e8bf2de7e5700b63cac4ef4be9ef9c",
+    "contentHash": "ce2f2d82cf7fe71b3a5900a8f91fd111",
     "links": [],
     "anchors": {
       "welcome-to-my-learning-repository-": {
@@ -3225,13 +3690,14 @@
       }
     },
     "children": [
-      "p1jj2aztluo4pb12qn8gunp",
+      "j416lb0sk2vag9yvgr9bxzb",
+      "ski4xep9sjz6v7rxjf1fln1",
       "avquk6puzxi790rxzodnfmh",
       "rn0e0y5coqo8iyqfxd7ocsk"
     ],
     "parent": null,
     "data": {},
-    "body": "\n## Welcome to my learning repository! 📚\n\n**Disclaimer:**\n\nThe content in this repository is a work in progress and should not be considered an authoritative source of information. These notes are currently being compiled during my learning journey at AppWorks School. They are subject to change, and there may be gaps in organization and accuracy.\n\n**Note Status:**\n\nI am actively working on organizing and rectifying any inaccuracies. Expect a more comprehensive set of notes by 2024/01/19.\n\nFeel free to connect with me and share your thoughts or suggestions regarding my note-taking process. I appreciate any feedback and collaboration to enhance the quality of these notes.\n\nHappy learning! 🚀"
+    "body": "\n## Welcome to my learning repository! 📚\n\n**Disclaimer:**\n\nThe content in this repository is a work in progress and should not be considered an authoritative source of information. These notes are currently being compiled during my learning journey at AppWorks School. They are subject to change, and there may be gaps in organization and accuracy.\n\n**Note Status:**\n\nI am actively working on organizing and rectifying any inaccuracies. Expect a more comprehensive set of notes by 2024/01/19.\n\n**Reading guide:**\n\n> Block quotes like this generally means this paragraph is quoted by official documentation.\n\n```swift\n// Example code is typically simplified and may not be practical in real-world scenarios.\n// It is created solely to aid my understanding of the underlying concepts related to a specific topic.\n```\n\nFeel free to connect with me and share your thoughts or suggestions regarding my note-taking process. I appreciate any feedback and collaboration to enhance the quality of these notes.\n\nHappy learning! 🚀"
   },
   "vaults": [
     {

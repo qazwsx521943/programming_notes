@@ -1,0 +1,76 @@
+<h1 id="enumeration">Enumeration<a aria-hidden="true" class="anchor-heading icon-link" href="#enumeration"></a></h1>
+<h2 id="enum-or-struct">enum or struct?<a aria-hidden="true" class="anchor-heading icon-link" href="#enum-or-struct"></a></h2>
+<h3 id="可枚舉但不需封裝">可枚舉但不需封裝:<a aria-hidden="true" class="anchor-heading icon-link" href="#可枚舉但不需封裝"></a></h3>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">enum</span> <span class="token class-name">LoginType</span><span class="token punctuation">:</span> <span class="token class-name">String</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> nativeLogin <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"native login"</span></span>
+    <span class="token keyword">case</span> fbLogin <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"facebook login"</span></span>
+    <span class="token keyword">case</span> appleLogin <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"apple login"</span></span>
+    <span class="token keyword">case</span> gitHubLogin <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"gitHub login"</span></span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">LoginTypeStruct</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">let</span> appleLogin <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"apple login"</span></span>
+    <span class="token keyword">static</span> <span class="token keyword">let</span> fbLogin <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"facebook login"</span></span>
+    <span class="token keyword">static</span> <span class="token keyword">let</span> githubLogin <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"gitHub login"</span></span>
+    <span class="token keyword">static</span> <span class="token keyword">let</span> nativeLogin <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"native login"</span></span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>in this case, it's better to use <code>enum</code>.</p>
+<ul>
+<li>type safety</li>
+<li>readibility</li>
+</ul>
+<h3 id="可枚舉且需封裝物件資料">可枚舉且需封裝物件資料:<a aria-hidden="true" class="anchor-heading icon-link" href="#可枚舉且需封裝物件資料"></a></h3>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">LoginTypeStruct</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">let</span> description<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">var</span> isEnabled<span class="token punctuation">:</span> <span class="token class-name">Bool</span> <span class="token comment">// Example of additional data</span>
+
+    <span class="token keyword">static</span> <span class="token keyword">let</span> appleLogin <span class="token operator">=</span> <span class="token class-name">LoginTypeStruct</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Apple Login"</span></span><span class="token punctuation">,</span> description<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Login using Apple ID"</span></span><span class="token punctuation">,</span> isEnabled<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+    <span class="token keyword">static</span> <span class="token keyword">let</span> fbLogin <span class="token operator">=</span> <span class="token class-name">LoginTypeStruct</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Facebook Login"</span></span><span class="token punctuation">,</span> description<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Login using Facebook"</span></span><span class="token punctuation">,</span> isEnabled<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+    <span class="token keyword">static</span> <span class="token keyword">let</span> githubLogin <span class="token operator">=</span> <span class="token class-name">LoginTypeStruct</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"GitHub Login"</span></span><span class="token punctuation">,</span> description<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Login using GitHub"</span></span><span class="token punctuation">,</span> isEnabled<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+    <span class="token keyword">static</span> <span class="token keyword">let</span> nativeLogin <span class="token operator">=</span> <span class="token class-name">LoginTypeStruct</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Native Login"</span></span><span class="token punctuation">,</span> description<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Login using our native authentication"</span></span><span class="token punctuation">,</span> isEnabled<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">enum</span> <span class="token class-name">LoginTypeEnum</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token function">appleLogin</span><span class="token punctuation">(</span>isEnabled<span class="token punctuation">:</span> <span class="token class-name">Bool</span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token function">fbLogin</span><span class="token punctuation">(</span>isEnabled<span class="token punctuation">:</span> <span class="token class-name">Bool</span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token function">githubLogin</span><span class="token punctuation">(</span>isEnabled<span class="token punctuation">:</span> <span class="token class-name">Bool</span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token function">nativeLogin</span><span class="token punctuation">(</span>isEnabled<span class="token punctuation">:</span> <span class="token class-name">Bool</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">var</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span> <span class="token punctuation">{</span>
+        <span class="token keyword">switch</span> <span class="token keyword">self</span> <span class="token punctuation">{</span>
+            <span class="token keyword">case</span> <span class="token punctuation">.</span>appleLogin<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"Apple Login"</span></span>
+            <span class="token keyword">case</span> <span class="token punctuation">.</span>fbLogin<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"Facebook Login"</span></span>
+            <span class="token keyword">case</span> <span class="token punctuation">.</span>githubLogin<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"GitHub Login"</span></span>
+            <span class="token keyword">case</span> <span class="token punctuation">.</span>nativeLogin<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"Native Login"</span></span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> description<span class="token punctuation">:</span> <span class="token class-name">String</span> <span class="token punctuation">{</span>
+        <span class="token keyword">switch</span> <span class="token keyword">self</span> <span class="token punctuation">{</span>
+            <span class="token keyword">case</span> <span class="token punctuation">.</span>appleLogin<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"Login using Apple ID"</span></span>
+            <span class="token keyword">case</span> <span class="token punctuation">.</span>fbLogin<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"Login using Facebook"</span></span>
+            <span class="token keyword">case</span> <span class="token punctuation">.</span>githubLogin<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"Login using GitHub"</span></span>
+            <span class="token keyword">case</span> <span class="token punctuation">.</span>nativeLogin<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"Login using our native authentication"</span></span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> isEnabled<span class="token punctuation">:</span> <span class="token class-name">Bool</span> <span class="token punctuation">{</span>
+        <span class="token keyword">switch</span> <span class="token keyword">self</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token keyword">let</span> <span class="token punctuation">.</span><span class="token function">appleLogin</span><span class="token punctuation">(</span>isEnabled<span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token keyword">let</span> <span class="token punctuation">.</span><span class="token function">fbLogin</span><span class="token punctuation">(</span>isEnabled<span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token keyword">let</span> <span class="token punctuation">.</span><span class="token function">githubLogin</span><span class="token punctuation">(</span>isEnabled<span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token keyword">let</span> <span class="token punctuation">.</span><span class="token function">nativeLogin</span><span class="token punctuation">(</span>isEnabled<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> isEnabled
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="use-cases">Use Cases<a aria-hidden="true" class="anchor-heading icon-link" href="#use-cases"></a></h2>
+<ol>
+<li>Error Handling
+<pre class="language-swift"><code class="language-swift"></code></pre>
+</li>
+<li></li>
+</ol>

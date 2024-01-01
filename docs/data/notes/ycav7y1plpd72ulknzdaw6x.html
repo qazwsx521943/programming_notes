@@ -1,0 +1,43 @@
+<h1 id="alamofire">Alamofire<a aria-hidden="true" class="anchor-heading icon-link" href="#alamofire"></a></h1>
+<h2 id="what-is-it-built-for">What is it built for?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-is-it-built-for"></a></h2>
+<p>Provide elegant and composable interface to HTTP network requests.</p>
+<h2 id="how-it-was-built">How it was built<a aria-hidden="true" class="anchor-heading icon-link" href="#how-it-was-built"></a></h2>
+<p>Built on top of Apple's <code>URL Loading System</code> provided by <code>Foundation</code> framework</p>
+<p>Wrapping up <code>URLSession</code> and the <code>URLSessionTask</code> subclasses.</p>
+<h3 id="where-does-af-come-from">Where does <code>AF</code> come from?<a aria-hidden="true" class="anchor-heading icon-link" href="#where-does-af-come-from"></a></h3>
+<pre class="language-swift"><code class="language-swift"><span class="token comment">// Shared singleton instance used by all `AF.request` APIs. Cannot be modified.</span>
+<span class="token comment">// Session可以建立、管理Request實例。</span>
+<span class="token keyword">public</span> <span class="token keyword">let</span> <span class="token constant">AF</span> <span class="token operator">=</span> <span class="token class-name">Session</span><span class="token punctuation">.</span><span class="token keyword">default</span>
+</code></pre>
+<h4 id="session職責"><code>Session</code>職責<a aria-hidden="true" class="anchor-heading icon-link" href="#session職責"></a></h4>
+<p>建立Request</p>
+<h4 id="urlconvertibleurlrequestconvertibleprotocol"><code>URLConvertible</code>、<code>URLRequestConvertible</code>protocol<a aria-hidden="true" class="anchor-heading icon-link" href="#urlconvertibleurlrequestconvertibleprotocol"></a></h4>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">public</span> <span class="token keyword">protocol</span> <span class="token class-name">URLConvertible</span> <span class="token punctuation">{</span>
+    <span class="token comment">/// Returns a `URL` from the conforming instance or throws.</span>
+    <span class="token comment">///</span>
+    <span class="token comment">/// - Returns: The `URL` created from the instance.</span>
+    <span class="token comment">/// - Throws:  Any error thrown while creating the `URL`.</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">asURL</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token operator">-></span> <span class="token constant">URL</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">protocol</span> <span class="token class-name">URLRequestConvertible</span> <span class="token punctuation">{</span>
+    <span class="token comment">/// Returns a `URLRequest` or throws if an `Error` was encountered.</span>
+    <span class="token comment">///</span>
+    <span class="token comment">/// - Returns: A `URLRequest`.</span>
+    <span class="token comment">/// - Throws:  Any error thrown while constructing the `URLRequest`.</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">asURLRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token operator">-></span> <span class="token class-name">URLRequest</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="sessiondelegate-職責"><code>SessionDelegate</code> 職責<a aria-hidden="true" class="anchor-heading icon-link" href="#sessiondelegate-職責"></a></h3>
+<blockquote>
+<p>Class which implements the various <code>URLSessionDelegate</code> methods to connect various Alamofire features.</p>
+</blockquote>
+<ul>
+<li>URLSessionDelegate</li>
+<li>URLSessionTaskDelegate</li>
+<li>URLSessionDataDelegate</li>
+<li>URLSessionWebSocketDelegate</li>
+<li>URLSessionDownloadDelegate</li>
+</ul>
+<h2 id="usage">Usage<a aria-hidden="true" class="anchor-heading icon-link" href="#usage"></a></h2>
+<h3 id="requests">requests<a aria-hidden="true" class="anchor-heading icon-link" href="#requests"></a></h3>

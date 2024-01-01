@@ -1,6 +1,8 @@
 
 ## Dependency Injection
 
+> Dependency injection aims to separate the concerns of constructing objects and using them, leading to loosely coupled programs.
+
 Common used cases:
 
 - When initializing a provider, we might pass in a dataService for the provider to init, and then the provdier can use that dataService instance to fetch Data.
