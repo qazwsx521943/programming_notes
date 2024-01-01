@@ -163,14 +163,6 @@
                   "vaultName": "Dendron",
                   "children": [
                     {
-                      "key": "td8qrahpv2jd2hkgjpre031",
-                      "title": "Class",
-                      "icon": null,
-                      "hasTitleNumberOutlined": false,
-                      "vaultName": "Dendron",
-                      "children": []
-                    },
-                    {
                       "key": "m30ay8bv1fkxsl30m2r9frl",
                       "title": "Enumeration",
                       "icon": null,
@@ -669,7 +661,6 @@
     "2v2u6kg1vpm06lq3nlupx7f": "ehit98sudwsnivfx8dnovwq",
     "jusxtrdqjytxtjizz2s5yok": "ehit98sudwsnivfx8dnovwq",
     "mr2culexmtziuklrq2gt22f": "vztg7xzj0425ae5ogmk8ds2",
-    "td8qrahpv2jd2hkgjpre031": "mr2culexmtziuklrq2gt22f",
     "m30ay8bv1fkxsl30m2r9frl": "mr2culexmtziuklrq2gt22f",
     "2cg1kb9zlmrzfvyzu54nsrd": "mr2culexmtziuklrq2gt22f",
     "41n9yjlpdhmbls1eigctl1v": "vztg7xzj0425ae5ogmk8ds2",
@@ -749,7 +740,6 @@
     "2v2u6kg1vpm06lq3nlupx7f": "Merge Data",
     "jusxtrdqjytxtjizz2s5yok": "Nested Data",
     "mr2culexmtziuklrq2gt22f": "Types",
-    "td8qrahpv2jd2hkgjpre031": "Class",
     "m30ay8bv1fkxsl30m2r9frl": "Enumeration",
     "2cg1kb9zlmrzfvyzu54nsrd": "Structures Vs Classes",
     "41n9yjlpdhmbls1eigctl1v": "Closures",
