@@ -2,55 +2,28 @@
 id: m30ay8bv1fkxsl30m2r9frl
 title: Enumeration
 desc: ''
-updated: 1704191921147
+updated: 1704208895807
 created: 1703951656006
 ---
 
-## enum or struct?
+## What is enum?
 
-enum 非常適合表達可列舉的相關值。
+是一個列舉型別，可以用來建立**有限**且**相關**的值集合
 
-將這些相關值用 enum 表示有以下優點
+## Declaration
 
-- Type Safety
+```swift
+enum Direction: String {
+    case north = "N"
+    case south = "S"
+    case west = "W"
+    case east = "E"
+}
+```
 
-    ```swift
-    enum Direction {
-        case north
-        case south
-        case west
-        case east
-    }
+## 用enum的優勢
 
-    // type safety -> compiler will check if the
-    // input parameter is correct type
-    func decideDirection(direction: Direction) {
-        switch direction {
-            case .north:
-                print("walk toward mountain")
-            case .south:
-                print("walk toward sea")
-            case .west, .east:
-                print("gg 3:0")
-        }
-    }
-
-    // can only check during run time
-    func decideDirection(direction: String) {
-        switch direction {
-        case "north":
-            print("walk toward mountain")
-        case "south":
-            print("walk toward sea")
-        default:
-            print("gg 3:0")
-        }
-    }
-
-    decideDirection(direction: .east)
-    decideDirection(direction: "north")
-    decideDirection(direction: "northh")
-    ```
+- Type Safety → compile-time check
 
 - Readability & Maintainability: 減少其他人看code需要的通靈技能
 
@@ -73,7 +46,7 @@ enum 非常適合表達可列舉的相關值。
         case mammal(name: String, legs: Int)
         case bird(name: String, wingspan: Double)
         case fish(name: String, color: String)
-        case reptile(name: String, scales: Bool)  // 新增爬蟲類型
+        case reptile(name: String, scales: Bool)  // Add reptile type
     }
   ```
 

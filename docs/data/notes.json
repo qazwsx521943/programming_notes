@@ -11,8 +11,8 @@
       "title": "This page has not yet sprouted",
       "schemaStub": false,
       "type": "note",
-      "updated": 1704203720124,
-      "created": 1704203720124,
+      "updated": 1704208999693,
+      "created": 1704208999693,
       "desc": "",
       "links": [],
       "anchors": {},
@@ -2863,7 +2863,7 @@
       "id": "m30ay8bv1fkxsl30m2r9frl",
       "title": "Enumeration",
       "desc": "",
-      "updated": 1704191921147,
+      "updated": 1704208895807,
       "created": 1703951656006,
       "custom": {},
       "fname": "programming.language.swift.Types.enumeration",
@@ -2873,14 +2873,30 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "9ad74b84f74ea9dbb4ef3fa745b3c965",
+      "contentHash": "1e14efc26b80b786855c9363afe4ea5b",
       "links": [],
       "anchors": {
-        "enum-or-struct": {
+        "what-is-enum": {
           "type": "header",
-          "text": "enum or struct?",
-          "value": "enum-or-struct",
+          "text": "What is enum?",
+          "value": "what-is-enum",
           "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "declaration": {
+          "type": "header",
+          "text": "Declaration",
+          "value": "declaration",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "用enum的優勢": {
+          "type": "header",
+          "text": "用enum的優勢",
+          "value": "用enum的優勢",
+          "line": 23,
           "column": 0,
           "depth": 2
         },
@@ -2888,7 +2904,7 @@
           "type": "header",
           "text": "Use Cases",
           "value": "use-cases",
-          "line": 79,
+          "line": 52,
           "column": 0,
           "depth": 2
         }
