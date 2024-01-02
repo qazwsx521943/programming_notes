@@ -2,7 +2,7 @@
 id: 2cg1kb9zlmrzfvyzu54nsrd
 title: Structures Vs Classes
 desc: ''
-updated: 1704124865992
+updated: 1704167843846
 created: 1703728237903
 ---
 
@@ -119,34 +119,90 @@ print(thirdPerson === fourthPersonec)
 
 ## Class 特性:
 
-- 繼承
 - 生命週期由ARC管理
-- Dynamic dispatch(type casting)
+- 繼承
+- Dynamic dispatch(runtime 決定要執行哪個function)
 
     ```swift
-    class Animal {
-        func eat() {
-            print("animals can eat")
+    protocol Dispatch {
+        func testDispatch()
+    }
+
+    extension Dispatch {
+        func shared() {
+            print("\(#function) from protocol extension")
         }
     }
 
-    class Dog: Animal {
-        override func eat() {
-            print("dogs can eat")
+    class A: Dispatch {
+      func testDispatch() {
+        print("\(#function) from A")
+      }
+    }
+
+    class B: A {
+        override func testDispatch() {
+            print("\(#function) from B")
         }
 
-        func onlyDog() {
-            print("only dog can call")
+        func shared() {
+            print("\(#function) from B")
         }
     }
 
-    let animal: Animal = Dog()
+    let a: A = B()
+    let b: B = B()
 
-    animal.eat()
-    if let dog = animal as? Dog {
-      dog.onlyDog()
-    }
+    a.testDispatch()
+    b.testDispatch()
+
+    a.shared()
+    b.shared()
     ```
+
+## Swift method dispatch
+
+d | initial Declaration | Extension
+---------| :----------: |:---------:
+ Value Type(struct, enum) | Static | Static
+ Protocol | Table | Static
+ Class | Table | Static
+ NSObject Subclass | Table | Message
+
+
+```swift
+// 1. Value Type (Struct): All Static Dispatch
+struct Person {
+    func isHungry() -> Bool { } // Static
+}
+extension Person {
+    func sayHello() -> String { } // Static
+}
+
+// 2. Protocol: Table & Static
+protocol Animal {
+    func isCute() -> Bool { } // Table
+}
+extension Animal {
+    func canGetAngry() -> Bool { } // Static
+}
+
+// 3. Class
+class Dog: Animal {
+    func isCute() -> Bool { } // Table
+    // add @objc & dynamic keyword
+    @objc dynamic func hoursSleep() -> Int { } // Table -> Message
+}
+extension Dog {
+    func canBite() -> Bool { } // Static
+    // add @objc keyword
+    @objc func goWild() { } // Static -> Message
+}
+// add final keyword
+final class Employee {
+    func canCode() -> Bool { } // Table -> Static
+}
+```
 
 ## What apple says
 

@@ -94,38 +94,114 @@ thirdPerson<span class="token punctuation">.</span>name <span class="token opera
 <h2 id="class-特性">Class 特性:<a aria-hidden="true" class="anchor-heading icon-link" href="#class-特性"></a></h2>
 <ul>
 <li>
-<p>繼承</p>
-</li>
-<li>
 <p>生命週期由ARC管理</p>
 </li>
 <li>
-<p>Dynamic dispatch(type casting)</p>
-<pre class="language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
-    <span class="token keyword">func</span> <span class="token function-definition function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"animals can eat"</span></span><span class="token punctuation">)</span>
+<p>繼承</p>
+</li>
+<li>
+<p>Dynamic dispatch(runtime 決定要執行哪個function)</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">protocol</span> <span class="token class-name">Dispatch</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">testDispatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">extension</span> <span class="token class-name">Dispatch</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">shared</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation"><span class="token literal constant">#function</span></span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> from protocol extension"</span></span><span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">:</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
-    <span class="token keyword">override</span> <span class="token keyword">func</span> <span class="token function-definition function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"dogs can eat"</span></span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">:</span> <span class="token class-name">Dispatch</span> <span class="token punctuation">{</span>
+  <span class="token keyword">func</span> <span class="token function-definition function">testDispatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation"><span class="token literal constant">#function</span></span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> from A"</span></span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">B</span><span class="token punctuation">:</span> <span class="token class-name">A</span> <span class="token punctuation">{</span>
+    <span class="token keyword">override</span> <span class="token keyword">func</span> <span class="token function-definition function">testDispatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation"><span class="token literal constant">#function</span></span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> from B"</span></span><span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
 
-    <span class="token keyword">func</span> <span class="token function-definition function">onlyDog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"only dog can call"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">shared</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation"><span class="token literal constant">#function</span></span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> from B"</span></span><span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">let</span> animal<span class="token punctuation">:</span> <span class="token class-name">Animal</span> <span class="token operator">=</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> a<span class="token punctuation">:</span> <span class="token class-name">A</span> <span class="token operator">=</span> <span class="token class-name">B</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> b<span class="token punctuation">:</span> <span class="token class-name">B</span> <span class="token operator">=</span> <span class="token class-name">B</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-animal<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">if</span> <span class="token keyword">let</span> dog <span class="token operator">=</span> animal <span class="token keyword">as</span><span class="token operator">?</span> <span class="token class-name">Dog</span> <span class="token punctuation">{</span>
-  dog<span class="token punctuation">.</span><span class="token function">onlyDog</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
+a<span class="token punctuation">.</span><span class="token function">testDispatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+b<span class="token punctuation">.</span><span class="token function">testDispatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+a<span class="token punctuation">.</span><span class="token function">shared</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+b<span class="token punctuation">.</span><span class="token function">shared</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
 </li>
 </ul>
+<h2 id="swift-method-dispatch">Swift method dispatch<a aria-hidden="true" class="anchor-heading icon-link" href="#swift-method-dispatch"></a></h2>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>d</th><th align="center">initial Declaration</th><th align="center">Extension</th></tr></thead><tbody><tr><td>Value Type(struct, enum)</td><td align="center">Static</td><td align="center">Static</td></tr><tr><td>Protocol</td><td align="center">Table</td><td align="center">Static</td></tr><tr><td>Class</td><td align="center">Table</td><td align="center">Static</td></tr><tr><td>NSObject Subclass</td><td align="center">Table</td><td align="center">Message</td></tr></tbody></table></div>
+<pre class="language-swift"><code class="language-swift"><span class="token comment">// 1. Value Type (Struct): All Static Dispatch</span>
+<span class="token keyword">struct</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">isHungry</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Bool</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> <span class="token comment">// Static</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">extension</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">String</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> <span class="token comment">// Static</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 2. Protocol: Table &#x26; Static</span>
+<span class="token keyword">protocol</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">isCute</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Bool</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> <span class="token comment">// Table</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">extension</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">canGetAngry</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Bool</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> <span class="token comment">// Static</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 3. Class</span>
+<span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">:</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">isCute</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Bool</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> <span class="token comment">// Table</span>
+    <span class="token comment">// add @objc &#x26; dynamic keyword</span>
+    <span class="token attribute atrule">@objc</span> <span class="token keyword">dynamic</span> <span class="token keyword">func</span> <span class="token function-definition function">hoursSleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Int</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> <span class="token comment">// Table -> Message</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">extension</span> <span class="token class-name">Dog</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">canBite</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Bool</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> <span class="token comment">// Static</span>
+    <span class="token comment">// add @objc keyword</span>
+    <span class="token attribute atrule">@objc</span> <span class="token keyword">func</span> <span class="token function-definition function">goWild</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> <span class="token comment">// Static -> Message</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// add final keyword</span>
+<span class="token keyword">final</span> <span class="token keyword">class</span> <span class="token class-name">Employee</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">canCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Bool</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> <span class="token comment">// Table -> Static</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <h2 id="what-apple-says">What apple says<a aria-hidden="true" class="anchor-heading icon-link" href="#what-apple-says"></a></h2>
 <blockquote>
 <p>The additional capabilities that classes support come at the cost of increased complexity. As a general guideline, prefer structures because they’re easier to reason about, and use classes when they’re appropriate or necessary. In practice, this means most of the custom types you define will be structures and enumerations.</p>

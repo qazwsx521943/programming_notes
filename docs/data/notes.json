@@ -11,8 +11,8 @@
       "title": "This page has not yet sprouted",
       "schemaStub": false,
       "type": "note",
-      "updated": 1704144606069,
-      "created": 1704144606069,
+      "updated": 1704168164215,
+      "created": 1704168164215,
       "desc": "",
       "links": [],
       "anchors": {},
@@ -2720,7 +2720,7 @@
       "id": "2cg1kb9zlmrzfvyzu54nsrd",
       "title": "Structures Vs Classes",
       "desc": "",
-      "updated": 1704124865992,
+      "updated": 1704167843846,
       "created": 1703728237903,
       "custom": {},
       "fname": "programming.language.swift.types.structures vs classes",
@@ -2730,7 +2730,7 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "b2c209d110c38090dd07e12574f5a837",
+      "contentHash": "069239fab5b9a87ca58cb6c59b2cc7ec",
       "links": [],
       "anchors": {
         "definition-syntax": {
@@ -2789,11 +2789,19 @@
           "column": 0,
           "depth": 2
         },
+        "swift-method-dispatch": {
+          "type": "header",
+          "text": "Swift method dispatch",
+          "value": "swift-method-dispatch",
+          "line": 162,
+          "column": 0,
+          "depth": 2
+        },
         "what-apple-says": {
           "type": "header",
           "text": "What apple says",
           "value": "what-apple-says",
-          "line": 150,
+          "line": 206,
           "column": 0,
           "depth": 2
         },
@@ -2801,7 +2809,7 @@
           "type": "header",
           "text": "Heap Summary",
           "value": "heap-summary",
-          "line": 156,
+          "line": 212,
           "column": 0,
           "depth": 3
         },
@@ -2809,7 +2817,7 @@
           "type": "header",
           "text": "Stack Summary",
           "value": "stack-summary",
-          "line": 166,
+          "line": 222,
           "column": 0,
           "depth": 3
         },
@@ -2817,7 +2825,7 @@
           "type": "header",
           "text": "Situations when choosing different data types",
           "value": "situations-when-choosing-different-data-types",
-          "line": 171,
+          "line": 227,
           "column": 0,
           "depth": 2
         },
@@ -2825,7 +2833,7 @@
           "type": "header",
           "text": "Comparison",
           "value": "comparison",
-          "line": 183,
+          "line": 239,
           "column": 0,
           "depth": 2
         }
