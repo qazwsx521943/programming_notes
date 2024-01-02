@@ -1,0 +1,297 @@
+<h1 id="class">Class<a aria-hidden="true" class="anchor-heading icon-link" href="#class"></a></h1>
+<h2 id="declare-a-class">Declare a class<a aria-hidden="true" class="anchor-heading icon-link" href="#declare-a-class"></a></h2>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Size</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> width<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token keyword">var</span> height<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">10</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">Size</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="initialize-a-class-instance">Initialize a class instance<a aria-hidden="true" class="anchor-heading icon-link" href="#initialize-a-class-instance"></a></h2>
+<ul>
+<li>
+<p>stored property with <code>default value</code></p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Size</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> width<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token keyword">var</span> height<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">10</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> size <span class="token operator">=</span> <span class="token class-name">Size</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li>
+<p>set up stored property values in <code>init</code> function</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Size</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> width<span class="token punctuation">:</span> <span class="token class-name">Int</span>
+    <span class="token keyword">var</span> height<span class="token punctuation">:</span> <span class="token class-name">Int</span>
+
+    <span class="token keyword">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      width <span class="token operator">=</span> <span class="token number">10</span>
+      height <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">init</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">self</span><span class="token punctuation">.</span>width <span class="token operator">=</span> width
+      <span class="token keyword">self</span><span class="token punctuation">.</span>height <span class="token operator">=</span> height
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> size1 <span class="token operator">=</span> <span class="token class-name">Size</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> size2 <span class="token operator">=</span> <span class="token class-name">Size</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li>
+<p>stored property with <code>optional value</code></p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Size</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> width<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token operator">?</span>
+  <span class="token keyword">var</span> height<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token operator">?</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> size <span class="token operator">=</span> <span class="token class-name">Size</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+size<span class="token punctuation">.</span>width <span class="token operator">=</span> <span class="token number">10</span>
+size<span class="token punctuation">.</span>height <span class="token operator">=</span> <span class="token number">10</span>
+</code></pre>
+</li>
+<li>
+<p>failable initializer</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Size</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> width<span class="token punctuation">:</span> <span class="token class-name">Int</span>
+    <span class="token keyword">var</span> height<span class="token punctuation">:</span> <span class="token class-name">Int</span>
+
+    <span class="token keyword">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        width <span class="token operator">=</span> <span class="token number">10</span>
+        height <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">init</span><span class="token operator">?</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>width <span class="token operator">=</span> width
+        <span class="token keyword">self</span><span class="token punctuation">.</span>height <span class="token operator">=</span> height
+
+        <span class="token keyword">if</span> width <span class="token operator">&#x3C;=</span> <span class="token number">0</span> <span class="token operator">||</span> height <span class="token operator">&#x3C;=</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token nil constant">nil</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> size1 <span class="token operator">=</span> <span class="token class-name">Size</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token comment">// nil</span>
+<span class="token keyword">var</span> size2 <span class="token operator">=</span> <span class="token class-name">Size</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token comment">// { width: 10, height: 10 }</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="property">Property<a aria-hidden="true" class="anchor-heading icon-link" href="#property"></a></h2>
+<ol>
+<li>
+<p><code>stored property</code></p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Size</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> width<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token keyword">var</span> height<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token keyword">var</span> x<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">var</span> y<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li>
+<p><code>computed property</code></p>
+<ol>
+<li>
+<p>getter(must) / setter(optional)</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Size</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> width<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token keyword">var</span> height<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token keyword">var</span> x<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">var</span> y<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">var</span> centerX<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token punctuation">{</span>
+        <span class="token keyword">get</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> x <span class="token operator">+</span> width <span class="token operator">/</span> <span class="token number">2</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">set</span> <span class="token punctuation">{</span>
+            x <span class="token operator">=</span> newValue <span class="token operator">-</span> width <span class="token operator">/</span> <span class="token number">2</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> centerY<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token punctuation">{</span>
+        <span class="token keyword">get</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> y <span class="token operator">+</span> height <span class="token operator">/</span> <span class="token number">2</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">set</span> <span class="token punctuation">{</span>
+            y <span class="token operator">=</span> newValue <span class="token operator">-</span> height <span class="token operator">/</span> <span class="token number">2</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>property observer</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Size</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> width<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">10</span> <span class="token punctuation">{</span>
+        <span class="token keyword">willSet</span> <span class="token punctuation">{</span>
+            newValue <span class="token operator">&#x3C;=</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+                <span class="token comment">// do something</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">didSet</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> width <span class="token operator">&#x3C;=</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+                width <span class="token operator">=</span> oldValue
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> height<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token keyword">var</span> x<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">var</span> y<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li>
+<p><code>lazy</code> delay initialization</p>
+</li>
+</ol>
+<h2 id="method">method<a aria-hidden="true" class="anchor-heading icon-link" href="#method"></a></h2>
+<ul>
+<li>
+<p>沒有<code>input</code>但有<code>return value</code> → 可以考慮用computed property 讓 code更簡潔</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Size</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> width<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token keyword">var</span> height<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token keyword">var</span> x<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">var</span> y<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">func</span> <span class="token function-definition function">description</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">String</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">width</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> x </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">height</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Size</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> width<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token keyword">var</span> height<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token keyword">var</span> x<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">var</span> y<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">var</span> description<span class="token punctuation">:</span> <span class="token class-name">String</span> <span class="token punctuation">{</span>
+        <span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">width</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> x </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">height</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Size</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> width<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token keyword">var</span> height<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token keyword">var</span> x<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">var</span> y<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">func</span> <span class="token function-definition function">adjustSize</span><span class="token punctuation">(</span>newWidth<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">,</span> newHeight<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        width <span class="token operator">=</span> newWidth
+        height <span class="token operator">=</span> newHeight
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Size adjusted to </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">width</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> x </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">height</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> mySize <span class="token operator">=</span> <span class="token class-name">Size</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+mySize<span class="token punctuation">.</span><span class="token function">adustSize</span><span class="token punctuation">(</span>newWidth<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span> newHeight<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="inheritance">Inheritance<a aria-hidden="true" class="anchor-heading icon-link" href="#inheritance"></a></h2>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Shape</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> color<span class="token punctuation">:</span> <span class="token class-name">String</span>
+
+    <span class="token keyword">init</span><span class="token punctuation">(</span>color<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>color <span class="token operator">=</span> color
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">func</span> <span class="token function-definition function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Drawing a shape in </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">color</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> color."</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Circle</span><span class="token punctuation">:</span> <span class="token class-name">Shape</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> radius<span class="token punctuation">:</span> <span class="token class-name">Double</span>
+
+    <span class="token keyword">init</span><span class="token punctuation">(</span>color<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> radius<span class="token punctuation">:</span> <span class="token class-name">Double</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>radius <span class="token operator">=</span> radius
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>color<span class="token punctuation">:</span> color<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">override</span> <span class="token keyword">func</span> <span class="token function-definition function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Drawing a circle with radius </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">radius</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> in </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">color</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> color."</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Square</span><span class="token punctuation">:</span> <span class="token class-name">Shape</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> width<span class="token punctuation">:</span> <span class="token class-name">Double</span>
+    <span class="token keyword">var</span> height<span class="token punctuation">:</span> <span class="token class-name">Double</span>
+
+    <span class="token keyword">init</span><span class="token punctuation">(</span>color<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> width<span class="token punctuation">:</span> <span class="token class-name">Double</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token class-name">Double</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>width <span class="token operator">=</span> width
+        <span class="token keyword">self</span><span class="token punctuation">.</span>height <span class="token operator">=</span> height
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>color<span class="token punctuation">:</span> color<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">override</span> <span class="token keyword">func</span> <span class="token function-definition function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Drawing a rectangle with width </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">width</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> and height </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">height</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> in </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">color</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> color."</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> redCircle <span class="token operator">=</span> <span class="token class-name">Circle</span><span class="token punctuation">(</span>color<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Red"</span></span><span class="token punctuation">,</span> radius<span class="token punctuation">:</span> <span class="token number">5.0</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> blueSquare <span class="token operator">=</span> <span class="token class-name">Square</span><span class="token punctuation">(</span>color<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Blue"</span></span><span class="token punctuation">,</span> width<span class="token punctuation">:</span> <span class="token number">8.0</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">6.0</span><span class="token punctuation">)</span>
+
+redCircle<span class="token punctuation">.</span><span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+blueSquare<span class="token punctuation">.</span><span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// dynamic dispatch</span>
+<span class="token keyword">var</span> circleShape<span class="token punctuation">:</span> <span class="token class-name">Shape</span> <span class="token operator">=</span> <span class="token class-name">Circle</span><span class="token punctuation">(</span>color<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Red"</span></span><span class="token punctuation">,</span> radius<span class="token punctuation">:</span> <span class="token number">5.0</span><span class="token punctuation">)</span>
+circleShape<span class="token punctuation">.</span><span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="designated--convenience-initializer">designated / convenience initializer<a aria-hidden="true" class="anchor-heading icon-link" href="#designated--convenience-initializer"></a></h2>
+<p>Principle:</p>
+<ol>
+<li>A designated initializer must call a designated initializer from its immediate superclass.</li>
+<li>A convenience initializer must call another initializer from the same class.</li>
+<li>A convenience initializer must ultimately call a designated initializer.</li>
+</ol>
+<p>Remember:</p>
+<ul>
+<li>
+<p>Designated initializers must always delegate up.</p>
+</li>
+<li>
+<p>Convenience initializers must always delegate across.</p>
+</li>
+</ul>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">Car</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> brand<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">var</span> model<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token comment">// designated initializer</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span>brand<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> model<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>brand <span class="token operator">=</span> brand
+        <span class="token keyword">self</span><span class="token punctuation">.</span>model <span class="token operator">=</span> model
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">ElectricCar</span><span class="token punctuation">:</span> <span class="token class-name">Car</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> batteryCapacity<span class="token punctuation">:</span> <span class="token class-name">Double</span>
+
+    <span class="token comment">// Designated initializer, must call parent designated initializer</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span>brand<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> model<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> batteryCapacity<span class="token punctuation">:</span> <span class="token class-name">Double</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>batteryCapacity <span class="token operator">=</span> batteryCapacity
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>brand<span class="token punctuation">:</span> brand<span class="token punctuation">,</span> model<span class="token punctuation">:</span> model<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Convenience initializer, must call current class defined designated initializer</span>
+    <span class="token keyword">convenience</span> <span class="token keyword">override</span> <span class="token keyword">init</span><span class="token punctuation">(</span>brand<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> model<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// default battery capacity set to 60</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>brand<span class="token punctuation">:</span> brand<span class="token punctuation">,</span> model<span class="token punctuation">:</span> model<span class="token punctuation">,</span> batteryCapacity<span class="token punctuation">:</span> <span class="token number">60.0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> teslaModel3 <span class="token operator">=</span> <span class="token class-name">ElectricCar</span><span class="token punctuation">(</span>brand<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Tesla"</span></span><span class="token punctuation">,</span> model<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Model 3"</span></span><span class="token punctuation">,</span> batteryCapacity<span class="token punctuation">:</span> <span class="token number">75.0</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> nissanLeaf <span class="token operator">=</span> <span class="token class-name">ElectricCar</span><span class="token punctuation">(</span>brand<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Nissan"</span></span><span class="token punctuation">,</span> model<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Leaf"</span></span><span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>concept:</li>
+</ul>
+<ol>
+<li>想要父類別的<code>convenience initializer</code>，我們需要<code>override</code>父類別的所有<code>designated initializer</code></li>
+</ol>

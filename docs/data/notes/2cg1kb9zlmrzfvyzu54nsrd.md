@@ -48,7 +48,7 @@ let locationClass = LocationClass(latitude: 120, longitude: 25)
 
 ### **Pass by value** vs **Pass by reference**
 
-#### CoA
+#### CoA （Copy-on-Assign）
 
 ```swift
 struct PersonStruct {
@@ -67,7 +67,7 @@ print(secondPerson.name)
 getStackAddress(target: &firstPerson) == getStackAddress(target: &secondPerson)
 ```
 
-#### CoW
+#### CoW （Copy-on-Write）
 
 ```swift
 var personStructArray = [
@@ -79,7 +79,7 @@ var personStructArrayCopy = personStructArray
 
 getStackAddress(target: &personStructArray) == getStackAddress(target: &personStructArrayCopy)
 
-personStructArray[0].name = "TOYA"
+personStructArrayCopy[0].name = "TOYA"
 
 getStackAddress(target: &personStructArray) == getStackAddress(target: &personStructArrayCopy)
 ```
@@ -106,7 +106,7 @@ thirdPerson.name = "ClassPersonModified"
 
 print(thirdPerson.name)
 print(fourthPerson.name)
-print(thirdPerson === fourthPersonec)
+print(thirdPerson === fourthPerson)
 ```
 
 ![reference type](/assets/images/programming.language.swift.Types.reference-type.png)
@@ -152,13 +152,9 @@ d | initial Declaration | Extension
     }
 
     let a: A = B()
-    let b: B = B()
 
     a.testDispatch()
-    b.testDispatch()
-
     a.shared()
-    b.shared()
     ```
 
 ```swift
@@ -199,6 +195,9 @@ final class Employee {
 
 > The additional capabilities that classes support come at the cost of increased complexity. As a general guideline, prefer structures because they’re easier to reason about, and use classes when they’re appropriate or necessary. In practice, this means most of the custom types you define will be structures and enumerations.
 
+- Use Classes When You Need Objective-C Interoperability
+- Use Classes When You Need to Control Identity
+
 如果我們沒有要使用到class比struct多擁有的特性，我們在開發的時候建議都以struct、enum建立Type，因為他們比較好local reason，可以確保程式碼的可讀性、維護性。
 
 ## Situations when choosing different data types
@@ -223,4 +222,5 @@ types | Struct | Class | Actor | Enum
  Inheritance | X | V | X | X
 
 References:
+
 - https://www.backblaze.com/blog/whats-the-diff-programs-processes-and-threads/

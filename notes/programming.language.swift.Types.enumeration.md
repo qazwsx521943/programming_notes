@@ -2,7 +2,7 @@
 id: m30ay8bv1fkxsl30m2r9frl
 title: Enumeration
 desc: ''
-updated: 1704144587178
+updated: 1704191921147
 created: 1703951656006
 ---
 
@@ -51,6 +51,7 @@ enum 非常適合表達可列舉的相關值。
     decideDirection(direction: "north")
     decideDirection(direction: "northh")
     ```
+
 - Readability & Maintainability: 減少其他人看code需要的通靈技能
 
     ```swift

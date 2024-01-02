@@ -39,7 +39,7 @@
 </ul>
 <h2 id="diff">DIFF<a aria-hidden="true" class="anchor-heading icon-link" href="#diff"></a></h2>
 <h3 id="pass-by-value-vs-pass-by-reference"><strong>Pass by value</strong> vs <strong>Pass by reference</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#pass-by-value-vs-pass-by-reference"></a></h3>
-<h4 id="coa">CoA<a aria-hidden="true" class="anchor-heading icon-link" href="#coa"></a></h4>
+<h4 id="coa-copy-on-assign">CoA （Copy-on-Assign）<a aria-hidden="true" class="anchor-heading icon-link" href="#coa-copy-on-assign"></a></h4>
 <pre class="language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">PersonStruct</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span>
     <span class="token keyword">var</span> age<span class="token punctuation">:</span> <span class="token class-name">Int</span>
@@ -55,7 +55,7 @@ firstPerson<span class="token punctuation">.</span>name <span class="token opera
 
 <span class="token function">getStackAddress</span><span class="token punctuation">(</span>target<span class="token punctuation">:</span> <span class="token operator">&#x26;</span>firstPerson<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token function">getStackAddress</span><span class="token punctuation">(</span>target<span class="token punctuation">:</span> <span class="token operator">&#x26;</span>secondPerson<span class="token punctuation">)</span>
 </code></pre>
-<h4 id="cow">CoW<a aria-hidden="true" class="anchor-heading icon-link" href="#cow"></a></h4>
+<h4 id="cow-copy-on-write">CoW （Copy-on-Write）<a aria-hidden="true" class="anchor-heading icon-link" href="#cow-copy-on-write"></a></h4>
 <pre class="language-swift"><code class="language-swift"><span class="token keyword">var</span> personStructArray <span class="token operator">=</span> <span class="token punctuation">[</span>
     <span class="token class-name">PersonStruct</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"TOYX"</span></span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     <span class="token class-name">PersonStruct</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"TOYY"</span></span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
@@ -65,7 +65,7 @@ firstPerson<span class="token punctuation">.</span>name <span class="token opera
 
 <span class="token function">getStackAddress</span><span class="token punctuation">(</span>target<span class="token punctuation">:</span> <span class="token operator">&#x26;</span>personStructArray<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token function">getStackAddress</span><span class="token punctuation">(</span>target<span class="token punctuation">:</span> <span class="token operator">&#x26;</span>personStructArrayCopy<span class="token punctuation">)</span>
 
-personStructArray<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"TOYA"</span></span>
+personStructArrayCopy<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"TOYA"</span></span>
 
 <span class="token function">getStackAddress</span><span class="token punctuation">(</span>target<span class="token punctuation">:</span> <span class="token operator">&#x26;</span>personStructArray<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token function">getStackAddress</span><span class="token punctuation">(</span>target<span class="token punctuation">:</span> <span class="token operator">&#x26;</span>personStructArrayCopy<span class="token punctuation">)</span>
 </code></pre>
@@ -88,7 +88,7 @@ thirdPerson<span class="token punctuation">.</span>name <span class="token opera
 
 <span class="token function">print</span><span class="token punctuation">(</span>thirdPerson<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
 <span class="token function">print</span><span class="token punctuation">(</span>fourthPerson<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
-<span class="token function">print</span><span class="token punctuation">(</span>thirdPerson <span class="token operator">===</span> fourthPersonec<span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>thirdPerson <span class="token operator">===</span> fourthPerson<span class="token punctuation">)</span>
 </code></pre>
 <p><img src="/programming_notes/assets/images/programming.language.swift.Types.reference-type.png" alt="reference type"></p>
 <h2 id="static-dispatch-vs-dynamic-dispatch">Static Dispatch vs Dynamic Dispatch<a aria-hidden="true" class="anchor-heading icon-link" href="#static-dispatch-vs-dynamic-dispatch"></a></h2>
@@ -154,13 +154,9 @@ thirdPerson<span class="token punctuation">.</span>name <span class="token opera
 <span class="token punctuation">}</span>
 
 <span class="token keyword">let</span> a<span class="token punctuation">:</span> <span class="token class-name">A</span> <span class="token operator">=</span> <span class="token class-name">B</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">let</span> b<span class="token punctuation">:</span> <span class="token class-name">B</span> <span class="token operator">=</span> <span class="token class-name">B</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 a<span class="token punctuation">.</span><span class="token function">testDispatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-b<span class="token punctuation">.</span><span class="token function">testDispatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-
 a<span class="token punctuation">.</span><span class="token function">shared</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-b<span class="token punctuation">.</span><span class="token function">shared</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
 </li>
 </ul>
@@ -200,6 +196,10 @@ b<span class="token punctuation">.</span><span class="token function">shared</sp
 <blockquote>
 <p>The additional capabilities that classes support come at the cost of increased complexity. As a general guideline, prefer structures because they’re easier to reason about, and use classes when they’re appropriate or necessary. In practice, this means most of the custom types you define will be structures and enumerations.</p>
 </blockquote>
+<ul>
+<li>Use Classes When You Need Objective-C Interoperability</li>
+<li>Use Classes When You Need to Control Identity</li>
+</ul>
 <p>如果我們沒有要使用到class比struct多擁有的特性，我們在開發的時候建議都以struct、enum建立Type，因為他們比較好local reason，可以確保程式碼的可讀性、維護性。</p>
 <h2 id="situations-when-choosing-different-data-types">Situations when choosing different data types<a aria-hidden="true" class="anchor-heading icon-link" href="#situations-when-choosing-different-data-types"></a></h2>
 <ol>

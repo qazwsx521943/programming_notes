@@ -44,6 +44,7 @@ enum 非常適合表達可列舉的相關值。
     decideDirection(direction: "north")
     decideDirection(direction: "northh")
     ```
+
 - Readability & Maintainability: 減少其他人看code需要的通靈技能
 
     ```swift

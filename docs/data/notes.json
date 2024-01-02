@@ -11,8 +11,8 @@
       "title": "This page has not yet sprouted",
       "schemaStub": false,
       "type": "note",
-      "updated": 1704177807441,
-      "created": 1704177807441,
+      "updated": 1704203720124,
+      "created": 1704203720124,
       "desc": "",
       "links": [],
       "anchors": {},
@@ -2726,6 +2726,7 @@
         }
       },
       "children": [
+        "f0rt95n87dvpuuf5ktobguw",
         "m30ay8bv1fkxsl30m2r9frl",
         "2cg1kb9zlmrzfvyzu54nsrd"
       ],
@@ -2736,7 +2737,7 @@
       "id": "2cg1kb9zlmrzfvyzu54nsrd",
       "title": "Structures Vs Classes",
       "desc": "",
-      "updated": 1704177770397,
+      "updated": 1704203216969,
       "created": 1703728237903,
       "custom": {},
       "fname": "programming.language.swift.types.structures vs classes",
@@ -2746,7 +2747,7 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "ab846342d71cd7e026c647190fc4d31b",
+      "contentHash": "eae051c4490c676bf6e695b8d1a0420e",
       "links": [],
       "anchors": {
         "definition-syntax": {
@@ -2789,18 +2790,18 @@
           "column": 0,
           "depth": 3
         },
-        "coa": {
+        "coa-copy-on-assign": {
           "type": "header",
-          "text": "CoA",
-          "value": "coa",
+          "text": "CoA （Copy-on-Assign）",
+          "value": "coa-copy-on-assign",
           "line": 57,
           "column": 0,
           "depth": 4
         },
-        "cow": {
+        "cow-copy-on-write": {
           "type": "header",
-          "text": "CoW",
-          "value": "cow",
+          "text": "CoW （Copy-on-Write）",
+          "value": "cow-copy-on-write",
           "line": 76,
           "column": 0,
           "depth": 4
@@ -2833,7 +2834,7 @@
           "type": "header",
           "text": "Which to choose?",
           "value": "which-to-choose",
-          "line": 204,
+          "line": 200,
           "column": 0,
           "depth": 2
         },
@@ -2841,7 +2842,7 @@
           "type": "header",
           "text": "Situations when choosing different data types",
           "value": "situations-when-choosing-different-data-types",
-          "line": 210,
+          "line": 209,
           "column": 0,
           "depth": 2
         },
@@ -2849,7 +2850,7 @@
           "type": "header",
           "text": "Comparison",
           "value": "comparison",
-          "line": 222,
+          "line": 221,
           "column": 0,
           "depth": 2
         }
@@ -2862,7 +2863,7 @@
       "id": "m30ay8bv1fkxsl30m2r9frl",
       "title": "Enumeration",
       "desc": "",
-      "updated": 1704144587178,
+      "updated": 1704191921147,
       "created": 1703951656006,
       "custom": {},
       "fname": "programming.language.swift.Types.enumeration",
@@ -2872,7 +2873,7 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "f708a5680cb91ad6d2f7cf9b70ca0c7a",
+      "contentHash": "9ad74b84f74ea9dbb4ef3fa745b3c965",
       "links": [],
       "anchors": {
         "enum-or-struct": {
@@ -2887,7 +2888,77 @@
           "type": "header",
           "text": "Use Cases",
           "value": "use-cases",
-          "line": 78,
+          "line": 79,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "mr2culexmtziuklrq2gt22f",
+      "data": {}
+    },
+    "f0rt95n87dvpuuf5ktobguw": {
+      "id": "f0rt95n87dvpuuf5ktobguw",
+      "title": "Class",
+      "desc": "",
+      "updated": 1704203683171,
+      "created": 1704195508926,
+      "custom": {},
+      "fname": "programming.language.swift.Types.Class",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "da881cd8360f63e52faf3546cf6d719f",
+      "links": [],
+      "anchors": {
+        "declare-a-class": {
+          "type": "header",
+          "text": "Declare a class",
+          "value": "declare-a-class",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "initialize-a-class-instance": {
+          "type": "header",
+          "text": "Initialize a class instance",
+          "value": "initialize-a-class-instance",
+          "line": 18,
+          "column": 0,
+          "depth": 2
+        },
+        "property": {
+          "type": "header",
+          "text": "Property",
+          "value": "property",
+          "line": 92,
+          "column": 0,
+          "depth": 2
+        },
+        "method": {
+          "type": "header",
+          "text": "method",
+          "value": "method",
+          "line": 160,
+          "column": 0,
+          "depth": 2
+        },
+        "inheritance": {
+          "type": "header",
+          "text": "Inheritance",
+          "value": "inheritance",
+          "line": 207,
+          "column": 0,
+          "depth": 2
+        },
+        "designated--convenience-initializer": {
+          "type": "header",
+          "text": "designated / convenience initializer",
+          "value": "designated--convenience-initializer",
+          "line": 261,
           "column": 0,
           "depth": 2
         }
