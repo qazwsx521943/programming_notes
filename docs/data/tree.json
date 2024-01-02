@@ -197,14 +197,6 @@
                   "children": []
                 },
                 {
-                  "key": "rc44em7kcfzkyprtzidrtjs",
-                  "title": "Data Structure",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": []
-                },
-                {
                   "key": "n5jvl7w3vcsyh0vxk4ocvcu",
                   "title": "Extension",
                   "icon": null,
@@ -673,7 +665,6 @@
     "m30ay8bv1fkxsl30m2r9frl": "mr2culexmtziuklrq2gt22f",
     "2cg1kb9zlmrzfvyzu54nsrd": "mr2culexmtziuklrq2gt22f",
     "41n9yjlpdhmbls1eigctl1v": "vztg7xzj0425ae5ogmk8ds2",
-    "rc44em7kcfzkyprtzidrtjs": "vztg7xzj0425ae5ogmk8ds2",
     "n5jvl7w3vcsyh0vxk4ocvcu": "vztg7xzj0425ae5ogmk8ds2",
     "rokc7843iqin5f5kfi9sew8": "n5jvl7w3vcsyh0vxk4ocvcu",
     "vngl32fzlfilw9u46sgx02x": "n5jvl7w3vcsyh0vxk4ocvcu",
@@ -753,7 +744,6 @@
     "m30ay8bv1fkxsl30m2r9frl": "Enumeration",
     "2cg1kb9zlmrzfvyzu54nsrd": "Structures Vs Classes",
     "41n9yjlpdhmbls1eigctl1v": "Closures",
-    "rc44em7kcfzkyprtzidrtjs": "Data Structure",
     "n5jvl7w3vcsyh0vxk4ocvcu": "Extension",
     "rokc7843iqin5f5kfi9sew8": "UIImage",
     "vngl32fzlfilw9u46sgx02x": "Tips",
