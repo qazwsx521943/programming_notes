@@ -11,8 +11,8 @@
       "title": "This page has not yet sprouted",
       "schemaStub": false,
       "type": "note",
-      "updated": 1704171713460,
-      "created": 1704171713461,
+      "updated": 1704177807441,
+      "created": 1704177807441,
       "desc": "",
       "links": [],
       "anchors": {},
@@ -1706,7 +1706,7 @@
       "id": "hvogtqvodqmpqkl2y0zxkph",
       "title": "Memory Management",
       "desc": "",
-      "updated": 1704120699994,
+      "updated": 1704177781019,
       "created": 1703918584124,
       "custom": {},
       "fname": "programming.language.swift.memory management",
@@ -1716,7 +1716,7 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "4d6c3d5c051b91ab10166608de2882d8",
+      "contentHash": "dea639386ccd8aed4819c80dc6599048",
       "links": [],
       "anchors": {
         "stack-vs-heap": {
@@ -1740,6 +1740,22 @@
           "text": "Heap 的特性",
           "value": "heap-的特性",
           "line": 28,
+          "column": 0,
+          "depth": 3
+        },
+        "heap-summary": {
+          "type": "header",
+          "text": "Heap Summary",
+          "value": "heap-summary",
+          "line": 42,
+          "column": 0,
+          "depth": 3
+        },
+        "stack-summary": {
+          "type": "header",
+          "text": "Stack Summary",
+          "value": "stack-summary",
+          "line": 52,
           "column": 0,
           "depth": 3
         }
@@ -2720,7 +2736,7 @@
       "id": "2cg1kb9zlmrzfvyzu54nsrd",
       "title": "Structures Vs Classes",
       "desc": "",
-      "updated": 1704171693183,
+      "updated": 1704177770397,
       "created": 1703728237903,
       "custom": {},
       "fname": "programming.language.swift.types.structures vs classes",
@@ -2730,7 +2746,7 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "3c8b5558e78c51afad6d9fd23f944367",
+      "contentHash": "ab846342d71cd7e026c647190fc4d31b",
       "links": [],
       "anchors": {
         "definition-syntax": {
@@ -2749,83 +2765,83 @@
           "column": 0,
           "depth": 2
         },
+        "both-can": {
+          "type": "header",
+          "text": "Both can:",
+          "value": "both-can",
+          "line": 46,
+          "column": 0,
+          "depth": 2
+        },
+        "diff": {
+          "type": "header",
+          "text": "DIFF",
+          "value": "diff",
+          "line": 53,
+          "column": 0,
+          "depth": 2
+        },
         "pass-by-value-vs-pass-by-reference": {
           "type": "header",
           "text": "Pass by value vs Pass by reference",
           "value": "pass-by-value-vs-pass-by-reference",
-          "line": 46,
+          "line": 55,
           "column": 0,
-          "depth": 2
+          "depth": 3
         },
         "coa": {
           "type": "header",
           "text": "CoA",
           "value": "coa",
-          "line": 48,
+          "line": 57,
           "column": 0,
-          "depth": 3
+          "depth": 4
         },
         "cow": {
           "type": "header",
           "text": "CoW",
           "value": "cow",
-          "line": 67,
+          "line": 76,
+          "column": 0,
+          "depth": 4
+        },
+        "reference": {
+          "type": "header",
+          "text": "Reference",
+          "value": "reference",
+          "line": 95,
+          "column": 0,
+          "depth": 4
+        },
+        "static-dispatch-vs-dynamic-dispatch": {
+          "type": "header",
+          "text": "Static Dispatch vs Dynamic Dispatch",
+          "value": "static-dispatch-vs-dynamic-dispatch",
+          "line": 120,
+          "column": 0,
+          "depth": 2
+        },
+        "method-dispatch": {
+          "type": "header",
+          "text": "Method dispatch",
+          "value": "method-dispatch",
+          "line": 122,
           "column": 0,
           "depth": 3
         },
-        "both-can": {
+        "which-to-choose": {
           "type": "header",
-          "text": "Both can:",
-          "value": "both-can",
-          "line": 111,
+          "text": "Which to choose?",
+          "value": "which-to-choose",
+          "line": 204,
           "column": 0,
           "depth": 2
-        },
-        "class-特性": {
-          "type": "header",
-          "text": "Class 特性:",
-          "value": "class-特性",
-          "line": 118,
-          "column": 0,
-          "depth": 2
-        },
-        "swift-method-dispatch": {
-          "type": "header",
-          "text": "Swift method dispatch",
-          "value": "swift-method-dispatch",
-          "line": 161,
-          "column": 0,
-          "depth": 2
-        },
-        "what-apple-says": {
-          "type": "header",
-          "text": "What apple says",
-          "value": "what-apple-says",
-          "line": 205,
-          "column": 0,
-          "depth": 2
-        },
-        "heap-summary": {
-          "type": "header",
-          "text": "Heap Summary",
-          "value": "heap-summary",
-          "line": 211,
-          "column": 0,
-          "depth": 3
-        },
-        "stack-summary": {
-          "type": "header",
-          "text": "Stack Summary",
-          "value": "stack-summary",
-          "line": 221,
-          "column": 0,
-          "depth": 3
         },
         "situations-when-choosing-different-data-types": {
           "type": "header",
           "text": "Situations when choosing different data types",
           "value": "situations-when-choosing-different-data-types",
-          "line": 226,
+          "line": 210,
           "column": 0,
           "depth": 2
         },
@@ -2833,7 +2849,7 @@
           "type": "header",
           "text": "Comparison",
           "value": "comparison",
-          "line": 238,
+          "line": 222,
           "column": 0,
           "depth": 2
         }

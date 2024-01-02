@@ -37,9 +37,18 @@ let locationClass = LocationClass(latitude: 120, longitude: 25)
 
 ```
 
-## **Pass by value** vs **Pass by reference**
+## Both can:
 
-### CoA
+- 定義store properties, computed properties
+- 定義methods
+- 用extension來擴展他們的功能
+- 定義subscripts，讓我們可以透過`[]`的方式取得值
+
+## DIFF
+
+### **Pass by value** vs **Pass by reference**
+
+#### CoA
 
 ```swift
 struct PersonStruct {
@@ -58,7 +67,7 @@ print(secondPerson.name)
 getStackAddress(target: &firstPerson) == getStackAddress(target: &secondPerson)
 ```
 
-### CoW
+#### CoW
 
 ```swift
 var personStructArray = [
@@ -77,7 +86,7 @@ getStackAddress(target: &personStructArray) == getStackAddress(target: &personSt
 
 ![value type](/assets/images/programming.language.swift.Types.value-type.png)
 
-Reference
+#### Reference
 
 ```swift
 class PersonClass {
@@ -102,18 +111,18 @@ print(thirdPerson === fourthPersonec)
 
 ![reference type](/assets/images/programming.language.swift.Types.reference-type.png)
 
-## Both can:
+## Static Dispatch vs Dynamic Dispatch
 
-- 定義store properties, computed properties
-- 定義methods
-- 用extension來擴展他們的功能
-- 定義subscripts，讓我們可以透過`[]`的方式取得值
+### Method dispatch
 
-## Class 特性:
+d | initial Declaration | Extension
+---------| :----------: |:---------:
+ Value Type(struct, enum) | Static | Static
+ Protocol | Table | Static
+ Class | Table | Static
+ NSObject Subclass | Table | Message
 
-- 生命週期由ARC管理
-- 繼承
-- Dynamic dispatch(runtime 決定要執行哪個function)
+- Dynamic dispatch example
 
     ```swift
     protocol Dispatch {
@@ -152,16 +161,6 @@ print(thirdPerson === fourthPersonec)
     b.shared()
     ```
 
-## Swift method dispatch
-
-d | initial Declaration | Extension
----------| :----------: |:---------:
- Value Type(struct, enum) | Static | Static
- Protocol | Table | Static
- Class | Table | Static
- NSObject Subclass | Table | Message
-
-
 ```swift
 // 1. Value Type (Struct): All Static Dispatch
 struct Person {
@@ -196,26 +195,11 @@ final class Employee {
 }
 ```
 
-## What apple says
+## Which to choose?
 
 > The additional capabilities that classes support come at the cost of increased complexity. As a general guideline, prefer structures because they’re easier to reason about, and use classes when they’re appropriate or necessary. In practice, this means most of the custom types you define will be structures and enumerations.
 
 如果我們沒有要使用到class比struct多擁有的特性，我們在開發的時候建議都以struct、enum建立Type，因為他們比較好local reason，可以確保程式碼的可讀性、維護性。
-
-### Heap Summary
-
-- More dynamic but less efficient than stack.
-- Goes through 3 steps:
-  1. allocation
-  2. tracking reference count
-  3. deallocation
-- Heap memory allocation is done for objects whose size can not be calculated at compile time, plus all reference types(because reference types life time is not based on their defined scope).
-- heap memory is somehow a global host for objects and all threads can have access to it, so the objects stored on it are not thread-safe
-
-### Stack Summary
-
-- value types are all stored on the stack memory. Note that the value types should not have any reference types associated with them(i.e. they are either not contained by or contain a reference type) otherwise they wouldn’t be stored on the stack.
-- The amount of memory needed is normally calculated at compile time since they are not dynamic and do not need reference count semantics to decide how long they have to live(They live in a scope and when they are used the memory will dump them)
 
 ## Situations when choosing different data types
 

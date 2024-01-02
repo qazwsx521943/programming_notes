@@ -32,6 +32,24 @@
 <p>heap上的資料可以在整個應用程式中共享</p>
 </li>
 </ul>
+<h3 id="heap-summary">Heap Summary<a aria-hidden="true" class="anchor-heading icon-link" href="#heap-summary"></a></h3>
+<ul>
+<li>More dynamic but less efficient than stack.</li>
+<li>Goes through 3 steps:
+<ol>
+<li>allocation</li>
+<li>tracking reference count</li>
+<li>deallocation</li>
+</ol>
+</li>
+<li>Heap memory allocation is done for objects whose size can not be calculated at compile time, plus all reference types(because reference types life time is not based on their defined scope).</li>
+<li>heap memory is somehow a global host for objects and all threads can have access to it, so the objects stored on it are not thread-safe</li>
+</ul>
+<h3 id="stack-summary">Stack Summary<a aria-hidden="true" class="anchor-heading icon-link" href="#stack-summary"></a></h3>
+<ul>
+<li>value types are all stored on the stack memory. Note that the value types should not have any reference types associated with them(i.e. they are either not contained by or contain a reference type) otherwise they wouldn’t be stored on the stack.</li>
+<li>The amount of memory needed is normally calculated at compile time since they are not dynamic and do not need reference count semantics to decide how long they have to live(They live in a scope and when they are used the memory will dump them)</li>
+</ul>
 <hr>
 <strong>Children</strong>
 <ol>

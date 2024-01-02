@@ -2,7 +2,7 @@
 id: hvogtqvodqmpqkl2y0zxkph
 title: Memory Management
 desc: ''
-updated: 1704120699994
+updated: 1704177781019
 created: 1703918584124
 ---
 
@@ -39,3 +39,18 @@ https://developer.apple.com/documentation/swift/manual-memory-management
 - **全局性:**
 
   heap上的資料可以在整個應用程式中共享
+
+### Heap Summary
+
+- More dynamic but less efficient than stack.
+- Goes through 3 steps:
+  1. allocation
+  2. tracking reference count
+  3. deallocation
+- Heap memory allocation is done for objects whose size can not be calculated at compile time, plus all reference types(because reference types life time is not based on their defined scope).
+- heap memory is somehow a global host for objects and all threads can have access to it, so the objects stored on it are not thread-safe
+
+### Stack Summary
+
+- value types are all stored on the stack memory. Note that the value types should not have any reference types associated with them(i.e. they are either not contained by or contain a reference type) otherwise they wouldn’t be stored on the stack.
+- The amount of memory needed is normally calculated at compile time since they are not dynamic and do not need reference count semantics to decide how long they have to live(They live in a scope and when they are used the memory will dump them)

@@ -30,8 +30,16 @@
 <span class="token keyword">let</span> locationClass <span class="token operator">=</span> <span class="token class-name">LocationClass</span><span class="token punctuation">(</span>latitude<span class="token punctuation">:</span> <span class="token number">120</span><span class="token punctuation">,</span> longitude<span class="token punctuation">:</span> <span class="token number">25</span><span class="token punctuation">)</span>
 
 </code></pre>
-<h2 id="pass-by-value-vs-pass-by-reference"><strong>Pass by value</strong> vs <strong>Pass by reference</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#pass-by-value-vs-pass-by-reference"></a></h2>
-<h3 id="coa">CoA<a aria-hidden="true" class="anchor-heading icon-link" href="#coa"></a></h3>
+<h2 id="both-can">Both can:<a aria-hidden="true" class="anchor-heading icon-link" href="#both-can"></a></h2>
+<ul>
+<li>定義store properties, computed properties</li>
+<li>定義methods</li>
+<li>用extension來擴展他們的功能</li>
+<li>定義subscripts，讓我們可以透過<code>[]</code>的方式取得值</li>
+</ul>
+<h2 id="diff">DIFF<a aria-hidden="true" class="anchor-heading icon-link" href="#diff"></a></h2>
+<h3 id="pass-by-value-vs-pass-by-reference"><strong>Pass by value</strong> vs <strong>Pass by reference</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#pass-by-value-vs-pass-by-reference"></a></h3>
+<h4 id="coa">CoA<a aria-hidden="true" class="anchor-heading icon-link" href="#coa"></a></h4>
 <pre class="language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">PersonStruct</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span>
     <span class="token keyword">var</span> age<span class="token punctuation">:</span> <span class="token class-name">Int</span>
@@ -47,7 +55,7 @@ firstPerson<span class="token punctuation">.</span>name <span class="token opera
 
 <span class="token function">getStackAddress</span><span class="token punctuation">(</span>target<span class="token punctuation">:</span> <span class="token operator">&#x26;</span>firstPerson<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token function">getStackAddress</span><span class="token punctuation">(</span>target<span class="token punctuation">:</span> <span class="token operator">&#x26;</span>secondPerson<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="cow">CoW<a aria-hidden="true" class="anchor-heading icon-link" href="#cow"></a></h3>
+<h4 id="cow">CoW<a aria-hidden="true" class="anchor-heading icon-link" href="#cow"></a></h4>
 <pre class="language-swift"><code class="language-swift"><span class="token keyword">var</span> personStructArray <span class="token operator">=</span> <span class="token punctuation">[</span>
     <span class="token class-name">PersonStruct</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"TOYX"</span></span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     <span class="token class-name">PersonStruct</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"TOYY"</span></span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
@@ -62,7 +70,7 @@ personStructArray<span class="token punctuation">[</span><span class="token numb
 <span class="token function">getStackAddress</span><span class="token punctuation">(</span>target<span class="token punctuation">:</span> <span class="token operator">&#x26;</span>personStructArray<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token function">getStackAddress</span><span class="token punctuation">(</span>target<span class="token punctuation">:</span> <span class="token operator">&#x26;</span>personStructArrayCopy<span class="token punctuation">)</span>
 </code></pre>
 <p><img src="/programming_notes/assets/images/programming.language.swift.Types.value-type.png" alt="value type"></p>
-<p>Reference</p>
+<h4 id="reference">Reference<a aria-hidden="true" class="anchor-heading icon-link" href="#reference"></a></h4>
 <pre class="language-swift"><code class="language-swift"><span class="token keyword">class</span> <span class="token class-name">PersonClass</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span>
     <span class="token keyword">var</span> age<span class="token punctuation">:</span> <span class="token class-name">Int</span>
@@ -83,23 +91,42 @@ thirdPerson<span class="token punctuation">.</span>name <span class="token opera
 <span class="token function">print</span><span class="token punctuation">(</span>thirdPerson <span class="token operator">===</span> fourthPersonec<span class="token punctuation">)</span>
 </code></pre>
 <p><img src="/programming_notes/assets/images/programming.language.swift.Types.reference-type.png" alt="reference type"></p>
-<h2 id="both-can">Both can:<a aria-hidden="true" class="anchor-heading icon-link" href="#both-can"></a></h2>
+<h2 id="static-dispatch-vs-dynamic-dispatch">Static Dispatch vs Dynamic Dispatch<a aria-hidden="true" class="anchor-heading icon-link" href="#static-dispatch-vs-dynamic-dispatch"></a></h2>
+<h3 id="method-dispatch">Method dispatch<a aria-hidden="true" class="anchor-heading icon-link" href="#method-dispatch"></a></h3>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>d</th><th align="center">initial Declaration</th><th align="center">Extension</th></tr></thead><tbody><tr><td>Value Type(struct, enum)</td><td align="center">Static</td><td align="center">Static</td></tr><tr><td>Protocol</td><td align="center">Table</td><td align="center">Static</td></tr><tr><td>Class</td><td align="center">Table</td><td align="center">Static</td></tr><tr><td>NSObject Subclass</td><td align="center">Table</td><td align="center">Message</td></tr></tbody></table></div>
 <ul>
-<li>定義store properties, computed properties</li>
-<li>定義methods</li>
-<li>用extension來擴展他們的功能</li>
-<li>定義subscripts，讓我們可以透過<code>[]</code>的方式取得值</li>
-</ul>
-<h2 id="class-特性">Class 特性:<a aria-hidden="true" class="anchor-heading icon-link" href="#class-特性"></a></h2>
-<ul>
 <li>
-<p>生命週期由ARC管理</p>
-</li>
-<li>
-<p>繼承</p>
-</li>
-<li>
-<p>Dynamic dispatch(runtime 決定要執行哪個function)</p>
+<p>Dynamic dispatch example</p>
 <pre class="language-swift"><code class="language-swift"><span class="token keyword">protocol</span> <span class="token class-name">Dispatch</span> <span class="token punctuation">{</span>
     <span class="token keyword">func</span> <span class="token function-definition function">testDispatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
@@ -137,38 +164,6 @@ b<span class="token punctuation">.</span><span class="token function">shared</sp
 </code></pre>
 </li>
 </ul>
-<h2 id="swift-method-dispatch">Swift method dispatch<a aria-hidden="true" class="anchor-heading icon-link" href="#swift-method-dispatch"></a></h2>
-<div class="table-responsive">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>d</th><th align="center">initial Declaration</th><th align="center">Extension</th></tr></thead><tbody><tr><td>Value Type(struct, enum)</td><td align="center">Static</td><td align="center">Static</td></tr><tr><td>Protocol</td><td align="center">Table</td><td align="center">Static</td></tr><tr><td>Class</td><td align="center">Table</td><td align="center">Static</td></tr><tr><td>NSObject Subclass</td><td align="center">Table</td><td align="center">Message</td></tr></tbody></table></div>
 <pre class="language-swift"><code class="language-swift"><span class="token comment">// 1. Value Type (Struct): All Static Dispatch</span>
 <span class="token keyword">struct</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
     <span class="token keyword">func</span> <span class="token function-definition function">isHungry</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Bool</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> <span class="token comment">// Static</span>
@@ -201,29 +196,11 @@ b<span class="token punctuation">.</span><span class="token function">shared</sp
     <span class="token keyword">func</span> <span class="token function-definition function">canCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Bool</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> <span class="token comment">// Table -> Static</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h2 id="what-apple-says">What apple says<a aria-hidden="true" class="anchor-heading icon-link" href="#what-apple-says"></a></h2>
+<h2 id="which-to-choose">Which to choose?<a aria-hidden="true" class="anchor-heading icon-link" href="#which-to-choose"></a></h2>
 <blockquote>
 <p>The additional capabilities that classes support come at the cost of increased complexity. As a general guideline, prefer structures because they’re easier to reason about, and use classes when they’re appropriate or necessary. In practice, this means most of the custom types you define will be structures and enumerations.</p>
 </blockquote>
 <p>如果我們沒有要使用到class比struct多擁有的特性，我們在開發的時候建議都以struct、enum建立Type，因為他們比較好local reason，可以確保程式碼的可讀性、維護性。</p>
-<h3 id="heap-summary">Heap Summary<a aria-hidden="true" class="anchor-heading icon-link" href="#heap-summary"></a></h3>
-<ul>
-<li>More dynamic but less efficient than stack.</li>
-<li>Goes through 3 steps:
-<ol>
-<li>allocation</li>
-<li>tracking reference count</li>
-<li>deallocation</li>
-</ol>
-</li>
-<li>Heap memory allocation is done for objects whose size can not be calculated at compile time, plus all reference types(because reference types life time is not based on their defined scope).</li>
-<li>heap memory is somehow a global host for objects and all threads can have access to it, so the objects stored on it are not thread-safe</li>
-</ul>
-<h3 id="stack-summary">Stack Summary<a aria-hidden="true" class="anchor-heading icon-link" href="#stack-summary"></a></h3>
-<ul>
-<li>value types are all stored on the stack memory. Note that the value types should not have any reference types associated with them(i.e. they are either not contained by or contain a reference type) otherwise they wouldn’t be stored on the stack.</li>
-<li>The amount of memory needed is normally calculated at compile time since they are not dynamic and do not need reference count semantics to decide how long they have to live(They live in a scope and when they are used the memory will dump them)</li>
-</ul>
 <h2 id="situations-when-choosing-different-data-types">Situations when choosing different data types<a aria-hidden="true" class="anchor-heading icon-link" href="#situations-when-choosing-different-data-types"></a></h2>
 <ol>
 <li>
