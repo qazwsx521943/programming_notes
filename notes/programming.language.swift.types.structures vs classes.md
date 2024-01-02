@@ -2,7 +2,7 @@
 id: 2cg1kb9zlmrzfvyzu54nsrd
 title: Structures Vs Classes
 desc: ''
-updated: 1704167843846
+updated: 1704171693183
 created: 1703728237903
 ---
 
@@ -62,8 +62,7 @@ firstPerson.name = "StructPersonModified"
 print(firstPerson.name)
 print(secondPerson.name)
 
-getStackAddress(target: &firstPerson)
-getStackAddress(target: &secondPerson)
+getStackAddress(target: &firstPerson) == getStackAddress(target: &secondPerson)
 ```
 
 ### CoW

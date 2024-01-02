@@ -55,8 +55,7 @@ firstPerson.name = "StructPersonModified"
 print(firstPerson.name)
 print(secondPerson.name)
 
-getStackAddress(target: &firstPerson)
-getStackAddress(target: &secondPerson)
+getStackAddress(target: &firstPerson) == getStackAddress(target: &secondPerson)
 ```
 
 ### CoW

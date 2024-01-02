@@ -11,8 +11,8 @@
       "title": "This page has not yet sprouted",
       "schemaStub": false,
       "type": "note",
-      "updated": 1704168164215,
-      "created": 1704168164215,
+      "updated": 1704171713460,
+      "created": 1704171713461,
       "desc": "",
       "links": [],
       "anchors": {},
@@ -2720,7 +2720,7 @@
       "id": "2cg1kb9zlmrzfvyzu54nsrd",
       "title": "Structures Vs Classes",
       "desc": "",
-      "updated": 1704167843846,
+      "updated": 1704171693183,
       "created": 1703728237903,
       "custom": {},
       "fname": "programming.language.swift.types.structures vs classes",
@@ -2730,7 +2730,7 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "069239fab5b9a87ca58cb6c59b2cc7ec",
+      "contentHash": "3c8b5558e78c51afad6d9fd23f944367",
       "links": [],
       "anchors": {
         "definition-syntax": {
@@ -2769,7 +2769,7 @@
           "type": "header",
           "text": "CoW",
           "value": "cow",
-          "line": 68,
+          "line": 67,
           "column": 0,
           "depth": 3
         },
@@ -2777,7 +2777,7 @@
           "type": "header",
           "text": "Both can:",
           "value": "both-can",
-          "line": 112,
+          "line": 111,
           "column": 0,
           "depth": 2
         },
@@ -2785,7 +2785,7 @@
           "type": "header",
           "text": "Class 特性:",
           "value": "class-特性",
-          "line": 119,
+          "line": 118,
           "column": 0,
           "depth": 2
         },
@@ -2793,7 +2793,7 @@
           "type": "header",
           "text": "Swift method dispatch",
           "value": "swift-method-dispatch",
-          "line": 162,
+          "line": 161,
           "column": 0,
           "depth": 2
         },
@@ -2801,7 +2801,7 @@
           "type": "header",
           "text": "What apple says",
           "value": "what-apple-says",
-          "line": 206,
+          "line": 205,
           "column": 0,
           "depth": 2
         },
@@ -2809,7 +2809,7 @@
           "type": "header",
           "text": "Heap Summary",
           "value": "heap-summary",
-          "line": 212,
+          "line": 211,
           "column": 0,
           "depth": 3
         },
@@ -2817,7 +2817,7 @@
           "type": "header",
           "text": "Stack Summary",
           "value": "stack-summary",
-          "line": 222,
+          "line": 221,
           "column": 0,
           "depth": 3
         },
@@ -2825,7 +2825,7 @@
           "type": "header",
           "text": "Situations when choosing different data types",
           "value": "situations-when-choosing-different-data-types",
-          "line": 227,
+          "line": 226,
           "column": 0,
           "depth": 2
         },
@@ -2833,7 +2833,7 @@
           "type": "header",
           "text": "Comparison",
           "value": "comparison",
-          "line": 239,
+          "line": 238,
           "column": 0,
           "depth": 2
         }
