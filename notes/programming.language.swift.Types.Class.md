@@ -1,94 +1,83 @@
 ---
-id: f0rt95n87dvpuuf5ktobguw
+id: e967gt61ay4vhqbij2qmofv
 title: Class
 desc: ''
-updated: 1704203683171
+updated: 1704386523475
 created: 1704195508926
+nav_order: 1
 ---
 
-## Declare a class
+## Declare a class / struct
 
 ```swift
-class Size {
-    var width: Int = 10
-    var height: Int = 10
+class Car {
+    var brand: String
+    var model: String
+
+    init(brand: String, model: String) {
+        self.brand = brand
+        self.model = model
+    }
 }
-Size()
 ```
 
-## Initialize a class instance
+## Initialize a class/struct instance
 
 - stored property with `default value`
 
   ```swift
-  class Size {
-      var width: Int = 10
-      var height: Int = 10
+  class Car {
+      var brand: String = "Tesla"
+      var model: String = "Model Y"
   }
 
-  var size = Size()
+  var tesla = Car()
   ```
 
 - set up stored property values in `init` function
 
   ```swift
-  class Size {
-      var width: Int
-      var height: Int
+  class Car {
+      var brand: String
+      var model: String
 
-      init() {
-        width = 10
-        height = 10
-      }
-
-      init(width: Int, height: Int) {
-        self.width = width
-        self.height = height
+      init(brand: String, model: String) {
+          self.brand = brand
+          self.model = model
       }
   }
 
-  var size1 = Size(width: 10, height: 10)
-  var size2 = Size()
+  var testla = Car(brand: "Tesla", model: "Model Y")
   ```
 
 - stored property with `optional value`
 
     ```swift
-  class Size {
-      var width: Int?
-      var height: Int?
-  }
+    class Car {
+        var brand: String?
+        var model: String?
+    }
 
-  var size = Size()
-  size.width = 10
-  size.height = 10
-  ```
+    var tesla = Car()
+    tesla.brand = "Tesla"
+    tesla.model = "Model Y"
+    ```
 
-- failable initializer
+    ```swift
+    class Car {
+        var brand: String?
+        var model: String?
 
-  ```swift
-  class Size {
-      var width: Int
-      var height: Int
+        init(brand: String?, model: String?) {
+            self.brand = brand
+            self.model = model
+        }
+    }
 
-      init() {
-          width = 10
-          height = 10
-      }
-
-      init?(width: Int, height: Int) {
-          self.width = width
-          self.height = height
-
-          if width <= 0 || height <= 0 {
-            return nil
-          }
-      }
-  }
-
-  var size1 = Size(width: -10, height: 10) // nil
-  var size2 = Size(width: 10, height: 10) // { width: 10, height: 10 }
-  ```
+    var tesla = Car()
+    tesla.brand = "Tesla"
+    tesla.model = "Model Y"
+    ```
 
 ## Property
 
@@ -133,30 +122,35 @@ Size()
     }
     ```
 
-3. property observer
+3. `lazy` property
+
+   使用前要思考一下為什麼要使用`lazy`:
+
+    1. Performance
+    2. Prevent retain cycle (lazy property closure default weak captures self)
 
     ```swift
-    class Size {
-        var width: Int = 10 {
-            willSet {
-                newValue <= 0 {
-                    // do something
-                }
+    class ElectricCar {
+        lazy var heavyComputation = {
+            var num = 0
+            for i in 0..<200 {
+                num += 2
             }
-            didSet {
-                if width <= 0 {
-                    width = oldValue
-                }
-            }
-        }
 
-        var height: Int = 10
-        var x: Int = 0
-        var y: Int = 0
+            return num
+        }()
     }
+
+    let tesla = ElectricCar()
+
+    let testla = tesla.heavyComputation
     ```
 
-4. `lazy` delay initialization
+    ★ `computed property`, `lazy`不要搞混，`computed property` getter每次會計算後回傳，`lazy`只會在第一次被access時執行。
+
+    ★ `lazy` property is not thread safe!!!
+
+    ★ `lazy`, `computed property` can only be declared using `var`!!!
 
 ## method
 
@@ -273,6 +267,8 @@ Remember:
 
 - Convenience initializers must always delegate across.
 
+★ 想要繼承父類別的`convenience initializer`，我們需要`override`父類別的所有`designated initializer`
+
 ```swift
 class Car {
     var brand: String
@@ -303,7 +299,3 @@ class ElectricCar: Car {
 let teslaModel3 = ElectricCar(brand: "Tesla", model: "Model 3", batteryCapacity: 75.0)
 let nissanLeaf = ElectricCar(brand: "Nissan", model: "Leaf")
 ```
-
-- concept:
-
-1. 想要父類別的`convenience initializer`，我們需要`override`父類別的所有`designated initializer`

@@ -2,8 +2,9 @@
 id: m30ay8bv1fkxsl30m2r9frl
 title: Enumeration
 desc: ''
-updated: 1704208895807
+updated: 1704358690616
 created: 1703951656006
+nav_order: 3
 ---
 
 ## What is enum?

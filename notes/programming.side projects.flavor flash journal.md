@@ -2,7 +2,7 @@
 id: gzy1xz97zvnttb8urqpfhh3
 title: Flavor Flash Journal
 desc: ''
-updated: 1703388640780
+updated: 1704342863447
 created: 1700872379646
 ---
 
@@ -85,3 +85,56 @@ Flavor Flash 開發筆記
 發文美食評論之後就可在美食足跡的社群中，看到自己跟朋友的發文，你可以對貼文留言&按讚。那如果有一些私底下想詢問的美食問題，也可以去聊天室建立群組聊天。
 
 那除了在這個社群頁面可以看到其他朋友的發文，使用者也可以在個人頁面的foodprint中在地圖上查看他過往吃過的餐廳，也可以跟朋友做足跡的疊加。
+
+## 專案遇到過的問題
+
+### 要怎麼開啟不同硬體適合的鏡頭？ 為何不用 `UIImagePickerController`、`PHPPhotoPicker`？
+
+   ```swift
+      UIDevice.current.model
+
+      UIDevice.current.systemName
+   ```
+
+   那我個人專案中並沒有使用到這個偵測型號的方法，
+   我是透過設計一個camera物件，讓那個物件在初始化的時候透過AVFoundation的api去偵測該裝置可以開啟的鏡頭裝置。
+
+   Camera初始化會做什麼？
+
+- Step1
+
+   AVCaptureDevice.DiscoverySession 拿到用戶裝置所有可用的鏡頭配置。
+
+- Step2
+
+   透過computed property去把可用的前、後鏡頭 filter 出來。
+
+- Step3
+
+   最後再從分類好的裝置中，綁定用戶該session要使用的前、後鏡頭配置，就完成相機初始化的部分。
+
+### 要怎麼將相機preview的畫面順利接到畫面上?
+
+先去暸解AVFoundation是如何建立一個capture session，那要建立一個capture session，我們會需要先拿到一個input device，然後建立一個output
+
+![capture session](/assets/images/programming.side%20projects.capture-session.png)
+
+- Step1
+
+   我們想要達到的功能是一個前、後鏡頭，必須先要建立一個`AVCaptureMultiCamSession`實例。（在camera物件中初始化時建立）
+
+   相機view出現在畫面上的時候，會去調用viewModel中camera物件的`start()`，開始串接Session的input、output。
+
+- Step2
+
+   因為camera是一個物件，我們要避免他重複串接Session的input跟output，我們額外添加一個`isMultiCaptureSessionConfigured`的property去紀錄。
+
+   如果還沒串接過
+
+   觸發camera物件的`start()`會開始
+   讓camera class去conform一些AVFoundation定好 `AVCapturePhotoCaptureDelegate`
+
+   在viewModel初始化的時候，會初始化camera物件，並透過closure的方式去請camera物件的回傳捕捉到的影像。那每次我們從camera物件中拿到新的image會更改viewModel中的properties，就會自動觸發view的rerender。
+   那假設我這個部分沒有透過MVVM的架構而是透過MVC去實作，我如果相機的view有想要抽換，我可能就需要連帶
+
+1. 要怎麼去分析圖片中的食物分類？

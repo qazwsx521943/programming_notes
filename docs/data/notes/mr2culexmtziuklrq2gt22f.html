@@ -1,5 +1,5 @@
 <h1 id="types">Types<a aria-hidden="true" class="anchor-heading icon-link" href="#types"></a></h1>
-<h2 id="definition">Definition<a aria-hidden="true" class="anchor-heading icon-link" href="#definition"></a></h2>
+<h2 id="usage-overview">Usage Overview<a aria-hidden="true" class="anchor-heading icon-link" href="#usage-overview"></a></h2>
 <ul>
 <li>class, struct</li>
 </ul>
@@ -12,24 +12,230 @@
 <blockquote>
 <p>Model custom types that define a list of possible values.</p>
 </blockquote>
-<h2 id="value-type--reference-type">Value Type , Reference Type<a aria-hidden="true" class="anchor-heading icon-link" href="#value-type--reference-type"></a></h2>
-<p>差異在於它們在記憶體中的儲存和管理方式</p>
-<h3 id="value-type">value type:<a aria-hidden="true" class="anchor-heading icon-link" href="#value-type"></a></h3>
+<h2 id="main-difference-between-struct--class">Main Difference between <code>Struct</code> &#x26; <code>Class</code><a aria-hidden="true" class="anchor-heading icon-link" href="#main-difference-between-struct--class"></a></h2>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th> </th><th align="center">Struct</th><th align="center">Class</th></tr></thead><tbody><tr><td>pass by</td><td align="center">value</td><td align="center">reference</td></tr><tr><td>method dispatch</td><td align="center">static</td><td align="center">dynamic</td></tr><tr><td>inheritance</td><td align="center">X</td><td align="center">V</td></tr></tbody></table></div>
+<h3 id="value-type--reference-type">Value Type , Reference Type<a aria-hidden="true" class="anchor-heading icon-link" href="#value-type--reference-type"></a></h3>
+<p>在記憶體中的儲存和管理方式不同</p>
+<h4 id="value-type">value type:<a aria-hidden="true" class="anchor-heading icon-link" href="#value-type"></a></h4>
 <ul>
 <li>通常較小，且輕量，因為儲存的是實際數據的<code>值</code>，可以直接存在<code>Stack</code>上</li>
-<li>pass by value</li>
+<li>pass by value（CoW）</li>
 </ul>
 <p><img src="/programming_notes/assets/images/programming.language.swift.Types.value-type.png" alt="value type"></p>
-<h3 id="reference-type">reference type:<a aria-hidden="true" class="anchor-heading icon-link" href="#reference-type"></a></h3>
+<h4 id="reference-type">reference type:<a aria-hidden="true" class="anchor-heading icon-link" href="#reference-type"></a></h4>
 <ul>
 <li>可能較大，因為儲存的是對實際數據的<code>引用</code>，可能會包含其他資訊(類型訊息、ARC相關訊息)</li>
 <li>pass by reference</li>
 </ul>
 <p><img src="/programming_notes/assets/images/programming.language.swift.Types.reference-type.png" alt="reference type"></p>
+<h3 id="static-dispatch-vs-dynamic-dispatch">Static Dispatch vs Dynamic Dispatch<a aria-hidden="true" class="anchor-heading icon-link" href="#static-dispatch-vs-dynamic-dispatch"></a></h3>
+<h4 id="method-dispatch">Method dispatch<a aria-hidden="true" class="anchor-heading icon-link" href="#method-dispatch"></a></h4>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th> </th><th align="center">initial Declaration</th><th align="center">Extension</th></tr></thead><tbody><tr><td>Value Type(struct, enum)</td><td align="center">Static</td><td align="center">Static</td></tr><tr><td>Protocol</td><td align="center">Table</td><td align="center">Static</td></tr><tr><td>Class</td><td align="center">Table</td><td align="center">Static</td></tr><tr><td>NSObject Subclass</td><td align="center">Table</td><td align="center">Message</td></tr></tbody></table></div>
+<ul>
+<li>
+<p>Dynamic dispatch example</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">protocol</span> <span class="token class-name">Dispatch</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">testDispatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">extension</span> <span class="token class-name">Dispatch</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">shared</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation"><span class="token literal constant">#function</span></span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> from protocol extension"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">:</span> <span class="token class-name">Dispatch</span> <span class="token punctuation">{</span>
+  <span class="token keyword">func</span> <span class="token function-definition function">testDispatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation"><span class="token literal constant">#function</span></span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> from A"</span></span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">B</span><span class="token punctuation">:</span> <span class="token class-name">A</span> <span class="token punctuation">{</span>
+    <span class="token keyword">override</span> <span class="token keyword">func</span> <span class="token function-definition function">testDispatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation"><span class="token literal constant">#function</span></span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> from B"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">func</span> <span class="token function-definition function">shared</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation"><span class="token literal constant">#function</span></span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> from B"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> a<span class="token punctuation">:</span> <span class="token class-name">A</span> <span class="token operator">=</span> <span class="token class-name">B</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+a<span class="token punctuation">.</span><span class="token function">testDispatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+a<span class="token punctuation">.</span><span class="token function">shared</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+</ul>
+<pre class="language-swift"><code class="language-swift"><span class="token comment">// 1. Value Type (Struct): All Static Dispatch</span>
+<span class="token keyword">struct</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">isHungry</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Bool</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> <span class="token comment">// Static</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">extension</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">String</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> <span class="token comment">// Static</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 2. Protocol: Table &#x26; Static</span>
+<span class="token keyword">protocol</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">isCute</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Bool</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> <span class="token comment">// Table</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">extension</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">canGetAngry</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Bool</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> <span class="token comment">// Static</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 3. Class</span>
+<span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">:</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">isCute</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Bool</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> <span class="token comment">// Table</span>
+    <span class="token comment">// add @objc &#x26; dynamic keyword</span>
+    <span class="token attribute atrule">@objc</span> <span class="token keyword">dynamic</span> <span class="token keyword">func</span> <span class="token function-definition function">hoursSleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Int</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> <span class="token comment">// Table -> Message</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">extension</span> <span class="token class-name">Dog</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">canBite</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Bool</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> <span class="token comment">// Static</span>
+    <span class="token comment">// add @objc keyword</span>
+    <span class="token attribute atrule">@objc</span> <span class="token keyword">func</span> <span class="token function-definition function">goWild</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> <span class="token comment">// Static -> Message</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// add final keyword</span>
+<span class="token keyword">final</span> <span class="token keyword">class</span> <span class="token class-name">Employee</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function-definition function">canCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Bool</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> <span class="token comment">// Table -> Static</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="which-to-choose-struct-or-class">Which to choose, <code>Struct</code> or <code>Class</code>?<a aria-hidden="true" class="anchor-heading icon-link" href="#which-to-choose-struct-or-class"></a></h2>
+<blockquote>
+<p>The additional capabilities that classes support come at the cost of increased complexity. As a general guideline, prefer structures because they’re easier to reason about, and use classes when they’re appropriate or necessary. In practice, this means most of the custom types you define will be structures and enumerations.</p>
+</blockquote>
+<ul>
+<li>Use Classes When You Need Objective-C Interoperability</li>
+<li>Use Classes When You Need to Control Identity</li>
+</ul>
+<p>Always keep <a href="/programming_notes/notes/y4x1bbpym9389xf1pj71s7z">Performance</a> principle in mind</p>
+<h2 id="situations-when-choosing-different-data-types">Situations when choosing different data types<a aria-hidden="true" class="anchor-heading icon-link" href="#situations-when-choosing-different-data-types"></a></h2>
+<ol>
+<li>
+<p>Structs:</p>
+<ol>
+<li>Data Models</li>
+<li>SwiftUI Views</li>
+</ol>
+</li>
+<li>
+<p>Classes:</p>
+<ol>
+<li>ViewModels</li>
+<li>KVO</li>
+</ol>
+</li>
+<li>
+<p>Actors:</p>
+<ol>
+<li>Shared 'Manager' / 'Data Store'</li>
+</ol>
+</li>
+</ol>
+<h2 id="comparison">Comparison<a aria-hidden="true" class="anchor-heading icon-link" href="#comparison"></a></h2>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th> </th><th align="center">Struct</th><th align="center">Class</th><th align="center">Actor</th><th align="center">Enum</th></tr></thead><tbody><tr><td>Stored in</td><td align="center">Stack</td><td align="center">Heap</td><td align="center">Heap</td><td align="center">Stack</td></tr><tr><td>copy by</td><td align="center">Value</td><td align="center">Reference</td><td align="center">Reference</td><td align="center">Value</td></tr><tr><td>Thread safe</td><td align="center">不一定</td><td align="center">X</td><td align="center">V</td><td align="center">V</td></tr><tr><td>Inheritance</td><td align="center">X</td><td align="center">V</td><td align="center">X</td><td align="center">X</td></tr></tbody></table></div>
+<p>References:</p>
+<ul>
+<li><a href="https://www.backblaze.com/blog/whats-the-diff-programs-processes-and-threads/">https://www.backblaze.com/blog/whats-the-diff-programs-processes-and-threads/</a></li>
+</ul>
 <hr>
 <strong>Children</strong>
 <ol>
-<li><a href="/programming_notes/notes/f0rt95n87dvpuuf5ktobguw">Class</a></li>
+<li><a href="/programming_notes/notes/e967gt61ay4vhqbij2qmofv">Class</a></li>
+<li><a href="/programming_notes/notes/2cg1kb9zlmrzfvyzu54nsrd">Struct</a></li>
 <li><a href="/programming_notes/notes/m30ay8bv1fkxsl30m2r9frl">Enumeration</a></li>
-<li><a href="/programming_notes/notes/2cg1kb9zlmrzfvyzu54nsrd">Structures Vs Classes</a></li>
 </ol>

@@ -8,6 +8,14 @@
       "vaultName": "Dendron",
       "children": [
         {
+          "key": "00oijwt190dfbc5166gqzll",
+          "title": "Interview ",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "Dendron",
+          "children": []
+        },
+        {
           "key": "j76ahf4fh0mz6jq2m1qhemw",
           "title": "Self Intro",
           "icon": null,
@@ -96,6 +104,14 @@
               "hasTitleNumberOutlined": false,
               "vaultName": "Dendron",
               "children": []
+            },
+            {
+              "key": "07evfbyayo4f86ydhmpx6wp",
+              "title": "Observer",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "Dendron",
+              "children": []
             }
           ]
         },
@@ -121,6 +137,56 @@
               "hasTitleNumberOutlined": false,
               "vaultName": "Dendron",
               "children": [
+                {
+                  "key": "mr2culexmtziuklrq2gt22f",
+                  "title": "Types",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "Dendron",
+                  "children": [
+                    {
+                      "key": "e967gt61ay4vhqbij2qmofv",
+                      "title": "Class",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "2cg1kb9zlmrzfvyzu54nsrd",
+                      "title": "Struct",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
+                      "key": "m30ay8bv1fkxsl30m2r9frl",
+                      "title": "Enumeration",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "key": "hvogtqvodqmpqkl2y0zxkph",
+                  "title": "Memory Management",
+                  "icon": null,
+                  "hasTitleNumberOutlined": false,
+                  "vaultName": "Dendron",
+                  "children": [
+                    {
+                      "key": "bbsq3i60b9ihroumbe0928d",
+                      "title": "ARC",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    }
+                  ]
+                },
                 {
                   "key": "rxplme0keulo3fon6e4gxmc",
                   "title": "Serialization",
@@ -152,39 +218,6 @@
                           "children": []
                         }
                       ]
-                    }
-                  ]
-                },
-                {
-                  "key": "mr2culexmtziuklrq2gt22f",
-                  "title": "Types",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": [
-                    {
-                      "key": "f0rt95n87dvpuuf5ktobguw",
-                      "title": "Class",
-                      "icon": null,
-                      "hasTitleNumberOutlined": false,
-                      "vaultName": "Dendron",
-                      "children": []
-                    },
-                    {
-                      "key": "m30ay8bv1fkxsl30m2r9frl",
-                      "title": "Enumeration",
-                      "icon": null,
-                      "hasTitleNumberOutlined": false,
-                      "vaultName": "Dendron",
-                      "children": []
-                    },
-                    {
-                      "key": "2cg1kb9zlmrzfvyzu54nsrd",
-                      "title": "Structures Vs Classes",
-                      "icon": null,
-                      "hasTitleNumberOutlined": false,
-                      "vaultName": "Dendron",
-                      "children": []
                     }
                   ]
                 },
@@ -295,6 +328,14 @@
                       "children": []
                     },
                     {
+                      "key": "m2klofp5yj7niqiawmu25a0",
+                      "title": "Grand Central Dispatch",
+                      "icon": null,
+                      "hasTitleNumberOutlined": false,
+                      "vaultName": "Dendron",
+                      "children": []
+                    },
+                    {
                       "key": "ri418z8my409lbev7mvbfo7",
                       "title": "URL Loading System",
                       "icon": null,
@@ -313,9 +354,9 @@
                   "children": []
                 },
                 {
-                  "key": "m2klofp5yj7niqiawmu25a0",
+                  "key": "mwi46jvfinzar9tadeb0gsl",
                   "title": "Grand Central Dispatch",
-                  "icon": null,
+                  "icon": "plusOutlined",
                   "hasTitleNumberOutlined": false,
                   "vaultName": "Dendron",
                   "children": [
@@ -330,23 +371,6 @@
                     {
                       "key": "9bunykr1jl52ls7wqudyauz",
                       "title": "Parallelism",
-                      "icon": null,
-                      "hasTitleNumberOutlined": false,
-                      "vaultName": "Dendron",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "key": "hvogtqvodqmpqkl2y0zxkph",
-                  "title": "Memory Management",
-                  "icon": null,
-                  "hasTitleNumberOutlined": false,
-                  "vaultName": "Dendron",
-                  "children": [
-                    {
-                      "key": "bbsq3i60b9ihroumbe0928d",
-                      "title": "ARC",
                       "icon": null,
                       "hasTitleNumberOutlined": false,
                       "vaultName": "Dendron",
@@ -642,6 +666,7 @@
   ],
   "child2parent": {
     "j416lb0sk2vag9yvgr9bxzb": null,
+    "00oijwt190dfbc5166gqzll": "j416lb0sk2vag9yvgr9bxzb",
     "j76ahf4fh0mz6jq2m1qhemw": "j416lb0sk2vag9yvgr9bxzb",
     "ski4xep9sjz6v7rxjf1fln1": null,
     "ycav7y1plpd72ulknzdaw6x": "ski4xep9sjz6v7rxjf1fln1",
@@ -653,17 +678,20 @@
     "y8otxung92f9zxx8j7ug0xu": "hbjsa0j33arqblxg88k4jfv",
     "0s36hxqraz1orimb13qdeio": "hbjsa0j33arqblxg88k4jfv",
     "fff715mwr5cluf3hwpq40z4": "hbjsa0j33arqblxg88k4jfv",
+    "07evfbyayo4f86ydhmpx6wp": "hbjsa0j33arqblxg88k4jfv",
     "r7uyk9st3d9jhl2udoeqf26": "rn0e0y5coqo8iyqfxd7ocsk",
     "07schiltkp85q9r624we8lq": "rn0e0y5coqo8iyqfxd7ocsk",
     "vztg7xzj0425ae5ogmk8ds2": "07schiltkp85q9r624we8lq",
+    "mr2culexmtziuklrq2gt22f": "vztg7xzj0425ae5ogmk8ds2",
+    "e967gt61ay4vhqbij2qmofv": "mr2culexmtziuklrq2gt22f",
+    "2cg1kb9zlmrzfvyzu54nsrd": "mr2culexmtziuklrq2gt22f",
+    "m30ay8bv1fkxsl30m2r9frl": "mr2culexmtziuklrq2gt22f",
+    "hvogtqvodqmpqkl2y0zxkph": "vztg7xzj0425ae5ogmk8ds2",
+    "bbsq3i60b9ihroumbe0928d": "hvogtqvodqmpqkl2y0zxkph",
     "rxplme0keulo3fon6e4gxmc": "vztg7xzj0425ae5ogmk8ds2",
     "ehit98sudwsnivfx8dnovwq": "rxplme0keulo3fon6e4gxmc",
     "2v2u6kg1vpm06lq3nlupx7f": "ehit98sudwsnivfx8dnovwq",
     "jusxtrdqjytxtjizz2s5yok": "ehit98sudwsnivfx8dnovwq",
-    "mr2culexmtziuklrq2gt22f": "vztg7xzj0425ae5ogmk8ds2",
-    "f0rt95n87dvpuuf5ktobguw": "mr2culexmtziuklrq2gt22f",
-    "m30ay8bv1fkxsl30m2r9frl": "mr2culexmtziuklrq2gt22f",
-    "2cg1kb9zlmrzfvyzu54nsrd": "mr2culexmtziuklrq2gt22f",
     "41n9yjlpdhmbls1eigctl1v": "vztg7xzj0425ae5ogmk8ds2",
     "n5jvl7w3vcsyh0vxk4ocvcu": "vztg7xzj0425ae5ogmk8ds2",
     "rokc7843iqin5f5kfi9sew8": "n5jvl7w3vcsyh0vxk4ocvcu",
@@ -677,13 +705,12 @@
     "4l31wi6hepfu79z7bwqhxzz": "2v31mamk1fjl6km26amg70u",
     "8foo2npzsn8w4081lilhziq": "2v31mamk1fjl6km26amg70u",
     "d5kbcl46xodh9c8hl10qrsu": "qjbja5y4bx4h8yq4aaydnss",
+    "m2klofp5yj7niqiawmu25a0": "qjbja5y4bx4h8yq4aaydnss",
     "ri418z8my409lbev7mvbfo7": "qjbja5y4bx4h8yq4aaydnss",
     "copi536d0o8g51ay18dp29l": "vztg7xzj0425ae5ogmk8ds2",
-    "m2klofp5yj7niqiawmu25a0": "vztg7xzj0425ae5ogmk8ds2",
-    "205jes6rqcp0hof79t6hs6i": "m2klofp5yj7niqiawmu25a0",
-    "9bunykr1jl52ls7wqudyauz": "m2klofp5yj7niqiawmu25a0",
-    "hvogtqvodqmpqkl2y0zxkph": "vztg7xzj0425ae5ogmk8ds2",
-    "bbsq3i60b9ihroumbe0928d": "hvogtqvodqmpqkl2y0zxkph",
+    "mwi46jvfinzar9tadeb0gsl": "vztg7xzj0425ae5ogmk8ds2",
+    "205jes6rqcp0hof79t6hs6i": "mwi46jvfinzar9tadeb0gsl",
+    "9bunykr1jl52ls7wqudyauz": "mwi46jvfinzar9tadeb0gsl",
     "y4x1bbpym9389xf1pj71s7z": "vztg7xzj0425ae5ogmk8ds2",
     "pup4i4mmvmbwq6pxkp1jchf": "vztg7xzj0425ae5ogmk8ds2",
     "rao39zh688txt34bqvi1pm0": "pup4i4mmvmbwq6pxkp1jchf",
@@ -721,6 +748,7 @@
   },
   "notesLabelById": {
     "j416lb0sk2vag9yvgr9bxzb": "Resume",
+    "00oijwt190dfbc5166gqzll": "Interview ",
     "j76ahf4fh0mz6jq2m1qhemw": "Self Intro",
     "ski4xep9sjz6v7rxjf1fln1": "Libraries",
     "ycav7y1plpd72ulknzdaw6x": "Alamofire",
@@ -732,17 +760,20 @@
     "y8otxung92f9zxx8j7ug0xu": "OOP",
     "0s36hxqraz1orimb13qdeio": "POP",
     "fff715mwr5cluf3hwpq40z4": "Factory",
+    "07evfbyayo4f86ydhmpx6wp": "Observer",
     "r7uyk9st3d9jhl2udoeqf26": "Git Flow",
     "07schiltkp85q9r624we8lq": "Language",
     "vztg7xzj0425ae5ogmk8ds2": "Swift",
+    "mr2culexmtziuklrq2gt22f": "Types",
+    "e967gt61ay4vhqbij2qmofv": "Class",
+    "2cg1kb9zlmrzfvyzu54nsrd": "Struct",
+    "m30ay8bv1fkxsl30m2r9frl": "Enumeration",
+    "hvogtqvodqmpqkl2y0zxkph": "Memory Management",
+    "bbsq3i60b9ihroumbe0928d": "ARC",
     "rxplme0keulo3fon6e4gxmc": "Serialization",
     "ehit98sudwsnivfx8dnovwq": "Decoding JSON",
     "2v2u6kg1vpm06lq3nlupx7f": "Merge Data",
     "jusxtrdqjytxtjizz2s5yok": "Nested Data",
-    "mr2culexmtziuklrq2gt22f": "Types",
-    "f0rt95n87dvpuuf5ktobguw": "Class",
-    "m30ay8bv1fkxsl30m2r9frl": "Enumeration",
-    "2cg1kb9zlmrzfvyzu54nsrd": "Structures Vs Classes",
     "41n9yjlpdhmbls1eigctl1v": "Closures",
     "n5jvl7w3vcsyh0vxk4ocvcu": "Extension",
     "rokc7843iqin5f5kfi9sew8": "UIImage",
@@ -756,13 +787,12 @@
     "4l31wi6hepfu79z7bwqhxzz": "Published",
     "8foo2npzsn8w4081lilhziq": "State",
     "d5kbcl46xodh9c8hl10qrsu": "Combine",
+    "m2klofp5yj7niqiawmu25a0": "Grand Central Dispatch",
     "ri418z8my409lbev7mvbfo7": "URL Loading System",
     "copi536d0o8g51ay18dp29l": "Generics",
-    "m2klofp5yj7niqiawmu25a0": "Grand Central Dispatch",
+    "mwi46jvfinzar9tadeb0gsl": "Grand Central Dispatch",
     "205jes6rqcp0hof79t6hs6i": "Concurrency",
     "9bunykr1jl52ls7wqudyauz": "Parallelism",
-    "hvogtqvodqmpqkl2y0zxkph": "Memory Management",
-    "bbsq3i60b9ihroumbe0928d": "ARC",
     "y4x1bbpym9389xf1pj71s7z": "Performance",
     "pup4i4mmvmbwq6pxkp1jchf": "Protocol",
     "rao39zh688txt34bqvi1pm0": "Sequence",

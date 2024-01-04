@@ -11,8 +11,8 @@
       "title": "This page has not yet sprouted",
       "schemaStub": false,
       "type": "note",
-      "updated": 1704209798951,
-      "created": 1704209798951,
+      "updated": 1704388249743,
+      "created": 1704388249743,
       "desc": "",
       "links": [],
       "anchors": {},
@@ -111,7 +111,7 @@
       "id": "gzy1xz97zvnttb8urqpfhh3",
       "title": "Flavor Flash Journal",
       "desc": "",
-      "updated": 1703388640780,
+      "updated": 1704342863447,
       "created": 1700872379646,
       "custom": {},
       "fname": "programming.side projects.flavor flash journal",
@@ -121,7 +121,7 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "38e303a7beaf40b221d002d760a6e1e7",
+      "contentHash": "cb0c3ea3741c985f97e4a14e19f668f8",
       "links": [],
       "anchors": {
         "food-app": {
@@ -131,6 +131,30 @@
           "line": 10,
           "column": 0,
           "depth": 2
+        },
+        "專案遇到過的問題": {
+          "type": "header",
+          "text": "專案遇到過的問題",
+          "value": "專案遇到過的問題",
+          "line": 88,
+          "column": 0,
+          "depth": 2
+        },
+        "要怎麼開啟不同硬體適合的鏡頭-為何不用-uiimagepickercontrollerphpphotopicker": {
+          "type": "header",
+          "text": "要怎麼開啟不同硬體適合的鏡頭？ 為何不用 UIImagePickerController、PHPPhotoPicker？",
+          "value": "要怎麼開啟不同硬體適合的鏡頭-為何不用-uiimagepickercontrollerphpphotopicker",
+          "line": 90,
+          "column": 0,
+          "depth": 3
+        },
+        "要怎麼將相機preview的畫面順利接到畫面上": {
+          "type": "header",
+          "text": "要怎麼將相機preview的畫面順利接到畫面上?",
+          "value": "要怎麼將相機preview的畫面順利接到畫面上",
+          "line": 115,
+          "column": 0,
+          "depth": 3
         }
       },
       "children": [
@@ -903,7 +927,7 @@
       "id": "idmoihik9jm09tb79mbpk1q",
       "title": "Architecture",
       "desc": "",
-      "updated": 1701074732617,
+      "updated": 1704334133026,
       "created": 1701041481511,
       "custom": {},
       "fname": "programming.side projects.flavor flash journal.architecture",
@@ -913,14 +937,54 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "ea254a658803a0b93e8b07a2038d61ad",
+      "contentHash": "60a374a372ac4e895260c8795717dd10",
       "links": [],
       "anchors": {
+        "mvc-mvvm-mvp-decision": {
+          "type": "header",
+          "text": "MVC, MVVM, MVP Decision",
+          "value": "mvc-mvvm-mvp-decision",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "mvc": {
+          "type": "header",
+          "text": "MVC",
+          "value": "mvc",
+          "line": 17,
+          "column": 0,
+          "depth": 3
+        },
+        "為何我不喜歡用mvc": {
+          "type": "header",
+          "text": "為何我不喜歡用MVC?",
+          "value": "為何我不喜歡用mvc",
+          "line": 26,
+          "column": 0,
+          "depth": 3
+        },
+        "why-use-async--await": {
+          "type": "header",
+          "text": "Why use async / await",
+          "value": "why-use-async--await",
+          "line": 30,
+          "column": 0,
+          "depth": 2
+        },
+        "why-dont-use-gcd-in-your-project": {
+          "type": "header",
+          "text": "Why don't use GCD in your project?",
+          "value": "why-dont-use-gcd-in-your-project",
+          "line": 36,
+          "column": 0,
+          "depth": 3
+        },
         "dependency-injection": {
           "type": "header",
           "text": "Dependency Injection",
           "value": "dependency-injection",
-          "line": 8,
+          "line": 44,
           "column": 0,
           "depth": 2
         },
@@ -928,7 +992,7 @@
           "type": "header",
           "text": "How it works?",
           "value": "how-it-works",
-          "line": 14,
+          "line": 50,
           "column": 0,
           "depth": 3
         },
@@ -936,7 +1000,7 @@
           "type": "header",
           "text": "Singleton",
           "value": "singleton",
-          "line": 21,
+          "line": 57,
           "column": 0,
           "depth": 2
         },
@@ -944,7 +1008,7 @@
           "type": "header",
           "text": "App LifeCycle",
           "value": "app-lifecycle",
-          "line": 34,
+          "line": 70,
           "column": 0,
           "depth": 2
         },
@@ -952,7 +1016,7 @@
           "type": "header",
           "text": "@Main property wrapper",
           "value": "main-property-wrapper",
-          "line": 38,
+          "line": 74,
           "column": 0,
           "depth": 3
         },
@@ -960,7 +1024,7 @@
           "type": "header",
           "text": "'App' protocol",
           "value": "app-protocol",
-          "line": 42,
+          "line": 78,
           "column": 0,
           "depth": 3
         }
@@ -1483,13 +1547,153 @@
         "n5jvl7w3vcsyh0vxk4ocvcu",
         "qjbja5y4bx4h8yq4aaydnss",
         "copi536d0o8g51ay18dp29l",
-        "m2klofp5yj7niqiawmu25a0",
         "hvogtqvodqmpqkl2y0zxkph",
         "y4x1bbpym9389xf1pj71s7z",
         "pup4i4mmvmbwq6pxkp1jchf",
-        "k0wglg86ad5i8p1z42joprw"
+        "k0wglg86ad5i8p1z42joprw",
+        "mwi46jvfinzar9tadeb0gsl"
       ],
       "parent": "07schiltkp85q9r624we8lq",
+      "data": {}
+    },
+    "mwi46jvfinzar9tadeb0gsl": {
+      "fname": "programming.language.swift.grand-central-dispatch",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1704388249309,
+      "created": 1704388249309,
+      "id": "mwi46jvfinzar9tadeb0gsl",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "205jes6rqcp0hof79t6hs6i",
+        "9bunykr1jl52ls7wqudyauz"
+      ],
+      "parent": "vztg7xzj0425ae5ogmk8ds2",
+      "data": {},
+      "title": "Grand Central Dispatch"
+    },
+    "9bunykr1jl52ls7wqudyauz": {
+      "id": "9bunykr1jl52ls7wqudyauz",
+      "title": "Parallelism",
+      "desc": "",
+      "updated": 1698463258665,
+      "created": 1698463052691,
+      "custom": {},
+      "fname": "programming.language.swift.grand-central-dispatch.parallelism",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "39fb1df540659f8f12296dc89c8a781f",
+      "links": [],
+      "anchors": {
+        "明確告訴gcd這個task要使用parellelism的方式去執行": {
+          "type": "header",
+          "text": "明確告訴GCD這個task要使用parellelism的方式去執行",
+          "value": "明確告訴gcd這個task要使用parellelism的方式去執行",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "mwi46jvfinzar9tadeb0gsl",
+      "data": {}
+    },
+    "205jes6rqcp0hof79t6hs6i": {
+      "id": "205jes6rqcp0hof79t6hs6i",
+      "title": "Concurrency",
+      "desc": "",
+      "updated": 1698670697373,
+      "created": 1698463425918,
+      "custom": {},
+      "fname": "programming.language.swift.grand-central-dispatch.concurrency",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "83746cf15bda54403acd9ed4cf2ec08a",
+      "links": [],
+      "anchors": {
+        "為什麼我們要好好的處理concurrency": {
+          "type": "header",
+          "text": "為什麼我們要好好的處理concurrency?",
+          "value": "為什麼我們要好好的處理concurrency",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "如何使用dispatchqueue": {
+          "type": "header",
+          "text": "如何使用DispatchQueue?",
+          "value": "如何使用dispatchqueue",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "step-1-取得或建立一個dispatchqueue": {
+          "type": "header",
+          "text": "Step 1: 取得或建立一個DispatchQueue",
+          "value": "step-1-取得或建立一個dispatchqueue",
+          "line": 16,
+          "column": 0,
+          "depth": 3
+        },
+        "step-2-我們可以透過以下方式提交task到一個dispatchqueue物件上並指定dispatchqueue要如何執行這個task": {
+          "type": "header",
+          "text": "Step 2: 我們可以透過以下方式提交Task到一個DispatchQueue物件上，並指定DispatchQueue要如何執行這個Task",
+          "value": "step-2-我們可以透過以下方式提交task到一個dispatchqueue物件上並指定dispatchqueue要如何執行這個task",
+          "line": 26,
+          "column": 0,
+          "depth": 3
+        },
+        "什麼是dispatchitem為何要使用他": {
+          "type": "header",
+          "text": "什麼是DispatchItem？為何要使用他？",
+          "value": "什麼是dispatchitem為何要使用他",
+          "line": 38,
+          "column": 0,
+          "depth": 2
+        },
+        "什麼是dispatchgroup-為何要使用他": {
+          "type": "header",
+          "text": "什麼是DispatchGroup? 為何要使用他？",
+          "value": "什麼是dispatchgroup-為何要使用他",
+          "line": 55,
+          "column": 0,
+          "depth": 2
+        },
+        "什麼是dispatchsemaphore為何要使用他": {
+          "type": "header",
+          "text": "什麼是DispatchSemaphore？為何要使用他？",
+          "value": "什麼是dispatchsemaphore為何要使用他",
+          "line": 92,
+          "column": 0,
+          "depth": 2
+        },
+        "什麼是barrier為何要使用他": {
+          "type": "header",
+          "text": "什麼是Barrier？為何要使用他？",
+          "value": "什麼是barrier為何要使用他",
+          "line": 94,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "mwi46jvfinzar9tadeb0gsl",
       "data": {}
     },
     "k0wglg86ad5i8p1z42joprw": {
@@ -1670,7 +1874,30 @@
         "name": "Dendron"
       },
       "contentHash": "e9ab897967adaab11bf736fcb2b43b0f",
-      "links": [],
+      "links": [
+        {
+          "from": {
+            "fname": "programming.language.swift.Types",
+            "id": "mr2culexmtziuklrq2gt22f",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 125,
+              "column": 13,
+              "offset": 2823
+            },
+            "end": {
+              "line": 125,
+              "column": 55,
+              "offset": 2865
+            },
+            "indent": []
+          },
+          "value": "programming.language.swift.performance"
+        }
+      ],
       "anchors": {
         "dimensions-of-performance": {
           "type": "header",
@@ -1705,9 +1932,12 @@
       "id": "hvogtqvodqmpqkl2y0zxkph",
       "title": "Memory Management",
       "desc": "",
-      "updated": 1704177781019,
+      "updated": 1704388196917,
       "created": 1703918584124,
-      "custom": {},
+      "nav_order": 2,
+      "custom": {
+        "nav_order": 2
+      },
       "fname": "programming.language.swift.memory management",
       "type": "note",
       "vault": {
@@ -1715,14 +1945,14 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "dea639386ccd8aed4819c80dc6599048",
+      "contentHash": "9713e8bd9fc9aee8f3f4e5b8e7d53f97",
       "links": [],
       "anchors": {
         "stack-vs-heap": {
           "type": "header",
           "text": "Stack vs Heap",
           "value": "stack-vs-heap",
-          "line": 10,
+          "line": 11,
           "column": 0,
           "depth": 2
         },
@@ -1730,7 +1960,7 @@
           "type": "header",
           "text": "Stack 特性",
           "value": "stack-特性",
-          "line": 14,
+          "line": 15,
           "column": 0,
           "depth": 3
         },
@@ -1738,7 +1968,7 @@
           "type": "header",
           "text": "Heap 的特性",
           "value": "heap-的特性",
-          "line": 28,
+          "line": 29,
           "column": 0,
           "depth": 3
         },
@@ -1746,7 +1976,7 @@
           "type": "header",
           "text": "Heap Summary",
           "value": "heap-summary",
-          "line": 42,
+          "line": 43,
           "column": 0,
           "depth": 3
         },
@@ -1754,7 +1984,7 @@
           "type": "header",
           "text": "Stack Summary",
           "value": "stack-summary",
-          "line": 52,
+          "line": 53,
           "column": 0,
           "depth": 3
         }
@@ -1827,6 +2057,74 @@
       "parent": "hvogtqvodqmpqkl2y0zxkph",
       "data": {}
     },
+    "copi536d0o8g51ay18dp29l": {
+      "id": "copi536d0o8g51ay18dp29l",
+      "title": "Generics",
+      "desc": "",
+      "updated": 1703732514198,
+      "created": 1703732409878,
+      "custom": {},
+      "fname": "programming.language.swift.generics",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "5e2c99c702c3595bc685ce25d7513195",
+      "links": [],
+      "anchors": {},
+      "children": [],
+      "parent": "vztg7xzj0425ae5ogmk8ds2",
+      "data": {}
+    },
+    "qjbja5y4bx4h8yq4aaydnss": {
+      "id": "qjbja5y4bx4h8yq4aaydnss",
+      "title": "Framework",
+      "desc": "",
+      "updated": 1698879252108,
+      "created": 1698879252108,
+      "custom": {},
+      "fname": "programming.language.swift.framework",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "334b85df298c351ef2a45f49c65d8953",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "265euhsg8077ow4ql8x9u0q",
+        "d5kbcl46xodh9c8hl10qrsu",
+        "m2klofp5yj7niqiawmu25a0",
+        "ri418z8my409lbev7mvbfo7"
+      ],
+      "parent": "vztg7xzj0425ae5ogmk8ds2",
+      "data": {}
+    },
+    "ri418z8my409lbev7mvbfo7": {
+      "id": "ri418z8my409lbev7mvbfo7",
+      "title": "URL Loading System",
+      "desc": "",
+      "updated": 1704028924787,
+      "created": 1704006010890,
+      "custom": {},
+      "fname": "programming.language.swift.framework.url loading System",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "db53150a28b30edc0fe5879cd0b3b6bd",
+      "links": [],
+      "anchors": {},
+      "children": [],
+      "parent": "qjbja5y4bx4h8yq4aaydnss",
+      "data": {}
+    },
     "m2klofp5yj7niqiawmu25a0": {
       "id": "m2klofp5yj7niqiawmu25a0",
       "title": "Grand Central Dispatch",
@@ -1834,7 +2132,7 @@
       "updated": 1704124807904,
       "created": 1698417734679,
       "custom": {},
-      "fname": "programming.language.swift.grand-central-dispatch",
+      "fname": "programming.language.swift.framework.grand-central-dispatch",
       "type": "note",
       "vault": {
         "fsPath": ".",
@@ -1933,192 +2231,6 @@
           "depth": 4
         }
       },
-      "children": [
-        "205jes6rqcp0hof79t6hs6i",
-        "9bunykr1jl52ls7wqudyauz"
-      ],
-      "parent": "vztg7xzj0425ae5ogmk8ds2",
-      "data": {}
-    },
-    "9bunykr1jl52ls7wqudyauz": {
-      "id": "9bunykr1jl52ls7wqudyauz",
-      "title": "Parallelism",
-      "desc": "",
-      "updated": 1698463258665,
-      "created": 1698463052691,
-      "custom": {},
-      "fname": "programming.language.swift.grand-central-dispatch.parallelism",
-      "type": "note",
-      "vault": {
-        "fsPath": ".",
-        "selfContained": true,
-        "name": "Dendron"
-      },
-      "contentHash": "39fb1df540659f8f12296dc89c8a781f",
-      "links": [],
-      "anchors": {
-        "明確告訴gcd這個task要使用parellelism的方式去執行": {
-          "type": "header",
-          "text": "明確告訴GCD這個task要使用parellelism的方式去執行",
-          "value": "明確告訴gcd這個task要使用parellelism的方式去執行",
-          "line": 8,
-          "column": 0,
-          "depth": 2
-        }
-      },
-      "children": [],
-      "parent": "m2klofp5yj7niqiawmu25a0",
-      "data": {}
-    },
-    "205jes6rqcp0hof79t6hs6i": {
-      "id": "205jes6rqcp0hof79t6hs6i",
-      "title": "Concurrency",
-      "desc": "",
-      "updated": 1698670697373,
-      "created": 1698463425918,
-      "custom": {},
-      "fname": "programming.language.swift.grand-central-dispatch.concurrency",
-      "type": "note",
-      "vault": {
-        "fsPath": ".",
-        "selfContained": true,
-        "name": "Dendron"
-      },
-      "contentHash": "83746cf15bda54403acd9ed4cf2ec08a",
-      "links": [],
-      "anchors": {
-        "為什麼我們要好好的處理concurrency": {
-          "type": "header",
-          "text": "為什麼我們要好好的處理concurrency?",
-          "value": "為什麼我們要好好的處理concurrency",
-          "line": 8,
-          "column": 0,
-          "depth": 2
-        },
-        "如何使用dispatchqueue": {
-          "type": "header",
-          "text": "如何使用DispatchQueue?",
-          "value": "如何使用dispatchqueue",
-          "line": 12,
-          "column": 0,
-          "depth": 2
-        },
-        "step-1-取得或建立一個dispatchqueue": {
-          "type": "header",
-          "text": "Step 1: 取得或建立一個DispatchQueue",
-          "value": "step-1-取得或建立一個dispatchqueue",
-          "line": 16,
-          "column": 0,
-          "depth": 3
-        },
-        "step-2-我們可以透過以下方式提交task到一個dispatchqueue物件上並指定dispatchqueue要如何執行這個task": {
-          "type": "header",
-          "text": "Step 2: 我們可以透過以下方式提交Task到一個DispatchQueue物件上，並指定DispatchQueue要如何執行這個Task",
-          "value": "step-2-我們可以透過以下方式提交task到一個dispatchqueue物件上並指定dispatchqueue要如何執行這個task",
-          "line": 26,
-          "column": 0,
-          "depth": 3
-        },
-        "什麼是dispatchitem為何要使用他": {
-          "type": "header",
-          "text": "什麼是DispatchItem？為何要使用他？",
-          "value": "什麼是dispatchitem為何要使用他",
-          "line": 38,
-          "column": 0,
-          "depth": 2
-        },
-        "什麼是dispatchgroup-為何要使用他": {
-          "type": "header",
-          "text": "什麼是DispatchGroup? 為何要使用他？",
-          "value": "什麼是dispatchgroup-為何要使用他",
-          "line": 55,
-          "column": 0,
-          "depth": 2
-        },
-        "什麼是dispatchsemaphore為何要使用他": {
-          "type": "header",
-          "text": "什麼是DispatchSemaphore？為何要使用他？",
-          "value": "什麼是dispatchsemaphore為何要使用他",
-          "line": 92,
-          "column": 0,
-          "depth": 2
-        },
-        "什麼是barrier為何要使用他": {
-          "type": "header",
-          "text": "什麼是Barrier？為何要使用他？",
-          "value": "什麼是barrier為何要使用他",
-          "line": 94,
-          "column": 0,
-          "depth": 2
-        }
-      },
-      "children": [],
-      "parent": "m2klofp5yj7niqiawmu25a0",
-      "data": {}
-    },
-    "copi536d0o8g51ay18dp29l": {
-      "id": "copi536d0o8g51ay18dp29l",
-      "title": "Generics",
-      "desc": "",
-      "updated": 1703732514198,
-      "created": 1703732409878,
-      "custom": {},
-      "fname": "programming.language.swift.generics",
-      "type": "note",
-      "vault": {
-        "fsPath": ".",
-        "selfContained": true,
-        "name": "Dendron"
-      },
-      "contentHash": "5e2c99c702c3595bc685ce25d7513195",
-      "links": [],
-      "anchors": {},
-      "children": [],
-      "parent": "vztg7xzj0425ae5ogmk8ds2",
-      "data": {}
-    },
-    "qjbja5y4bx4h8yq4aaydnss": {
-      "id": "qjbja5y4bx4h8yq4aaydnss",
-      "title": "Framework",
-      "desc": "",
-      "updated": 1698879252108,
-      "created": 1698879252108,
-      "custom": {},
-      "fname": "programming.language.swift.framework",
-      "type": "note",
-      "vault": {
-        "fsPath": ".",
-        "selfContained": true,
-        "name": "Dendron"
-      },
-      "contentHash": "334b85df298c351ef2a45f49c65d8953",
-      "links": [],
-      "anchors": {},
-      "children": [
-        "265euhsg8077ow4ql8x9u0q",
-        "d5kbcl46xodh9c8hl10qrsu",
-        "ri418z8my409lbev7mvbfo7"
-      ],
-      "parent": "vztg7xzj0425ae5ogmk8ds2",
-      "data": {}
-    },
-    "ri418z8my409lbev7mvbfo7": {
-      "id": "ri418z8my409lbev7mvbfo7",
-      "title": "URL Loading System",
-      "desc": "",
-      "updated": 1704028924787,
-      "created": 1704006010890,
-      "custom": {},
-      "fname": "programming.language.swift.framework.url loading System",
-      "type": "note",
-      "vault": {
-        "fsPath": ".",
-        "selfContained": true,
-        "name": "Dendron"
-      },
-      "contentHash": "db53150a28b30edc0fe5879cd0b3b6bd",
-      "links": [],
-      "anchors": {},
       "children": [],
       "parent": "qjbja5y4bx4h8yq4aaydnss",
       "data": {}
@@ -2624,9 +2736,12 @@
       "id": "mr2culexmtziuklrq2gt22f",
       "title": "Types",
       "desc": "",
-      "updated": 1704124855649,
+      "updated": 1704388122468,
       "created": 1703951617977,
-      "custom": {},
+      "nav_order": 1,
+      "custom": {
+        "nav_order": 1
+      },
       "fname": "programming.language.swift.Types",
       "type": "note",
       "vault": {
@@ -2634,14 +2749,50 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "cb9a1d13e6406a6b8f42ea0f153250a4",
-      "links": [],
+      "contentHash": "c89e31d268dcccc84002ed6763ba2666",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "programming.language.swift.Types",
+            "id": "mr2culexmtziuklrq2gt22f",
+            "vaultName": "Dendron"
+          },
+          "value": "programming.language.swift.performance",
+          "position": {
+            "start": {
+              "line": 125,
+              "column": 13,
+              "offset": 2823
+            },
+            "end": {
+              "line": 125,
+              "column": 55,
+              "offset": 2865
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "programming.language.swift.performance"
+          }
+        }
+      ],
       "anchors": {
-        "definition": {
+        "usage-overview": {
           "type": "header",
-          "text": "Definition",
-          "value": "definition",
-          "line": 8,
+          "text": "Usage Overview",
+          "value": "usage-overview",
+          "line": 9,
+          "column": 0,
+          "depth": 2
+        },
+        "main-difference-between-struct--class": {
+          "type": "header",
+          "text": "Main Difference between Struct & Class",
+          "value": "main-difference-between-struct--class",
+          "line": 19,
           "column": 0,
           "depth": 2
         },
@@ -2649,29 +2800,69 @@
           "type": "header",
           "text": "Value Type , Reference Type",
           "value": "value-type--reference-type",
-          "line": 18,
+          "line": 27,
           "column": 0,
-          "depth": 2
+          "depth": 3
         },
         "value-type": {
           "type": "header",
           "text": "value type:",
           "value": "value-type",
-          "line": 22,
+          "line": 31,
           "column": 0,
-          "depth": 3
+          "depth": 4
         },
         "reference-type": {
           "type": "header",
           "text": "reference type:",
           "value": "reference-type",
-          "line": 29,
+          "line": 38,
+          "column": 0,
+          "depth": 4
+        },
+        "static-dispatch-vs-dynamic-dispatch": {
+          "type": "header",
+          "text": "Static Dispatch vs Dynamic Dispatch",
+          "value": "static-dispatch-vs-dynamic-dispatch",
+          "line": 45,
           "column": 0,
           "depth": 3
+        },
+        "method-dispatch": {
+          "type": "header",
+          "text": "Method dispatch",
+          "value": "method-dispatch",
+          "line": 47,
+          "column": 0,
+          "depth": 4
+        },
+        "which-to-choose-struct-or-class": {
+          "type": "header",
+          "text": "Which to choose, Struct or Class?",
+          "value": "which-to-choose-struct-or-class",
+          "line": 125,
+          "column": 0,
+          "depth": 2
+        },
+        "situations-when-choosing-different-data-types": {
+          "type": "header",
+          "text": "Situations when choosing different data types",
+          "value": "situations-when-choosing-different-data-types",
+          "line": 134,
+          "column": 0,
+          "depth": 2
+        },
+        "comparison": {
+          "type": "header",
+          "text": "Comparison",
+          "value": "comparison",
+          "line": 147,
+          "column": 0,
+          "depth": 2
         }
       },
       "children": [
-        "f0rt95n87dvpuuf5ktobguw",
+        "e967gt61ay4vhqbij2qmofv",
         "m30ay8bv1fkxsl30m2r9frl",
         "2cg1kb9zlmrzfvyzu54nsrd"
       ],
@@ -2680,124 +2871,55 @@
     },
     "2cg1kb9zlmrzfvyzu54nsrd": {
       "id": "2cg1kb9zlmrzfvyzu54nsrd",
-      "title": "Structures Vs Classes",
+      "title": "Struct",
       "desc": "",
-      "updated": 1704203216969,
+      "updated": 1704387824824,
       "created": 1703728237903,
-      "custom": {},
-      "fname": "programming.language.swift.types.structures vs classes",
+      "nav_order": 2,
+      "custom": {
+        "nav_order": 2
+      },
+      "fname": "programming.language.swift.types.struct",
       "type": "note",
       "vault": {
         "fsPath": ".",
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "eae051c4490c676bf6e695b8d1a0420e",
+      "contentHash": "e81f84f1de149c088c1272f4acbd6d10",
       "links": [],
       "anchors": {
         "definition-syntax": {
           "type": "header",
           "text": "Definition Syntax",
           "value": "definition-syntax",
-          "line": 10,
+          "line": 9,
           "column": 0,
           "depth": 2
         },
-        "examples": {
+        "pass-by-value": {
           "type": "header",
-          "text": "Examples",
-          "value": "examples",
-          "line": 22,
+          "text": "Pass by value",
+          "value": "pass-by-value",
+          "line": 20,
           "column": 0,
           "depth": 2
-        },
-        "both-can": {
-          "type": "header",
-          "text": "Both can:",
-          "value": "both-can",
-          "line": 46,
-          "column": 0,
-          "depth": 2
-        },
-        "diff": {
-          "type": "header",
-          "text": "DIFF",
-          "value": "diff",
-          "line": 53,
-          "column": 0,
-          "depth": 2
-        },
-        "pass-by-value-vs-pass-by-reference": {
-          "type": "header",
-          "text": "Pass by value vs Pass by reference",
-          "value": "pass-by-value-vs-pass-by-reference",
-          "line": 55,
-          "column": 0,
-          "depth": 3
         },
         "coa-copy-on-assign": {
           "type": "header",
           "text": "CoA （Copy-on-Assign）",
           "value": "coa-copy-on-assign",
-          "line": 57,
+          "line": 22,
           "column": 0,
-          "depth": 4
+          "depth": 3
         },
         "cow-copy-on-write": {
           "type": "header",
           "text": "CoW （Copy-on-Write）",
           "value": "cow-copy-on-write",
-          "line": 76,
-          "column": 0,
-          "depth": 4
-        },
-        "reference": {
-          "type": "header",
-          "text": "Reference",
-          "value": "reference",
-          "line": 95,
-          "column": 0,
-          "depth": 4
-        },
-        "static-dispatch-vs-dynamic-dispatch": {
-          "type": "header",
-          "text": "Static Dispatch vs Dynamic Dispatch",
-          "value": "static-dispatch-vs-dynamic-dispatch",
-          "line": 120,
-          "column": 0,
-          "depth": 2
-        },
-        "method-dispatch": {
-          "type": "header",
-          "text": "Method dispatch",
-          "value": "method-dispatch",
-          "line": 122,
+          "line": 41,
           "column": 0,
           "depth": 3
-        },
-        "which-to-choose": {
-          "type": "header",
-          "text": "Which to choose?",
-          "value": "which-to-choose",
-          "line": 200,
-          "column": 0,
-          "depth": 2
-        },
-        "situations-when-choosing-different-data-types": {
-          "type": "header",
-          "text": "Situations when choosing different data types",
-          "value": "situations-when-choosing-different-data-types",
-          "line": 209,
-          "column": 0,
-          "depth": 2
-        },
-        "comparison": {
-          "type": "header",
-          "text": "Comparison",
-          "value": "comparison",
-          "line": 221,
-          "column": 0,
-          "depth": 2
         }
       },
       "children": [],
@@ -2808,9 +2930,12 @@
       "id": "m30ay8bv1fkxsl30m2r9frl",
       "title": "Enumeration",
       "desc": "",
-      "updated": 1704208895807,
+      "updated": 1704358690616,
       "created": 1703951656006,
-      "custom": {},
+      "nav_order": 3,
+      "custom": {
+        "nav_order": 3
+      },
       "fname": "programming.language.swift.Types.enumeration",
       "type": "note",
       "vault": {
@@ -2818,14 +2943,14 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "1e14efc26b80b786855c9363afe4ea5b",
+      "contentHash": "ecb5744937599111ed17296cd973638d",
       "links": [],
       "anchors": {
         "what-is-enum": {
           "type": "header",
           "text": "What is enum?",
           "value": "what-is-enum",
-          "line": 8,
+          "line": 9,
           "column": 0,
           "depth": 2
         },
@@ -2833,7 +2958,7 @@
           "type": "header",
           "text": "Declaration",
           "value": "declaration",
-          "line": 12,
+          "line": 13,
           "column": 0,
           "depth": 2
         },
@@ -2841,7 +2966,7 @@
           "type": "header",
           "text": "用enum的優勢",
           "value": "用enum的優勢",
-          "line": 23,
+          "line": 24,
           "column": 0,
           "depth": 2
         },
@@ -2849,7 +2974,7 @@
           "type": "header",
           "text": "Use Cases",
           "value": "use-cases",
-          "line": 52,
+          "line": 53,
           "column": 0,
           "depth": 2
         }
@@ -2858,36 +2983,39 @@
       "parent": "mr2culexmtziuklrq2gt22f",
       "data": {}
     },
-    "f0rt95n87dvpuuf5ktobguw": {
-      "id": "f0rt95n87dvpuuf5ktobguw",
+    "e967gt61ay4vhqbij2qmofv": {
+      "id": "e967gt61ay4vhqbij2qmofv",
       "title": "Class",
       "desc": "",
-      "updated": 1704203683171,
+      "updated": 1704386523475,
       "created": 1704195508926,
-      "custom": {},
-      "fname": "programming.language.swift.Types.Class",
+      "nav_order": 1,
+      "custom": {
+        "nav_order": 1
+      },
+      "fname": "programming.language.swift.Types.class",
       "type": "note",
       "vault": {
         "fsPath": ".",
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "da881cd8360f63e52faf3546cf6d719f",
+      "contentHash": "12e6ab9b85c5178746828f565ac0b5e4",
       "links": [],
       "anchors": {
-        "declare-a-class": {
+        "declare-a-class--struct": {
           "type": "header",
-          "text": "Declare a class",
-          "value": "declare-a-class",
-          "line": 8,
+          "text": "Declare a class / struct",
+          "value": "declare-a-class--struct",
+          "line": 9,
           "column": 0,
           "depth": 2
         },
-        "initialize-a-class-instance": {
+        "initialize-a-classstruct-instance": {
           "type": "header",
-          "text": "Initialize a class instance",
-          "value": "initialize-a-class-instance",
-          "line": 18,
+          "text": "Initialize a class/struct instance",
+          "value": "initialize-a-classstruct-instance",
+          "line": 23,
           "column": 0,
           "depth": 2
         },
@@ -2895,7 +3023,7 @@
           "type": "header",
           "text": "Property",
           "value": "property",
-          "line": 92,
+          "line": 81,
           "column": 0,
           "depth": 2
         },
@@ -2903,7 +3031,7 @@
           "type": "header",
           "text": "method",
           "value": "method",
-          "line": 160,
+          "line": 154,
           "column": 0,
           "depth": 2
         },
@@ -2911,7 +3039,7 @@
           "type": "header",
           "text": "Inheritance",
           "value": "inheritance",
-          "line": 207,
+          "line": 201,
           "column": 0,
           "depth": 2
         },
@@ -2919,7 +3047,7 @@
           "type": "header",
           "text": "designated / convenience initializer",
           "value": "designated--convenience-initializer",
-          "line": 261,
+          "line": 255,
           "column": 0,
           "depth": 2
         }
@@ -3157,7 +3285,7 @@
       "id": "hbjsa0j33arqblxg88k4jfv",
       "title": "Design Pattern",
       "desc": "",
-      "updated": 1698904815825,
+      "updated": 1704346264676,
       "created": 1698904799908,
       "custom": {},
       "fname": "programming.design pattern",
@@ -3167,15 +3295,37 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "049be6e3997e6ffb1ddb5cdd72482ed6",
+      "contentHash": "a1286a9e5b2705a16a627215bdf670b6",
       "links": [],
       "anchors": {},
       "children": [
         "y8otxung92f9zxx8j7ug0xu",
         "0s36hxqraz1orimb13qdeio",
-        "fff715mwr5cluf3hwpq40z4"
+        "fff715mwr5cluf3hwpq40z4",
+        "07evfbyayo4f86ydhmpx6wp"
       ],
       "parent": "rn0e0y5coqo8iyqfxd7ocsk",
+      "data": {}
+    },
+    "07evfbyayo4f86ydhmpx6wp": {
+      "id": "07evfbyayo4f86ydhmpx6wp",
+      "title": "Observer",
+      "desc": "",
+      "updated": 1704346456975,
+      "created": 1704346204664,
+      "custom": {},
+      "fname": "programming.design pattern.observer pattern",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "6cc02f7280f4573c6b602092daa731a5",
+      "links": [],
+      "anchors": {},
+      "children": [],
+      "parent": "hbjsa0j33arqblxg88k4jfv",
       "data": {}
     },
     "fff715mwr5cluf3hwpq40z4": {
@@ -3535,6 +3685,7 @@
       "links": [],
       "anchors": {},
       "children": [
+        "00oijwt190dfbc5166gqzll",
         "j76ahf4fh0mz6jq2m1qhemw"
       ],
       "parent": "root",
@@ -3544,7 +3695,7 @@
       "id": "j76ahf4fh0mz6jq2m1qhemw",
       "title": "Self Intro",
       "desc": "",
-      "updated": 1703678273348,
+      "updated": 1704347368353,
       "created": 1703313259802,
       "custom": {},
       "fname": "job finding.self-intro",
@@ -3554,7 +3705,7 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "b5819fac644818ddf20169da90950596",
+      "contentHash": "a8d5c1326cb4278f1cd351f59923ba25",
       "links": [],
       "anchors": {
         "summary": {
@@ -3652,6 +3803,52 @@
           "line": 76,
           "column": 0,
           "depth": 4
+        }
+      },
+      "children": [],
+      "parent": "j416lb0sk2vag9yvgr9bxzb",
+      "data": {}
+    },
+    "00oijwt190dfbc5166gqzll": {
+      "id": "00oijwt190dfbc5166gqzll",
+      "title": "Interview ",
+      "desc": "",
+      "updated": 1704356010600,
+      "created": 1704295912566,
+      "custom": {},
+      "fname": "job finding.interview",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "fd72f96325d167a2ca90e31991789086",
+      "links": [],
+      "anchors": {
+        "basic-questions": {
+          "type": "header",
+          "text": "Basic Questions",
+          "value": "basic-questions",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "advance": {
+          "type": "header",
+          "text": "Advance",
+          "value": "advance",
+          "line": 16,
+          "column": 0,
+          "depth": 2
+        },
+        "導師-1-on-1-面談回饋": {
+          "type": "header",
+          "text": "導師 1 on 1 面談回饋",
+          "value": "導師-1-on-1-面談回饋",
+          "line": 23,
+          "column": 0,
+          "depth": 2
         }
       },
       "children": [],

@@ -2,8 +2,9 @@
 id: hvogtqvodqmpqkl2y0zxkph
 title: Memory Management
 desc: ''
-updated: 1704177781019
+updated: 1704388196917
 created: 1703918584124
+nav_order: 2
 ---
 
 https://developer.apple.com/documentation/swift/manual-memory-management
