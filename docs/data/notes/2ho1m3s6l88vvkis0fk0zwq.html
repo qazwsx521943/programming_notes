@@ -1,0 +1,109 @@
+<h1 id="concurrency">Concurrency<a aria-hidden="true" class="anchor-heading icon-link" href="#concurrency"></a></h1>
+<h2 id="whats-the-benefits-of-using-this-new-concurrency-model">What's the benefits of using this new concurrency model?<a aria-hidden="true" class="anchor-heading icon-link" href="#whats-the-benefits-of-using-this-new-concurrency-model"></a></h2>
+<ul>
+<li>No more nested completionHandlers -> Big improvement in Readability</li>
+<li>Reduce the risk of thread explosion</li>
+<li>Introduces <code>Actor</code>, reducing the race conditions risks.</li>
+</ul>
+<p>以之前Stylish登入然後拿使用者資料為例，我們需要依序做三件事，因為每個Task都依賴於前一個Task拿到的資訊：</p>
+<ol>
+<li>拿fbToken</li>
+<li>拿stylishToken</li>
+<li>拿User資料</li>
+</ol>
+<pre class="language-swift"><code class="language-swift"><span class="token comment">// 以下的code都是示意而已，無法在 playground 測試，且不考量error handling</span>
+<span class="token keyword">typealias</span> <span class="token class-name">Token</span> <span class="token operator">=</span> <span class="token class-name">String</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">let</span> id<span class="token punctuation">:</span> <span class="token class-name">String</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function-definition function">login</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+    getFBToken <span class="token punctuation">{</span> fbToken <span class="token keyword">in</span>
+        <span class="token function">loginWithFB</span><span class="token punctuation">(</span>fbToken<span class="token punctuation">:</span> fbToken<span class="token punctuation">)</span> <span class="token punctuation">{</span> stylishToken <span class="token keyword">in</span>
+            <span class="token function">getUserData</span><span class="token punctuation">(</span>token<span class="token punctuation">:</span> stylishToken<span class="token punctuation">)</span> <span class="token punctuation">{</span> user <span class="token keyword">in</span>
+                <span class="token keyword">return</span> user
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function-definition function">getFBToken</span><span class="token punctuation">(</span>completionHandler<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token class-name">Token</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> tokenString<span class="token punctuation">:</span> <span class="token class-name">Token</span>
+    <span class="token comment">// get token by facebook sdk</span>
+    <span class="token function">completionHandler</span><span class="token punctuation">(</span>tokenString<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function-definition function">loginWithFB</span><span class="token punctuation">(</span>fbToken<span class="token punctuation">:</span> <span class="token class-name">Token</span><span class="token punctuation">,</span> completionHandler<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token class-name">Token</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> stylishToken<span class="token punctuation">:</span> <span class="token class-name">Token</span>
+    <span class="token comment">// login stylish by fb token</span>
+    <span class="token function">completionHandler</span><span class="token punctuation">(</span>stylishToken<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function-definition function">getUserData</span><span class="token punctuation">(</span>token<span class="token punctuation">:</span> <span class="token class-name">Token</span><span class="token punctuation">,</span> completionHandler<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token class-name">User</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// get user data by stylish token</span>
+    <span class="token function">completionHandler</span><span class="token punctuation">(</span><span class="token class-name">User</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"John"</span></span><span class="token punctuation">,</span> id<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"123"</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>如果用async await</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">func</span> <span class="token function-definition function">login</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token operator">-></span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> fbToken <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">getFBToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">let</span> stylishToken <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">loginWithFB</span><span class="token punctuation">(</span>fbToken<span class="token punctuation">:</span> fbToken<span class="token punctuation">)</span>
+  <span class="token keyword">let</span> user <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">getUserData</span><span class="token punctuation">(</span>token<span class="token punctuation">:</span> stylishToken<span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> user
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function-definition function">getFBToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token operator">-></span> <span class="token class-name">Token</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> tokenString<span class="token punctuation">:</span> <span class="token class-name">Token</span>
+    <span class="token comment">// get token by facebook sdk</span>
+    <span class="token keyword">return</span> tokenString
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function-definition function">loginWithFB</span><span class="token punctuation">(</span>fbToken<span class="token punctuation">:</span> <span class="token class-name">Token</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Token</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> stylishToken<span class="token punctuation">:</span> <span class="token class-name">Token</span>
+    <span class="token comment">// login stylish by fb token</span>
+    <span class="token keyword">return</span> stylishToken
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function-definition function">getUserData</span><span class="token punctuation">(</span>token<span class="token punctuation">:</span> <span class="token class-name">Token</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+    <span class="token comment">// get user data by stylish token</span>
+    <span class="token keyword">return</span> <span class="token class-name">User</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"John"</span></span><span class="token punctuation">,</span> id<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"123"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>很明顯的感受到一樣的功能，使用async await語法可以讓可讀性增加不少，就連沒學過程式的人可能都看得懂。</p>
+<h2 id="basic-syntax">Basic syntax<a aria-hidden="true" class="anchor-heading icon-link" href="#basic-syntax"></a></h2>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">func</span> <span class="token function-definition function">fetchData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token keyword">throws</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token keyword">await</span> <span class="token class-name">Task</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token keyword">for</span><span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token function">seconds</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"successed"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>★ 當程式碼執行到<code>await</code>會發生什麼事？</p>
+<p>當程式碼執行遇到<code>await</code>時，是告訴系統說接下來的任務是異步的(會需要時間執行)，為了不要讓他卡在當前的thread上導致其他任務無法執行，他會暫停當前這個異步任務在當前線程的執行，先讓其他任務在該線程上執行。</p>
+<p>等到<code>await</code>後面的異步任務執行完後Swift runtime會確保回到原本的thread在適當的時候繼續執行接下來的code。</p>
+<ul>
+<li>遇到<code>await</code>，暫定的是方法，不是thread</li>
+<li>暫停的前後有可能會切換到不同的 thread 執行</li>
+</ul>
+<p>所以這個5.5出來的concurrency model做了什麼？</p>
+<ul>
+<li>他弱化了開發者對"<strong>Thread</strong>"的概念，讓線程的創建完全由concurrency model做判斷</li>
+</ul>
+<h2 id="what-is-a-sendable-protocol">What is a <code>Sendable</code> Protocol?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-is-a-sendable-protocol"></a></h2>
+<p>★ <code>Sendable</code> protocol 是一個<code>Marker protocol</code>，他不要求任何實作，不能做conditional cast</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">let</span> isSendable <span class="token operator">=</span> <span class="token class-name">Car</span><span class="token punctuation">.</span><span class="token keyword">self</span> <span class="token keyword">is</span> <span class="token class-name">Sendable</span>  <span class="token comment">// error: Marker protocol 'Sendable' cannot be used in a conditional cast.</span>
+</code></pre>
+<blockquote>
+<p>A type that can be shared from one concurrency domain to another is known as a sendable type.
+You mark a type as being sendable by declaring conformance to the Sendable protocol.</p>
+</blockquote>
+<p>可以在多線程環境下共享的類別，我們就稱他是一個Sendable的類別。</p>
+<p>從</p>
+<h2 id="asyncsequence-protocol">AsyncSequence protocol<a aria-hidden="true" class="anchor-heading icon-link" href="#asyncsequence-protocol"></a></h2>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/programming_notes/notes/0swgx3xcko1wm5cfll7nvah">Actors</a></li>
+<li><a href="/programming_notes/notes/4momin9k0ledbifglklmqyv">Task &#x26; TaskGroup</a></li>
+</ol>

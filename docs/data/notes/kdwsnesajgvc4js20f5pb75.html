@@ -1,0 +1,56 @@
+<h1 id="concurrency">Concurrency<a aria-hidden="true" class="anchor-heading icon-link" href="#concurrency"></a></h1>
+<h2 id="what-is-concurrency">What is concurrency?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-is-concurrency"></a></h2>
+<p>在一定的時間內，有多個任務(Task)需要同時進行。</p>
+<p>在ios開發中，我們可能同一個時段會需要處理不同的任務，那我們就會透過多線程的方式，讓每個線程去處理不同的任務。</p>
+<p>比方說，跟 UI 有關的任務包含，建立 / 更新視圖，就一定要在主線程上執行。</p>
+<p>而如果要等待資料回傳的任務（發送網路請求、下載文件等等），我們就會讓他在其他線程上去執行。</p>
+<p>如果今天我們把需要花時間的任務請主線程處理的話，主線程會乾等在那導致UI無法進行任何處理，使用者就會覺得我們的應用程式壞掉。</p>
+<h2 id="高併發跟多線程的關係">高併發跟多線程的關係？<a aria-hidden="true" class="anchor-heading icon-link" href="#高併發跟多線程的關係"></a></h2>
+<h2 id="ios中有什麼處理多線程的技術">iOS中有什麼處理多線程的技術？<a aria-hidden="true" class="anchor-heading icon-link" href="#ios中有什麼處理多線程的技術"></a></h2>
+<ol>
+<li>
+<p>NSThread</p>
+<blockquote>
+<p>屬於Objective-C中的一個類，可以用來建立 / 管理 線程</p>
+</blockquote>
+</li>
+<li>
+<p><a href="/programming_notes/notes/m2klofp5yj7niqiawmu25a0">GCD</a></p>
+<blockquote>
+<p>Apple 開發的框架，讓我們可以有效針對不同裝置的硬體配備進行多線程的處理。</p>
+</blockquote>
+<ul>
+<li>解決了 NSThread 什麼問題？
+<ul>
+<li>簡單易用</li>
+<li>高效：可以更有效利用設備的多核心處理能力</li>
+<li>安全可靠</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>async / await (swift 5.5)</p>
+<blockquote>
+</blockquote>
+</li>
+</ol>
+<h2 id="衡量標準">衡量標準<a aria-hidden="true" class="anchor-heading icon-link" href="#衡量標準"></a></h2>
+<ol>
+<li>QPS(Query per second)</li>
+<li>RT (Response Time)</li>
+</ol>
+<h2 id="通常在解決高併發有兩種擴展方式">通常在解決高併發有兩種擴展方式<a aria-hidden="true" class="anchor-heading icon-link" href="#通常在解決高併發有兩種擴展方式"></a></h2>
+<ol>
+<li>垂直擴展 -> 升級硬體
+<ol>
+<li>提高硬體核心數</li>
+</ol>
+</li>
+<li>水平擴展
+<ol>
+<li>負載均衡 ex: F5 + nginx 去做 load balance</li>
+<li>分散式緩存： redis, memcached. 搭配CDN</li>
+</ol>
+</li>
+</ol>

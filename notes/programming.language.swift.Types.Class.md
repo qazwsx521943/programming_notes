@@ -2,12 +2,12 @@
 id: e967gt61ay4vhqbij2qmofv
 title: Class
 desc: ''
-updated: 1704386523475
+updated: 1704421591299
 created: 1704195508926
 nav_order: 1
 ---
 
-## Declare a class / struct
+## Declare a class
 
 ```swift
 class Car {
@@ -21,7 +21,7 @@ class Car {
 }
 ```
 
-## Initialize a class/struct instance
+## Initialize a class instance
 
 - stored property with `default value`
 

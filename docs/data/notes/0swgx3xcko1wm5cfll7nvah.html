@@ -1,0 +1,53 @@
+<h1 id="actors">Actors<a aria-hidden="true" class="anchor-heading icon-link" href="#actors"></a></h1>
+<h2 id="what-did-actor-solved">What did <strong>Actor</strong> solved?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-did-actor-solved"></a></h2>
+<p>高併發所產生的data race問題。</p>
+<h2 id="how-did-it-solved">How did it solved?<a aria-hidden="true" class="anchor-heading icon-link" href="#how-did-it-solved"></a></h2>
+<p>透過Actor宣告的類別，instance會有一個數據隔離的特性，所有想要存取到該instance的外部資源都需要排入一個serial queue，以這個方式確保不會有同時修改到instance資源的問題。</p>
+<h2 id="actor-isolation">Actor isolation<a aria-hidden="true" class="anchor-heading icon-link" href="#actor-isolation"></a></h2>
+<p>以實例為單位，將內部資源與外部資源隔離。</p>
+<ul>
+<li>
+<p>需要隔離(會動到<code>mutable</code>屬性)：</p>
+<ul>
+<li><code>var</code>宣告的stored property、computed property</li>
+<li>methods</li>
+</ul>
+</li>
+<li>
+<p>不需隔離(<code>immutable</code>屬性無法被更改)：</p>
+<ul>
+<li>以<code>let</code>宣告的stored property</li>
+</ul>
+</li>
+</ul>
+<p>只有潛在可能更改到內部資源的訪問會需要隔離。</p>
+<h2 id="nonisolated"><code>nonisolated</code><a aria-hidden="true" class="anchor-heading icon-link" href="#nonisolated"></a></h2>
+<p>有的時候，我們很確定某些computed property、function並不會引起data race，這時候我們就可以透過<code>nonisolated</code>在屬性前面做標記，減少性能損耗。</p>
+<p>當然，標記<code>nonisolated</code>的computed property跟function在內部都不能存取到actor實體的<code>mutable</code>屬性。</p>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">actor</span> <span class="token class-name">Profile</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> birthDay<span class="token punctuation">:</span> <span class="token class-name">String</span>
+
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword">extension</span> <span class="token class-name">Profile</span> <span class="token punctuation">{</span>
+    <span class="token keyword">nonisolated</span> <span class="token keyword">func</span> <span class="token function-definition function">familyNameLength</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span>  <span class="token punctuation">{</span>
+
+        <span class="token keyword">let</span> dateFormatter <span class="token operator">=</span> <span class="token class-name">DateFormatter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        dateFormatter<span class="token punctuation">.</span>dateFormat <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"yyyy-MM-dd"</span></span>
+        <span class="token keyword">guard</span> <span class="token keyword">let</span> startDate <span class="token operator">=</span> dateFormatter<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>from<span class="token punctuation">:</span> birthDay<span class="token punctuation">)</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token function">fatalError</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Failed to convert start date string to date."</span></span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">let</span> endDate <span class="token operator">=</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">let</span> calendar <span class="token operator">=</span> <span class="token class-name">Calendar</span><span class="token punctuation">.</span>current
+        <span class="token keyword">let</span> components <span class="token operator">=</span> calendar<span class="token punctuation">.</span><span class="token function">dateComponents</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">.</span>day<span class="token punctuation">]</span><span class="token punctuation">,</span> from<span class="token punctuation">:</span> startDate<span class="token punctuation">,</span> to<span class="token punctuation">:</span> endDate<span class="token punctuation">)</span>
+
+        <span class="token keyword">if</span> <span class="token keyword">let</span> daysDifference <span class="token operator">=</span> components<span class="token punctuation">.</span>day <span class="token punctuation">{</span>
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"1998/06/30 到今天相隔 </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">daysDifference</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> 天。"</span></span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"無法計算日期差距。"</span></span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>

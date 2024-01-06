@@ -1,5 +1,5 @@
 
-## Declare a class / struct
+## Declare a class
 
 ```swift
 class Car {
@@ -13,7 +13,7 @@ class Car {
 }
 ```
 
-## Initialize a class/struct instance
+## Initialize a class instance
 
 - stored property with `default value`
 

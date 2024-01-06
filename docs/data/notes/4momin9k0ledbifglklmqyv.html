@@ -1,0 +1,52 @@
+<h1 id="task--taskgroup">Task &#x26; TaskGroup<a aria-hidden="true" class="anchor-heading icon-link" href="#task--taskgroup"></a></h1>
+<h2 id="task">Task<a aria-hidden="true" class="anchor-heading icon-link" href="#task"></a></h2>
+<blockquote>
+<p>A unit of <strong>asynchronous</strong> work.</p>
+</blockquote>
+<h2 id="task-groups">Task Groups<a aria-hidden="true" class="anchor-heading icon-link" href="#task-groups"></a></h2>
+<blockquote>
+<p>A task itself does only one thing at a time, but when you create <strong>multiple tasks</strong>, Swift can schedule them to <strong>run simultaneously</strong>.</p>
+</blockquote>
+<h3 id="情境一想要把某個相簿中的所有照片下載下來">情境(一)：想要把某個相簿中的所有照片下載下來。<a aria-hidden="true" class="anchor-heading icon-link" href="#情境一想要把某個相簿中的所有照片下載下來"></a></h3>
+<p>TaskHiearchy分析：</p>
+<p>步驟：</p>
+<ol>
+<li>
+<p>透過<code>withTaskGroup</code>建立一個task group，並傳入一個closure</p>
+<pre class="language-swift"><code class="language-swift"><span class="token attribute atrule">@available</span><span class="token punctuation">(</span>macOS <span class="token number">10.15</span><span class="token punctuation">,</span> iOS <span class="token number">13.0</span><span class="token punctuation">,</span> watchOS <span class="token number">6.0</span><span class="token punctuation">,</span> tvOS <span class="token number">13.0</span><span class="token punctuation">,</span> <span class="token operator">*</span><span class="token punctuation">)</span>
+<span class="token attribute atrule">@inlinable</span> <span class="token keyword">public</span> <span class="token keyword">func</span> <span class="token function-definition function">withTaskGroup</span><span class="token operator">&#x3C;</span><span class="token class-name">ChildTaskResult</span><span class="token punctuation">,</span> <span class="token class-name">GroupResult</span><span class="token operator">></span><span class="token punctuation">(</span>of childTaskResultType<span class="token punctuation">:</span> <span class="token class-name">ChildTaskResult</span><span class="token punctuation">.</span><span class="token keyword">Type</span><span class="token punctuation">,</span> returning returnType<span class="token punctuation">:</span> <span class="token class-name">GroupResult</span><span class="token punctuation">.</span><span class="token keyword">Type</span> <span class="token operator">=</span> <span class="token class-name">GroupResult</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">,</span> body<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token keyword">inout</span> <span class="token class-name">TaskGroup</span><span class="token operator">&#x3C;</span><span class="token class-name">ChildTaskResult</span><span class="token operator">></span><span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token operator">-></span> <span class="token class-name">GroupResult</span><span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token operator">-></span> <span class="token class-name">GroupResult</span> <span class="token keyword">where</span> <span class="token class-name">ChildTaskResult</span> <span class="token punctuation">:</span> <span class="token class-name">Sendable</span>
+</code></pre>
+<p>這個closure提供一個新建立好的<code>taskGroup</code>，我們可以把想要加到group中的task以<code>addTask</code>加入</p>
+<p>★ 如果今天加入到group的task是可能會throw的，可以使用<code>withThrowingTaskGroup</code></p>
+<pre class="language-swift"><code class="language-swift"><span class="token attribute atrule">@available</span><span class="token punctuation">(</span>macOS <span class="token number">10.15</span><span class="token punctuation">,</span> iOS <span class="token number">13.0</span><span class="token punctuation">,</span> watchOS <span class="token number">6.0</span><span class="token punctuation">,</span> tvOS <span class="token number">13.0</span><span class="token punctuation">,</span> <span class="token operator">*</span><span class="token punctuation">)</span>
+<span class="token attribute atrule">@inlinable</span> <span class="token keyword">public</span> <span class="token keyword">func</span> <span class="token function-definition function">withThrowingTaskGroup</span><span class="token operator">&#x3C;</span><span class="token class-name">ChildTaskResult</span><span class="token punctuation">,</span> <span class="token class-name">GroupResult</span><span class="token operator">></span><span class="token punctuation">(</span>of childTaskResultType<span class="token punctuation">:</span> <span class="token class-name">ChildTaskResult</span><span class="token punctuation">.</span><span class="token keyword">Type</span><span class="token punctuation">,</span> returning returnType<span class="token punctuation">:</span> <span class="token class-name">GroupResult</span><span class="token punctuation">.</span><span class="token keyword">Type</span> <span class="token operator">=</span> <span class="token class-name">GroupResult</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">,</span> body<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token keyword">inout</span> <span class="token class-name">ThrowingTaskGroup</span><span class="token operator">&#x3C;</span><span class="token class-name">ChildTaskResult</span><span class="token punctuation">,</span> <span class="token class-name">Error</span><span class="token operator">></span><span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token keyword">throws</span> <span class="token operator">-></span> <span class="token class-name">GroupResult</span><span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token keyword">rethrows</span> <span class="token operator">-></span> <span class="token class-name">GroupResult</span> <span class="token keyword">where</span> <span class="token class-name">ChildTaskResult</span> <span class="token punctuation">:</span> <span class="token class-name">Sendable</span>
+</code></pre>
+</li>
+<li>
+<p>先抓到相簿中所有照片的name</p>
+</li>
+<li>
+<p>把每張要下載的照片加入task group</p>
+</li>
+<li>
+<p>透過<code>for await</code>將已回傳的photo加到result陣列中。</p>
+</li>
+</ol>
+<pre class="language-swift"><code class="language-swift"><span class="token keyword">let</span> photos <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">withTaskGroup</span><span class="token punctuation">(</span>of<span class="token punctuation">:</span> <span class="token class-name">Data</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> group <span class="token keyword">in</span>
+
+    <span class="token keyword">let</span> photoNames <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">listPhotos</span><span class="token punctuation">(</span>inGallery<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Summer Vacation"</span></span><span class="token punctuation">)</span>
+
+    <span class="token keyword">for</span> name <span class="token keyword">in</span> photoNames <span class="token punctuation">{</span>
+        group<span class="token punctuation">.</span>addTask <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token function">downloadPhoto</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> name<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> results<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">Data</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> <span class="token keyword">await</span> photo <span class="token keyword">in</span> group <span class="token punctuation">{</span>
+        results<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>photo<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> results
+<span class="token punctuation">}</span>
+</code></pre>

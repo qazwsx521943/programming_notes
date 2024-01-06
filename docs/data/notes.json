@@ -11,8 +11,8 @@
       "title": "This page has not yet sprouted",
       "schemaStub": false,
       "type": "note",
-      "updated": 1704388249743,
-      "created": 1704388249743,
+      "updated": 1704559325755,
+      "created": 1704559325755,
       "desc": "",
       "links": [],
       "anchors": {},
@@ -76,6 +76,7 @@
       "links": [],
       "anchors": {},
       "children": [
+        "kdwsnesajgvc4js20f5pb75",
         "hbjsa0j33arqblxg88k4jfv",
         "r7uyk9st3d9jhl2udoeqf26",
         "07schiltkp85q9r624we8lq",
@@ -1544,6 +1545,7 @@
         "rxplme0keulo3fon6e4gxmc",
         "mr2culexmtziuklrq2gt22f",
         "41n9yjlpdhmbls1eigctl1v",
+        "2ho1m3s6l88vvkis0fk0zwq",
         "n5jvl7w3vcsyh0vxk4ocvcu",
         "qjbja5y4bx4h8yq4aaydnss",
         "copi536d0o8g51ay18dp29l",
@@ -1551,12 +1553,12 @@
         "y4x1bbpym9389xf1pj71s7z",
         "pup4i4mmvmbwq6pxkp1jchf",
         "k0wglg86ad5i8p1z42joprw",
-        "mwi46jvfinzar9tadeb0gsl"
+        "22vc1wmt7zsz4uzvsn7cg6f"
       ],
       "parent": "07schiltkp85q9r624we8lq",
       "data": {}
     },
-    "mwi46jvfinzar9tadeb0gsl": {
+    "22vc1wmt7zsz4uzvsn7cg6f": {
       "fname": "programming.language.swift.grand-central-dispatch",
       "stub": true,
       "vault": {
@@ -1566,9 +1568,9 @@
       },
       "schemaStub": false,
       "type": "note",
-      "updated": 1704388249309,
-      "created": 1704388249309,
-      "id": "mwi46jvfinzar9tadeb0gsl",
+      "updated": 1704559324821,
+      "created": 1704559324821,
+      "id": "22vc1wmt7zsz4uzvsn7cg6f",
       "desc": "",
       "links": [],
       "anchors": {},
@@ -1607,7 +1609,7 @@
         }
       },
       "children": [],
-      "parent": "mwi46jvfinzar9tadeb0gsl",
+      "parent": "22vc1wmt7zsz4uzvsn7cg6f",
       "data": {}
     },
     "205jes6rqcp0hof79t6hs6i": {
@@ -1693,7 +1695,7 @@
         }
       },
       "children": [],
-      "parent": "mwi46jvfinzar9tadeb0gsl",
+      "parent": "22vc1wmt7zsz4uzvsn7cg6f",
       "data": {}
     },
     "k0wglg86ad5i8p1z42joprw": {
@@ -2099,6 +2101,7 @@
         "265euhsg8077ow4ql8x9u0q",
         "d5kbcl46xodh9c8hl10qrsu",
         "m2klofp5yj7niqiawmu25a0",
+        "m2ycm3lsjkn11aww6iehtsf",
         "ri418z8my409lbev7mvbfo7"
       ],
       "parent": "vztg7xzj0425ae5ogmk8ds2",
@@ -2125,6 +2128,50 @@
       "parent": "qjbja5y4bx4h8yq4aaydnss",
       "data": {}
     },
+    "m2ycm3lsjkn11aww6iehtsf": {
+      "id": "m2ycm3lsjkn11aww6iehtsf",
+      "title": "UIKit",
+      "desc": "",
+      "updated": 1704420565955,
+      "created": 1704420535042,
+      "custom": {},
+      "fname": "programming.language.swift.framework.uIKit",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "d5b279aa97d4f135e97ad4bf54feb9d1",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "mefscm1qd4tnttqxsvpoxbs"
+      ],
+      "parent": "qjbja5y4bx4h8yq4aaydnss",
+      "data": {}
+    },
+    "mefscm1qd4tnttqxsvpoxbs": {
+      "id": "mefscm1qd4tnttqxsvpoxbs",
+      "title": "life cycle",
+      "desc": "",
+      "updated": 1704420635823,
+      "created": 1704420635823,
+      "custom": {},
+      "fname": "programming.language.swift.framework.uIKit.life cycle",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "eab7b17eb8fec57fcb171d23f0a9b498",
+      "links": [],
+      "anchors": {},
+      "children": [],
+      "parent": "m2ycm3lsjkn11aww6iehtsf",
+      "data": {}
+    },
     "m2klofp5yj7niqiawmu25a0": {
       "id": "m2klofp5yj7niqiawmu25a0",
       "title": "Grand Central Dispatch",
@@ -2140,7 +2187,30 @@
         "name": "Dendron"
       },
       "contentHash": "8561eea8a5d75d5b5ee371c196598d55",
-      "links": [],
+      "links": [
+        {
+          "from": {
+            "fname": "programming.concurrency",
+            "id": "kdwsnesajgvc4js20f5pb75",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 20,
+              "column": 4,
+              "offset": 355
+            },
+            "end": {
+              "line": 20,
+              "column": 71,
+              "offset": 422
+            },
+            "indent": []
+          },
+          "value": "programming.language.swift.framework.grand-central-dispatch"
+        }
+      ],
       "anchors": {
         "what-is-grand-central-dispatch": {
           "type": "header",
@@ -2694,6 +2764,163 @@
       "parent": "n5jvl7w3vcsyh0vxk4ocvcu",
       "data": {}
     },
+    "2ho1m3s6l88vvkis0fk0zwq": {
+      "id": "2ho1m3s6l88vvkis0fk0zwq",
+      "title": "Concurrency",
+      "desc": "",
+      "updated": 1704531229369,
+      "created": 1704447754272,
+      "custom": {},
+      "fname": "programming.language.swift.concurrency",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "471797459c095271dcf4e6b3cb7497d1",
+      "links": [],
+      "anchors": {
+        "whats-the-benefits-of-using-this-new-concurrency-model": {
+          "type": "header",
+          "text": "What's the benefits of using this new concurrency model?",
+          "value": "whats-the-benefits-of-using-this-new-concurrency-model",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "basic-syntax": {
+          "type": "header",
+          "text": "Basic syntax",
+          "value": "basic-syntax",
+          "line": 88,
+          "column": 0,
+          "depth": 2
+        },
+        "what-is-a-sendable-protocol": {
+          "type": "header",
+          "text": "What is a Sendable Protocol?",
+          "value": "what-is-a-sendable-protocol",
+          "line": 110,
+          "column": 0,
+          "depth": 2
+        },
+        "asyncsequence-protocol": {
+          "type": "header",
+          "text": "AsyncSequence protocol",
+          "value": "asyncsequence-protocol",
+          "line": 125,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "0swgx3xcko1wm5cfll7nvah",
+        "4momin9k0ledbifglklmqyv"
+      ],
+      "parent": "vztg7xzj0425ae5ogmk8ds2",
+      "data": {}
+    },
+    "4momin9k0ledbifglklmqyv": {
+      "id": "4momin9k0ledbifglklmqyv",
+      "title": "Task & TaskGroup",
+      "desc": "",
+      "updated": 1704531237979,
+      "created": 1704531164027,
+      "custom": {},
+      "fname": "programming.language.swift.concurrency.task & taskGroup",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "9871db7dc23a4c3369a0aa09f53df557",
+      "links": [],
+      "anchors": {
+        "task": {
+          "type": "header",
+          "text": "Task",
+          "value": "task",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "task-groups": {
+          "type": "header",
+          "text": "Task Groups",
+          "value": "task-groups",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "情境一想要把某個相簿中的所有照片下載下來": {
+          "type": "header",
+          "text": "情境(一)：想要把某個相簿中的所有照片下載下來。",
+          "value": "情境一想要把某個相簿中的所有照片下載下來",
+          "line": 16,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [],
+      "parent": "2ho1m3s6l88vvkis0fk0zwq",
+      "data": {}
+    },
+    "0swgx3xcko1wm5cfll7nvah": {
+      "id": "0swgx3xcko1wm5cfll7nvah",
+      "title": "Actors",
+      "desc": "",
+      "updated": 1704559306033,
+      "created": 1704531174758,
+      "custom": {},
+      "fname": "programming.language.swift.concurrency.actors",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "d98185c24bc244a1c0e0d8958bf4b49d",
+      "links": [],
+      "anchors": {
+        "what-did-actor-solved": {
+          "type": "header",
+          "text": "What did Actor solved?",
+          "value": "what-did-actor-solved",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "how-did-it-solved": {
+          "type": "header",
+          "text": "How did it solved?",
+          "value": "how-did-it-solved",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "actor-isolation": {
+          "type": "header",
+          "text": "Actor isolation",
+          "value": "actor-isolation",
+          "line": 16,
+          "column": 0,
+          "depth": 2
+        },
+        "nonisolated": {
+          "type": "header",
+          "text": "nonisolated",
+          "value": "nonisolated",
+          "line": 29,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "2ho1m3s6l88vvkis0fk0zwq",
+      "data": {}
+    },
     "41n9yjlpdhmbls1eigctl1v": {
       "id": "41n9yjlpdhmbls1eigctl1v",
       "title": "Closures",
@@ -2987,7 +3214,7 @@
       "id": "e967gt61ay4vhqbij2qmofv",
       "title": "Class",
       "desc": "",
-      "updated": 1704386523475,
+      "updated": 1704421591299,
       "created": 1704195508926,
       "nav_order": 1,
       "custom": {
@@ -3000,21 +3227,21 @@
         "selfContained": true,
         "name": "Dendron"
       },
-      "contentHash": "12e6ab9b85c5178746828f565ac0b5e4",
+      "contentHash": "539bab180b00719a2ad37784933fcc5a",
       "links": [],
       "anchors": {
-        "declare-a-class--struct": {
+        "declare-a-class": {
           "type": "header",
-          "text": "Declare a class / struct",
-          "value": "declare-a-class--struct",
+          "text": "Declare a class",
+          "value": "declare-a-class",
           "line": 9,
           "column": 0,
           "depth": 2
         },
-        "initialize-a-classstruct-instance": {
+        "initialize-a-class-instance": {
           "type": "header",
-          "text": "Initialize a class/struct instance",
-          "value": "initialize-a-classstruct-instance",
+          "text": "Initialize a class instance",
+          "value": "initialize-a-class-instance",
           "line": 23,
           "column": 0,
           "depth": 2
@@ -3448,6 +3675,97 @@
       },
       "children": [],
       "parent": "hbjsa0j33arqblxg88k4jfv",
+      "data": {}
+    },
+    "kdwsnesajgvc4js20f5pb75": {
+      "id": "kdwsnesajgvc4js20f5pb75",
+      "title": "Concurrency",
+      "desc": "",
+      "updated": 1704447724983,
+      "created": 1704421852609,
+      "custom": {},
+      "fname": "programming.concurrency",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "496261d78dd24b7d15778073026e6958",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "programming.concurrency",
+            "id": "kdwsnesajgvc4js20f5pb75",
+            "vaultName": "Dendron"
+          },
+          "value": "programming.language.swift.framework.grand-central-dispatch",
+          "alias": "GCD",
+          "position": {
+            "start": {
+              "line": 20,
+              "column": 4,
+              "offset": 355
+            },
+            "end": {
+              "line": 20,
+              "column": 71,
+              "offset": 422
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "programming.language.swift.framework.grand-central-dispatch"
+          }
+        }
+      ],
+      "anchors": {
+        "what-is-concurrency": {
+          "type": "header",
+          "text": "What is concurrency?",
+          "value": "what-is-concurrency",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "高併發跟多線程的關係": {
+          "type": "header",
+          "text": "高併發跟多線程的關係？",
+          "value": "高併發跟多線程的關係",
+          "line": 20,
+          "column": 0,
+          "depth": 2
+        },
+        "ios中有什麼處理多線程的技術": {
+          "type": "header",
+          "text": "iOS中有什麼處理多線程的技術？",
+          "value": "ios中有什麼處理多線程的技術",
+          "line": 22,
+          "column": 0,
+          "depth": 2
+        },
+        "衡量標準": {
+          "type": "header",
+          "text": "衡量標準",
+          "value": "衡量標準",
+          "line": 37,
+          "column": 0,
+          "depth": 2
+        },
+        "通常在解決高併發有兩種擴展方式": {
+          "type": "header",
+          "text": "通常在解決高併發有兩種擴展方式",
+          "value": "通常在解決高併發有兩種擴展方式",
+          "line": 42,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "rn0e0y5coqo8iyqfxd7ocsk",
       "data": {}
     },
     "avquk6puzxi790rxzodnfmh": {
